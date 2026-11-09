@@ -69,6 +69,15 @@ img { max-width: 100%; height: auto; display: block; }
 .tone-people { --tone: #2563eb; --tone-soft: #dbeafe; --tone-ink: #1e3a8a; }
 .tone-archive { --tone: #64748b; --tone-soft: #e2e8f0; --tone-ink: #334155; }
 .tone-saved { --tone: #0d9488; --tone-soft: #ccfbf1; --tone-ink: #115e59; }
+.tone-industries { --tone: #4f46e5; --tone-soft: #e0e7ff; --tone-ink: #3730a3; }
+.tone-ind-medtech, .tag-ind-medtech { --tone: #c026d3; --tone-soft: #fae8ff; --tone-ink: #86198f; }
+.tone-ind-finance, .tag-ind-finance { --tone: #4338ca; --tone-soft: #e0e7ff; --tone-ink: #312e81; }
+.tone-ind-retail, .tag-ind-retail { --tone: #ea580c; --tone-soft: #ffedd5; --tone-ink: #9a3412; }
+.tone-ind-manufacturing, .tag-ind-manufacturing { --tone: #0891b2; --tone-soft: #cffafe; --tone-ink: #155e75; }
+.tone-ind-proservices, .tag-ind-proservices { --tone: #65a30d; --tone-soft: #ecfccb; --tone-ink: #3f6212; }
+.tone-ind-education, .tag-ind-education { --tone: #ca8a04; --tone-soft: #fef9c3; --tone-ink: #854d0e; }
+.tone-ind-sales, .tag-ind-sales { --tone: #db2777; --tone-soft: #fce7f3; --tone-ink: #9d174d; }
+.tag-industries { --tone: #4f46e5; --tone-soft: #e0e7ff; --tone-ink: #3730a3; }
 
 .hero {
   background:
@@ -193,6 +202,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-scroll a[href="#healthcare"] { --nav-bg:#ffe4e6; --nav-border:#fecdd3; --nav-ink:#9f1239; }
 .nav-scroll a[href="#videos"] { --nav-bg:#ffe4e6; --nav-border:#fecdd3; --nav-ink:#be123c; }
 .nav-scroll a[href="#people"] { --nav-bg:#dbeafe; --nav-border:#bfdbfe; --nav-ink:#1e3a8a; }
+.nav-scroll a[href="#industries"] { --nav-bg:#e0e7ff; --nav-border:#c7d2fe; --nav-ink:#3730a3; }
 .nav-scroll a[href="#this-week"] { --nav-bg:#e0f2fe; --nav-border:#bae6fd; --nav-ink:#075985; }
 .nav-scroll a:focus-visible, .chip:focus-visible, .btn-copy:focus-visible, .video-poster:focus-visible, #q:focus-visible {
   outline: none; box-shadow: var(--focus);
@@ -234,6 +244,29 @@ img { max-width: 100%; height: auto; display: block; }
 .chip[data-filter="healthcare-regulatory"][aria-pressed="true"] { background: var(--rose); border-color: var(--rose); }
 .chip[data-filter="videos"][aria-pressed="true"] { background: var(--coral); border-color: var(--coral); }
 .chip[data-filter="people"][aria-pressed="true"] { background: var(--blue); border-color: var(--blue); }
+.chip[data-filter="industries"][aria-pressed="true"] { background: #4f46e5; border-color: #4f46e5; }
+.chip.ind-chip { border-color: color-mix(in srgb, var(--tone) 35%, var(--line)); color: var(--tone-ink); background: var(--tone-soft); }
+.chip.ind-chip[aria-pressed="true"] { background: var(--tone); border-color: var(--tone); color: #fff; }
+#industries, .ind-group { scroll-margin-top: 10rem; }
+.ind-jump { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .4rem; }
+.ind-jump-label { font-size: .8rem; font-weight: 700; color: var(--muted); margin: 0 0 .35rem; }
+.ind-group {
+  margin: 1.1rem 0 .4rem;
+  padding: .85rem .85rem .95rem;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--tone-soft) 55%, #fff);
+  border: 1px solid color-mix(in srgb, var(--tone) 22%, var(--line));
+  border-top: 4px solid var(--tone);
+}
+.ind-group-head { display: flex; gap: .65rem; align-items: center; margin-bottom: .6rem; }
+.ind-group-head h3 { margin: 0; font-size: 1.08rem; color: var(--navy); }
+.ind-group-head p { margin: .15rem 0 0; color: var(--muted); font-size: .9rem; }
+.section-head .badge-new { margin-left: .5rem; vertical-align: middle; position: relative; top: -2px; }
+@media (prefers-color-scheme: dark) {
+  .ind-group { background: color-mix(in srgb, var(--tone) 10%, #0f1b2d); }
+  .ind-group-head h3 { color: #e8eef8; }
+  .chip.ind-chip { background: color-mix(in srgb, var(--tone) 18%, #0f1b2d); color: #e5eefc; }
+}
 
 .wrap { max-width: var(--max); margin: 0 auto; padding: 1.25rem; }
 .start {
@@ -342,8 +375,6 @@ img { max-width: 100%; height: auto; display: block; }
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
 .card {
-  --tone: #2563eb;
-  --tone-soft: #dbeafe;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -657,9 +688,10 @@ noscript .note {
     <p class="intro">A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.</p>
     <p class="meta-line">Updated 2026-11-09 · Updated daily</p>
     <div class="stat-pills" aria-label="Library snapshot">
-      <span class="stat-pill"><strong>60</strong> resources</span>
+      <span class="stat-pill"><strong>92</strong> resources</span>
       <span class="stat-pill"><strong>6</strong> prompts</span>
       <span class="stat-pill"><strong>10</strong> videos</span>
+      <span class="stat-pill"><strong>7</strong> industries</span>
     </div>
   </div>
 </header>
@@ -674,6 +706,7 @@ noscript .note {
       <a href="#leadership">Leadership</a>
       <a href="#smb">Small business</a>
       <a href="#healthcare">Healthcare &amp; pharma</a>
+      <a href="#industries">By industry</a>
       <a href="#videos">Videos</a>
       <a href="#people">People</a>
       <a href="#saved">Saved <span class="count-badge" data-saved-count>0</span></a>
@@ -691,6 +724,7 @@ noscript .note {
         <button type="button" class="chip" data-filter="healthcare" aria-pressed="false">Healthcare &amp; pharma</button>
         <button type="button" class="chip" data-filter="pharma-commercial" aria-pressed="false">Pharma commercial</button>
         <button type="button" class="chip" data-filter="healthcare-regulatory" aria-pressed="false">Regulatory &amp; clinical</button>
+        <button type="button" class="chip" data-filter="industries" aria-pressed="false">Industries</button>
         <button type="button" class="chip" data-filter="videos" aria-pressed="false">Videos</button>
         <button type="button" class="chip" data-filter="people" aria-pressed="false">People</button>
         <button type="button" class="chip" data-filter="saved" aria-pressed="false">Saved</button>
@@ -1509,6 +1543,601 @@ Facts:
   </div>
 </section>
   
+<section class="section reveal tone-industries" id="industries" data-section="industries">
+  <header class="section-head">
+    <span class="icon-tile tone-industries" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 21V10l5-3v3l5-3v3l5-3v14H3zm3-3h2v-2H6v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2z"/><path fill="currentColor" opacity=".55" d="M18 4h3v17h-3z"/></svg></span>
+    <div>
+      <h2>AI by industry <span class="badge-new">New</span></h2>
+      <p>How leaders and managers are putting AI to work in specific fields. Tap an industry to filter.</p>
+    </div>
+  </header>
+  <p class="ind-jump-label">Filter by industry</p>
+  <div class="ind-jump chips" role="group" aria-label="Filter by industry"><button type="button" class="chip ind-chip tone-ind-medtech" data-filter="ind-medtech" aria-pressed="false">Medtech &amp; biotech <span class="count-badge">5</span></button><button type="button" class="chip ind-chip tone-ind-finance" data-filter="ind-finance" aria-pressed="false">Finance &amp; insurance <span class="count-badge">5</span></button><button type="button" class="chip ind-chip tone-ind-retail" data-filter="ind-retail" aria-pressed="false">Retail &amp; CPG <span class="count-badge">5</span></button><button type="button" class="chip ind-chip tone-ind-manufacturing" data-filter="ind-manufacturing" aria-pressed="false">Manufacturing <span class="count-badge">4</span></button><button type="button" class="chip ind-chip tone-ind-proservices" data-filter="ind-proservices" aria-pressed="false">Pro services <span class="count-badge">4</span></button><button type="button" class="chip ind-chip tone-ind-education" data-filter="ind-education" aria-pressed="false">Education &amp; nonprofits <span class="count-badge">5</span></button><button type="button" class="chip ind-chip tone-ind-sales" data-filter="ind-sales" aria-pressed="false">Sales leadership <span class="count-badge">4</span></button></div>
+  
+  <div class="ind-group tone-ind-medtech" id="ind-medtech">
+    <div class="ind-group-head">
+      <span class="icon-tile tone-ind-medtech" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 12h4l2.5-6 4 12 2.5-6H22"/></svg></span>
+      <div>
+        <h3>Medical devices &amp; biotech</h3>
+        <p>Field sales, reimbursement, and commercial leadership in device and biotech companies. Sits next to Healthcare &amp; pharma.</p>
+      </div>
+    </div>
+    <div class="grid">
+<article class="card tone-ind-medtech" id="item-ind-0c48c7b8e1" data-id="ind-0c48c7b8e1" data-tags="industries ind-medtech managers leadership" data-text="scaling gen ai in the medtech industry mckinsey survey-backed look at where medtech teams are getting value from gen ai, including crm-based sales tools, coaching aids for sales managers, and faster content and legal review. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-medtech" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 12h4l2.5-6 4 12 2.5-6H22"/></svg></span>
+    <div>
+      <h3><a href="https://www.mckinsey.com/industries/life-sciences/our-insights/scaling-gen-ai-in-the-medtech-industry" rel="noopener noreferrer">Scaling gen AI in the medtech industry</a></h3>
+      <p class="meta">McKinsey · 2025-05-29</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Survey-backed look at where medtech teams are getting value from gen AI, including CRM-based sales tools, coaching aids for sales managers, and faster content and legal review.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-medtech">Medtech &amp; biotech</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-0c48c7b8e1" aria-pressed="false" aria-label="Save Scaling gen AI in the medtech industry">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-0c48c7b8e1" aria-label="Share Scaling gen AI in the medtech industry">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-medtech" id="item-ind-f1d4263d98" data-id="ind-f1d4263d98" data-tags="industries ind-medtech managers leadership" data-text="building an effective ai strategy for medtech organizations zs argues for starting from the decisions you want to improve, not the tool, and tying each use case to revenue, productivity, or customer-experience goals. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-medtech" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 12h4l2.5-6 4 12 2.5-6H22"/></svg></span>
+    <div>
+      <h3><a href="https://www.zs.com/insights/ai-strategy-framework-medtech" rel="noopener noreferrer">Building an effective AI strategy for medtech organizations</a></h3>
+      <p class="meta">ZS · 2025-04-23</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Argues for starting from the decisions you want to improve, not the tool, and tying each use case to revenue, productivity, or customer-experience goals.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-medtech">Medtech &amp; biotech</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-f1d4263d98" aria-pressed="false" aria-label="Save Building an effective AI strategy for medtech organizations">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-f1d4263d98" aria-label="Share Building an effective AI strategy for medtech organizations">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-medtech" id="item-ind-d4381481da" data-id="ind-d4381481da" data-tags="industries ind-medtech managers" data-text="can agentic ai improve workflows and margins in medtech? deloitte walks through where ai agents could help in medtech, from contracting and pricing to field service and commercial content, and where people still need to decide. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-medtech" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 12h4l2.5-6 4 12 2.5-6H22"/></svg></span>
+    <div>
+      <h3><a href="https://www.deloitte.com/us/en/industries/life-sciences-health-care/blogs/health-care/can-agentic-ai-improve-workflows-and-margins-in-medtech.html" rel="noopener noreferrer">Can agentic AI improve workflows and margins in medtech?</a></h3>
+      <p class="meta">Deloitte · 2025-11-20</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Walks through where AI agents could help in medtech, from contracting and pricing to field service and commercial content, and where people still need to decide.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-medtech">Medtech &amp; biotech</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-d4381481da" aria-pressed="false" aria-label="Save Can agentic AI improve workflows and margins in medtech?">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-d4381481da" aria-label="Share Can agentic AI improve workflows and margins in medtech?">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-medtech" id="item-ind-ce4bdcee1b" data-id="ind-ce4bdcee1b" data-tags="industries ind-medtech managers leadership" data-text="three key trends likely to shape medtech in 2026 deloitte short read on portfolio shifts, the move to outpatient care, and ai governance. useful context for commercial leaders planning the year. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-medtech" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 12h4l2.5-6 4 12 2.5-6H22"/></svg></span>
+    <div>
+      <h3><a href="https://www.deloitte.com/us/en/industries/life-sciences-health-care/blogs/health-care/three-key-trends-likely-to-shape-medtech.html" rel="noopener noreferrer">Three key trends likely to shape medtech in 2026</a></h3>
+      <p class="meta">Deloitte · 2026-01-25</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Short read on portfolio shifts, the move to outpatient care, and AI governance. Useful context for commercial leaders planning the year.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-medtech">Medtech &amp; biotech</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-ce4bdcee1b" aria-pressed="false" aria-label="Save Three key trends likely to shape medtech in 2026">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-ce4bdcee1b" aria-label="Share Three key trends likely to shape medtech in 2026">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-medtech" id="item-ind-672f848203" data-id="ind-672f848203" data-tags="industries ind-medtech managers" data-text="tips to overcome ai medical device reimbursement woes md+di a founder&#x27;s lessons on getting coverage, coding, and payment for an ai-enabled device, and why to talk to fda, cms, and payers early. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-medtech" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 12h4l2.5-6 4 12 2.5-6H22"/></svg></span>
+    <div>
+      <h3><a href="https://www.mddionline.com/artificial-intelligence/tips-to-overcome-ai-medical-device-reimbursement-woes" rel="noopener noreferrer">Tips to Overcome AI Medical Device Reimbursement Woes</a></h3>
+      <p class="meta">MD+DI · 2025-11-19</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">A founder&#x27;s lessons on getting coverage, coding, and payment for an AI-enabled device, and why to talk to FDA, CMS, and payers early.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-medtech">Medtech &amp; biotech</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-672f848203" aria-pressed="false" aria-label="Save Tips to Overcome AI Medical Device Reimbursement Woes">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-672f848203" aria-label="Share Tips to Overcome AI Medical Device Reimbursement Woes">Share</button>
+  </div>
+</article></div>
+  </div>
+  <div class="ind-group tone-ind-finance" id="ind-finance">
+    <div class="ind-group-head">
+      <span class="icon-tile tone-ind-finance" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v2h20V7L12 2zM4 11h2v7H4v-7zm4.5 0h2v7h-2v-7zm5 0h2v7h-2v-7zm4.5 0h2v7h-2v-7zM2 20h20v2H2v-2z"/></svg></span>
+      <div>
+        <h3>Financial services &amp; insurance</h3>
+        <p>Claims, underwriting, compliance, and advisor productivity in regulated financial firms.</p>
+      </div>
+    </div>
+    <div class="grid">
+<article class="card tone-ind-finance" id="item-ind-b914767eeb" data-id="ind-b914767eeb" data-tags="industries ind-finance managers leadership" data-text="the future of ai in the insurance industry mckinsey how insurers are reworking whole areas like claims, underwriting, and distribution instead of running scattered pilots, and why change management is half the work. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-finance" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v2h20V7L12 2zM4 11h2v7H4v-7zm4.5 0h2v7h-2v-7zm5 0h2v7h-2v-7zm4.5 0h2v7h-2v-7zM2 20h20v2H2v-2z"/></svg></span>
+    <div>
+      <h3><a href="https://www.mckinsey.com/industries/financial-services/our-insights/the-future-of-ai-in-the-insurance-industry" rel="noopener noreferrer">The future of AI in the insurance industry</a></h3>
+      <p class="meta">McKinsey · 2025-07-15</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">How insurers are reworking whole areas like claims, underwriting, and distribution instead of running scattered pilots, and why change management is half the work.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-finance">Finance &amp; insurance</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-b914767eeb" aria-pressed="false" aria-label="Save The future of AI in the insurance industry">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-b914767eeb" aria-label="Share The future of AI in the insurance industry">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-finance" id="item-ind-8d92b82dd0" data-id="ind-8d92b82dd0" data-tags="industries ind-finance managers" data-text="how banks can supercharge intelligent automation with agentic ai deloitte insights where ai agents fit in banking processes such as credit underwriting and fraud work, and why compliance has to be built in from the start. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-finance" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v2h20V7L12 2zM4 11h2v7H4v-7zm4.5 0h2v7h-2v-7zm5 0h2v7h-2v-7zm4.5 0h2v7h-2v-7zM2 20h20v2H2v-2z"/></svg></span>
+    <div>
+      <h3><a href="https://www.deloitte.com/us/en/insights/industry/financial-services/agentic-ai-banking.html" rel="noopener noreferrer">How banks can supercharge intelligent automation with agentic AI</a></h3>
+      <p class="meta">Deloitte Insights · 2025-08-13</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Where AI agents fit in banking processes such as credit underwriting and fraud work, and why compliance has to be built in from the start.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-finance">Finance &amp; insurance</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-8d92b82dd0" aria-pressed="false" aria-label="Save How banks can supercharge intelligent automation with agentic AI">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-8d92b82dd0" aria-label="Share How banks can supercharge intelligent automation with agentic AI">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-finance" id="item-ind-7f7fb60221" data-id="ind-7f7fb60221" data-tags="industries ind-finance managers leadership" data-text="managing the new wave of risks from ai agents in banking deloitte insights practical governance ideas for ai agents: named owners, activity logs, escalation triggers, and human review for consequential decisions. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-finance" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v2h20V7L12 2zM4 11h2v7H4v-7zm4.5 0h2v7h-2v-7zm5 0h2v7h-2v-7zm4.5 0h2v7h-2v-7zM2 20h20v2H2v-2z"/></svg></span>
+    <div>
+      <h3><a href="https://www.deloitte.com/us/en/insights/industry/financial-services/agentic-ai-risks-banking.html" rel="noopener noreferrer">Managing the new wave of risks from AI agents in banking</a></h3>
+      <p class="meta">Deloitte Insights · 2026-03-05</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Practical governance ideas for AI agents: named owners, activity logs, escalation triggers, and human review for consequential decisions.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-finance">Finance &amp; insurance</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-7f7fb60221" aria-pressed="false" aria-label="Save Managing the new wave of risks from AI agents in banking">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-7f7fb60221" aria-label="Share Managing the new wave of risks from AI agents in banking">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-finance" id="item-ind-0ad55b241d" data-id="ind-0ad55b241d" data-tags="industries ind-finance managers" data-text="genai: continuing and emerging trends (2026 finra annual regulatory oversight report) finra the regulator&#x27;s view of how existing supervision, communications, and recordkeeping rules apply when firms use gen ai and ai agents. a good compliance checklist. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-finance" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v2h20V7L12 2zM4 11h2v7H4v-7zm4.5 0h2v7h-2v-7zm5 0h2v7h-2v-7zm4.5 0h2v7h-2v-7zM2 20h20v2H2v-2z"/></svg></span>
+    <div>
+      <h3><a href="https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai" rel="noopener noreferrer">GenAI: Continuing and Emerging Trends (2026 FINRA Annual Regulatory Oversight Report)</a></h3>
+      <p class="meta">FINRA · 2025-12</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">The regulator&#x27;s view of how existing supervision, communications, and recordkeeping rules apply when firms use gen AI and AI agents. A good compliance checklist.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-finance">Finance &amp; insurance</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-0ad55b241d" aria-pressed="false" aria-label="Save GenAI: Continuing and Emerging Trends (2026 FINRA Annual Regulatory Oversight Report)">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-0ad55b241d" aria-label="Share GenAI: Continuing and Emerging Trends (2026 FINRA Annual Regulatory Oversight Report)">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-finance" id="item-ind-ea9caf74cb" data-id="ind-ea9caf74cb" data-tags="industries ind-finance managers aspiring" data-text="the looming advisor shortage in us wealth management mckinsey sizes the coming advisor gap and shows where gen ai can give advisors time back: meeting prep, notes, plan drafts, and compliance tasks. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-finance" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v2h20V7L12 2zM4 11h2v7H4v-7zm4.5 0h2v7h-2v-7zm5 0h2v7h-2v-7zm4.5 0h2v7h-2v-7zM2 20h20v2H2v-2z"/></svg></span>
+    <div>
+      <h3><a href="https://www.mckinsey.com/industries/financial-services/our-insights/the-looming-advisor-shortage-in-us-wealth-management" rel="noopener noreferrer">The looming advisor shortage in US wealth management</a></h3>
+      <p class="meta">McKinsey · 2025-02-10</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Sizes the coming advisor gap and shows where gen AI can give advisors time back: meeting prep, notes, plan drafts, and compliance tasks.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-finance">Finance &amp; insurance</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-ea9caf74cb" aria-pressed="false" aria-label="Save The looming advisor shortage in US wealth management">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-ea9caf74cb" aria-label="Share The looming advisor shortage in US wealth management">Share</button>
+  </div>
+</article></div>
+  </div>
+  <div class="ind-group tone-ind-retail" id="ind-retail">
+    <div class="ind-group-head">
+      <span class="icon-tile tone-ind-retail" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 7V6a6 6 0 0 1 12 0v1h3l-1.2 14H4.2L3 7h3zm2 0h8V6a4 4 0 0 0-8 0v1z"/></svg></span>
+      <div>
+        <h3>Retail &amp; consumer goods</h3>
+        <p>Store and district managers, forecasting, and customer service.</p>
+      </div>
+    </div>
+    <div class="grid">
+<article class="card tone-ind-retail" id="item-ind-777e06135e" data-id="ind-777e06135e" data-tags="industries ind-retail managers" data-text="the case for agentic ai in retail with ai-sourcing deloitte concrete store examples like shelf monitoring, staff scheduling, and task assignment, plus how merchandising, planning, and customer care could change. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-retail" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 7V6a6 6 0 0 1 12 0v1h3l-1.2 14H4.2L3 7h3zm2 0h8V6a4 4 0 0 0-8 0v1z"/></svg></span>
+    <div>
+      <h3><a href="https://www.deloitte.com/us/en/industries/consumer/articles/ai-retail-digital-workers-transformation.html" rel="noopener noreferrer">The case for agentic AI in retail with AI-sourcing</a></h3>
+      <p class="meta">Deloitte · 2025-10-17</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Concrete store examples like shelf monitoring, staff scheduling, and task assignment, plus how merchandising, planning, and customer care could change.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-retail">Retail &amp; CPG</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-777e06135e" aria-pressed="false" aria-label="Save The case for agentic AI in retail with AI-sourcing">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-777e06135e" aria-label="Share The case for agentic AI in retail with AI-sourcing">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-retail" id="item-ind-38620b0b44" data-id="ind-38620b0b44" data-tags="industries ind-retail managers aspiring" data-text="elevating the retail floor: how will ai reshape frontline retail roles and the customer experience? kearney how ai could free up store associates&#x27; time and change customer service, and what that means for hiring and training frontline teams. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-retail" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 7V6a6 6 0 0 1 12 0v1h3l-1.2 14H4.2L3 7h3zm2 0h8V6a4 4 0 0 0-8 0v1z"/></svg></span>
+    <div>
+      <h3><a href="https://www.kearney.com/industry/consumer-retail/article/elevating-the-retail-floor-how-will-ai-reshape-frontline-retail-roles-and-the-customer-experience" rel="noopener noreferrer">Elevating the retail floor: How will AI reshape frontline retail roles and the customer experience?</a></h3>
+      <p class="meta">Kearney · 2025</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">How AI could free up store associates&#x27; time and change customer service, and what that means for hiring and training frontline teams.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-retail">Retail &amp; CPG</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-38620b0b44" aria-pressed="false" aria-label="Save Elevating the retail floor: How will AI reshape frontline retail roles and the customer experience?">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-38620b0b44" aria-label="Share Elevating the retail floor: How will AI reshape frontline retail roles and the customer experience?">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-retail" id="item-ind-1b757fe3db" data-id="ind-1b757fe3db" data-tags="industries ind-retail managers leadership" data-text="state of ai in retail and cpg deloitte a survey of 200 consumer-sector executives that found high conviction but uneven execution. quick benchmark for where your team stands. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-retail" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 7V6a6 6 0 0 1 12 0v1h3l-1.2 14H4.2L3 7h3zm2 0h8V6a4 4 0 0 0-8 0v1z"/></svg></span>
+    <div>
+      <h3><a href="https://www.deloitte.com/us/en/industries/consumer/articles/state-of-ai-adoption-in-retail-cpg-executive-survey.html" rel="noopener noreferrer">State of AI in retail and CPG</a></h3>
+      <p class="meta">Deloitte · 2026-06-18</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">A survey of 200 consumer-sector executives that found high conviction but uneven execution. Quick benchmark for where your team stands.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-retail">Retail &amp; CPG</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-1b757fe3db" aria-pressed="false" aria-label="Save State of AI in retail and CPG">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-1b757fe3db" aria-label="Share State of AI in retail and CPG">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-retail" id="item-ind-33a1329f9b" data-id="ind-33a1329f9b" data-tags="industries ind-retail managers leadership" data-text="2026 global retail industry outlook deloitte global the big-picture outlook for retail leaders, including how ai is moving from pilots into pricing, personalization, and planning. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-retail" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 7V6a6 6 0 0 1 12 0v1h3l-1.2 14H4.2L3 7h3zm2 0h8V6a4 4 0 0 0-8 0v1z"/></svg></span>
+    <div>
+      <h3><a href="https://www.deloitte.com/global/en/industries/consumer/perspectives/global-retail-industry-outlook.html" rel="noopener noreferrer">2026 Global Retail Industry Outlook</a></h3>
+      <p class="meta">Deloitte Global · 2026-01-08</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">The big-picture outlook for retail leaders, including how AI is moving from pilots into pricing, personalization, and planning.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-retail">Retail &amp; CPG</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-33a1329f9b" aria-pressed="false" aria-label="Save 2026 Global Retail Industry Outlook">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-33a1329f9b" aria-label="Share 2026 Global Retail Industry Outlook">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-retail" id="item-ind-f97ef9ef9d" data-id="ind-f97ef9ef9d" data-tags="industries ind-retail managers" data-text="agentic ai in customer care: what&#x27;s on leaders&#x27; minds? mckinsey customer-service leaders on running a hybrid team of people and ai agents: shared metrics, new training, and starting from real customer pain points. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-retail" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 7V6a6 6 0 0 1 12 0v1h3l-1.2 14H4.2L3 7h3zm2 0h8V6a4 4 0 0 0-8 0v1z"/></svg></span>
+    <div>
+      <h3><a href="https://www.mckinsey.com/capabilities/operations/our-insights/operations-blog/agentic-ai-in-customer-care-whats-on-leaders-minds" rel="noopener noreferrer">Agentic AI in customer care: What&#x27;s on leaders&#x27; minds?</a></h3>
+      <p class="meta">McKinsey · 2025-09-25</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Customer-service leaders on running a hybrid team of people and AI agents: shared metrics, new training, and starting from real customer pain points.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-retail">Retail &amp; CPG</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-f97ef9ef9d" aria-pressed="false" aria-label="Save Agentic AI in customer care: What&#x27;s on leaders&#x27; minds?">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-f97ef9ef9d" aria-label="Share Agentic AI in customer care: What&#x27;s on leaders&#x27; minds?">Share</button>
+  </div>
+</article></div>
+  </div>
+  <div class="ind-group tone-ind-manufacturing" id="ind-manufacturing">
+    <div class="ind-group-head">
+      <span class="icon-tile tone-ind-manufacturing" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.3 7.3 0 0 0-1.7-1L15 3h-4l-.4 2.9a7.3 7.3 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1c.5.4 1.1.7 1.7 1L11 21h4l.4-2.9c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.5-2.2-1.6zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg></span>
+      <div>
+        <h3>Manufacturing &amp; supply chain</h3>
+        <p>Plant supervisors, quality, safety, scheduling, and planning.</p>
+      </div>
+    </div>
+    <div class="grid">
+<article class="card tone-ind-manufacturing" id="item-ind-5327803a4d" data-id="ind-5327803a4d" data-tags="industries ind-manufacturing managers leadership" data-text="from vision to value: a road map for enterprise transformation in manufacturing with agentic ai deloitte insights shop-floor examples like ai-drafted work instructions reviewed by engineers, plus why most task hours stay human and how to bring workers along. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-manufacturing" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.3 7.3 0 0 0-1.7-1L15 3h-4l-.4 2.9a7.3 7.3 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1c.5.4 1.1.7 1.7 1L11 21h4l.4-2.9c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.5-2.2-1.6zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg></span>
+    <div>
+      <h3><a href="https://www.deloitte.com/us/en/insights/industry/manufacturing-industrial-products/agentic-ai-manufacturing-digital-transformation.html" rel="noopener noreferrer">From vision to value: A road map for enterprise transformation in manufacturing with agentic AI</a></h3>
+      <p class="meta">Deloitte Insights · 2025-09-22</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Shop-floor examples like AI-drafted work instructions reviewed by engineers, plus why most task hours stay human and how to bring workers along.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-manufacturing">Manufacturing</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-5327803a4d" aria-pressed="false" aria-label="Save From vision to value: A road map for enterprise transformation in manufacturing with agentic AI">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-5327803a4d" aria-label="Share From vision to value: A road map for enterprise transformation in manufacturing with agentic AI">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-manufacturing" id="item-ind-53d8a6c9aa" data-id="ind-53d8a6c9aa" data-tags="industries ind-manufacturing managers leadership" data-text="how coos maximize operational impact from gen ai and agentic ai mckinsey includes a maintenance copilot for frontline technicians and an ai-prepared shift handover that the supervisor reviews before acting. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-manufacturing" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.3 7.3 0 0 0-1.7-1L15 3h-4l-.4 2.9a7.3 7.3 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1c.5.4 1.1.7 1.7 1L11 21h4l.4-2.9c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.5-2.2-1.6zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg></span>
+    <div>
+      <h3><a href="https://www.mckinsey.com/capabilities/operations/our-insights/how-coos-maximize-operational-impact-from-gen-ai-and-agentic-ai" rel="noopener noreferrer">How COOs maximize operational impact from gen AI and agentic AI</a></h3>
+      <p class="meta">McKinsey · 2025-03-20</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Includes a maintenance copilot for frontline technicians and an AI-prepared shift handover that the supervisor reviews before acting.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-manufacturing">Manufacturing</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-53d8a6c9aa" aria-pressed="false" aria-label="Save How COOs maximize operational impact from gen AI and agentic AI">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-53d8a6c9aa" aria-label="Share How COOs maximize operational impact from gen AI and agentic AI">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-manufacturing" id="item-ind-ba6b0aad0d" data-id="ind-ba6b0aad0d" data-tags="industries ind-manufacturing managers" data-text="6 steps to succeeding with industrial ai mit sloan keep scope small, frame problems clearly, and get timely data to the people on the floor who make real-time decisions. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-manufacturing" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.3 7.3 0 0 0-1.7-1L15 3h-4l-.4 2.9a7.3 7.3 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1c.5.4 1.1.7 1.7 1L11 21h4l.4-2.9c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.5-2.2-1.6zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg></span>
+    <div>
+      <h3><a href="https://mitsloan.mit.edu/ideas-made-to-matter/6-steps-to-succeeding-industrial-ai" rel="noopener noreferrer">6 steps to succeeding with industrial AI</a></h3>
+      <p class="meta">MIT Sloan · 2025-09-29</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Keep scope small, frame problems clearly, and get timely data to the people on the floor who make real-time decisions.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-manufacturing">Manufacturing</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-ba6b0aad0d" aria-pressed="false" aria-label="Save 6 steps to succeeding with industrial AI">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-ba6b0aad0d" aria-label="Share 6 steps to succeeding with industrial AI">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-manufacturing" id="item-ind-a32fee2e7a" data-id="ind-a32fee2e7a" data-tags="industries ind-manufacturing managers workflows" data-text="the future of supply chain planning: faster, smarter decisions with llms mit sloan executive education how planners can ask plain-language what-if questions of their planning tools and get answers in minutes instead of days. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-manufacturing" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.3 7.3 0 0 0-1.7-1L15 3h-4l-.4 2.9a7.3 7.3 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1c.5.4 1.1.7 1.7 1L11 21h4l.4-2.9c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.5-2.2-1.6zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg></span>
+    <div>
+      <h3><a href="https://executive.mit.edu/blog/the-future-of-supply-chain-planning-faster-smarter-decisions-with-llms.html" rel="noopener noreferrer">The Future of Supply Chain Planning: Faster, Smarter Decisions with LLMs</a></h3>
+      <p class="meta">MIT Sloan Executive Education · 2025-07-03</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">How planners can ask plain-language what-if questions of their planning tools and get answers in minutes instead of days.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-manufacturing">Manufacturing</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-a32fee2e7a" aria-pressed="false" aria-label="Save The Future of Supply Chain Planning: Faster, Smarter Decisions with LLMs">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-a32fee2e7a" aria-label="Share The Future of Supply Chain Planning: Faster, Smarter Decisions with LLMs">Share</button>
+  </div>
+</article></div>
+  </div>
+  <div class="ind-group tone-ind-proservices" id="ind-proservices">
+    <div class="ind-group-head">
+      <span class="icon-tile tone-ind-proservices" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a2 2 0 0 1 2 2v2h3a2 2 0 0 1 2 2v4H2V9a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 4h6V5H9v2zM2 15h8v2h4v-2h8v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4z"/></svg></span>
+      <div>
+        <h3>Small business &amp; professional services</h3>
+        <p>Owners and small firms: marketing, bookkeeping, client follow-up, and getting started safely.</p>
+      </div>
+    </div>
+    <div class="grid">
+<article class="card tone-ind-proservices" id="item-ind-2730a0b636" data-id="ind-2730a0b636" data-tags="industries ind-proservices managers smb workflows" data-text="real-life ways small firms use ai journal of accountancy four accounting practices with fewer than 10 people show how they use ai for research, prospect intake, invoice approvals, and client-satisfaction checks, with a human reviewing the work. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-proservices" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a2 2 0 0 1 2 2v2h3a2 2 0 0 1 2 2v4H2V9a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 4h6V5H9v2zM2 15h8v2h4v-2h8v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4z"/></svg></span>
+    <div>
+      <h3><a href="https://www.journalofaccountancy.com/issues/2026/aug/real-life-ways-small-firms-use-ai/" rel="noopener noreferrer">Real-life ways small firms use AI</a></h3>
+      <p class="meta">Journal of Accountancy · 2026-08-01</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Four accounting practices with fewer than 10 people show how they use AI for research, prospect intake, invoice approvals, and client-satisfaction checks, with a human reviewing the work.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-proservices">Pro services</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-2730a0b636" aria-pressed="false" aria-label="Save Real-life ways small firms use AI">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-2730a0b636" aria-label="Share Real-life ways small firms use AI">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-proservices" id="item-ind-dc05fc3b3a" data-id="ind-dc05fc3b3a" data-tags="industries ind-proservices managers smb aspiring" data-text="ai for small business 101: how to get started co— by u.s. chamber of commerce beginner-friendly guide to picking ai tools for marketing, customer service, and admin tasks, with tips on trying them safely. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-proservices" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a2 2 0 0 1 2 2v2h3a2 2 0 0 1 2 2v4H2V9a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 4h6V5H9v2zM2 15h8v2h4v-2h8v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4z"/></svg></span>
+    <div>
+      <h3><a href="https://www.uschamber.com/co/run/technology/small-business-ai-guide" rel="noopener noreferrer">AI for Small Business 101: How to Get Started</a></h3>
+      <p class="meta">CO— by U.S. Chamber of Commerce · updated 2025-12</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Beginner-friendly guide to picking AI tools for marketing, customer service, and admin tasks, with tips on trying them safely.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-proservices">Pro services</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-dc05fc3b3a" aria-pressed="false" aria-label="Save AI for Small Business 101: How to Get Started">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-dc05fc3b3a" aria-label="Share AI for Small Business 101: How to Get Started">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-proservices" id="item-ind-2d4f6c10cd" data-id="ind-2d4f6c10cd" data-tags="industries ind-proservices managers smb" data-text="ai readiness checklist for smbs: a practical starting point aws a five-step check of your data, tools, and processes so you can start small, prove value, and then grow. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-proservices" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a2 2 0 0 1 2 2v2h3a2 2 0 0 1 2 2v4H2V9a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 4h6V5H9v2zM2 15h8v2h4v-2h8v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4z"/></svg></span>
+    <div>
+      <h3><a href="https://aws.amazon.com/smart-business/resources-for-smb/ai-readiness-checklist/" rel="noopener noreferrer">AI readiness checklist for SMBs: A practical starting point</a></h3>
+      <p class="meta">AWS · 2025-09-01</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">A five-step check of your data, tools, and processes so you can start small, prove value, and then grow.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-proservices">Pro services</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-2d4f6c10cd" aria-pressed="false" aria-label="Save AI readiness checklist for SMBs: A practical starting point">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-2d4f6c10cd" aria-label="Share AI readiness checklist for SMBs: A practical starting point">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-proservices" id="item-ind-97a01d63a3" data-id="ind-97a01d63a3" data-tags="industries ind-proservices managers smb" data-text="new advocacy article highlights small businesses closing the ai adoption gap u.s. sba office of advocacy census-based data on how fast small firms are adopting ai. they&#x27;re ahead in some areas, like automated marketing. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-proservices" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a2 2 0 0 1 2 2v2h3a2 2 0 0 1 2 2v4H2V9a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 4h6V5H9v2zM2 15h8v2h4v-2h8v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4z"/></svg></span>
+    <div>
+      <h3><a href="https://advocacy.sba.gov/2025/09/24/new-advocacy-article-highlights-small-businesses-closing-the-ai-adoption-gap/" rel="noopener noreferrer">New Advocacy Article Highlights Small Businesses Closing the AI Adoption Gap</a></h3>
+      <p class="meta">U.S. SBA Office of Advocacy · 2025-09-24</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Census-based data on how fast small firms are adopting AI. They&#x27;re ahead in some areas, like automated marketing.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-proservices">Pro services</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-97a01d63a3" aria-pressed="false" aria-label="Save New Advocacy Article Highlights Small Businesses Closing the AI Adoption Gap">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-97a01d63a3" aria-label="Share New Advocacy Article Highlights Small Businesses Closing the AI Adoption Gap">Share</button>
+  </div>
+</article></div>
+  </div>
+  <div class="ind-group tone-ind-education" id="ind-education">
+    <div class="ind-group-head">
+      <span class="icon-tile tone-ind-education" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 4 7 4s7-2.3 7-4v-3.8l-7 3.8-7-3.8z"/></svg></span>
+      <div>
+        <h3>Education &amp; nonprofits</h3>
+        <p>Principals, district leaders, and program leads doing more with less.</p>
+      </div>
+    </div>
+    <div class="grid">
+<article class="card tone-ind-education" id="item-ind-7040cc56d9" data-id="ind-7040cc56d9" data-tags="industries ind-education managers leadership" data-text="ai use in schools is quickly increasing but guidance lags behind rand national surveys of teachers, school and district leaders, students, and parents. shows how fast ai use is growing and where policy and training lag. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-education" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 4 7 4s7-2.3 7-4v-3.8l-7 3.8-7-3.8z"/></svg></span>
+    <div>
+      <h3><a href="https://www.rand.org/pubs/research_reports/RRA4180-1.html" rel="noopener noreferrer">AI Use in Schools Is Quickly Increasing but Guidance Lags Behind</a></h3>
+      <p class="meta">RAND · 2025-09-30</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">National surveys of teachers, school and district leaders, students, and parents. Shows how fast AI use is growing and where policy and training lag.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-education">Education &amp; nonprofits</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-7040cc56d9" aria-pressed="false" aria-label="Save AI Use in Schools Is Quickly Increasing but Guidance Lags Behind">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-7040cc56d9" aria-label="Share AI Use in Schools Is Quickly Increasing but Guidance Lags Behind">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-education" id="item-ind-9db0eaa8d2" data-id="ind-9db0eaa8d2" data-tags="industries ind-education managers" data-text="strategies for taking advantage of ai as a new administrator edutopia a new administrator shares how they use ai to save time on communications, planning, and data, and where they keep their own judgment. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-education" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 4 7 4s7-2.3 7-4v-3.8l-7 3.8-7-3.8z"/></svg></span>
+    <div>
+      <h3><a href="https://www.edutopia.org/article/strategies-taking-advantage-ai-school-administrator/" rel="noopener noreferrer">Strategies for Taking Advantage of AI as a New Administrator</a></h3>
+      <p class="meta">Edutopia · 2025-07-21</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">A new administrator shares how they use AI to save time on communications, planning, and data, and where they keep their own judgment.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-education">Education &amp; nonprofits</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-9db0eaa8d2" aria-pressed="false" aria-label="Save Strategies for Taking Advantage of AI as a New Administrator">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-9db0eaa8d2" aria-label="Share Strategies for Taking Advantage of AI as a New Administrator">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-education" id="item-ind-67b2b874af" data-id="ind-67b2b874af" data-tags="industries ind-education managers leadership" data-text="how to make purposeful decisions about generative ai in your school edutopia guidance for school leaders writing ai policies: involve teachers, start with clear goals, and revisit the rules as tools change. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-education" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 4 7 4s7-2.3 7-4v-3.8l-7 3.8-7-3.8z"/></svg></span>
+    <div>
+      <h3><a href="https://www.edutopia.org/article/purposeful-decisions-school-ai-policies/" rel="noopener noreferrer">How to Make Purposeful Decisions About Generative AI in Your School</a></h3>
+      <p class="meta">Edutopia · 2025-09-11</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Guidance for school leaders writing AI policies: involve teachers, start with clear goals, and revisit the rules as tools change.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-education">Education &amp; nonprofits</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-67b2b874af" aria-pressed="false" aria-label="Save How to Make Purposeful Decisions About Generative AI in Your School">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-67b2b874af" aria-label="Share How to Make Purposeful Decisions About Generative AI in Your School">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-education" id="item-ind-a19a081809" data-id="ind-a19a081809" data-tags="industries ind-education managers" data-text="how ai can deepen nonprofit relationships stanford social innovation review how nonprofits can use ai to know donors better and personalize outreach without losing the human relationship. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-education" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 4 7 4s7-2.3 7-4v-3.8l-7 3.8-7-3.8z"/></svg></span>
+    <div>
+      <h3><a href="https://ssir.org/articles/entry/artificial-intelligence-donor-engagement" rel="noopener noreferrer">How AI Can Deepen Nonprofit Relationships</a></h3>
+      <p class="meta">Stanford Social Innovation Review · 2025-09-08</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">How nonprofits can use AI to know donors better and personalize outreach without losing the human relationship.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-education">Education &amp; nonprofits</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-a19a081809" aria-pressed="false" aria-label="Save How AI Can Deepen Nonprofit Relationships">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-a19a081809" aria-label="Share How AI Can Deepen Nonprofit Relationships">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-education" id="item-ind-1233e7f96b" data-id="ind-1233e7f96b" data-tags="industries ind-education managers leadership" data-text="how to use a.i. effectively and protect your organization&#x27;s reputation and values chronicle of philanthropy experts explain why nonprofits need written ai-use guidelines and how to draft them. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-education" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 4 7 4s7-2.3 7-4v-3.8l-7 3.8-7-3.8z"/></svg></span>
+    <div>
+      <h3><a href="https://www.philanthropy.com/solutions/how-to-use-a-i-effectively-and-protect-your-organizations-reputation-and-values/" rel="noopener noreferrer">How to Use A.I. Effectively and Protect Your Organization&#x27;s Reputation and Values</a></h3>
+      <p class="meta">Chronicle of Philanthropy · 2025-01-09</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Experts explain why nonprofits need written AI-use guidelines and how to draft them.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-education">Education &amp; nonprofits</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-1233e7f96b" aria-pressed="false" aria-label="Save How to Use A.I. Effectively and Protect Your Organization&#x27;s Reputation and Values">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-1233e7f96b" aria-label="Share How to Use A.I. Effectively and Protect Your Organization&#x27;s Reputation and Values">Share</button>
+  </div>
+</article></div>
+  </div>
+  <div class="ind-group tone-ind-sales" id="ind-sales">
+    <div class="ind-group-head">
+      <span class="icon-tile tone-ind-sales" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8"/><path fill="currentColor" d="M15 5h6v6l-6-6z"/></svg></span>
+      <div>
+        <h3>Sales leadership</h3>
+        <p>Cross-industry: coaching, call prep, account and territory planning.</p>
+      </div>
+    </div>
+    <div class="grid">
+<article class="card tone-ind-sales" id="item-ind-4dd4119499" data-id="ind-4dd4119499" data-tags="industries ind-sales managers leadership" data-text="ai is transforming productivity, but sales remains a new frontier bain &amp; company why sales teams lag other functions on ai, and how to start: pick one or two process-ready areas like prospecting, clean the data, and redesign the workflow. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-sales" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8"/><path fill="currentColor" d="M15 5h6v6l-6-6z"/></svg></span>
+    <div>
+      <h3><a href="https://www.bain.com/insights/ai-transforming-productivity-sales-remains-new-frontier-technology-report-2025/" rel="noopener noreferrer">AI Is Transforming Productivity, but Sales Remains a New Frontier</a></h3>
+      <p class="meta">Bain &amp; Company · 2025-09-23</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Why sales teams lag other functions on AI, and how to start: pick one or two process-ready areas like prospecting, clean the data, and redesign the workflow.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-sales">Sales leadership</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-4dd4119499" aria-pressed="false" aria-label="Save AI Is Transforming Productivity, but Sales Remains a New Frontier">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-4dd4119499" aria-label="Share AI Is Transforming Productivity, but Sales Remains a New Frontier">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-sales" id="item-ind-b1af92334b" data-id="ind-b1af92334b" data-tags="industries ind-sales managers workflows" data-text="five ways b2b sales leaders can win with tech and ai mckinsey covers ai-drafted account plans, lead prioritization, rfp drafts, and call analysis that points coaching at each rep&#x27;s skill gaps. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-sales" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8"/><path fill="currentColor" d="M15 5h6v6l-6-6z"/></svg></span>
+    <div>
+      <h3><a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/five-ways-b2b-sales-leaders-can-win-with-tech-and-ai" rel="noopener noreferrer">Five ways B2B sales leaders can win with tech and AI</a></h3>
+      <p class="meta">McKinsey · 2025-02-13</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">Covers AI-drafted account plans, lead prioritization, RFP drafts, and call analysis that points coaching at each rep&#x27;s skill gaps.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-sales">Sales leadership</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-b1af92334b" aria-pressed="false" aria-label="Save Five ways B2B sales leaders can win with tech and AI">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-b1af92334b" aria-label="Share Five ways B2B sales leaders can win with tech and AI">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-sales" id="item-ind-33c8be9f56" data-id="ind-33c8be9f56" data-tags="industries ind-sales managers leadership" data-text="how successful sales teams are embracing agentic ai harvard business review what changes when ai agents work alongside reps to find, nurture, and close deals, and what managers should still own. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-sales" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8"/><path fill="currentColor" d="M15 5h6v6l-6-6z"/></svg></span>
+    <div>
+      <h3><a href="https://hbr.org/2025/09/how-successful-sales-teams-are-embracing-agentic-ai" rel="noopener noreferrer">How Successful Sales Teams Are Embracing Agentic AI</a></h3>
+      <p class="meta">Harvard Business Review · 2025-09-15</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">What changes when AI agents work alongside reps to find, nurture, and close deals, and what managers should still own.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-sales">Sales leadership</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-33c8be9f56" aria-pressed="false" aria-label="Save How Successful Sales Teams Are Embracing Agentic AI">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-33c8be9f56" aria-label="Share How Successful Sales Teams Are Embracing Agentic AI">Share</button>
+  </div>
+</article>
+<article class="card tone-ind-sales" id="item-ind-3795ac1ad7" data-id="ind-3795ac1ad7" data-tags="industries ind-sales managers leadership aspiring" data-text="why some sales teams are actually growing alongside ai harvard business review for complex, high-stakes purchases, buyers still want a person who helps them sort through uncertainty. explains how sales roles are shifting. ">
+  <div class="card-head">
+    <span class="icon-tile tone-ind-sales" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8"/><path fill="currentColor" d="M15 5h6v6l-6-6z"/></svg></span>
+    <div>
+      <h3><a href="https://hbr.org/2025/09/why-some-sales-teams-are-actually-growing-alongside-ai" rel="noopener noreferrer">Why Some Sales Teams Are Actually Growing Alongside AI</a></h3>
+      <p class="meta">Harvard Business Review · 2025-09-02</p>
+    </div>
+    <span class="badge-new">New</span>
+  </div>
+  <p class="why">For complex, high-stakes purchases, buyers still want a person who helps them sort through uncertainty. Explains how sales roles are shifting.</p>
+  <div class="tag-row"><span class="tag-pill tag-industries">Industries</span><span class="tag-pill tag-ind-sales">Sales leadership</span><span class="tag-pill tag-managers">Managers</span></div>
+  <div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="ind-3795ac1ad7" aria-pressed="false" aria-label="Save Why Some Sales Teams Are Actually Growing Alongside AI">Save</button>
+    <button type="button" class="btn-share" data-share-id="ind-3795ac1ad7" aria-label="Share Why Some Sales Teams Are Actually Growing Alongside AI">Share</button>
+  </div>
+</article></div>
+  </div>
+</section>
+  
 <section class="section reveal tone-videos" id="videos" data-section="videos">
   <header class="section-head">
     <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
@@ -1983,7 +2612,7 @@ Facts:
       if (!src) src = document.querySelector('article.card[data-id="' + id + '"]');
       if (!src) return;
       // Skip if this node already lives only in saved grid duplicates: find original in content sections
-      var original = document.querySelector('#this-week .card[data-id="' + id + '"], #workflows .card[data-id="' + id + '"], #prompts .card[data-id="' + id + '"], #leadership .card[data-id="' + id + '"], #smb .card[data-id="' + id + '"], #healthcare .card[data-id="' + id + '"], #videos .card[data-id="' + id + '"], #people .card[data-id="' + id + '"], #archive .card[data-id="' + id + '"]');
+      var original = document.querySelector('#this-week .card[data-id="' + id + '"], #workflows .card[data-id="' + id + '"], #prompts .card[data-id="' + id + '"], #leadership .card[data-id="' + id + '"], #smb .card[data-id="' + id + '"], #healthcare .card[data-id="' + id + '"], #industries .card[data-id="' + id + '"], #videos .card[data-id="' + id + '"], #people .card[data-id="' + id + '"], #archive .card[data-id="' + id + '"]');
       var node = (original || src).cloneNode(true);
       node.removeAttribute('hidden');
       node.classList.remove('is-deep-link');

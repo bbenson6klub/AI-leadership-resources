@@ -2,7 +2,7 @@
   "meta": {
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
-    "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership\u2014not hype.",
+    "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
     "last_updated": "2026-11-09",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
@@ -28,7 +28,7 @@
       "url": "https://executiveeducation.wharton.upenn.edu/thought-leadership/wharton-at-work/2026/11/three-ways-to-work-with-ai/",
       "source": "Wharton Executive Education (Ethan Mollick)",
       "date": "2026-11",
-      "why": "Clear framework for centaur, cyborg, and conjurer modes\u2014so you decide how much of a task to keep, share, or hand off before you start prompting.",
+      "why": "Clear framework for centaur, cyborg, and conjurer modes—so you decide how much of a task to keep, share, or hand off before you start prompting.",
       "tags": [
         "workflows",
         "managers",
@@ -37,11 +37,11 @@
       "new": true
     },
     {
-      "title": "The Four Ps \u2014 How to Manage an AI-Native Engineering Team",
+      "title": "The Four Ps — How to Manage an AI-Native Engineering Team",
       "url": "https://www.deeplearning.ai/the-batch/the-four-ps",
       "source": "DeepLearning.AI / Andrew Ng",
       "date": "2026-10-23",
-      "why": "A leadership checklist around People, Projects, Platforms, and Processes. Useful even if you do not manage engineers\u2014same pattern applies to any knowledge team adopting AI.",
+      "why": "A leadership checklist around People, Projects, Platforms, and Processes. Useful even if you do not manage engineers—same pattern applies to any knowledge team adopting AI.",
       "tags": [
         "leadership",
         "workflows",
@@ -64,7 +64,7 @@
       "url": "https://ajaia.ai/resources/manager-ai-adoption-playbook",
       "source": "Ajaia",
       "date": "2026",
-      "why": "Week-by-week plan to pick one workflow, set safe-use rules, add human checkpoints, and measure quality\u2014not just logins.",
+      "why": "Week-by-week plan to pick one workflow, set safe-use rules, add human checkpoints, and measure quality—not just logins.",
       "tags": [
         "workflows",
         "managers",
@@ -92,7 +92,7 @@
       "url": "https://www.oneusefulthing.org/p/management-as-ai-superpower",
       "source": "One Useful Thing (Ethan Mollick)",
       "date": "2026-01-27",
-      "why": "Why management skills\u2014clear goals, evaluation, and feedback\u2014matter more as AI agents do longer stretches of work.",
+      "why": "Why management skills—clear goals, evaluation, and feedback—matter more as AI agents do longer stretches of work.",
       "tags": [
         "workflows",
         "managers",
@@ -104,7 +104,7 @@
       "url": "https://selfmadepm.com/blog/152-ai-workflows-a-practical-guide-for-project-managers/",
       "source": "Self-Made Project Manager",
       "date": "2026",
-      "why": "Defines an AI workflow as trigger \u2192 context \u2192 model \u2192 human review \u2192 output, with ownership and privacy called out explicitly.",
+      "why": "Defines an AI workflow as trigger → context → model → human review → output, with ownership and privacy called out explicitly.",
       "tags": [
         "workflows",
         "managers"
@@ -127,7 +127,7 @@
       "url": "https://zapier.com/blog/business-process-automation/",
       "source": "Zapier",
       "date": "2026",
-      "why": "Plain-language overview of when process automation helps\u2014and when a messy process needs a SOP before a tool.",
+      "why": "Plain-language overview of when process automation helps—and when a messy process needs a SOP before a tool.",
       "tags": [
         "workflows",
         "smb"
@@ -147,7 +147,7 @@
       ]
     },
     {
-      "title": "Meeting notes \u2192 actions",
+      "title": "Meeting notes → actions",
       "id": "prompt-actions",
       "why": "Convert a transcript or rough notes into owners and due dates you can send for confirmation.",
       "prompt": "Convert the meeting notes below into an action list. For each item include: action, owner (or 'unassigned'), due date if stated, and status (new / needs confirmation). List open questions separately. Do not assign owners or dates that were not said. End with a short follow-up email draft asking people to confirm their items.\n\nMeeting notes:\n{{paste notes}}",
@@ -160,7 +160,7 @@
     {
       "title": "Delegation brief for an AI agent",
       "id": "prompt-delegate",
-      "why": "Brief AI the way you would brief a new hire\u2014goal, constraints, definition of done, and checks.",
+      "why": "Brief AI the way you would brief a new hire—goal, constraints, definition of done, and checks.",
       "prompt": "Rewrite my rough task into a clear delegation brief for an AI agent with these sections: Objective, Context, Constraints (what must not change), Definition of done, Required outputs, Checks to run before claiming finished, and Escalation rules (when to stop and ask a human). Keep it under 250 words. Use only what I provide.\n\nRough task:\n{{describe task}}",
       "tags": [
         "prompts",
@@ -192,8 +192,8 @@
     {
       "title": "Decision memo (options + recommendation)",
       "id": "prompt-decision",
-      "why": "Force a clear recommendation with assumptions and kill criteria\u2014useful for managers and owners alike.",
-      "prompt": "Write a one-page decision memo from the facts below. Structure: Decision needed, Options (2\u20134), Pros/cons for each, Recommendation, Key assumptions, What would change my mind, and Next step if we approve. Do not invent data. If information is missing, list it under Open questions instead of guessing.\n\nFacts:\n{{paste facts}}",
+      "why": "Force a clear recommendation with assumptions and kill criteria—useful for managers and owners alike.",
+      "prompt": "Write a one-page decision memo from the facts below. Structure: Decision needed, Options (2–4), Pros/cons for each, Recommendation, Key assumptions, What would change my mind, and Next step if we approve. Do not invent data. If information is missing, list it under Open questions instead of guessing.\n\nFacts:\n{{paste facts}}",
       "tags": [
         "prompts",
         "managers",
@@ -208,7 +208,7 @@
       "url": "https://knowledge.wharton.upenn.edu/article/want-become-better-leader-question-assumptions/",
       "source": "Knowledge at Wharton (Adam Grant & Erika James)",
       "date": "2021-05-17",
-      "why": "Evidence-based reminder to rethink management habits\u2014pairs well with AI experiments where old assumptions fail fast.",
+      "why": "Evidence-based reminder to rethink management habits—pairs well with AI experiments where old assumptions fail fast.",
       "tags": [
         "leadership",
         "aspiring",
@@ -220,7 +220,7 @@
       "url": "https://knowledge.wharton.upenn.edu/article/why-you-need-a-challenge-network/",
       "source": "Knowledge at Wharton (Adam Grant)",
       "date": "2021-02-16",
-      "why": "On surrounding yourself with thoughtful skeptics who catch blind spots\u2014especially useful when AI makes weak ideas look polished.",
+      "why": "On surrounding yourself with thoughtful skeptics who catch blind spots—especially useful when AI makes weak ideas look polished.",
       "tags": [
         "leadership",
         "managers",
@@ -232,7 +232,7 @@
       "url": "https://www.oneusefulthing.org/p/the-shape-of-the-thing",
       "source": "One Useful Thing (Ethan Mollick)",
       "date": "2026-03-12",
-      "why": "Big-picture leadership read on the shift from co-intelligence chat to managing agents\u2014and why org choices now set precedents.",
+      "why": "Big-picture leadership read on the shift from co-intelligence chat to managing agents—and why org choices now set precedents.",
       "tags": [
         "leadership",
         "managers"
@@ -256,7 +256,7 @@
       "url": "https://zapier.com/blog/operations-automation/",
       "source": "Zapier",
       "date": "2026",
-      "why": "Practical ops framing for small businesses\u2014what to automate in handoffs between apps without losing accountability.",
+      "why": "Practical ops framing for small businesses—what to automate in handoffs between apps without losing accountability.",
       "tags": [
         "smb",
         "workflows"
@@ -274,14 +274,860 @@
       ]
     }
   ],
+  "healthcare": [
+    {
+      "title": "Artificial Intelligence for Drug Development",
+      "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/artificial-intelligence-drug-development",
+      "source": "U.S. Food and Drug Administration (CDER)",
+      "date": "updated 2025–2026",
+      "why": "FDA hub for how AI shows up in drug development submissions—useful for leaders who need a regulatory map before funding pilots that may later support safety, efficacy, or quality decisions.",
+      "tags": [
+        "healthcare",
+        "managers",
+        "leadership",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
+    },
+    {
+      "title": "Considerations for the Use of Artificial Intelligence To Support Regulatory Decision-Making for Drug and Biological Products",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological",
+      "source": "U.S. Food and Drug Administration",
+      "date": "2025-01",
+      "why": "Draft guidance on risk-based credibility assessment for AI models used in regulatory decisions—start here when defining context of use, documentation, and human oversight for life-sciences AI work.",
+      "tags": [
+        "healthcare",
+        "managers",
+        "leadership",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
+    },
+    {
+      "title": "Ethics and governance of artificial intelligence for health",
+      "url": "https://www.who.int/publications/i/item/9789240029200/",
+      "source": "World Health Organization",
+      "date": "2021",
+      "why": "Consensus principles (autonomy, safety, transparency, accountability, equity, sustainability) that still frame governance and privacy conversations for health AI programs.",
+      "tags": [
+        "healthcare",
+        "leadership",
+        "managers",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
+    },
+    {
+      "title": "Ethics and governance of artificial intelligence for health: Guidance on large multi-modal models",
+      "url": "https://www.who.int/publications/i/item/9789240084759/",
+      "source": "World Health Organization",
+      "date": "2025-03",
+      "why": "Practical recommendations for governments, developers, and providers on generative multi-modal models—including risks of inaccurate outputs and the need for post-release audit and data protection.",
+      "tags": [
+        "healthcare",
+        "leadership",
+        "managers",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
+    },
+    {
+      "title": "Artificial intelligence (EMA overview)",
+      "url": "https://www.ema.europa.eu/en/about-us/how-we-work/big-data/artificial-intelligence",
+      "source": "European Medicines Agency",
+      "date": "ongoing",
+      "why": "EU regulator’s page on AI across the medicine lifecycle—helps pharma leaders align internal AI use with European expectations, not only U.S. FDA framing.",
+      "tags": [
+        "healthcare",
+        "managers",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
+    },
+    {
+      "title": "2026 Life sciences outlook",
+      "url": "https://www.deloitte.com/global/en/insights/industry/health-care/life-sciences-and-health-care-industry-outlooks/2026-life-sciences-executive-outlook.html",
+      "source": "Deloitte Insights",
+      "date": "2026",
+      "why": "Executive survey view of AI scaling, regulation, and cybersecurity pressure in biopharma and medtech—useful for setting realistic adoption goals when few leaders report significant AI returns yet.",
+      "tags": [
+        "healthcare",
+        "managers",
+        "leadership",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
+    },
+    {
+      "title": "Redesigning leadership for clinical AI deployment",
+      "url": "https://www.nature.com/articles/s41746-026-02532-6",
+      "source": "npj Digital Medicine (Nature)",
+      "date": "2026-03",
+      "why": "On leadership structures that actually support clinical AI—clinical champions, multidisciplinary teams, and frontline engagement rather than a single tech rollout plan.",
+      "tags": [
+        "healthcare",
+        "leadership",
+        "managers",
+        "aspiring",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
+    },
+    {
+      "title": "Artificial Intelligence-Enabled Medical Devices",
+      "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device",
+      "source": "U.S. Food and Drug Administration",
+      "date": "ongoing",
+      "why": "Device-side FDA landing page for AI-enabled medical devices—helps healthcare leaders separate SaMD regulatory paths from drug-development AI uses.",
+      "tags": [
+        "healthcare",
+        "managers",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
+    },
+    {
+      "title": "Generative AI in life sciences marketing",
+      "url": "https://www.zs.com/insights/generative-ai-in-life-sciences-marketing",
+      "source": "ZS",
+      "date": "2024–2025",
+      "why": "Survey of marketing leaders on gen AI for concept ideation, derivative content, and why MLR process redesign—not just more drafts—is the bottleneck to scale.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Agentic AI in life sciences commercialization strategy",
+      "url": "https://www.zs.com/insights/agentic-ai-life-sciences-commercialization",
+      "source": "ZS",
+      "date": "2025–2026",
+      "why": "Argues commercialization needs decision systems across sales, marketing, and access—not a pile of disconnected AI pilots—with human review still in the loop.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Medical affairs outlook report 2026: Key trends and insights",
+      "url": "https://www.zs.com/insights/medical-affairs-outlook-report-2026-trends-to-watch",
+      "source": "ZS",
+      "date": "2026",
+      "why": "Outlook for medical affairs leaders on where AI and analytics fit scientific engagement and insight work—useful when commercial AI plans need a medical counterpart.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Reinventing Pharma Customer Engagement with AI",
+      "url": "https://www.accenture.com/en/insights/life-sciences/ai-pharma-customer-engagement",
+      "source": "Accenture",
+      "date": "2025",
+      "why": "Field-focused view of AI for call planning, personalized HCP content, and cross-functional collaboration among sales, medical, and market access—with compliance framed as part of the engagement design.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Reinventing Life Sciences Age of Generative AI",
+      "url": "https://www.accenture.com/en/insights/life-sciences/reinventing-life-sciences-age-generative-ai",
+      "source": "Accenture",
+      "date": "2024-08",
+      "why": "Commercialization section covers access/contracting, marketing content under regulatory constraints, MLR-assisted review, and field assistants—good overview before picking one workflow to pilot.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "AI in Life Sciences Commercialization",
+      "url": "https://www.iqvia.com/library/white-papers/ai-in-life-sciences-commercialization",
+      "source": "IQVIA",
+      "date": "2025-08",
+      "why": "2025 survey of commercial leaders on adoption across sales, marketing, market access, and compliance—useful for benchmarking where peers still struggle to industrialize tools.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Omnichannel Engagement in Pharma: Harnessing the Power of Generative AI",
+      "url": "https://www.iqvia.com/blogs/2024/10/omnichannel-engagement-in-pharma",
+      "source": "IQVIA",
+      "date": "2024-10",
+      "why": "On next-best-action and gen AI in HCP omnichannel programs—practical for leaders who need to measure engagement quality, not just content volume.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Best use cases for scaling agentic AI in commercial life sciences",
+      "url": "https://www.iqvia.com/blogs/2025/06/best-use-cases-for-scaling-agentic-ai-in-commercial-life-sciences",
+      "source": "IQVIA",
+      "date": "2025-06",
+      "why": "Checklist mindset for which commercial AI use cases scale (repetitive but reviewable; immediate value for reps) versus experiments that stall—pairs well with adoption and impact measurement.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "workflows"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "The System-Level View That Sound Market Access Decisions Are Missing",
+      "url": "https://www.pharmaceuticalcommerce.com/view/the-system-level-view-that-sound-market-access-decisions-are-missing",
+      "source": "Pharmaceutical Commerce (Matthew Champion and Kunal Akwalia, IQVIA)",
+      "date": "2026-11-05",
+      "why": "Shows how market access teams can use scenario modeling, including AI agents that rebuild models as inputs change, to see how pricing, coverage, contracting, and affordability choices affect each other before committing.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Generative Artificial Intelligence for Health Technology Assessment: Opportunities, Challenges, and Policy Considerations",
+      "url": "https://www.ispor.org/heor-resources/good-practices/article/generative-artificial-intelligence-for-health-technology-assessment--opportunities--challenges--and-policy-considerations",
+      "source": "ISPOR (Value in Health)",
+      "date": "2025-02",
+      "why": "Working-group view of gen AI in HTA/HEOR—literature review, RWE, and economic modeling—with privacy, bias, and human oversight called out for market-access leaders.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "The Office of Prescription Drug Promotion (OPDP)",
+      "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/office-prescription-drug-promotion-opdp",
+      "source": "U.S. Food and Drug Administration",
+      "date": "ongoing",
+      "why": "FDA office that oversees prescription-drug promotional communications—baseline context for any marketing-content or MLR AI pilot so teams know what still needs human promotional review.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "healthcare-regulatory",
+        "managers"
+      ],
+      "subgroup": "commercial"
+    }
+  ],
+  "industry_groups": [
+    {
+      "id": "ind-medtech",
+      "label": "Medical devices & biotech",
+      "short": "Medtech & biotech",
+      "blurb": "Field sales, reimbursement, and commercial leadership in device and biotech companies. Sits next to Healthcare & pharma."
+    },
+    {
+      "id": "ind-finance",
+      "label": "Financial services & insurance",
+      "short": "Finance & insurance",
+      "blurb": "Claims, underwriting, compliance, and advisor productivity in regulated financial firms."
+    },
+    {
+      "id": "ind-retail",
+      "label": "Retail & consumer goods",
+      "short": "Retail & CPG",
+      "blurb": "Store and district managers, forecasting, and customer service."
+    },
+    {
+      "id": "ind-manufacturing",
+      "label": "Manufacturing & supply chain",
+      "short": "Manufacturing",
+      "blurb": "Plant supervisors, quality, safety, scheduling, and planning."
+    },
+    {
+      "id": "ind-proservices",
+      "label": "Small business & professional services",
+      "short": "Pro services",
+      "blurb": "Owners and small firms: marketing, bookkeeping, client follow-up, and getting started safely."
+    },
+    {
+      "id": "ind-education",
+      "label": "Education & nonprofits",
+      "short": "Education & nonprofits",
+      "blurb": "Principals, district leaders, and program leads doing more with less."
+    },
+    {
+      "id": "ind-sales",
+      "label": "Sales leadership",
+      "short": "Sales leadership",
+      "blurb": "Cross-industry: coaching, call prep, account and territory planning."
+    }
+  ],
+  "industries": [
+    {
+      "id": "ind-0c48c7b8e1",
+      "title": "Scaling gen AI in the medtech industry",
+      "url": "https://www.mckinsey.com/industries/life-sciences/our-insights/scaling-gen-ai-in-the-medtech-industry",
+      "source": "McKinsey",
+      "date": "2025-05-29",
+      "why": "Survey-backed look at where medtech teams are getting value from gen AI, including CRM-based sales tools, coaching aids for sales managers, and faster content and legal review.",
+      "tags": [
+        "industries",
+        "ind-medtech",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-medtech",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-f1d4263d98",
+      "title": "Building an effective AI strategy for medtech organizations",
+      "url": "https://www.zs.com/insights/ai-strategy-framework-medtech",
+      "source": "ZS",
+      "date": "2025-04-23",
+      "why": "Argues for starting from the decisions you want to improve, not the tool, and tying each use case to revenue, productivity, or customer-experience goals.",
+      "tags": [
+        "industries",
+        "ind-medtech",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-medtech",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-d4381481da",
+      "title": "Can agentic AI improve workflows and margins in medtech?",
+      "url": "https://www.deloitte.com/us/en/industries/life-sciences-health-care/blogs/health-care/can-agentic-ai-improve-workflows-and-margins-in-medtech.html",
+      "source": "Deloitte",
+      "date": "2025-11-20",
+      "why": "Walks through where AI agents could help in medtech, from contracting and pricing to field service and commercial content, and where people still need to decide.",
+      "tags": [
+        "industries",
+        "ind-medtech",
+        "managers"
+      ],
+      "subgroup": "ind-medtech",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-ce4bdcee1b",
+      "title": "Three key trends likely to shape medtech in 2026",
+      "url": "https://www.deloitte.com/us/en/industries/life-sciences-health-care/blogs/health-care/three-key-trends-likely-to-shape-medtech.html",
+      "source": "Deloitte",
+      "date": "2026-01-25",
+      "why": "Short read on portfolio shifts, the move to outpatient care, and AI governance. Useful context for commercial leaders planning the year.",
+      "tags": [
+        "industries",
+        "ind-medtech",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-medtech",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-672f848203",
+      "title": "Tips to Overcome AI Medical Device Reimbursement Woes",
+      "url": "https://www.mddionline.com/artificial-intelligence/tips-to-overcome-ai-medical-device-reimbursement-woes",
+      "source": "MD+DI",
+      "date": "2025-11-19",
+      "why": "A founder's lessons on getting coverage, coding, and payment for an AI-enabled device, and why to talk to FDA, CMS, and payers early.",
+      "tags": [
+        "industries",
+        "ind-medtech",
+        "managers"
+      ],
+      "subgroup": "ind-medtech",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-b914767eeb",
+      "title": "The future of AI in the insurance industry",
+      "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-future-of-ai-in-the-insurance-industry",
+      "source": "McKinsey",
+      "date": "2025-07-15",
+      "why": "How insurers are reworking whole areas like claims, underwriting, and distribution instead of running scattered pilots, and why change management is half the work.",
+      "tags": [
+        "industries",
+        "ind-finance",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-finance",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-8d92b82dd0",
+      "title": "How banks can supercharge intelligent automation with agentic AI",
+      "url": "https://www.deloitte.com/us/en/insights/industry/financial-services/agentic-ai-banking.html",
+      "source": "Deloitte Insights",
+      "date": "2025-08-13",
+      "why": "Where AI agents fit in banking processes such as credit underwriting and fraud work, and why compliance has to be built in from the start.",
+      "tags": [
+        "industries",
+        "ind-finance",
+        "managers"
+      ],
+      "subgroup": "ind-finance",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-7f7fb60221",
+      "title": "Managing the new wave of risks from AI agents in banking",
+      "url": "https://www.deloitte.com/us/en/insights/industry/financial-services/agentic-ai-risks-banking.html",
+      "source": "Deloitte Insights",
+      "date": "2026-03-05",
+      "why": "Practical governance ideas for AI agents: named owners, activity logs, escalation triggers, and human review for consequential decisions.",
+      "tags": [
+        "industries",
+        "ind-finance",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-finance",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-0ad55b241d",
+      "title": "GenAI: Continuing and Emerging Trends (2026 FINRA Annual Regulatory Oversight Report)",
+      "url": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai",
+      "source": "FINRA",
+      "date": "2025-12",
+      "why": "The regulator's view of how existing supervision, communications, and recordkeeping rules apply when firms use gen AI and AI agents. A good compliance checklist.",
+      "tags": [
+        "industries",
+        "ind-finance",
+        "managers"
+      ],
+      "subgroup": "ind-finance",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-ea9caf74cb",
+      "title": "The looming advisor shortage in US wealth management",
+      "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-looming-advisor-shortage-in-us-wealth-management",
+      "source": "McKinsey",
+      "date": "2025-02-10",
+      "why": "Sizes the coming advisor gap and shows where gen AI can give advisors time back: meeting prep, notes, plan drafts, and compliance tasks.",
+      "tags": [
+        "industries",
+        "ind-finance",
+        "managers",
+        "aspiring"
+      ],
+      "subgroup": "ind-finance",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-777e06135e",
+      "title": "The case for agentic AI in retail with AI-sourcing",
+      "url": "https://www.deloitte.com/us/en/industries/consumer/articles/ai-retail-digital-workers-transformation.html",
+      "source": "Deloitte",
+      "date": "2025-10-17",
+      "why": "Concrete store examples like shelf monitoring, staff scheduling, and task assignment, plus how merchandising, planning, and customer care could change.",
+      "tags": [
+        "industries",
+        "ind-retail",
+        "managers"
+      ],
+      "subgroup": "ind-retail",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-38620b0b44",
+      "title": "Elevating the retail floor: How will AI reshape frontline retail roles and the customer experience?",
+      "url": "https://www.kearney.com/industry/consumer-retail/article/elevating-the-retail-floor-how-will-ai-reshape-frontline-retail-roles-and-the-customer-experience",
+      "source": "Kearney",
+      "date": "2025",
+      "why": "How AI could free up store associates' time and change customer service, and what that means for hiring and training frontline teams.",
+      "tags": [
+        "industries",
+        "ind-retail",
+        "managers",
+        "aspiring"
+      ],
+      "subgroup": "ind-retail",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-1b757fe3db",
+      "title": "State of AI in retail and CPG",
+      "url": "https://www.deloitte.com/us/en/industries/consumer/articles/state-of-ai-adoption-in-retail-cpg-executive-survey.html",
+      "source": "Deloitte",
+      "date": "2026-06-18",
+      "why": "A survey of 200 consumer-sector executives that found high conviction but uneven execution. Quick benchmark for where your team stands.",
+      "tags": [
+        "industries",
+        "ind-retail",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-retail",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-33a1329f9b",
+      "title": "2026 Global Retail Industry Outlook",
+      "url": "https://www.deloitte.com/global/en/industries/consumer/perspectives/global-retail-industry-outlook.html",
+      "source": "Deloitte Global",
+      "date": "2026-01-08",
+      "why": "The big-picture outlook for retail leaders, including how AI is moving from pilots into pricing, personalization, and planning.",
+      "tags": [
+        "industries",
+        "ind-retail",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-retail",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-f97ef9ef9d",
+      "title": "Agentic AI in customer care: What's on leaders' minds?",
+      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/operations-blog/agentic-ai-in-customer-care-whats-on-leaders-minds",
+      "source": "McKinsey",
+      "date": "2025-09-25",
+      "why": "Customer-service leaders on running a hybrid team of people and AI agents: shared metrics, new training, and starting from real customer pain points.",
+      "tags": [
+        "industries",
+        "ind-retail",
+        "managers"
+      ],
+      "subgroup": "ind-retail",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-5327803a4d",
+      "title": "From vision to value: A road map for enterprise transformation in manufacturing with agentic AI",
+      "url": "https://www.deloitte.com/us/en/insights/industry/manufacturing-industrial-products/agentic-ai-manufacturing-digital-transformation.html",
+      "source": "Deloitte Insights",
+      "date": "2025-09-22",
+      "why": "Shop-floor examples like AI-drafted work instructions reviewed by engineers, plus why most task hours stay human and how to bring workers along.",
+      "tags": [
+        "industries",
+        "ind-manufacturing",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-manufacturing",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-53d8a6c9aa",
+      "title": "How COOs maximize operational impact from gen AI and agentic AI",
+      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/how-coos-maximize-operational-impact-from-gen-ai-and-agentic-ai",
+      "source": "McKinsey",
+      "date": "2025-03-20",
+      "why": "Includes a maintenance copilot for frontline technicians and an AI-prepared shift handover that the supervisor reviews before acting.",
+      "tags": [
+        "industries",
+        "ind-manufacturing",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-manufacturing",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-ba6b0aad0d",
+      "title": "6 steps to succeeding with industrial AI",
+      "url": "https://mitsloan.mit.edu/ideas-made-to-matter/6-steps-to-succeeding-industrial-ai",
+      "source": "MIT Sloan",
+      "date": "2025-09-29",
+      "why": "Keep scope small, frame problems clearly, and get timely data to the people on the floor who make real-time decisions.",
+      "tags": [
+        "industries",
+        "ind-manufacturing",
+        "managers"
+      ],
+      "subgroup": "ind-manufacturing",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-a32fee2e7a",
+      "title": "The Future of Supply Chain Planning: Faster, Smarter Decisions with LLMs",
+      "url": "https://executive.mit.edu/blog/the-future-of-supply-chain-planning-faster-smarter-decisions-with-llms.html",
+      "source": "MIT Sloan Executive Education",
+      "date": "2025-07-03",
+      "why": "How planners can ask plain-language what-if questions of their planning tools and get answers in minutes instead of days.",
+      "tags": [
+        "industries",
+        "ind-manufacturing",
+        "managers",
+        "workflows"
+      ],
+      "subgroup": "ind-manufacturing",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-2730a0b636",
+      "title": "Real-life ways small firms use AI",
+      "url": "https://www.journalofaccountancy.com/issues/2026/aug/real-life-ways-small-firms-use-ai/",
+      "source": "Journal of Accountancy",
+      "date": "2026-08-01",
+      "why": "Four accounting practices with fewer than 10 people show how they use AI for research, prospect intake, invoice approvals, and client-satisfaction checks, with a human reviewing the work.",
+      "tags": [
+        "industries",
+        "ind-proservices",
+        "managers",
+        "smb",
+        "workflows"
+      ],
+      "subgroup": "ind-proservices",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-dc05fc3b3a",
+      "title": "AI for Small Business 101: How to Get Started",
+      "url": "https://www.uschamber.com/co/run/technology/small-business-ai-guide",
+      "source": "CO— by U.S. Chamber of Commerce",
+      "date": "updated 2025-12",
+      "why": "Beginner-friendly guide to picking AI tools for marketing, customer service, and admin tasks, with tips on trying them safely.",
+      "tags": [
+        "industries",
+        "ind-proservices",
+        "managers",
+        "smb",
+        "aspiring"
+      ],
+      "subgroup": "ind-proservices",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-2d4f6c10cd",
+      "title": "AI readiness checklist for SMBs: A practical starting point",
+      "url": "https://aws.amazon.com/smart-business/resources-for-smb/ai-readiness-checklist/",
+      "source": "AWS",
+      "date": "2025-09-01",
+      "why": "A five-step check of your data, tools, and processes so you can start small, prove value, and then grow.",
+      "tags": [
+        "industries",
+        "ind-proservices",
+        "managers",
+        "smb"
+      ],
+      "subgroup": "ind-proservices",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-97a01d63a3",
+      "title": "New Advocacy Article Highlights Small Businesses Closing the AI Adoption Gap",
+      "url": "https://advocacy.sba.gov/2025/09/24/new-advocacy-article-highlights-small-businesses-closing-the-ai-adoption-gap/",
+      "source": "U.S. SBA Office of Advocacy",
+      "date": "2025-09-24",
+      "why": "Census-based data on how fast small firms are adopting AI. They're ahead in some areas, like automated marketing.",
+      "tags": [
+        "industries",
+        "ind-proservices",
+        "managers",
+        "smb"
+      ],
+      "subgroup": "ind-proservices",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-7040cc56d9",
+      "title": "AI Use in Schools Is Quickly Increasing but Guidance Lags Behind",
+      "url": "https://www.rand.org/pubs/research_reports/RRA4180-1.html",
+      "source": "RAND",
+      "date": "2025-09-30",
+      "why": "National surveys of teachers, school and district leaders, students, and parents. Shows how fast AI use is growing and where policy and training lag.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-education",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-9db0eaa8d2",
+      "title": "Strategies for Taking Advantage of AI as a New Administrator",
+      "url": "https://www.edutopia.org/article/strategies-taking-advantage-ai-school-administrator/",
+      "source": "Edutopia",
+      "date": "2025-07-21",
+      "why": "A new administrator shares how they use AI to save time on communications, planning, and data, and where they keep their own judgment.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers"
+      ],
+      "subgroup": "ind-education",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-67b2b874af",
+      "title": "How to Make Purposeful Decisions About Generative AI in Your School",
+      "url": "https://www.edutopia.org/article/purposeful-decisions-school-ai-policies/",
+      "source": "Edutopia",
+      "date": "2025-09-11",
+      "why": "Guidance for school leaders writing AI policies: involve teachers, start with clear goals, and revisit the rules as tools change.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-education",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-a19a081809",
+      "title": "How AI Can Deepen Nonprofit Relationships",
+      "url": "https://ssir.org/articles/entry/artificial-intelligence-donor-engagement",
+      "source": "Stanford Social Innovation Review",
+      "date": "2025-09-08",
+      "why": "How nonprofits can use AI to know donors better and personalize outreach without losing the human relationship.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers"
+      ],
+      "subgroup": "ind-education",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-1233e7f96b",
+      "title": "How to Use A.I. Effectively and Protect Your Organization's Reputation and Values",
+      "url": "https://www.philanthropy.com/solutions/how-to-use-a-i-effectively-and-protect-your-organizations-reputation-and-values/",
+      "source": "Chronicle of Philanthropy",
+      "date": "2025-01-09",
+      "why": "Experts explain why nonprofits need written AI-use guidelines and how to draft them.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-education",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-4dd4119499",
+      "title": "AI Is Transforming Productivity, but Sales Remains a New Frontier",
+      "url": "https://www.bain.com/insights/ai-transforming-productivity-sales-remains-new-frontier-technology-report-2025/",
+      "source": "Bain & Company",
+      "date": "2025-09-23",
+      "why": "Why sales teams lag other functions on AI, and how to start: pick one or two process-ready areas like prospecting, clean the data, and redesign the workflow.",
+      "tags": [
+        "industries",
+        "ind-sales",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-sales",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-b1af92334b",
+      "title": "Five ways B2B sales leaders can win with tech and AI",
+      "url": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/five-ways-b2b-sales-leaders-can-win-with-tech-and-ai",
+      "source": "McKinsey",
+      "date": "2025-02-13",
+      "why": "Covers AI-drafted account plans, lead prioritization, RFP drafts, and call analysis that points coaching at each rep's skill gaps.",
+      "tags": [
+        "industries",
+        "ind-sales",
+        "managers",
+        "workflows"
+      ],
+      "subgroup": "ind-sales",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-33c8be9f56",
+      "title": "How Successful Sales Teams Are Embracing Agentic AI",
+      "url": "https://hbr.org/2025/09/how-successful-sales-teams-are-embracing-agentic-ai",
+      "source": "Harvard Business Review",
+      "date": "2025-09-15",
+      "why": "What changes when AI agents work alongside reps to find, nurture, and close deals, and what managers should still own.",
+      "tags": [
+        "industries",
+        "ind-sales",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-sales",
+      "new": true,
+      "added": "2026-11-09"
+    },
+    {
+      "id": "ind-3795ac1ad7",
+      "title": "Why Some Sales Teams Are Actually Growing Alongside AI",
+      "url": "https://hbr.org/2025/09/why-some-sales-teams-are-actually-growing-alongside-ai",
+      "source": "Harvard Business Review",
+      "date": "2025-09-02",
+      "why": "For complex, high-stakes purchases, buyers still want a person who helps them sort through uncertainty. Explains how sales roles are shifting.",
+      "tags": [
+        "industries",
+        "ind-sales",
+        "managers",
+        "leadership",
+        "aspiring"
+      ],
+      "subgroup": "ind-sales",
+      "new": true,
+      "added": "2026-11-09"
+    }
+  ],
   "videos": [
     {
       "youtube_id": "9f3qnX6aiIE",
-      "title": "How AI Is Changing Strategy\u2014and 4 Skills Leaders Need Next",
+      "title": "How AI Is Changing Strategy—and 4 Skills Leaders Need Next",
       "url": "https://www.youtube.com/watch?v=9f3qnX6aiIE",
       "channel": "Harvard Business Review",
       "date": "2026",
-      "why": "Mollick on why treating AI as only a productivity tool backfires\u2014and what leaders should decide urgently.",
+      "why": "Mollick on why treating AI as only a productivity tool backfires—and what leaders should decide urgently.",
       "tags": [
         "videos",
         "leadership",
@@ -294,7 +1140,7 @@
       "url": "https://www.youtube.com/watch?v=bsyqZ_oUwTo",
       "channel": "Washington Speakers Bureau",
       "date": "2025",
-      "why": "Leadership\u2013lab\u2013crowd model for getting AI adoption out of pilots and into real work.",
+      "why": "Leadership–lab–crowd model for getting AI adoption out of pilots and into real work.",
       "tags": [
         "videos",
         "workflows",
@@ -303,7 +1149,7 @@
     },
     {
       "youtube_id": "DuT3dsyshLA",
-      "title": "Andrew Ng on building AI-native teams | AI Fund Frontier \u201826",
+      "title": "Andrew Ng on building AI-native teams | AI Fund Frontier ‘26",
       "url": "https://www.youtube.com/watch?v=DuT3dsyshLA",
       "channel": "AI Fund",
       "date": "2026-10",
@@ -320,7 +1166,7 @@
       "url": "https://www.youtube.com/watch?v=JPcx9qHzzgk",
       "channel": "DeepLearningAI",
       "date": "2019",
-      "why": "Non-technical grounding in what AI can and cannot do\u2014still a solid on-ramp for aspiring managers.",
+      "why": "Non-technical grounding in what AI can and cannot do—still a solid on-ramp for aspiring managers.",
       "tags": [
         "videos",
         "aspiring",
@@ -333,7 +1179,7 @@
       "url": "https://www.youtube.com/watch?v=EO3_qN_Ynsk",
       "channel": "The Pragmatic Engineer",
       "date": "2025-07",
-      "why": "Practical reality check on LLM workflows from Simon Willison\u2014useful even if you lead non-engineering teams adopting agents.",
+      "why": "Practical reality check on LLM workflows from Simon Willison—useful even if you lead non-engineering teams adopting agents.",
       "tags": [
         "videos",
         "workflows",
@@ -360,7 +1206,7 @@
       "url": "https://www.youtube.com/watch?v=bhHqUaIVZf0",
       "channel": "TED Podcasts",
       "date": "2023",
-      "why": "On diagnosing what is actually broken before you roll out the next change\u2014including AI tools.",
+      "why": "On diagnosing what is actually broken before you roll out the next change—including AI tools.",
       "tags": [
         "videos",
         "leadership",
@@ -369,11 +1215,11 @@
     },
     {
       "youtube_id": "PQAqVbAQVtM",
-      "title": "Bren\u00e9 Brown and Simon Sinek on the leadership skills we need to build | Re:Thinking with Adam Grant",
+      "title": "Brené Brown and Simon Sinek on the leadership skills we need to build | Re:Thinking with Adam Grant",
       "url": "https://www.youtube.com/watch?v=PQAqVbAQVtM",
       "channel": "TED Podcasts",
       "date": "2022",
-      "why": "Conversation on learnable leadership skills\u2014useful balance beside the AI workflow content.",
+      "why": "Conversation on learnable leadership skills—useful balance beside the AI workflow content.",
       "tags": [
         "videos",
         "leadership",
@@ -386,7 +1232,7 @@
       "url": "https://www.youtube.com/watch?v=KaO3V-B1Wjg",
       "channel": "U.S. Food and Drug Administration",
       "date": "2024",
-      "why": "FDA staff walk through AI/ML in drug development submissions and a risk-based credibility mindset\u2014good orientation for pharma leaders before drafting internal AI rules.",
+      "why": "FDA staff walk through AI/ML in drug development submissions and a risk-based credibility mindset—good orientation for pharma leaders before drafting internal AI rules.",
       "tags": [
         "videos",
         "healthcare",
@@ -398,8 +1244,8 @@
       "title": "How pharma can redesign decision-making to unlock AI value | Aaron Mitchell, ZS",
       "url": "https://www.youtube.com/watch?v=SFdiNc685kc",
       "channel": "Reuters Events Pharma",
-      "date": "2024\u20132025",
-      "why": "ZS commercial perspective on redesigning decisions\u2014not just tooling\u2014so AI adoption sticks in pharma organizations.",
+      "date": "2024–2025",
+      "why": "ZS commercial perspective on redesigning decisions—not just tooling—so AI adoption sticks in pharma organizations.",
       "tags": [
         "videos",
         "healthcare",
@@ -454,7 +1300,7 @@
       "name": "Cassie Kozyrkov",
       "handle": "@decisionleader",
       "url": "https://x.com/decisionleader",
-      "why": "Decision science\u2014where human judgment still matters with AI.",
+      "why": "Decision science—where human judgment still matters with AI.",
       "tags": [
         "people",
         "managers"
@@ -504,6 +1350,21 @@
       ]
     }
   ],
+  "archive": [
+    {
+      "title": "Agency and Agents",
+      "url": "https://www.oneusefulthing.org/p/agency-and-agents",
+      "source": "One Useful Thing (Ethan Mollick)",
+      "date": "2026-08-31",
+      "why": "On when agents should pull humans in—for approval, expertise, exceptions, and interesting decisions—so you do not automate the wrong half of the job.",
+      "tags": [
+        "workflows",
+        "managers"
+      ],
+      "archived_date": "2026-11-09",
+      "archived_from": "this_week"
+    }
+  ],
   "dropped_links": [
     {
       "url": "https://openai.com/academy/managers/",
@@ -524,283 +1385,6 @@
     {
       "url": "https://www.youtube.com/watch?v=3eR85yxE3uQ",
       "reason": "Skipped: third-party book summary channel, not primary source"
-    }
-  ],
-  "healthcare": [
-    {
-      "title": "Artificial Intelligence for Drug Development",
-      "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/artificial-intelligence-drug-development",
-      "source": "U.S. Food and Drug Administration (CDER)",
-      "date": "updated 2025\u20132026",
-      "why": "FDA hub for how AI shows up in drug development submissions\u2014useful for leaders who need a regulatory map before funding pilots that may later support safety, efficacy, or quality decisions.",
-      "tags": [
-        "healthcare",
-        "managers",
-        "leadership",
-        "healthcare-regulatory"
-      ],
-      "subgroup": "regulatory"
-    },
-    {
-      "title": "Considerations for the Use of Artificial Intelligence To Support Regulatory Decision-Making for Drug and Biological Products",
-      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological",
-      "source": "U.S. Food and Drug Administration",
-      "date": "2025-01",
-      "why": "Draft guidance on risk-based credibility assessment for AI models used in regulatory decisions\u2014start here when defining context of use, documentation, and human oversight for life-sciences AI work.",
-      "tags": [
-        "healthcare",
-        "managers",
-        "leadership",
-        "healthcare-regulatory"
-      ],
-      "subgroup": "regulatory"
-    },
-    {
-      "title": "Ethics and governance of artificial intelligence for health",
-      "url": "https://www.who.int/publications/i/item/9789240029200/",
-      "source": "World Health Organization",
-      "date": "2021",
-      "why": "Consensus principles (autonomy, safety, transparency, accountability, equity, sustainability) that still frame governance and privacy conversations for health AI programs.",
-      "tags": [
-        "healthcare",
-        "leadership",
-        "managers",
-        "healthcare-regulatory"
-      ],
-      "subgroup": "regulatory"
-    },
-    {
-      "title": "Ethics and governance of artificial intelligence for health: Guidance on large multi-modal models",
-      "url": "https://www.who.int/publications/i/item/9789240084759/",
-      "source": "World Health Organization",
-      "date": "2025-03",
-      "why": "Practical recommendations for governments, developers, and providers on generative multi-modal models\u2014including risks of inaccurate outputs and the need for post-release audit and data protection.",
-      "tags": [
-        "healthcare",
-        "leadership",
-        "managers",
-        "healthcare-regulatory"
-      ],
-      "subgroup": "regulatory"
-    },
-    {
-      "title": "Artificial intelligence (EMA overview)",
-      "url": "https://www.ema.europa.eu/en/about-us/how-we-work/big-data/artificial-intelligence",
-      "source": "European Medicines Agency",
-      "date": "ongoing",
-      "why": "EU regulator\u2019s page on AI across the medicine lifecycle\u2014helps pharma leaders align internal AI use with European expectations, not only U.S. FDA framing.",
-      "tags": [
-        "healthcare",
-        "managers",
-        "healthcare-regulatory"
-      ],
-      "subgroup": "regulatory"
-    },
-    {
-      "title": "2026 Life sciences outlook",
-      "url": "https://www.deloitte.com/global/en/insights/industry/health-care/life-sciences-and-health-care-industry-outlooks/2026-life-sciences-executive-outlook.html",
-      "source": "Deloitte Insights",
-      "date": "2026",
-      "why": "Executive survey view of AI scaling, regulation, and cybersecurity pressure in biopharma and medtech\u2014useful for setting realistic adoption goals when few leaders report significant AI returns yet.",
-      "tags": [
-        "healthcare",
-        "managers",
-        "leadership",
-        "healthcare-regulatory"
-      ],
-      "subgroup": "regulatory"
-    },
-    {
-      "title": "Redesigning leadership for clinical AI deployment",
-      "url": "https://www.nature.com/articles/s41746-026-02532-6",
-      "source": "npj Digital Medicine (Nature)",
-      "date": "2026-03",
-      "why": "On leadership structures that actually support clinical AI\u2014clinical champions, multidisciplinary teams, and frontline engagement rather than a single tech rollout plan.",
-      "tags": [
-        "healthcare",
-        "leadership",
-        "managers",
-        "aspiring",
-        "healthcare-regulatory"
-      ],
-      "subgroup": "regulatory"
-    },
-    {
-      "title": "Artificial Intelligence-Enabled Medical Devices",
-      "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device",
-      "source": "U.S. Food and Drug Administration",
-      "date": "ongoing",
-      "why": "Device-side FDA landing page for AI-enabled medical devices\u2014helps healthcare leaders separate SaMD regulatory paths from drug-development AI uses.",
-      "tags": [
-        "healthcare",
-        "managers",
-        "healthcare-regulatory"
-      ],
-      "subgroup": "regulatory"
-    },
-    {
-      "title": "Generative AI in life sciences marketing",
-      "url": "https://www.zs.com/insights/generative-ai-in-life-sciences-marketing",
-      "source": "ZS",
-      "date": "2024\u20132025",
-      "why": "Survey of marketing leaders on gen AI for concept ideation, derivative content, and why MLR process redesign\u2014not just more drafts\u2014is the bottleneck to scale.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "managers"
-      ],
-      "subgroup": "commercial"
-    },
-    {
-      "title": "Agentic AI in life sciences commercialization strategy",
-      "url": "https://www.zs.com/insights/agentic-ai-life-sciences-commercialization",
-      "source": "ZS",
-      "date": "2025\u20132026",
-      "why": "Argues commercialization needs decision systems across sales, marketing, and access\u2014not a pile of disconnected AI pilots\u2014with human review still in the loop.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "managers",
-        "leadership"
-      ],
-      "subgroup": "commercial"
-    },
-    {
-      "title": "Medical affairs outlook report 2026: Key trends and insights",
-      "url": "https://www.zs.com/insights/medical-affairs-outlook-report-2026-trends-to-watch",
-      "source": "ZS",
-      "date": "2026",
-      "why": "Outlook for medical affairs leaders on where AI and analytics fit scientific engagement and insight work\u2014useful when commercial AI plans need a medical counterpart.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "managers"
-      ],
-      "subgroup": "commercial"
-    },
-    {
-      "title": "Reinventing Pharma Customer Engagement with AI",
-      "url": "https://www.accenture.com/en/insights/life-sciences/ai-pharma-customer-engagement",
-      "source": "Accenture",
-      "date": "2025",
-      "why": "Field-focused view of AI for call planning, personalized HCP content, and cross-functional collaboration among sales, medical, and market access\u2014with compliance framed as part of the engagement design.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "managers"
-      ],
-      "subgroup": "commercial"
-    },
-    {
-      "title": "Reinventing Life Sciences Age of Generative AI",
-      "url": "https://www.accenture.com/en/insights/life-sciences/reinventing-life-sciences-age-generative-ai",
-      "source": "Accenture",
-      "date": "2024-08",
-      "why": "Commercialization section covers access/contracting, marketing content under regulatory constraints, MLR-assisted review, and field assistants\u2014good overview before picking one workflow to pilot.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "managers",
-        "leadership"
-      ],
-      "subgroup": "commercial"
-    },
-    {
-      "title": "AI in Life Sciences Commercialization",
-      "url": "https://www.iqvia.com/library/white-papers/ai-in-life-sciences-commercialization",
-      "source": "IQVIA",
-      "date": "2025-08",
-      "why": "2025 survey of commercial leaders on adoption across sales, marketing, market access, and compliance\u2014useful for benchmarking where peers still struggle to industrialize tools.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "managers"
-      ],
-      "subgroup": "commercial"
-    },
-    {
-      "title": "Omnichannel Engagement in Pharma: Harnessing the Power of Generative AI",
-      "url": "https://www.iqvia.com/blogs/2024/10/omnichannel-engagement-in-pharma",
-      "source": "IQVIA",
-      "date": "2024-10",
-      "why": "On next-best-action and gen AI in HCP omnichannel programs\u2014practical for leaders who need to measure engagement quality, not just content volume.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "managers"
-      ],
-      "subgroup": "commercial"
-    },
-    {
-      "title": "Best use cases for scaling agentic AI in commercial life sciences",
-      "url": "https://www.iqvia.com/blogs/2025/06/best-use-cases-for-scaling-agentic-ai-in-commercial-life-sciences",
-      "source": "IQVIA",
-      "date": "2025-06",
-      "why": "Checklist mindset for which commercial AI use cases scale (repetitive but reviewable; immediate value for reps) versus experiments that stall\u2014pairs well with adoption and impact measurement.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "managers",
-        "workflows"
-      ],
-      "subgroup": "commercial"
-    },
-    {
-      "title": "The System-Level View That Sound Market Access Decisions Are Missing",
-      "url": "https://www.pharmaceuticalcommerce.com/view/the-system-level-view-that-sound-market-access-decisions-are-missing",
-      "source": "Pharmaceutical Commerce (Matthew Champion and Kunal Akwalia, IQVIA)",
-      "date": "2026-11-05",
-      "why": "Shows how market access teams can use scenario modeling, including AI agents that rebuild models as inputs change, to see how pricing, coverage, contracting, and affordability choices affect each other before committing.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "managers",
-        "leadership"
-      ],
-      "subgroup": "commercial"
-    },
-    {
-      "title": "Generative Artificial Intelligence for Health Technology Assessment: Opportunities, Challenges, and Policy Considerations",
-      "url": "https://www.ispor.org/heor-resources/good-practices/article/generative-artificial-intelligence-for-health-technology-assessment--opportunities--challenges--and-policy-considerations",
-      "source": "ISPOR (Value in Health)",
-      "date": "2025-02",
-      "why": "Working-group view of gen AI in HTA/HEOR\u2014literature review, RWE, and economic modeling\u2014with privacy, bias, and human oversight called out for market-access leaders.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "managers",
-        "leadership"
-      ],
-      "subgroup": "commercial"
-    },
-    {
-      "title": "The Office of Prescription Drug Promotion (OPDP)",
-      "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/office-prescription-drug-promotion-opdp",
-      "source": "U.S. Food and Drug Administration",
-      "date": "ongoing",
-      "why": "FDA office that oversees prescription-drug promotional communications\u2014baseline context for any marketing-content or MLR AI pilot so teams know what still needs human promotional review.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "healthcare-regulatory",
-        "managers"
-      ],
-      "subgroup": "commercial"
-    }
-  ],
-  "archive": [
-    {
-      "title": "Agency and Agents",
-      "url": "https://www.oneusefulthing.org/p/agency-and-agents",
-      "source": "One Useful Thing (Ethan Mollick)",
-      "date": "2026-08-31",
-      "why": "On when agents should pull humans in\u2014for approval, expertise, exceptions, and interesting decisions\u2014so you do not automate the wrong half of the job.",
-      "tags": [
-        "workflows",
-        "managers"
-      ],
-      "archived_date": "2026-11-09",
-      "archived_from": "this_week"
     }
   ]
 }

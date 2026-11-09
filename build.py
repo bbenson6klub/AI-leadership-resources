@@ -52,7 +52,21 @@ TAG_LABELS = {
     "aspiring": "Aspiring leaders",
     "archive": "Archive",
     "saved": "Saved",
+    "industries": "Industries",
+    "ind-medtech": "Medtech & biotech",
+    "ind-finance": "Finance & insurance",
+    "ind-retail": "Retail & CPG",
+    "ind-manufacturing": "Manufacturing",
+    "ind-proservices": "Pro services",
+    "ind-education": "Education & nonprofits",
+    "ind-sales": "Sales leadership",
 }
+
+# Industry subgroups (labels/blurbs can be overridden by resources.json "industry_groups").
+INDUSTRY_IDS = [
+    "ind-medtech", "ind-finance", "ind-retail", "ind-manufacturing",
+    "ind-proservices", "ind-education", "ind-sales",
+]
 
 
 def tag_pills(tags: list, limit: int = 3) -> str:
@@ -81,6 +95,14 @@ ICON_SVGS = {
     "people": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>""",
     "healthcare": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg>""",
     "archive": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16v4H4V4zm1 6h14v10H5V10zm3 2v2h8v-2H8z"/></svg>""",
+    "industries": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 21V10l5-3v3l5-3v3l5-3v14H3zm3-3h2v-2H6v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2z"/><path fill="currentColor" opacity=".55" d="M18 4h3v17h-3z"/></svg>""",
+    "ind-medtech": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 12h4l2.5-6 4 12 2.5-6H22"/></svg>""",
+    "ind-finance": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7v2h20V7L12 2zM4 11h2v7H4v-7zm4.5 0h2v7h-2v-7zm5 0h2v7h-2v-7zm4.5 0h2v7h-2v-7zM2 20h20v2H2v-2z"/></svg>""",
+    "ind-retail": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 7V6a6 6 0 0 1 12 0v1h3l-1.2 14H4.2L3 7h3zm2 0h8V6a4 4 0 0 0-8 0v1z"/></svg>""",
+    "ind-manufacturing": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.3 7.3 0 0 0-1.7-1L15 3h-4l-.4 2.9a7.3 7.3 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1c.5.4 1.1.7 1.7 1L11 21h4l.4-2.9c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.5-2.2-1.6zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>""",
+    "ind-proservices": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6a2 2 0 0 1 2 2v2h3a2 2 0 0 1 2 2v4H2V9a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 4h6V5H9v2zM2 15h8v2h4v-2h8v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4z"/></svg>""",
+    "ind-education": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17c0 1.7 3.1 4 7 4s7-2.3 7-4v-3.8l-7 3.8-7-3.8z"/></svg>""",
+    "ind-sales": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8"/><path fill="currentColor" d="M15 5h6v6l-6-6z"/></svg>""",
     "week": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg>""",
 }
 
@@ -280,6 +302,15 @@ img { max-width: 100%; height: auto; display: block; }
 .tone-people { --tone: #2563eb; --tone-soft: #dbeafe; --tone-ink: #1e3a8a; }
 .tone-archive { --tone: #64748b; --tone-soft: #e2e8f0; --tone-ink: #334155; }
 .tone-saved { --tone: #0d9488; --tone-soft: #ccfbf1; --tone-ink: #115e59; }
+.tone-industries { --tone: #4f46e5; --tone-soft: #e0e7ff; --tone-ink: #3730a3; }
+.tone-ind-medtech, .tag-ind-medtech { --tone: #c026d3; --tone-soft: #fae8ff; --tone-ink: #86198f; }
+.tone-ind-finance, .tag-ind-finance { --tone: #4338ca; --tone-soft: #e0e7ff; --tone-ink: #312e81; }
+.tone-ind-retail, .tag-ind-retail { --tone: #ea580c; --tone-soft: #ffedd5; --tone-ink: #9a3412; }
+.tone-ind-manufacturing, .tag-ind-manufacturing { --tone: #0891b2; --tone-soft: #cffafe; --tone-ink: #155e75; }
+.tone-ind-proservices, .tag-ind-proservices { --tone: #65a30d; --tone-soft: #ecfccb; --tone-ink: #3f6212; }
+.tone-ind-education, .tag-ind-education { --tone: #ca8a04; --tone-soft: #fef9c3; --tone-ink: #854d0e; }
+.tone-ind-sales, .tag-ind-sales { --tone: #db2777; --tone-soft: #fce7f3; --tone-ink: #9d174d; }
+.tag-industries { --tone: #4f46e5; --tone-soft: #e0e7ff; --tone-ink: #3730a3; }
 
 .hero {
   background:
@@ -404,6 +435,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-scroll a[href="#healthcare"] { --nav-bg:#ffe4e6; --nav-border:#fecdd3; --nav-ink:#9f1239; }
 .nav-scroll a[href="#videos"] { --nav-bg:#ffe4e6; --nav-border:#fecdd3; --nav-ink:#be123c; }
 .nav-scroll a[href="#people"] { --nav-bg:#dbeafe; --nav-border:#bfdbfe; --nav-ink:#1e3a8a; }
+.nav-scroll a[href="#industries"] { --nav-bg:#e0e7ff; --nav-border:#c7d2fe; --nav-ink:#3730a3; }
 .nav-scroll a[href="#this-week"] { --nav-bg:#e0f2fe; --nav-border:#bae6fd; --nav-ink:#075985; }
 .nav-scroll a:focus-visible, .chip:focus-visible, .btn-copy:focus-visible, .video-poster:focus-visible, #q:focus-visible {
   outline: none; box-shadow: var(--focus);
@@ -445,6 +477,29 @@ img { max-width: 100%; height: auto; display: block; }
 .chip[data-filter="healthcare-regulatory"][aria-pressed="true"] { background: var(--rose); border-color: var(--rose); }
 .chip[data-filter="videos"][aria-pressed="true"] { background: var(--coral); border-color: var(--coral); }
 .chip[data-filter="people"][aria-pressed="true"] { background: var(--blue); border-color: var(--blue); }
+.chip[data-filter="industries"][aria-pressed="true"] { background: #4f46e5; border-color: #4f46e5; }
+.chip.ind-chip { border-color: color-mix(in srgb, var(--tone) 35%, var(--line)); color: var(--tone-ink); background: var(--tone-soft); }
+.chip.ind-chip[aria-pressed="true"] { background: var(--tone); border-color: var(--tone); color: #fff; }
+#industries, .ind-group { scroll-margin-top: 10rem; }
+.ind-jump { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .4rem; }
+.ind-jump-label { font-size: .8rem; font-weight: 700; color: var(--muted); margin: 0 0 .35rem; }
+.ind-group {
+  margin: 1.1rem 0 .4rem;
+  padding: .85rem .85rem .95rem;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--tone-soft) 55%, #fff);
+  border: 1px solid color-mix(in srgb, var(--tone) 22%, var(--line));
+  border-top: 4px solid var(--tone);
+}
+.ind-group-head { display: flex; gap: .65rem; align-items: center; margin-bottom: .6rem; }
+.ind-group-head h3 { margin: 0; font-size: 1.08rem; color: var(--navy); }
+.ind-group-head p { margin: .15rem 0 0; color: var(--muted); font-size: .9rem; }
+.section-head .badge-new { margin-left: .5rem; vertical-align: middle; position: relative; top: -2px; }
+@media (prefers-color-scheme: dark) {
+  .ind-group { background: color-mix(in srgb, var(--tone) 10%, #0f1b2d); }
+  .ind-group-head h3 { color: #e8eef8; }
+  .chip.ind-chip { background: color-mix(in srgb, var(--tone) 18%, #0f1b2d); color: #e5eefc; }
+}
 
 .wrap { max-width: var(--max); margin: 0 auto; padding: 1.25rem; }
 .start {
@@ -553,8 +608,6 @@ img { max-width: 100%; height: auto; display: block; }
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
 .card {
-  --tone: #2563eb;
-  --tone-soft: #dbeafe;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -897,7 +950,7 @@ JS = r"""
       if (!src) src = document.querySelector('article.card[data-id="' + id + '"]');
       if (!src) return;
       // Skip if this node already lives only in saved grid duplicates: find original in content sections
-      var original = document.querySelector('#this-week .card[data-id="' + id + '"], #workflows .card[data-id="' + id + '"], #prompts .card[data-id="' + id + '"], #leadership .card[data-id="' + id + '"], #smb .card[data-id="' + id + '"], #healthcare .card[data-id="' + id + '"], #videos .card[data-id="' + id + '"], #people .card[data-id="' + id + '"], #archive .card[data-id="' + id + '"]');
+      var original = document.querySelector('#this-week .card[data-id="' + id + '"], #workflows .card[data-id="' + id + '"], #prompts .card[data-id="' + id + '"], #leadership .card[data-id="' + id + '"], #smb .card[data-id="' + id + '"], #healthcare .card[data-id="' + id + '"], #industries .card[data-id="' + id + '"], #videos .card[data-id="' + id + '"], #people .card[data-id="' + id + '"], #archive .card[data-id="' + id + '"]');
       var node = (original || src).cloneNode(true);
       node.removeAttribute('hidden');
       node.classList.remove('is-deep-link');
@@ -1214,6 +1267,55 @@ def healthcare_section_html(items: list) -> str:
 
 
 
+def industries_section_html(items: list, groups_meta: list) -> str:
+    """AI by industry: one colored subgroup per industry, filterable by chip (tag = subgroup id)."""
+    meta = {g["id"]: g for g in (groups_meta or [])}
+    order = [g["id"] for g in (groups_meta or [])] or INDUSTRY_IDS
+    for gid in INDUSTRY_IDS:
+        if gid not in order:
+            order.append(gid)
+    chips = []
+    blocks = []
+    for gid in order:
+        group_items = [i for i in items if i.get("subgroup") == gid]
+        if not group_items:
+            continue
+        g = meta.get(gid, {})
+        label = g.get("label") or TAG_LABELS.get(gid, gid)
+        short = g.get("short") or TAG_LABELS.get(gid, label)
+        blurb = g.get("blurb", "")
+        cards = "".join(card_link(i, gid) for i in group_items)
+        chips.append(
+            f'<button type="button" class="chip ind-chip tone-{esc(gid)}" data-filter="{esc(gid)}" aria-pressed="false">{esc(short)} <span class="count-badge">{len(group_items)}</span></button>'
+        )
+        blocks.append(f"""
+  <div class="ind-group tone-{esc(gid)}" id="{esc(gid)}">
+    <div class="ind-group-head">
+      {icon_tile(gid)}
+      <div>
+        <h3>{esc(label)}</h3>
+        <p>{esc(blurb)}</p>
+      </div>
+    </div>
+    <div class="grid">{cards}</div>
+  </div>""")
+    any_new = any(i.get("new") for i in items)
+    new_badge = '<span class="badge-new">New</span>' if any_new else ""
+    return f"""
+<section class="section reveal tone-industries" id="industries" data-section="industries">
+  <header class="section-head">
+    {icon_tile('industries')}
+    <div>
+      <h2>AI by industry {new_badge}</h2>
+      <p>How leaders and managers are putting AI to work in specific fields. Tap an industry to filter.</p>
+    </div>
+  </header>
+  <p class="ind-jump-label">Filter by industry</p>
+  <div class="ind-jump chips" role="group" aria-label="Filter by industry">{"".join(chips)}</div>
+  {"".join(blocks)}
+</section>"""
+
+
 def build() -> Path:
     m = DATA["meta"]
     week = "".join(card_link(i, "week") for i in DATA["this_week"])
@@ -1224,6 +1326,8 @@ def build() -> Path:
     videos = "".join(card_video(i) for i in DATA["videos"])
     people = "".join(card_person(i) for i in DATA["people"])
     healthcare = healthcare_section_html(DATA.get("healthcare", []))
+    industries = industries_section_html(DATA.get("industries", []), DATA.get("industry_groups", []))
+    n_industries = len({i.get("subgroup") for i in DATA.get("industries", []) if i.get("subgroup")})
     archive = archive_section_html(DATA.get("archive", []))
 
     n_prompts = len(DATA.get("prompts", []))
@@ -1235,6 +1339,7 @@ def build() -> Path:
         + len(DATA.get("leadership", []))
         + len(DATA.get("smb", []))
         + len(DATA.get("healthcare", []))
+        + len(DATA.get("industries", []))
         + n_videos
         + len(DATA.get("people", []))
     )
@@ -1282,6 +1387,7 @@ def build() -> Path:
       <span class="stat-pill"><strong>{n_resources}</strong> resources</span>
       <span class="stat-pill"><strong>{n_prompts}</strong> prompts</span>
       <span class="stat-pill"><strong>{n_videos}</strong> videos</span>
+      <span class="stat-pill"><strong>{n_industries}</strong> industries</span>
     </div>
   </div>
 </header>
@@ -1296,6 +1402,7 @@ def build() -> Path:
       <a href="#leadership">Leadership</a>
       <a href="#smb">Small business</a>
       <a href="#healthcare">Healthcare &amp; pharma</a>
+      <a href="#industries">By industry</a>
       <a href="#videos">Videos</a>
       <a href="#people">People</a>
       <a href="#saved">Saved <span class="count-badge" data-saved-count>0</span></a>
@@ -1313,6 +1420,7 @@ def build() -> Path:
         <button type="button" class="chip" data-filter="healthcare" aria-pressed="false">Healthcare &amp; pharma</button>
         <button type="button" class="chip" data-filter="pharma-commercial" aria-pressed="false">Pharma commercial</button>
         <button type="button" class="chip" data-filter="healthcare-regulatory" aria-pressed="false">Regulatory &amp; clinical</button>
+        <button type="button" class="chip" data-filter="industries" aria-pressed="false">Industries</button>
         <button type="button" class="chip" data-filter="videos" aria-pressed="false">Videos</button>
         <button type="button" class="chip" data-filter="people" aria-pressed="false">People</button>
         <button type="button" class="chip" data-filter="saved" aria-pressed="false">Saved</button>
@@ -1344,6 +1452,7 @@ def build() -> Path:
   {section_block('leadership', 'Leadership', 'Judgment, feedback, and rethinking—skills AI does not replace.', leadership, 'leadership')}
   {section_block('smb', 'Small business', 'Automation ideas for owners who wear many hats.', smb, 'smb')}
   {healthcare}
+  {industries}
   {section_block('videos', 'Videos', 'Click a thumbnail to play (loads YouTube privacy-enhanced embed).', videos, 'videos')}
   {section_block('people', 'People to follow', 'Accounts that stay useful on AI at work and leadership.', people, 'people')}
 

@@ -17,11 +17,26 @@ Do **not** publish `preview-desktop.png`, `preview-mobile.png`, or other preview
 
 ## Schema notes (`resources.json`)
 
-- **Sections:** `this_week`, `workflows`, `prompts`, `leadership`, `smb`, `healthcare`, `videos`, `people`, `archive`
+- **Sections:** `this_week`, `workflows`, `prompts`, `leadership`, `smb`, `healthcare`, `industries`, `videos`, `people`, `archive` (plus `industry_groups` metadata)
 - **Common fields:** `title`, `url` (or `prompt` for prompts), `why`, `tags` (array)
 - **Tags:** topic chips — `workflows`, `prompts`, `leadership`, `smb`, `healthcare`, `videos`, `people` — plus audience — `managers`, `aspiring`, `smb`
 - **Healthcare & pharma:** use tag `healthcare` on all health/life-sciences items. Set `"subgroup": "regulatory"` + tag `healthcare-regulatory` for FDA/EMA/WHO ethics/clinical/device items; set `"subgroup": "commercial"` + tag `pharma-commercial` for AI *inside* pharma companies (sales/HCP engagement, marketing + MLR, market access/HEOR, medical affairs, commercial ops/analytics). Prefer ZS/IQVIA/Accenture/ISPOR/FDA OPDP and similar public pieces. No employer- or brand-specific content; no patient data.
 - **Filter chips:** `healthcare` (whole section), `pharma-commercial`, `healthcare-regulatory`.
+- **AI by industry (`industries`, page section id `industries`, nav label "By industry"):** one array of items; each item has `"subgroup"` set to one of the industry ids below and tags `["industries", "<industry id>", "managers", ...]`. The industry id doubles as the subgroup anchor (`#ind-retail`) and its filter chip. Labels/blurbs live in `industry_groups` (order there = display order). Keep **3–5 items per industry**; when adding a newer piece past 5, move the oldest into `archive[]` with `"archived_from": "industries"` (keep its `id`, `subgroup`, tags).
+  | id | Label | Focus |
+  |----|-------|-------|
+  | `ind-medtech` | Medical devices & biotech | field sales, reimbursement, commercial leaders (shown first, next to Healthcare & pharma) |
+  | `ind-finance` | Financial services & insurance | claims, underwriting, compliance, advisor productivity |
+  | `ind-retail` | Retail & consumer goods | store/district managers, forecasting, customer service |
+  | `ind-manufacturing` | Manufacturing & supply chain | plant supervisors, quality, safety, scheduling, planning |
+  | `ind-proservices` | Small business & professional services | owners/small firms: marketing, bookkeeping, client follow-up |
+  | `ind-education` | Education & nonprofits | principals, district leaders, program leads |
+  | `ind-sales` | Sales leadership | cross-industry coaching, call prep, account/territory planning |
+  - Industry item ids are explicit: `"id": "ind-" + sha1(url)[:10]`. Set it on every new industry item so ids stay stable even if an item changes subgroup.
+  - Pharma/health-system items still go in `healthcare`, not `industries`. General small-business automation stays in `smb`; `ind-proservices` is for owner/firm-specific AI-adoption pieces.
+  - Industry items added 2026-11-09 carry `"new": true` and `"added": "2026-11-09"`. Clear `new` on them on or after **2026-11-16**. For later additions, set `"new": true` + `"added"` and clear after ~7 days.
+  - Prefer free-to-read sources (McKinsey, Deloitte, BCG, Bain, MIT Sloan, RAND, FINRA, SBA, trade pubs). HBR is metered (a few free articles/month) — fine but don't let it dominate a group.
+  - Known bot-blocked but live in browsers: `mckinsey.com` (curl times out → verify with WebFetch), `mddionline.com` (Cloudflare 403 → verify with WebFetch). Don't drop these on a curl failure alone.
 - **New badge:** `"new": true` on `this_week` items (clear when they age out)
 - **Videos:**
   ```json
@@ -41,7 +56,7 @@ Do **not** publish `preview-desktop.png`, `preview-mobile.png`, or other preview
 
 ## Daily checklist
 
-1. **Scan** for 1–3 new, free, high-quality pieces (practical AI for managers / aspiring leaders / SMB, leadership judgment, **healthcare & pharma** regulatory/clinical AI, or **pharma commercial** AI for sales/marketing/market access/medical affairs). Prefer primary sources over listicles.
+1. **Scan** for 1–3 new, free, high-quality pieces (practical AI for managers / aspiring leaders / SMB, leadership judgment, **healthcare & pharma** regulatory/clinical AI, **pharma commercial** AI for sales/marketing/market access/medical affairs, or one of the seven **AI by industry** groups). Prefer primary sources over listicles. Rotate through the industries so each gets a fresh look about once a week (e.g., Mon medtech, Tue finance, Wed retail, Thu manufacturing, Fri pro services, Sat education/nonprofits, Sun sales).
 2. **Videos (optional each day):** If adding a YouTube video, verify it exists:
    ```bash
    curl -sL -o /dev/null -w "%{http_code}\n" \
@@ -58,7 +73,7 @@ Do **not** publish `preview-desktop.png`, `preview-mobile.png`, or other preview
    import json, urllib.request
    data = json.load(open("resources.json"))
    urls = []
-   for key in ("this_week","workflows","leadership","smb","healthcare","videos","people"):
+   for key in ("this_week","workflows","leadership","smb","healthcare","industries","videos","people"):
        for item in data[key]:
            urls.append(item["url"])
    for u in urls:
