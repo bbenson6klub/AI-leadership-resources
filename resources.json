@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "title": "Practical AI. Better Leadership.",
+    "tagline": "Work smarter. Lead with clarity.",
+    "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype. Curated for Brian Benson (@BBenson6).",
+    "last_updated": "2026-11-08",
+    "timezone_note": "America/Chicago",
+    "x_profile": "https://x.com/BBenson6",
+    "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
+  },
+  "this_week": [
+    {
+      "title": "Three Ways to Work with AI, and How to Choose",
+      "url": "https://executiveeducation.wharton.upenn.edu/thought-leadership/wharton-at-work/2026/11/three-ways-to-work-with-ai/",
+      "source": "Wharton Executive Education (Ethan Mollick)",
+      "date": "2026-11",
+      "why": "Clear framework for centaur, cyborg, and conjurer modes—so you decide how much of a task to keep, share, or hand off before you start prompting."
+    },
+    {
+      "title": "The Four Ps — How to Manage an AI-Native Engineering Team",
+      "url": "https://www.deeplearning.ai/the-batch/the-four-ps",
+      "source": "DeepLearning.AI / Andrew Ng",
+      "date": "2026-10-23",
+      "why": "A leadership checklist around People, Projects, Platforms, and Processes. Useful even if you do not manage engineers—same pattern applies to any knowledge team adopting AI."
+    },
+    {
+      "title": "How AI Is Changing Strategy (podcast with Ethan Mollick)",
+      "url": "https://hbr.org/podcast/2026/10/how-ai-is-changing-strategy-rethinking-what-your-business-is-designed-to-do",
+      "source": "Harvard Business Review",
+      "date": "2026-10",
+      "why": "Short listen on why AI is a strategy question, not just a productivity add-on, and why managers should experiment instead of waiting for a perfect playbook."
+    },
+    {
+      "title": "Manager AI Adoption Playbook: Six-Week Plan",
+      "url": "https://ajaia.ai/resources/manager-ai-adoption-playbook",
+      "source": "Ajaia",
+      "date": "2026",
+      "why": "Week-by-week plan to pick one workflow, set safe-use rules, add human checkpoints, and measure quality—not just logins."
+    },
+    {
+      "title": "AI for Managers: How to Lead a Team That Uses AI",
+      "url": "https://manishsingh.info/blog/ai-for-managers",
+      "source": "Manish Singh",
+      "date": "2026",
+      "why": "Practical starting workflows (status reports, 1:1 prep, meeting actions) plus a one-page rules outline managers can actually use."
+    },
+    {
+      "title": "Agency and Agents",
+      "url": "https://www.oneusefulthing.org/p/agency-and-agents",
+      "source": "One Useful Thing (Ethan Mollick)",
+      "date": "2026-08-31",
+      "why": "On when agents should pull humans in—for approval, expertise, exceptions, and interesting decisions—so you do not automate the wrong half of the job."
+    }
+  ],
+  "workflows": [
+    {
+      "title": "Management as AI Superpower",
+      "url": "https://www.oneusefulthing.org/p/management-as-ai-superpower",
+      "source": "One Useful Thing (Ethan Mollick)",
+      "date": "2026-01-27",
+      "why": "Why management skills—clear goals, evaluation, and feedback—matter more as AI agents do longer stretches of work."
+    },
+    {
+      "title": "AI Workflows: A Practical Guide for Project Managers",
+      "url": "https://selfmadepm.com/blog/152-ai-workflows-a-practical-guide-for-project-managers/",
+      "source": "Self-Made Project Manager",
+      "date": "2026",
+      "why": "Defines an AI workflow as trigger → context → model → human review → output, with ownership and privacy called out explicitly."
+    },
+    {
+      "title": "How to Use AI for Business Automation",
+      "url": "https://zapier.com/blog/ai-for-business-automation/",
+      "source": "Zapier",
+      "date": "2026",
+      "why": "Sensible sequence for small teams: map repetitive work, automate one simple flow first, keep humans on customer-facing and high-risk steps."
+    },
+    {
+      "title": "Business Process Automation (overview)",
+      "url": "https://zapier.com/blog/business-process-automation/",
+      "source": "Zapier",
+      "date": "2026",
+      "why": "Plain-language overview of when process automation helps—and when a messy process needs a SOP before a tool."
+    }
+  ],
+  "prompts": [
+    {
+      "title": "1:1 prep brief",
+      "id": "prompt-1on1",
+      "why": "Turn scattered notes into a sharp agenda without inventing performance judgments.",
+      "prompt": "You are helping a manager prepare for a weekly 1:1. Using only the notes I paste below, produce: (1) 3 open commitments with owners and dates if mentioned, (2) 3 questions I should ask, (3) 1 risk or blocker to address, (4) a 4-bullet proposed agenda. Do not invent facts, praise, or criticism that is not supported by the notes. Flag anything unclear as a question for me.\n\nNotes:\n{{paste notes}}"
+    },
+    {
+      "title": "Meeting notes → actions",
+      "id": "prompt-actions",
+      "why": "Convert a transcript or rough notes into owners and due dates you can send for confirmation.",
+      "prompt": "Convert the meeting notes below into an action list. For each item include: action, owner (or 'unassigned'), due date if stated, and status (new / needs confirmation). List open questions separately. Do not assign owners or dates that were not said. End with a short follow-up email draft asking people to confirm their items.\n\nMeeting notes:\n{{paste notes}}"
+    },
+    {
+      "title": "Delegation brief for an AI agent",
+      "id": "prompt-delegate",
+      "why": "Brief AI the way you would brief a new hire—goal, constraints, definition of done, and checks.",
+      "prompt": "Rewrite my rough task into a clear delegation brief for an AI agent with these sections: Objective, Context, Constraints (what must not change), Definition of done, Required outputs, Checks to run before claiming finished, and Escalation rules (when to stop and ask a human). Keep it under 250 words. Use only what I provide.\n\nRough task:\n{{describe task}}"
+    },
+    {
+      "title": "Weekly status from raw updates",
+      "id": "prompt-status",
+      "why": "Draft a status update for stakeholders while keeping escalation decisions with you.",
+      "prompt": "Using only the team updates below, draft a weekly status with sections: Done, In progress, Blocked, Asks, and Risks. Keep each bullet factual and short. Mark items that need my judgment with [REVIEW]. Do not soften bad news or invent metrics.\n\nUpdates:\n{{paste updates}}"
+    },
+    {
+      "title": "SOP from a walkthrough",
+      "id": "prompt-sop",
+      "why": "Turn a recorded process into a draft SOP you still approve before it becomes team truth.",
+      "prompt": "Turn this walkthrough into a step-by-step SOP for a teammate doing the task for the first time. Include: purpose, when to use it, prerequisites, numbered steps, common mistakes, and a short 'done when' checklist. Call out any step that needs human judgment or access I did not describe. Do not invent tools or shortcuts I did not mention.\n\nWalkthrough:\n{{paste transcript or outline}}"
+    },
+    {
+      "title": "Decision memo (options + recommendation)",
+      "id": "prompt-decision",
+      "why": "Force a clear recommendation with assumptions and kill criteria—useful for managers and owners alike.",
+      "prompt": "Write a one-page decision memo from the facts below. Structure: Decision needed, Options (2–4), Pros/cons for each, Recommendation, Key assumptions, What would change my mind, and Next step if we approve. Do not invent data. If information is missing, list it under Open questions instead of guessing.\n\nFacts:\n{{paste facts}}"
+    }
+  ],
+  "leadership": [
+    {
+      "title": "Want to Become a Better Leader? Question Your Assumptions",
+      "url": "https://knowledge.wharton.upenn.edu/article/want-become-better-leader-question-assumptions/",
+      "source": "Knowledge at Wharton (Adam Grant & Erika James)",
+      "date": "2021-05-17",
+      "why": "Evidence-based reminder to rethink management habits—pairs well with AI experiments where old assumptions fail fast."
+    },
+    {
+      "title": "Why You Need a Challenge Network",
+      "url": "https://knowledge.wharton.upenn.edu/article/why-you-need-a-challenge-network/",
+      "source": "Knowledge at Wharton (Adam Grant)",
+      "date": "2021-02-16",
+      "why": "On surrounding yourself with thoughtful skeptics who catch blind spots—especially useful when AI makes weak ideas look polished."
+    },
+    {
+      "title": "The Shape of the Thing",
+      "url": "https://www.oneusefulthing.org/p/the-shape-of-the-thing",
+      "source": "One Useful Thing (Ethan Mollick)",
+      "date": "2026-03-12",
+      "why": "Big-picture leadership read on the shift from co-intelligence chat to managing agents—and why org choices now set precedents."
+    }
+  ],
+  "smb": [
+    {
+      "title": "Business Automation: Transform Your Operations",
+      "url": "https://zapier.com/blog/business-automation/",
+      "source": "Zapier",
+      "date": "2026",
+      "why": "Owner-friendly starting point: audit repetitive work, automate one flow, measure time and errors before expanding."
+    },
+    {
+      "title": "Operations Automation: Everything You Need to Know",
+      "url": "https://zapier.com/blog/operations-automation/",
+      "source": "Zapier",
+      "date": "2026",
+      "why": "Practical ops framing for small businesses—what to automate in handoffs between apps without losing accountability."
+    },
+    {
+      "title": "n8n Workflow Templates (open library)",
+      "url": "https://n8n.io/workflows/",
+      "source": "n8n",
+      "date": "ongoing",
+      "why": "Browse free automation templates if you prefer self-hosted or open workflows; always adapt and review before connecting real data."
+    }
+  ],
+  "people": [
+    {
+      "name": "Ethan Mollick",
+      "handle": "@emollick",
+      "url": "https://x.com/emollick",
+      "why": "Wharton professor on AI at work; practical frameworks for managers."
+    },
+    {
+      "name": "Allie K. Miller",
+      "handle": "@alliekmiller",
+      "url": "https://x.com/alliekmiller",
+      "why": "AI for business and operators; enterprise adoption in plain language."
+    },
+    {
+      "name": "Andrew Ng",
+      "handle": "@AndrewYNg",
+      "url": "https://x.com/AndrewYNg",
+      "why": "Practical AI skills and leadership notes for building AI-capable teams."
+    },
+    {
+      "name": "Simon Willison",
+      "handle": "@simonw",
+      "url": "https://x.com/simonw",
+      "why": "Hands-on AI workflows and clear demos without the hype cycle."
+    },
+    {
+      "name": "Cassie Kozyrkov",
+      "handle": "@decisionleader",
+      "url": "https://x.com/decisionleader",
+      "why": "Decision science—where human judgment still matters with AI."
+    },
+    {
+      "name": "Shreyas Doshi",
+      "handle": "@shreyas",
+      "url": "https://x.com/shreyas",
+      "why": "Executive and product coaching for leaders and aspiring managers."
+    },
+    {
+      "name": "Adam Grant",
+      "handle": "@AdamMGrant",
+      "url": "https://x.com/AdamMGrant",
+      "why": "Organizational psychology on leadership, rethinking, and teams."
+    },
+    {
+      "name": "Lenny Rachitsky",
+      "handle": "@lennysan",
+      "url": "https://x.com/lennysan",
+      "why": "Product, growth, and career interviews useful for managers."
+    },
+    {
+      "name": "Dharmesh Shah",
+      "handle": "@dharmesh",
+      "url": "https://x.com/dharmesh",
+      "why": "Operator perspective on products, growth, and AI for growing companies."
+    }
+  ],
+  "dropped_links": [
+    {
+      "url": "https://openai.com/academy/managers/",
+      "reason": "HTTP 403 from server fetch Nov 8, 2026"
+    },
+    {
+      "url": "https://zapier.com/blog/automate-your-job/",
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://support.google.com/docs/answer/14353928",
+      "reason": "HTTP 404"
+    }
+  ]
+}

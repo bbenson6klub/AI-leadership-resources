@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Practical AI. Better Leadership. — Resources</title>
+  <meta name="description" content="A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype. Curated for Brian Benson (@BBenson6)." />
+  <meta name="author" content="Brian Benson" />
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --navy-2: #122a4a;
+      --navy-3: #1a3658;
+      --blue: #6eb6ff;
+      --blue-soft: #9ec9f5;
+      --muted: #a8b8cc;
+      --paper: #f5f8fc;
+      --card: #ffffff;
+      --ink: #122033;
+      --line: #d7e2ef;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(11, 31, 58, 0.08);
+      --max: 920px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+    a { color: #1a5fb4; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    a:hover { color: #0d3f7a; }
+    .hero {
+      background: linear-gradient(105deg, #081528 0%, var(--navy) 45%, #163a63 100%);
+      color: #fff;
+      padding: 2.4rem 1.25rem 2rem;
+      border-bottom: 1px solid rgba(110, 182, 255, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -20px;
+      width: 280px;
+      height: 220px;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(110,182,255,0.45) 0 3px, transparent 4px),
+        radial-gradient(circle at 55% 25%, rgba(158,201,245,0.35) 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 60%, rgba(110,182,255,0.4) 0 2.5px, transparent 3.5px),
+        radial-gradient(circle at 40% 75%, rgba(158,201,245,0.3) 0 2px, transparent 3px);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+    .hero-inner { max-width: var(--max); margin: 0 auto; position: relative; z-index: 1; }
+    .hero h1 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      letter-spacing: -0.02em;
+      font-weight: 700;
+    }
+    .hero .tagline {
+      margin: 0 0 1rem;
+      color: var(--blue-soft);
+      font-size: 1.05rem;
+    }
+    .hero .intro {
+      margin: 0;
+      max-width: 40rem;
+      color: #d9e6f5;
+      font-size: 0.98rem;
+    }
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(110,182,255,0.35);
+      color: var(--blue);
+      background: rgba(110,182,255,0.08);
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 1.25rem; }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.25rem 0 1.5rem;
+    }
+    .nav a {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .nav a:hover { border-color: var(--blue); color: #0d3f7a; }
+    .section { margin: 0 0 2rem; }
+    .section h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1.35rem;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .section-lead {
+      margin: 0 0 1rem;
+      color: #4a5d73;
+      font-size: 0.96rem;
+    }
+    .grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    .card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.05rem;
+      line-height: 1.35;
+    }
+    .card h3 a { color: var(--navy); text-decoration: none; }
+    .card h3 a:hover { color: #1a5fb4; text-decoration: underline; }
+    .meta {
+      margin: 0 0 0.55rem;
+      color: #5b6f86;
+      font-size: 0.84rem;
+    }
+    .why { margin: 0; color: #2b3c50; font-size: 0.95rem; }
+    .label {
+      margin: 0.85rem 0 0.35rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #5b6f86;
+      font-weight: 700;
+    }
+    .prompt-text {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #0b1f3a;
+      color: #e8f1fb;
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      font-size: 0.86rem;
+      line-height: 1.45;
+      overflow-x: auto;
+    }
+    .bio-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .bio-box strong { color: var(--navy); }
+    footer {
+      background: var(--navy);
+      color: #c9d7e8;
+      padding: 1.5rem 1.25rem 2rem;
+      margin-top: 1rem;
+    }
+    footer .inner { max-width: var(--max); margin: 0 auto; font-size: 0.92rem; }
+    footer a { color: var(--blue); }
+    footer p { margin: 0.35rem 0; }
+    @media (min-width: 720px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      .prompt { grid-column: 1 / -1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>Practical AI. Better Leadership.</h1>
+      <p class="tagline">Work smarter. Lead with clarity.</p>
+      <p class="intro">A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype. Curated for Brian Benson (@BBenson6).</p>
+      <div class="meta-bar">
+        <span class="badge">Last updated 2026-11-08</span>
+        <span>For managers, aspiring leaders, and small-business owners</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    
+      <nav class="nav" aria-label="Sections">
+        <a href="#this-week">This week</a>
+        <a href="#workflows">Workflows</a>
+        <a href="#prompts">Prompts</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#smb">Small business</a>
+        <a href="#people">People</a>
+      </nav>
+    <div class="bio-box">
+      <strong>About this page.</strong> Built to sit behind the X bio for <a href="https://x.com/BBenson6" rel="noopener noreferrer" target="_blank">@BBenson6</a>:
+      “Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners.” Links are free to open. Prompts below are original drafts for Brian’s readers—edit them to fit your team’s tools and policies.
+    </div>
+
+    
+      <section id="this-week" class="section">
+        <h2>This week&#x27;s picks</h2>
+        <p class="section-lead">Recent, high-signal reads and tools. Older picks move into the categories below.</p>
+        <div class="grid">
+          
+        <article class="card">
+          <h3><a href="https://executiveeducation.wharton.upenn.edu/thought-leadership/wharton-at-work/2026/11/three-ways-to-work-with-ai/" rel="noopener noreferrer" target="_blank">Three Ways to Work with AI, and How to Choose</a></h3>
+          <p class="meta">Wharton Executive Education (Ethan Mollick) · 2026-11</p>
+          <p class="why">Clear framework for centaur, cyborg, and conjurer modes—so you decide how much of a task to keep, share, or hand off before you start prompting.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://www.deeplearning.ai/the-batch/the-four-ps" rel="noopener noreferrer" target="_blank">The Four Ps — How to Manage an AI-Native Engineering Team</a></h3>
+          <p class="meta">DeepLearning.AI / Andrew Ng · 2026-10-23</p>
+          <p class="why">A leadership checklist around People, Projects, Platforms, and Processes. Useful even if you do not manage engineers—same pattern applies to any knowledge team adopting AI.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://hbr.org/podcast/2026/10/how-ai-is-changing-strategy-rethinking-what-your-business-is-designed-to-do" rel="noopener noreferrer" target="_blank">How AI Is Changing Strategy (podcast with Ethan Mollick)</a></h3>
+          <p class="meta">Harvard Business Review · 2026-10</p>
+          <p class="why">Short listen on why AI is a strategy question, not just a productivity add-on, and why managers should experiment instead of waiting for a perfect playbook.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://ajaia.ai/resources/manager-ai-adoption-playbook" rel="noopener noreferrer" target="_blank">Manager AI Adoption Playbook: Six-Week Plan</a></h3>
+          <p class="meta">Ajaia · 2026</p>
+          <p class="why">Week-by-week plan to pick one workflow, set safe-use rules, add human checkpoints, and measure quality—not just logins.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://manishsingh.info/blog/ai-for-managers" rel="noopener noreferrer" target="_blank">AI for Managers: How to Lead a Team That Uses AI</a></h3>
+          <p class="meta">Manish Singh · 2026</p>
+          <p class="why">Practical starting workflows (status reports, 1:1 prep, meeting actions) plus a one-page rules outline managers can actually use.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://www.oneusefulthing.org/p/agency-and-agents" rel="noopener noreferrer" target="_blank">Agency and Agents</a></h3>
+          <p class="meta">One Useful Thing (Ethan Mollick) · 2026-08-31</p>
+          <p class="why">On when agents should pull humans in—for approval, expertise, exceptions, and interesting decisions—so you do not automate the wrong half of the job.</p>
+        </article>
+        </div>
+      </section>
+    
+      <section id="workflows" class="section">
+        <h2>AI workflows &amp; tools for managers</h2>
+        <p class="section-lead">Repeatable ways to use AI without giving up ownership of the outcome.</p>
+        <div class="grid">
+          
+        <article class="card">
+          <h3><a href="https://www.oneusefulthing.org/p/management-as-ai-superpower" rel="noopener noreferrer" target="_blank">Management as AI Superpower</a></h3>
+          <p class="meta">One Useful Thing (Ethan Mollick) · 2026-01-27</p>
+          <p class="why">Why management skills—clear goals, evaluation, and feedback—matter more as AI agents do longer stretches of work.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://selfmadepm.com/blog/152-ai-workflows-a-practical-guide-for-project-managers/" rel="noopener noreferrer" target="_blank">AI Workflows: A Practical Guide for Project Managers</a></h3>
+          <p class="meta">Self-Made Project Manager · 2026</p>
+          <p class="why">Defines an AI workflow as trigger → context → model → human review → output, with ownership and privacy called out explicitly.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://zapier.com/blog/ai-for-business-automation/" rel="noopener noreferrer" target="_blank">How to Use AI for Business Automation</a></h3>
+          <p class="meta">Zapier · 2026</p>
+          <p class="why">Sensible sequence for small teams: map repetitive work, automate one simple flow first, keep humans on customer-facing and high-risk steps.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://zapier.com/blog/business-process-automation/" rel="noopener noreferrer" target="_blank">Business Process Automation (overview)</a></h3>
+          <p class="meta">Zapier · 2026</p>
+          <p class="why">Plain-language overview of when process automation helps—and when a messy process needs a SOP before a tool.</p>
+        </article>
+        </div>
+      </section>
+    
+      <section id="prompts" class="section">
+        <h2>Prompts &amp; templates</h2>
+        <p class="section-lead">Original prompts from Brian. Replace the placeholders, then review every output before you send or decide.</p>
+        <div class="grid">
+          
+        <article class="card prompt" id="prompt-1on1">
+          <h3>1:1 prep brief</h3>
+          <p class="why">Turn scattered notes into a sharp agenda without inventing performance judgments.</p>
+          <p class="label">Copy this prompt</p>
+          <pre class="prompt-text">You are helping a manager prepare for a weekly 1:1. Using only the notes I paste below, produce: (1) 3 open commitments with owners and dates if mentioned, (2) 3 questions I should ask, (3) 1 risk or blocker to address, (4) a 4-bullet proposed agenda. Do not invent facts, praise, or criticism that is not supported by the notes. Flag anything unclear as a question for me.
+
+Notes:
+{{paste notes}}</pre>
+        </article>
+        <article class="card prompt" id="prompt-actions">
+          <h3>Meeting notes → actions</h3>
+          <p class="why">Convert a transcript or rough notes into owners and due dates you can send for confirmation.</p>
+          <p class="label">Copy this prompt</p>
+          <pre class="prompt-text">Convert the meeting notes below into an action list. For each item include: action, owner (or &#x27;unassigned&#x27;), due date if stated, and status (new / needs confirmation). List open questions separately. Do not assign owners or dates that were not said. End with a short follow-up email draft asking people to confirm their items.
+
+Meeting notes:
+{{paste notes}}</pre>
+        </article>
+        <article class="card prompt" id="prompt-delegate">
+          <h3>Delegation brief for an AI agent</h3>
+          <p class="why">Brief AI the way you would brief a new hire—goal, constraints, definition of done, and checks.</p>
+          <p class="label">Copy this prompt</p>
+          <pre class="prompt-text">Rewrite my rough task into a clear delegation brief for an AI agent with these sections: Objective, Context, Constraints (what must not change), Definition of done, Required outputs, Checks to run before claiming finished, and Escalation rules (when to stop and ask a human). Keep it under 250 words. Use only what I provide.
+
+Rough task:
+{{describe task}}</pre>
+        </article>
+        <article class="card prompt" id="prompt-status">
+          <h3>Weekly status from raw updates</h3>
+          <p class="why">Draft a status update for stakeholders while keeping escalation decisions with you.</p>
+          <p class="label">Copy this prompt</p>
+          <pre class="prompt-text">Using only the team updates below, draft a weekly status with sections: Done, In progress, Blocked, Asks, and Risks. Keep each bullet factual and short. Mark items that need my judgment with [REVIEW]. Do not soften bad news or invent metrics.
+
+Updates:
+{{paste updates}}</pre>
+        </article>
+        <article class="card prompt" id="prompt-sop">
+          <h3>SOP from a walkthrough</h3>
+          <p class="why">Turn a recorded process into a draft SOP you still approve before it becomes team truth.</p>
+          <p class="label">Copy this prompt</p>
+          <pre class="prompt-text">Turn this walkthrough into a step-by-step SOP for a teammate doing the task for the first time. Include: purpose, when to use it, prerequisites, numbered steps, common mistakes, and a short &#x27;done when&#x27; checklist. Call out any step that needs human judgment or access I did not describe. Do not invent tools or shortcuts I did not mention.
+
+Walkthrough:
+{{paste transcript or outline}}</pre>
+        </article>
+        <article class="card prompt" id="prompt-decision">
+          <h3>Decision memo (options + recommendation)</h3>
+          <p class="why">Force a clear recommendation with assumptions and kill criteria—useful for managers and owners alike.</p>
+          <p class="label">Copy this prompt</p>
+          <pre class="prompt-text">Write a one-page decision memo from the facts below. Structure: Decision needed, Options (2–4), Pros/cons for each, Recommendation, Key assumptions, What would change my mind, and Next step if we approve. Do not invent data. If information is missing, list it under Open questions instead of guessing.
+
+Facts:
+{{paste facts}}</pre>
+        </article>
+        </div>
+      </section>
+    
+      <section id="leadership" class="section">
+        <h2>Leadership &amp; career growth</h2>
+        <p class="section-lead">Judgment, rethinking, and how work is changing as agents arrive.</p>
+        <div class="grid">
+          
+        <article class="card">
+          <h3><a href="https://knowledge.wharton.upenn.edu/article/want-become-better-leader-question-assumptions/" rel="noopener noreferrer" target="_blank">Want to Become a Better Leader? Question Your Assumptions</a></h3>
+          <p class="meta">Knowledge at Wharton (Adam Grant &amp; Erika James) · 2021-05-17</p>
+          <p class="why">Evidence-based reminder to rethink management habits—pairs well with AI experiments where old assumptions fail fast.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://knowledge.wharton.upenn.edu/article/why-you-need-a-challenge-network/" rel="noopener noreferrer" target="_blank">Why You Need a Challenge Network</a></h3>
+          <p class="meta">Knowledge at Wharton (Adam Grant) · 2021-02-16</p>
+          <p class="why">On surrounding yourself with thoughtful skeptics who catch blind spots—especially useful when AI makes weak ideas look polished.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://www.oneusefulthing.org/p/the-shape-of-the-thing" rel="noopener noreferrer" target="_blank">The Shape of the Thing</a></h3>
+          <p class="meta">One Useful Thing (Ethan Mollick) · 2026-03-12</p>
+          <p class="why">Big-picture leadership read on the shift from co-intelligence chat to managing agents—and why org choices now set precedents.</p>
+        </article>
+        </div>
+      </section>
+    
+      <section id="smb" class="section">
+        <h2>Small-business automation</h2>
+        <p class="section-lead">Start with one process. Document it, then automate the boring handoffs.</p>
+        <div class="grid">
+          
+        <article class="card">
+          <h3><a href="https://zapier.com/blog/business-automation/" rel="noopener noreferrer" target="_blank">Business Automation: Transform Your Operations</a></h3>
+          <p class="meta">Zapier · 2026</p>
+          <p class="why">Owner-friendly starting point: audit repetitive work, automate one flow, measure time and errors before expanding.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://zapier.com/blog/operations-automation/" rel="noopener noreferrer" target="_blank">Operations Automation: Everything You Need to Know</a></h3>
+          <p class="meta">Zapier · 2026</p>
+          <p class="why">Practical ops framing for small businesses—what to automate in handoffs between apps without losing accountability.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://n8n.io/workflows/" rel="noopener noreferrer" target="_blank">n8n Workflow Templates (open library)</a></h3>
+          <p class="meta">n8n · ongoing</p>
+          <p class="why">Browse free automation templates if you prefer self-hosted or open workflows; always adapt and review before connecting real data.</p>
+        </article>
+        </div>
+      </section>
+    
+      <section id="people" class="section">
+        <h2>People worth following</h2>
+        <p class="section-lead">Verified public X profiles (people, not company accounts). Follow in the X app.</p>
+        <div class="grid">
+          
+        <article class="card person">
+          <h3><a href="https://x.com/emollick" rel="noopener noreferrer" target="_blank">Ethan Mollick</a></h3>
+          <p class="meta">@emollick</p>
+          <p class="why">Wharton professor on AI at work; practical frameworks for managers.</p>
+        </article>
+        <article class="card person">
+          <h3><a href="https://x.com/alliekmiller" rel="noopener noreferrer" target="_blank">Allie K. Miller</a></h3>
+          <p class="meta">@alliekmiller</p>
+          <p class="why">AI for business and operators; enterprise adoption in plain language.</p>
+        </article>
+        <article class="card person">
+          <h3><a href="https://x.com/AndrewYNg" rel="noopener noreferrer" target="_blank">Andrew Ng</a></h3>
+          <p class="meta">@AndrewYNg</p>
+          <p class="why">Practical AI skills and leadership notes for building AI-capable teams.</p>
+        </article>
+        <article class="card person">
+          <h3><a href="https://x.com/simonw" rel="noopener noreferrer" target="_blank">Simon Willison</a></h3>
+          <p class="meta">@simonw</p>
+          <p class="why">Hands-on AI workflows and clear demos without the hype cycle.</p>
+        </article>
+        <article class="card person">
+          <h3><a href="https://x.com/decisionleader" rel="noopener noreferrer" target="_blank">Cassie Kozyrkov</a></h3>
+          <p class="meta">@decisionleader</p>
+          <p class="why">Decision science—where human judgment still matters with AI.</p>
+        </article>
+        <article class="card person">
+          <h3><a href="https://x.com/shreyas" rel="noopener noreferrer" target="_blank">Shreyas Doshi</a></h3>
+          <p class="meta">@shreyas</p>
+          <p class="why">Executive and product coaching for leaders and aspiring managers.</p>
+        </article>
+        <article class="card person">
+          <h3><a href="https://x.com/AdamMGrant" rel="noopener noreferrer" target="_blank">Adam Grant</a></h3>
+          <p class="meta">@AdamMGrant</p>
+          <p class="why">Organizational psychology on leadership, rethinking, and teams.</p>
+        </article>
+        <article class="card person">
+          <h3><a href="https://x.com/lennysan" rel="noopener noreferrer" target="_blank">Lenny Rachitsky</a></h3>
+          <p class="meta">@lennysan</p>
+          <p class="why">Product, growth, and career interviews useful for managers.</p>
+        </article>
+        <article class="card person">
+          <h3><a href="https://x.com/dharmesh" rel="noopener noreferrer" target="_blank">Dharmesh Shah</a></h3>
+          <p class="meta">@dharmesh</p>
+          <p class="why">Operator perspective on products, growth, and AI for growing companies.</p>
+        </article>
+        </div>
+      </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <p><strong>Practical AI. Better Leadership.</strong> — curated by Brian Benson.</p>
+      <p>Follow on X: <a href="https://x.com/BBenson6" rel="noopener noreferrer" target="_blank">https://x.com/BBenson6</a></p>
+      <p>Last updated 2026-11-08. No affiliate links. No income guarantees. Use your organization’s policies for data and AI tools.</p>
+    </div>
+  </footer>
+</body>
+</html>
