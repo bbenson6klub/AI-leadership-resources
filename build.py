@@ -2,6 +2,7 @@
 """Build a static, progressive-enhancement index.html from resources.json."""
 from __future__ import annotations
 
+import hashlib
 import html
 import json
 from pathlib import Path
@@ -18,6 +19,25 @@ def tag_attrs(tags: list) -> str:
     return " ".join(esc(t) for t in (tags or []))
 
 
+def stable_id(item: dict, kind: str = "item") -> str:
+    """Stable per-item id across rebuilds (explicit id, youtube id, or URL/name hash)."""
+    if item.get("id"):
+        return str(item["id"])
+    if item.get("youtube_id"):
+        return f"yt-{item['youtube_id']}"
+    seed = item.get("url") or item.get("name") or item.get("title") or kind
+    digest = hashlib.sha1(str(seed).encode("utf-8")).hexdigest()[:10]
+    return f"{kind}-{digest}"
+
+
+def card_actions(sid: str, label: str) -> str:
+    safe = esc(label)
+    return f"""<div class="card-actions">
+    <button type="button" class="btn-save" data-save-id="{esc(sid)}" aria-pressed="false" aria-label="Save {safe}">Save</button>
+    <button type="button" class="btn-share" data-share-id="{esc(sid)}" aria-label="Share {safe}">Share</button>
+  </div>"""
+
+
 TAG_LABELS = {
     "workflows": "Workflows",
     "prompts": "Prompts",
@@ -30,6 +50,8 @@ TAG_LABELS = {
     "people": "People",
     "managers": "Managers",
     "aspiring": "Aspiring leaders",
+    "archive": "Archive",
+    "saved": "Saved",
 }
 
 
@@ -58,21 +80,28 @@ ICON_SVGS = {
     "videos": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>""",
     "people": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>""",
     "healthcare": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg>""",
+    "archive": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16v4H4V4zm1 6h14v10H5V10zm3 2v2h8v-2H8z"/></svg>""",
     "week": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg>""",
 }
 
 
 def card_link(item: dict, section: str) -> str:
     tags = item.get("tags") or [section]
+    sid = stable_id(item, section)
     new_badge = '<span class="badge-new">New</span>' if item.get("new") else ""
     title = esc(item["title"])
     url = esc(item["url"])
     source = esc(item.get("source", ""))
     date = esc(item.get("date", ""))
     why = esc(item.get("why", ""))
-    meta = " · ".join(x for x in [source, date] if x)
+    meta_bits = [source, date]
+    if item.get("archived_from"):
+        meta_bits.append(f"from {item.get('archived_from')}")
+    if item.get("archived_date"):
+        meta_bits.append(f"archived {item.get('archived_date')}")
+    meta = " · ".join(x for x in meta_bits if x)
     return f"""
-<article class="card tone-{esc(section)}" data-tags="{tag_attrs(tags)}" data-text="{esc((item['title'] + ' ' + item.get('source','') + ' ' + item.get('why','')).lower())}">
+<article class="card tone-{esc(section)}" id="item-{esc(sid)}" data-id="{esc(sid)}" data-tags="{tag_attrs(tags)}" data-text="{esc((item.get('title','') + ' ' + item.get('source','') + ' ' + item.get('why','') + ' ' + item.get('name','')).lower())}">
   <div class="card-head">
     {icon_tile(section)}
     <div>
@@ -83,18 +112,20 @@ def card_link(item: dict, section: str) -> str:
   </div>
   <p class="why">{why}</p>
   {tag_pills(tags)}
+  {card_actions(sid, item.get('title') or 'resource')}
 </article>"""
+
 
 
 
 def card_prompt(item: dict) -> str:
     tags = item.get("tags") or ["prompts"]
-    pid = esc(item.get("id", "prompt"))
+    sid = stable_id(item, "prompt")
     title = esc(item["title"])
     why = esc(item.get("why", ""))
     prompt = item.get("prompt", "")
     return f"""
-<article class="card prompt-card tone-prompts" data-tags="{tag_attrs(tags)}" data-text="{esc((item['title'] + ' ' + item.get('why','') + ' ' + prompt).lower())}" id="{pid}">
+<article class="card prompt-card tone-prompts" id="item-{esc(sid)}" data-id="{esc(sid)}" data-tags="{tag_attrs(tags)}" data-text="{esc((item['title'] + ' ' + item.get('why','') + ' ' + prompt).lower())}">
   <div class="card-head">
     {icon_tile('prompts')}
     <div>
@@ -103,24 +134,27 @@ def card_prompt(item: dict) -> str:
     </div>
   </div>
   <p class="why">{why}</p>
-  <pre class="prompt-body" id="{pid}-text">{esc(prompt)}</pre>
+  <pre class="prompt-body" id="{esc(sid)}-text">{esc(prompt)}</pre>
   <div class="prompt-actions">
-    <button type="button" class="btn-copy" data-copy-target="{pid}-text" aria-label="Copy prompt: {title}">Copy</button>
+    <button type="button" class="btn-copy" data-copy-target="{esc(sid)}-text" aria-label="Copy prompt: {title}">Copy</button>
     <span class="copy-feedback" hidden aria-live="polite">Copied</span>
   </div>
   {tag_pills(tags)}
+  {card_actions(sid, item.get('title') or 'prompt')}
 </article>"""
+
 
 
 
 def card_person(item: dict) -> str:
     tags = item.get("tags") or ["people"]
+    sid = stable_id(item, "person")
     name = esc(item["name"])
     handle = esc(item.get("handle", ""))
     url = esc(item["url"])
     why = esc(item.get("why", ""))
     return f"""
-<article class="card person-card tone-people" data-tags="{tag_attrs(tags)}" data-text="{esc((item['name'] + ' ' + item.get('handle','') + ' ' + item.get('why','')).lower())}">
+<article class="card person-card tone-people" id="item-{esc(sid)}" data-id="{esc(sid)}" data-tags="{tag_attrs(tags)}" data-text="{esc((item['name'] + ' ' + item.get('handle','') + ' ' + item.get('why','')).lower())}">
   <div class="card-head">
     {icon_tile('people')}
     <div>
@@ -130,12 +164,15 @@ def card_person(item: dict) -> str:
   </div>
   <p class="why">{why}</p>
   {tag_pills(tags)}
+  {card_actions(sid, item.get('name') or 'person')}
 </article>"""
+
 
 
 
 def card_video(item: dict) -> str:
     tags = item.get("tags") or ["videos"]
+    sid = stable_id(item, "video")
     vid = esc(item["youtube_id"])
     title = esc(item["title"])
     url = esc(item["url"])
@@ -145,7 +182,7 @@ def card_video(item: dict) -> str:
     thumb = f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
     meta = " · ".join(x for x in [channel, date] if x)
     return f"""
-<article class="card video-card tone-videos" data-tags="{tag_attrs(tags)}" data-text="{esc((item['title'] + ' ' + item.get('channel','') + ' ' + item.get('why','')).lower())}">
+<article class="card video-card tone-videos" id="item-{esc(sid)}" data-id="{esc(sid)}" data-tags="{tag_attrs(tags)}" data-text="{esc((item['title'] + ' ' + item.get('channel','') + ' ' + item.get('why','')).lower())}">
   <div class="video-lazy" data-youtube-id="{vid}">
     <button type="button" class="video-poster" aria-label="Play video: {title}">
       <img src="{thumb}" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -161,7 +198,9 @@ def card_video(item: dict) -> str:
   </div>
   <p class="why">{why}</p>
   {tag_pills(tags)}
+  {card_actions(sid, item.get('title') or 'video')}
 </article>"""
+
 
 
 
@@ -239,6 +278,8 @@ img { max-width: 100%; height: auto; display: block; }
 .tone-healthcare { --tone: #e11d48; --tone-soft: #ffe4e6; --tone-ink: #9f1239; }
 .tone-videos { --tone: #f43f5e; --tone-soft: #ffe4e6; --tone-ink: #9f1239; }
 .tone-people { --tone: #2563eb; --tone-soft: #dbeafe; --tone-ink: #1e3a8a; }
+.tone-archive { --tone: #64748b; --tone-soft: #e2e8f0; --tone-ink: #334155; }
+.tone-saved { --tone: #0d9488; --tone-soft: #ccfbf1; --tone-ink: #115e59; }
 
 .hero {
   background:
@@ -673,6 +714,99 @@ noscript .note {
   transform: none;
 }
 
+
+.card-actions {
+  display: flex; flex-wrap: wrap; gap: .4rem;
+  margin-top: .75rem;
+}
+.btn-save, .btn-share {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: .82rem;
+  border-radius: 999px;
+  padding: .38rem .75rem;
+  cursor: pointer;
+}
+.btn-save[aria-pressed="true"] {
+  background: linear-gradient(135deg, #0d9488, #0284c7);
+  color: #fff;
+  border-color: transparent;
+}
+.btn-save:hover, .btn-share:hover { filter: brightness(1.03); }
+.btn-share:focus-visible, .btn-save:focus-visible {
+  outline: none; box-shadow: var(--focus);
+}
+.count-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 1.35rem; height: 1.35rem;
+  padding: 0 .4rem;
+  margin-left: .35rem;
+  border-radius: 999px;
+  background: var(--tone-soft, #dbeafe);
+  color: var(--tone-ink, #1e3a8a);
+  font-size: .75rem;
+  font-weight: 800;
+  vertical-align: middle;
+}
+.nav-scroll a .count-badge {
+  background: rgba(11,31,58,.1);
+  color: inherit;
+  margin-left: .25rem;
+}
+.nav-scroll a[href="#saved"] .count-badge {
+  background: #0d9488; color: #fff;
+}
+.saved-empty, .archive-empty {
+  margin: .5rem 0 0;
+  padding: .9rem 1rem;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+  background: color-mix(in srgb, #fff 70%, transparent);
+}
+.archive-details { border: 0; }
+.archive-summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  gap: .85rem;
+  align-items: flex-start;
+}
+.archive-summary::-webkit-details-marker { display: none; }
+.archive-summary::after {
+  content: "Show";
+  margin-left: auto;
+  align-self: center;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--blue);
+  background: #eef4ff;
+  border-radius: 999px;
+  padding: .3rem .7rem;
+}
+.archive-details[open] .archive-summary::after { content: "Hide"; }
+.archive-month { margin-top: 1rem; }
+.archive-month h3 {
+  margin: 0 0 .65rem;
+  font-size: 1rem;
+  color: var(--navy);
+}
+.card.is-deep-link {
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, .45), var(--shadow-hover);
+  border-color: #0d9488;
+}
+.chip[data-filter="saved"][aria-pressed="true"] { background: #0d9488; border-color: #0d9488; }
+.nav-scroll a[href="#saved"] { --nav-bg:#ccfbf1; --nav-border:#99f6e4; --nav-ink:#115e59; }
+.nav-scroll a[href="#archive"] { --nav-bg:#e2e8f0; --nav-border:#cbd5e1; --nav-ink:#334155; }
+
+@media (prefers-color-scheme: dark) {
+  .btn-save, .btn-share { background: #0f1b2d; color: #dbeafe; border-color: #2b3d55; }
+  .saved-empty, .archive-empty { background: #0f1b2d; }
+  .archive-summary::after { background: #1e293b; color: #93c5fd; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-mesh, .hero-glow { animation: none !important; }
@@ -710,34 +844,146 @@ noscript .note {
 
 JS = r"""
 (function () {
+  var STORAGE_KEY = 'ai-leadership-saved-v1';
   var q = document.getElementById('q');
   var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
   var empty = document.getElementById('no-results');
   var active = 'all';
+  var savedGrid = document.getElementById('saved-grid');
+  var savedEmpty = document.getElementById('saved-empty');
+  var savedCountEls = document.querySelectorAll('[data-saved-count]');
+
+  function allCards() {
+    return Array.prototype.slice.call(document.querySelectorAll('main .card'));
+  }
+
+  function loadSaved() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      var arr = raw ? JSON.parse(raw) : [];
+      return Array.isArray(arr) ? arr.filter(Boolean) : [];
+    } catch (err) {
+      return [];
+    }
+  }
+
+  function storeSaved(ids) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+  }
+
+  function syncSaveButtons(ids) {
+    document.querySelectorAll('.btn-save').forEach(function (btn) {
+      var id = btn.getAttribute('data-save-id');
+      var on = ids.indexOf(id) !== -1;
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.textContent = on ? 'Saved' : 'Save';
+    });
+  }
+
+  function updateSavedCount(ids) {
+    savedCountEls.forEach(function (el) {
+      el.textContent = String(ids.length);
+      el.hidden = false;
+    });
+  }
+
+  function rebuildSavedSection(ids) {
+    if (!savedGrid) return;
+    savedGrid.innerHTML = '';
+    var shown = 0;
+    ids.forEach(function (id) {
+      var src = document.querySelector('main .card[data-id="' + id + '"]:not(#saved-grid .card)');
+      // Prefer canonical card outside saved grid
+      if (!src) src = document.querySelector('article.card[data-id="' + id + '"]');
+      if (!src) return;
+      // Skip if this node already lives only in saved grid duplicates: find original in content sections
+      var original = document.querySelector('#this-week .card[data-id="' + id + '"], #workflows .card[data-id="' + id + '"], #prompts .card[data-id="' + id + '"], #leadership .card[data-id="' + id + '"], #smb .card[data-id="' + id + '"], #healthcare .card[data-id="' + id + '"], #videos .card[data-id="' + id + '"], #people .card[data-id="' + id + '"], #archive .card[data-id="' + id + '"]');
+      var node = (original || src).cloneNode(true);
+      node.removeAttribute('hidden');
+      node.classList.remove('is-deep-link');
+      // Avoid duplicate element ids in clones
+      if (node.id) node.id = 'saved-clone-' + node.getAttribute('data-id');
+      node.querySelectorAll('[id]').forEach(function (el) {
+        el.id = 'saved-clone-' + el.id;
+      });
+      node.querySelectorAll('.btn-copy').forEach(function (btn) {
+        var t = btn.getAttribute('data-copy-target');
+        if (t) btn.setAttribute('data-copy-target', 'saved-clone-' + t);
+      });
+      savedGrid.appendChild(node);
+      shown += 1;
+    });
+    if (savedEmpty) savedEmpty.hidden = shown > 0;
+    savedGrid.hidden = shown === 0;
+    syncSaveButtons(ids);
+  }
+
+  function refreshSavedUI() {
+    var ids = loadSaved();
+    updateSavedCount(ids);
+    syncSaveButtons(ids);
+    rebuildSavedSection(ids);
+  }
 
   function apply() {
     var term = (q && q.value || '').trim().toLowerCase();
+    var ids = loadSaved();
     var shown = 0;
-    cards.forEach(function (card) {
+    allCards().forEach(function (card) {
+      var inSavedGrid = !!(card.closest && card.closest('#saved-grid'));
       var tags = (card.getAttribute('data-tags') || '').split(/\s+/);
       var text = card.getAttribute('data-text') || '';
-      var tagOk = active === 'all' || tags.indexOf(active) !== -1;
+      var id = card.getAttribute('data-id') || '';
       var textOk = !term || text.indexOf(term) !== -1;
-      var ok = tagOk && textOk;
+
+      // My saved shelf: keep clones visible; topic chips do not hide them
+      if (inSavedGrid) {
+        if (active === 'saved') {
+          card.hidden = !(ids.indexOf(id) !== -1 && textOk);
+        } else {
+          card.hidden = !textOk; // search can still narrow the shelf
+        }
+        return;
+      }
+
+      var ok;
+      if (active === 'saved') {
+        ok = false; // originals hidden; shelf shows clones
+      } else {
+        var tagOk = active === 'all' || tags.indexOf(active) !== -1;
+        ok = tagOk && textOk;
+      }
       card.hidden = !ok;
       if (ok) shown += 1;
     });
-    document.querySelectorAll('.section').forEach(function (sec) {
+    document.querySelectorAll('main .section').forEach(function (sec) {
+      if (sec.id === 'saved') {
+        sec.classList.remove('is-empty');
+        return;
+      }
+      if (sec.id === 'archive' && !sec.querySelector('.card')) {
+        sec.classList.remove('is-empty');
+        return;
+      }
+      if (active === 'saved') {
+        sec.classList.add('is-empty');
+        return;
+      }
       var any = sec.querySelector('.card:not([hidden])');
       sec.classList.toggle('is-empty', !any);
     });
-    if (empty) empty.classList.toggle('show', shown === 0);
+    if (empty) {
+      if (active === 'saved') {
+        var anySaved = document.querySelector('#saved-grid .card:not([hidden])');
+        empty.classList.toggle('show', !anySaved && loadSaved().length > 0 && !!term);
+        if (loadSaved().length === 0) empty.classList.remove('show');
+      } else {
+        empty.classList.toggle('show', shown === 0);
+      }
+    }
   }
 
-  if (q) {
-    q.addEventListener('input', apply);
-  }
+  if (q) q.addEventListener('input', apply);
   chips.forEach(function (chip) {
     chip.addEventListener('click', function () {
       active = chip.getAttribute('data-filter') || 'all';
@@ -745,7 +991,54 @@ JS = r"""
         c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
       });
       apply();
+      if (active === 'saved') {
+        var savedSec = document.getElementById('saved');
+        if (savedSec) savedSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
+  });
+
+  document.addEventListener('click', function (e) {
+    var saveBtn = e.target.closest('.btn-save');
+    if (saveBtn) {
+      var id = saveBtn.getAttribute('data-save-id');
+      if (!id) return;
+      var ids = loadSaved();
+      var idx = ids.indexOf(id);
+      if (idx === -1) ids.push(id); else ids.splice(idx, 1);
+      storeSaved(ids);
+      refreshSavedUI();
+      apply();
+      return;
+    }
+    var shareBtn = e.target.closest('.btn-share');
+    if (shareBtn) {
+      var sid = shareBtn.getAttribute('data-share-id');
+      if (!sid) return;
+      var url = window.location.origin + window.location.pathname + window.location.search + '#item-' + encodeURIComponent(sid);
+      var titleEl = document.querySelector('#item-' + sid.replace(/"/g, '') + ' h3');
+      var title = titleEl ? titleEl.textContent.trim() : 'AI leadership resource';
+      function copied() {
+        var prev = shareBtn.textContent;
+        shareBtn.textContent = 'Link copied';
+        setTimeout(function () { shareBtn.textContent = prev; }, 1400);
+      }
+      if (navigator.share) {
+        navigator.share({ title: title, url: url }).catch(function () {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(copied);
+          }
+        });
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(copied);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = url; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); copied(); } catch (err) {}
+        document.body.removeChild(ta);
+      }
+      return;
+    }
   });
 
   document.addEventListener('click', function (e) {
@@ -796,6 +1089,22 @@ JS = r"""
     wrap.appendChild(iframe);
   });
 
+  function highlightDeepLink() {
+    var hash = window.location.hash || '';
+    if (hash.indexOf('#item-') !== 0) return;
+    var id = decodeURIComponent(hash.slice(6));
+    var el = document.getElementById('item-' + id);
+    if (!el) return;
+    el.classList.add('is-deep-link');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(function () { el.classList.remove('is-deep-link'); }, 3200);
+  }
+
+  refreshSavedUI();
+  apply();
+  highlightDeepLink();
+  window.addEventListener('hashchange', highlightDeepLink);
+
   document.documentElement.classList.add('js');
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var revealEls = document.querySelectorAll('.reveal');
@@ -818,6 +1127,53 @@ JS = r"""
 
 })();
 """
+
+
+def archive_section_html(items: list) -> str:
+    """Collapsed Archive section, grouped by archived month."""
+    from collections import defaultdict
+
+    groups: dict[str, list] = defaultdict(list)
+    for item in items or []:
+        ad = str(item.get("archived_date") or item.get("date") or "Unknown")
+        # Prefer YYYY-MM
+        month = ad[:7] if len(ad) >= 7 and ad[4:5] == "-" else ad
+        groups[month].append(item)
+
+    if not groups:
+        body = """
+  <p class="archive-empty">Older picks land here when the daily refresh rotates them out of This week or trims a list. Nothing has been archived yet.</p>"""
+        count_label = "0"
+    else:
+        parts = []
+        for month in sorted(groups.keys(), reverse=True):
+            cards = "".join(
+                card_link({**item, "tags": list(dict.fromkeys((item.get("tags") or []) + ["archive"]))},
+                          item.get("archived_from") or "week")
+                for item in groups[month]
+            )
+            parts.append(f"""
+  <div class="archive-month">
+    <h3>{esc(month)}</h3>
+    <div class="grid">{cards}</div>
+  </div>""")
+        body = "".join(parts)
+        count_label = str(sum(len(v) for v in groups.values()))
+
+    return f"""
+<section class="section reveal tone-week" id="archive" data-section="archive">
+  <details class="archive-details">
+    <summary class="section-head archive-summary">
+      {icon_tile('archive')}
+      <div>
+        <h2>Archive <span class="count-badge" id="archive-count">{esc(count_label)}</span></h2>
+        <p>Rotated-out reads, kept for later. Dead links are removed, not archived.</p>
+      </div>
+    </summary>
+    {body}
+  </details>
+</section>"""
+
 
 
 def healthcare_section_html(items: list) -> str:
@@ -868,6 +1224,7 @@ def build() -> Path:
     videos = "".join(card_video(i) for i in DATA["videos"])
     people = "".join(card_person(i) for i in DATA["people"])
     healthcare = healthcare_section_html(DATA.get("healthcare", []))
+    archive = archive_section_html(DATA.get("archive", []))
 
     n_prompts = len(DATA.get("prompts", []))
     n_videos = len(DATA.get("videos", []))
@@ -941,6 +1298,8 @@ def build() -> Path:
       <a href="#healthcare">Healthcare &amp; pharma</a>
       <a href="#videos">Videos</a>
       <a href="#people">People</a>
+      <a href="#saved">Saved <span class="count-badge" data-saved-count>0</span></a>
+      <a href="#archive">Archive</a>
     </nav>
     <div class="controls">
       <label for="q" class="visually-hidden" style="position:absolute;left:-9999px;">Search resources</label>
@@ -956,6 +1315,7 @@ def build() -> Path:
         <button type="button" class="chip" data-filter="healthcare-regulatory" aria-pressed="false">Regulatory &amp; clinical</button>
         <button type="button" class="chip" data-filter="videos" aria-pressed="false">Videos</button>
         <button type="button" class="chip" data-filter="people" aria-pressed="false">People</button>
+        <button type="button" class="chip" data-filter="saved" aria-pressed="false">Saved</button>
         <button type="button" class="chip" data-filter="managers" aria-pressed="false">Managers</button>
         <button type="button" class="chip" data-filter="aspiring" aria-pressed="false">Aspiring leaders</button>
       </div>
@@ -986,6 +1346,20 @@ def build() -> Path:
   {healthcare}
   {section_block('videos', 'Videos', 'Click a thumbnail to play (loads YouTube privacy-enhanced embed).', videos, 'videos')}
   {section_block('people', 'People to follow', 'Accounts that stay useful on AI at work and leadership.', people, 'people')}
+
+  <section class="section reveal tone-saved" id="saved" data-section="saved">
+    <header class="section-head">
+      <span class="icon-tile tone-saved" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12a1 1 0 0 1 1 1v19l-7-4-7 4V3a1 1 0 0 1 1-1z"/></svg></span>
+      <div>
+        <h2>My saved <span class="count-badge" data-saved-count>0</span></h2>
+        <p>Bookmarks stay on this device only—no account, no trackers.</p>
+      </div>
+    </header>
+    <p id="saved-empty" class="saved-empty">Tap Save on anything to keep it here. Saved on this device only.</p>
+    <div id="saved-grid" class="grid" hidden></div>
+  </section>
+
+  {archive}
 </main>
 
 <footer>

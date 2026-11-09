@@ -10,3 +10,5 @@ A static, mobile-first resources library for managers, aspiring leaders, and sma
 Designed for GitHub Pages (`bbenson6klub/AI-leadership-resources`). Progressive enhancement: readable without JavaScript; search, filters, Copy, and click-to-play videos need JS.
 
 Preview screenshots (`preview-*.png`) are local QA artifacts and should not be committed for publish.
+
+Includes Archive (rotated items) and Save (device-local bookmarks).

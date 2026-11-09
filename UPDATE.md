@@ -17,7 +17,7 @@ Do **not** publish `preview-desktop.png`, `preview-mobile.png`, or other preview
 
 ## Schema notes (`resources.json`)
 
-- **Sections:** `this_week`, `workflows`, `prompts`, `leadership`, `smb`, `healthcare`, `videos`, `people`
+- **Sections:** `this_week`, `workflows`, `prompts`, `leadership`, `smb`, `healthcare`, `videos`, `people`, `archive`
 - **Common fields:** `title`, `url` (or `prompt` for prompts), `why`, `tags` (array)
 - **Tags:** topic chips — `workflows`, `prompts`, `leadership`, `smb`, `healthcare`, `videos`, `people` — plus audience — `managers`, `aspiring`, `smb`
 - **Healthcare & pharma:** use tag `healthcare` on all health/life-sciences items. Set `"subgroup": "regulatory"` + tag `healthcare-regulatory` for FDA/EMA/WHO ethics/clinical/device items; set `"subgroup": "commercial"` + tag `pharma-commercial` for AI *inside* pharma companies (sales/HCP engagement, marketing + MLR, market access/HEOR, medical affairs, commercial ops/analytics). Prefer ZS/IQVIA/Accenture/ISPOR/FDA OPDP and similar public pieces. No employer- or brand-specific content; no patient data.
@@ -36,6 +36,8 @@ Do **not** publish `preview-desktop.png`, `preview-mobile.png`, or other preview
   }
   ```
 - Record dropped URLs in `dropped_links` with a reason.
+- **Archive:** `archive[]` holds items rotated out of `this_week` or trimmed past a section cap. Each entry keeps its fields plus `"archived_date": "YYYY-MM-DD"` and `"archived_from": "this_week"` (or the source section). **Do not delete** rotated items—append to `archive`. Dead links (404/gone) go to `dropped_links`, not archive. The Archive section on the site is collapsed by default and grouped by month.
+- **Save (client-only):** visitors can bookmark cards in `localStorage` (`ai-leadership-saved-v1`). No server/login. Stable item ids come from explicit `id`, `youtube_id`, or a SHA1 of the URL/name (see `stable_id()` in `build.py`).
 
 ## Daily checklist
 
@@ -75,7 +77,7 @@ Do **not** publish `preview-desktop.png`, `preview-mobile.png`, or other preview
    PY
    ```
    Drop 404s / hard failures. Note 403s (sometimes bot-blocked but live in browsers)—prefer replace if unsure.
-4. **Edit** `resources.json`: move last week’s “new” items into permanent sections or drop; set `"new": true` only on truly fresh `this_week` items; update `meta.last_updated` (America/Chicago date).
+4. **Edit** `resources.json`: clear `"new"` on aging `this_week` items; move rotated-out This week items (or anything trimmed past a section cap) into `archive[]` with `archived_date` + `archived_from`—do **not** delete them. Dead links → `dropped_links`, not archive. Set `"new": true` only on truly fresh `this_week` items; update `meta.last_updated` (America/Chicago date).
 5. **Rebuild:**
    ```bash
    python3 build.py
