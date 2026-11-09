@@ -1,36 +1,12 @@
-# Practical AI. Better Leadership. — Resources
+# Practical AI. Better Leadership.
 
-Static site for Brian Benson’s X bio link (`@BBenson6`).
+A static, mobile-first resources library for managers, aspiring leaders, and small-business owners—workflows, copy-ready prompts, leadership reads, small-business automation, healthcare & pharma AI guidance, curated YouTube videos, and people to follow.
 
-## Who it’s for
+- **Live data:** `resources.json`
+- **Build:** `python3 build.py` → `index.html`
+- **Refresh:** see `UPDATE.md` (includes how to add verified videos)
+- **Assets:** local files under `assets/` only
 
-Team leaders, aspiring managers, and small-business owners who want practical AI workflows and clearer leadership—without hype.
+Designed for GitHub Pages (`bbenson6klub/AI-leadership-resources`). Progressive enhancement: readable without JavaScript; search, filters, Copy, and click-to-play videos need JS.
 
-## Files
-
-| File | Role |
-| --- | --- |
-| `resources.json` | Source of truth for every resource, prompt, and person |
-| `build.py` | Builds `index.html` from the JSON |
-| `index.html` | Deployable static page (no external CSS/JS) |
-| `UPDATE.md` | Daily refresh procedure |
-| `preview.png` | Local render check |
-
-## Local build
-
-```bash
-python3 build.py
-```
-
-Open `index.html` in a browser. For GitHub Pages, publish this folder (or the repo root) after building.
-
-## Daily updates
-
-Edit `resources.json` only, then run `python3 build.py`. See `UPDATE.md`.
-
-## Notes
-
-- No affiliate links.
-- No guaranteed income claims.
-- Prompts are original drafts—users should adapt them to their tools and policies.
-- Hosting on GitHub Pages is planned; repo not created from this folder yet.
+Preview screenshots (`preview-*.png`) are local QA artifacts and should not be committed for publish.

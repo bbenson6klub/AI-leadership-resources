@@ -2,7 +2,7 @@
   "meta": {
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
-    "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype. Curated for Brian Benson (@BBenson6).",
+    "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership\u2014not hype. Curated for Brian Benson (@BBenson6).",
     "last_updated": "2026-11-08",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
@@ -14,42 +14,76 @@
       "url": "https://executiveeducation.wharton.upenn.edu/thought-leadership/wharton-at-work/2026/11/three-ways-to-work-with-ai/",
       "source": "Wharton Executive Education (Ethan Mollick)",
       "date": "2026-11",
-      "why": "Clear framework for centaur, cyborg, and conjurer modes—so you decide how much of a task to keep, share, or hand off before you start prompting."
+      "why": "Clear framework for centaur, cyborg, and conjurer modes\u2014so you decide how much of a task to keep, share, or hand off before you start prompting.",
+      "tags": [
+        "workflows",
+        "managers",
+        "aspiring"
+      ],
+      "new": true
     },
     {
-      "title": "The Four Ps — How to Manage an AI-Native Engineering Team",
+      "title": "The Four Ps \u2014 How to Manage an AI-Native Engineering Team",
       "url": "https://www.deeplearning.ai/the-batch/the-four-ps",
       "source": "DeepLearning.AI / Andrew Ng",
       "date": "2026-10-23",
-      "why": "A leadership checklist around People, Projects, Platforms, and Processes. Useful even if you do not manage engineers—same pattern applies to any knowledge team adopting AI."
+      "why": "A leadership checklist around People, Projects, Platforms, and Processes. Useful even if you do not manage engineers\u2014same pattern applies to any knowledge team adopting AI.",
+      "tags": [
+        "leadership",
+        "workflows",
+        "managers"
+      ],
+      "new": true
     },
     {
       "title": "How AI Is Changing Strategy (podcast with Ethan Mollick)",
       "url": "https://hbr.org/podcast/2026/10/how-ai-is-changing-strategy-rethinking-what-your-business-is-designed-to-do",
       "source": "Harvard Business Review",
       "date": "2026-10",
-      "why": "Short listen on why AI is a strategy question, not just a productivity add-on, and why managers should experiment instead of waiting for a perfect playbook."
+      "why": "Short listen on why AI is a strategy question, not just a productivity add-on, and why managers should experiment instead of waiting for a perfect playbook.",
+      "tags": [
+        "leadership",
+        "managers"
+      ],
+      "new": true
     },
     {
       "title": "Manager AI Adoption Playbook: Six-Week Plan",
       "url": "https://ajaia.ai/resources/manager-ai-adoption-playbook",
       "source": "Ajaia",
       "date": "2026",
-      "why": "Week-by-week plan to pick one workflow, set safe-use rules, add human checkpoints, and measure quality—not just logins."
+      "why": "Week-by-week plan to pick one workflow, set safe-use rules, add human checkpoints, and measure quality\u2014not just logins.",
+      "tags": [
+        "workflows",
+        "managers",
+        "smb"
+      ],
+      "new": true
     },
     {
       "title": "AI for Managers: How to Lead a Team That Uses AI",
       "url": "https://manishsingh.info/blog/ai-for-managers",
       "source": "Manish Singh",
       "date": "2026",
-      "why": "Practical starting workflows (status reports, 1:1 prep, meeting actions) plus a one-page rules outline managers can actually use."
+      "why": "Practical starting workflows (status reports, 1:1 prep, meeting actions) plus a one-page rules outline managers can actually use.",
+      "tags": [
+        "workflows",
+        "managers",
+        "aspiring"
+      ],
+      "new": true
     },
     {
       "title": "Agency and Agents",
       "url": "https://www.oneusefulthing.org/p/agency-and-agents",
       "source": "One Useful Thing (Ethan Mollick)",
       "date": "2026-08-31",
-      "why": "On when agents should pull humans in—for approval, expertise, exceptions, and interesting decisions—so you do not automate the wrong half of the job."
+      "why": "On when agents should pull humans in\u2014for approval, expertise, exceptions, and interesting decisions\u2014so you do not automate the wrong half of the job.",
+      "tags": [
+        "workflows",
+        "managers"
+      ],
+      "new": true
     }
   ],
   "workflows": [
@@ -58,28 +92,46 @@
       "url": "https://www.oneusefulthing.org/p/management-as-ai-superpower",
       "source": "One Useful Thing (Ethan Mollick)",
       "date": "2026-01-27",
-      "why": "Why management skills—clear goals, evaluation, and feedback—matter more as AI agents do longer stretches of work."
+      "why": "Why management skills\u2014clear goals, evaluation, and feedback\u2014matter more as AI agents do longer stretches of work.",
+      "tags": [
+        "workflows",
+        "managers",
+        "aspiring"
+      ]
     },
     {
       "title": "AI Workflows: A Practical Guide for Project Managers",
       "url": "https://selfmadepm.com/blog/152-ai-workflows-a-practical-guide-for-project-managers/",
       "source": "Self-Made Project Manager",
       "date": "2026",
-      "why": "Defines an AI workflow as trigger → context → model → human review → output, with ownership and privacy called out explicitly."
+      "why": "Defines an AI workflow as trigger \u2192 context \u2192 model \u2192 human review \u2192 output, with ownership and privacy called out explicitly.",
+      "tags": [
+        "workflows",
+        "managers"
+      ]
     },
     {
       "title": "How to Use AI for Business Automation",
       "url": "https://zapier.com/blog/ai-for-business-automation/",
       "source": "Zapier",
       "date": "2026",
-      "why": "Sensible sequence for small teams: map repetitive work, automate one simple flow first, keep humans on customer-facing and high-risk steps."
+      "why": "Sensible sequence for small teams: map repetitive work, automate one simple flow first, keep humans on customer-facing and high-risk steps.",
+      "tags": [
+        "workflows",
+        "smb",
+        "managers"
+      ]
     },
     {
       "title": "Business Process Automation (overview)",
       "url": "https://zapier.com/blog/business-process-automation/",
       "source": "Zapier",
       "date": "2026",
-      "why": "Plain-language overview of when process automation helps—and when a messy process needs a SOP before a tool."
+      "why": "Plain-language overview of when process automation helps\u2014and when a messy process needs a SOP before a tool.",
+      "tags": [
+        "workflows",
+        "smb"
+      ]
     }
   ],
   "prompts": [
@@ -87,37 +139,67 @@
       "title": "1:1 prep brief",
       "id": "prompt-1on1",
       "why": "Turn scattered notes into a sharp agenda without inventing performance judgments.",
-      "prompt": "You are helping a manager prepare for a weekly 1:1. Using only the notes I paste below, produce: (1) 3 open commitments with owners and dates if mentioned, (2) 3 questions I should ask, (3) 1 risk or blocker to address, (4) a 4-bullet proposed agenda. Do not invent facts, praise, or criticism that is not supported by the notes. Flag anything unclear as a question for me.\n\nNotes:\n{{paste notes}}"
+      "prompt": "You are helping a manager prepare for a weekly 1:1. Using only the notes I paste below, produce: (1) 3 open commitments with owners and dates if mentioned, (2) 3 questions I should ask, (3) 1 risk or blocker to address, (4) a 4-bullet proposed agenda. Do not invent facts, praise, or criticism that is not supported by the notes. Flag anything unclear as a question for me.\n\nNotes:\n{{paste notes}}",
+      "tags": [
+        "prompts",
+        "managers",
+        "aspiring"
+      ]
     },
     {
-      "title": "Meeting notes → actions",
+      "title": "Meeting notes \u2192 actions",
       "id": "prompt-actions",
       "why": "Convert a transcript or rough notes into owners and due dates you can send for confirmation.",
-      "prompt": "Convert the meeting notes below into an action list. For each item include: action, owner (or 'unassigned'), due date if stated, and status (new / needs confirmation). List open questions separately. Do not assign owners or dates that were not said. End with a short follow-up email draft asking people to confirm their items.\n\nMeeting notes:\n{{paste notes}}"
+      "prompt": "Convert the meeting notes below into an action list. For each item include: action, owner (or 'unassigned'), due date if stated, and status (new / needs confirmation). List open questions separately. Do not assign owners or dates that were not said. End with a short follow-up email draft asking people to confirm their items.\n\nMeeting notes:\n{{paste notes}}",
+      "tags": [
+        "prompts",
+        "managers",
+        "smb"
+      ]
     },
     {
       "title": "Delegation brief for an AI agent",
       "id": "prompt-delegate",
-      "why": "Brief AI the way you would brief a new hire—goal, constraints, definition of done, and checks.",
-      "prompt": "Rewrite my rough task into a clear delegation brief for an AI agent with these sections: Objective, Context, Constraints (what must not change), Definition of done, Required outputs, Checks to run before claiming finished, and Escalation rules (when to stop and ask a human). Keep it under 250 words. Use only what I provide.\n\nRough task:\n{{describe task}}"
+      "why": "Brief AI the way you would brief a new hire\u2014goal, constraints, definition of done, and checks.",
+      "prompt": "Rewrite my rough task into a clear delegation brief for an AI agent with these sections: Objective, Context, Constraints (what must not change), Definition of done, Required outputs, Checks to run before claiming finished, and Escalation rules (when to stop and ask a human). Keep it under 250 words. Use only what I provide.\n\nRough task:\n{{describe task}}",
+      "tags": [
+        "prompts",
+        "managers",
+        "workflows"
+      ]
     },
     {
       "title": "Weekly status from raw updates",
       "id": "prompt-status",
       "why": "Draft a status update for stakeholders while keeping escalation decisions with you.",
-      "prompt": "Using only the team updates below, draft a weekly status with sections: Done, In progress, Blocked, Asks, and Risks. Keep each bullet factual and short. Mark items that need my judgment with [REVIEW]. Do not soften bad news or invent metrics.\n\nUpdates:\n{{paste updates}}"
+      "prompt": "Using only the team updates below, draft a weekly status with sections: Done, In progress, Blocked, Asks, and Risks. Keep each bullet factual and short. Mark items that need my judgment with [REVIEW]. Do not soften bad news or invent metrics.\n\nUpdates:\n{{paste updates}}",
+      "tags": [
+        "prompts",
+        "managers"
+      ]
     },
     {
       "title": "SOP from a walkthrough",
       "id": "prompt-sop",
       "why": "Turn a recorded process into a draft SOP you still approve before it becomes team truth.",
-      "prompt": "Turn this walkthrough into a step-by-step SOP for a teammate doing the task for the first time. Include: purpose, when to use it, prerequisites, numbered steps, common mistakes, and a short 'done when' checklist. Call out any step that needs human judgment or access I did not describe. Do not invent tools or shortcuts I did not mention.\n\nWalkthrough:\n{{paste transcript or outline}}"
+      "prompt": "Turn this walkthrough into a step-by-step SOP for a teammate doing the task for the first time. Include: purpose, when to use it, prerequisites, numbered steps, common mistakes, and a short 'done when' checklist. Call out any step that needs human judgment or access I did not describe. Do not invent tools or shortcuts I did not mention.\n\nWalkthrough:\n{{paste transcript or outline}}",
+      "tags": [
+        "prompts",
+        "smb",
+        "managers"
+      ]
     },
     {
       "title": "Decision memo (options + recommendation)",
       "id": "prompt-decision",
-      "why": "Force a clear recommendation with assumptions and kill criteria—useful for managers and owners alike.",
-      "prompt": "Write a one-page decision memo from the facts below. Structure: Decision needed, Options (2–4), Pros/cons for each, Recommendation, Key assumptions, What would change my mind, and Next step if we approve. Do not invent data. If information is missing, list it under Open questions instead of guessing.\n\nFacts:\n{{paste facts}}"
+      "why": "Force a clear recommendation with assumptions and kill criteria\u2014useful for managers and owners alike.",
+      "prompt": "Write a one-page decision memo from the facts below. Structure: Decision needed, Options (2\u20134), Pros/cons for each, Recommendation, Key assumptions, What would change my mind, and Next step if we approve. Do not invent data. If information is missing, list it under Open questions instead of guessing.\n\nFacts:\n{{paste facts}}",
+      "tags": [
+        "prompts",
+        "managers",
+        "aspiring",
+        "smb"
+      ]
     }
   ],
   "leadership": [
@@ -126,21 +208,35 @@
       "url": "https://knowledge.wharton.upenn.edu/article/want-become-better-leader-question-assumptions/",
       "source": "Knowledge at Wharton (Adam Grant & Erika James)",
       "date": "2021-05-17",
-      "why": "Evidence-based reminder to rethink management habits—pairs well with AI experiments where old assumptions fail fast."
+      "why": "Evidence-based reminder to rethink management habits\u2014pairs well with AI experiments where old assumptions fail fast.",
+      "tags": [
+        "leadership",
+        "aspiring",
+        "managers"
+      ]
     },
     {
       "title": "Why You Need a Challenge Network",
       "url": "https://knowledge.wharton.upenn.edu/article/why-you-need-a-challenge-network/",
       "source": "Knowledge at Wharton (Adam Grant)",
       "date": "2021-02-16",
-      "why": "On surrounding yourself with thoughtful skeptics who catch blind spots—especially useful when AI makes weak ideas look polished."
+      "why": "On surrounding yourself with thoughtful skeptics who catch blind spots\u2014especially useful when AI makes weak ideas look polished.",
+      "tags": [
+        "leadership",
+        "managers",
+        "aspiring"
+      ]
     },
     {
       "title": "The Shape of the Thing",
       "url": "https://www.oneusefulthing.org/p/the-shape-of-the-thing",
       "source": "One Useful Thing (Ethan Mollick)",
       "date": "2026-03-12",
-      "why": "Big-picture leadership read on the shift from co-intelligence chat to managing agents—and why org choices now set precedents."
+      "why": "Big-picture leadership read on the shift from co-intelligence chat to managing agents\u2014and why org choices now set precedents.",
+      "tags": [
+        "leadership",
+        "managers"
+      ]
     }
   ],
   "smb": [
@@ -149,21 +245,153 @@
       "url": "https://zapier.com/blog/business-automation/",
       "source": "Zapier",
       "date": "2026",
-      "why": "Owner-friendly starting point: audit repetitive work, automate one flow, measure time and errors before expanding."
+      "why": "Owner-friendly starting point: audit repetitive work, automate one flow, measure time and errors before expanding.",
+      "tags": [
+        "smb",
+        "workflows"
+      ]
     },
     {
       "title": "Operations Automation: Everything You Need to Know",
       "url": "https://zapier.com/blog/operations-automation/",
       "source": "Zapier",
       "date": "2026",
-      "why": "Practical ops framing for small businesses—what to automate in handoffs between apps without losing accountability."
+      "why": "Practical ops framing for small businesses\u2014what to automate in handoffs between apps without losing accountability.",
+      "tags": [
+        "smb",
+        "workflows"
+      ]
     },
     {
       "title": "n8n Workflow Templates (open library)",
       "url": "https://n8n.io/workflows/",
       "source": "n8n",
       "date": "ongoing",
-      "why": "Browse free automation templates if you prefer self-hosted or open workflows; always adapt and review before connecting real data."
+      "why": "Browse free automation templates if you prefer self-hosted or open workflows; always adapt and review before connecting real data.",
+      "tags": [
+        "smb",
+        "workflows"
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "youtube_id": "9f3qnX6aiIE",
+      "title": "How AI Is Changing Strategy\u2014and 4 Skills Leaders Need Next",
+      "url": "https://www.youtube.com/watch?v=9f3qnX6aiIE",
+      "channel": "Harvard Business Review",
+      "date": "2026",
+      "why": "Mollick on why treating AI as only a productivity tool backfires\u2014and what leaders should decide urgently.",
+      "tags": [
+        "videos",
+        "leadership",
+        "managers"
+      ]
+    },
+    {
+      "youtube_id": "bsyqZ_oUwTo",
+      "title": "Ethan Mollick on an AI Strategy for Organizations to Succeed",
+      "url": "https://www.youtube.com/watch?v=bsyqZ_oUwTo",
+      "channel": "Washington Speakers Bureau",
+      "date": "2025",
+      "why": "Leadership\u2013lab\u2013crowd model for getting AI adoption out of pilots and into real work.",
+      "tags": [
+        "videos",
+        "workflows",
+        "managers"
+      ]
+    },
+    {
+      "youtube_id": "DuT3dsyshLA",
+      "title": "Andrew Ng on building AI-native teams | AI Fund Frontier \u201826",
+      "url": "https://www.youtube.com/watch?v=DuT3dsyshLA",
+      "channel": "AI Fund",
+      "date": "2026-10",
+      "why": "Concrete leadership moves for AI-native teams: platforms, processes, and empowered high-context groups.",
+      "tags": [
+        "videos",
+        "leadership",
+        "managers"
+      ]
+    },
+    {
+      "youtube_id": "JPcx9qHzzgk",
+      "title": "AI for Everyone by Andrew Ng",
+      "url": "https://www.youtube.com/watch?v=JPcx9qHzzgk",
+      "channel": "DeepLearningAI",
+      "date": "2019",
+      "why": "Non-technical grounding in what AI can and cannot do\u2014still a solid on-ramp for aspiring managers.",
+      "tags": [
+        "videos",
+        "aspiring",
+        "managers"
+      ]
+    },
+    {
+      "youtube_id": "EO3_qN_Ynsk",
+      "title": "Software engineering with LLMs in 2025: reality check (at LDX3 by LeadDev)",
+      "url": "https://www.youtube.com/watch?v=EO3_qN_Ynsk",
+      "channel": "The Pragmatic Engineer",
+      "date": "2025-07",
+      "why": "Practical reality check on LLM workflows from Simon Willison\u2014useful even if you lead non-engineering teams adopting agents.",
+      "tags": [
+        "videos",
+        "workflows",
+        "managers"
+      ]
+    },
+    {
+      "youtube_id": "sPWRjjj2iok",
+      "title": "How to Give & Get Constructive Feedback | Dr. Adam Grant & Dr. Andrew Huberman",
+      "url": "https://www.youtube.com/watch?v=sPWRjjj2iok",
+      "channel": "Huberman Lab Clips",
+      "date": "2024",
+      "why": "Leadership skill that AI cannot replace: giving and receiving feedback without ego theater.",
+      "tags": [
+        "videos",
+        "leadership",
+        "aspiring",
+        "managers"
+      ]
+    },
+    {
+      "youtube_id": "bhHqUaIVZf0",
+      "title": "How to Change Your Workplace | WorkLife with Adam Grant",
+      "url": "https://www.youtube.com/watch?v=bhHqUaIVZf0",
+      "channel": "TED Podcasts",
+      "date": "2023",
+      "why": "On diagnosing what is actually broken before you roll out the next change\u2014including AI tools.",
+      "tags": [
+        "videos",
+        "leadership",
+        "managers"
+      ]
+    },
+    {
+      "youtube_id": "PQAqVbAQVtM",
+      "title": "Bren\u00e9 Brown and Simon Sinek on the leadership skills we need to build | Re:Thinking with Adam Grant",
+      "url": "https://www.youtube.com/watch?v=PQAqVbAQVtM",
+      "channel": "TED Podcasts",
+      "date": "2022",
+      "why": "Conversation on learnable leadership skills\u2014useful balance beside the AI workflow content.",
+      "tags": [
+        "videos",
+        "leadership",
+        "aspiring"
+      ]
+    },
+    {
+      "youtube_id": "KaO3V-B1Wjg",
+      "title": "REdI 2024 | D2S05 - Artificial Intelligence/Machine Learning: The New Frontier of Drug Development..",
+      "url": "https://www.youtube.com/watch?v=KaO3V-B1Wjg",
+      "channel": "U.S. Food and Drug Administration",
+      "date": "2024",
+      "why": "FDA staff walk through AI/ML in drug development submissions and a risk-based credibility mindset\u2014good orientation for pharma leaders before drafting internal AI rules.",
+      "tags": [
+        "videos",
+        "healthcare",
+        "managers"
+      ]
     }
   ],
   "people": [
@@ -171,55 +399,95 @@
       "name": "Ethan Mollick",
       "handle": "@emollick",
       "url": "https://x.com/emollick",
-      "why": "Wharton professor on AI at work; practical frameworks for managers."
+      "why": "Wharton professor on AI at work; practical frameworks for managers.",
+      "tags": [
+        "people",
+        "managers"
+      ]
     },
     {
       "name": "Allie K. Miller",
       "handle": "@alliekmiller",
       "url": "https://x.com/alliekmiller",
-      "why": "AI for business and operators; enterprise adoption in plain language."
+      "why": "AI for business and operators; enterprise adoption in plain language.",
+      "tags": [
+        "people",
+        "managers",
+        "smb"
+      ]
     },
     {
       "name": "Andrew Ng",
       "handle": "@AndrewYNg",
       "url": "https://x.com/AndrewYNg",
-      "why": "Practical AI skills and leadership notes for building AI-capable teams."
+      "why": "Practical AI skills and leadership notes for building AI-capable teams.",
+      "tags": [
+        "people",
+        "managers"
+      ]
     },
     {
       "name": "Simon Willison",
       "handle": "@simonw",
       "url": "https://x.com/simonw",
-      "why": "Hands-on AI workflows and clear demos without the hype cycle."
+      "why": "Hands-on AI workflows and clear demos without the hype cycle.",
+      "tags": [
+        "people",
+        "workflows"
+      ]
     },
     {
       "name": "Cassie Kozyrkov",
       "handle": "@decisionleader",
       "url": "https://x.com/decisionleader",
-      "why": "Decision science—where human judgment still matters with AI."
+      "why": "Decision science\u2014where human judgment still matters with AI.",
+      "tags": [
+        "people",
+        "managers"
+      ]
     },
     {
       "name": "Shreyas Doshi",
       "handle": "@shreyas",
       "url": "https://x.com/shreyas",
-      "why": "Executive and product coaching for leaders and aspiring managers."
+      "why": "Executive and product coaching for leaders and aspiring managers.",
+      "tags": [
+        "people",
+        "aspiring",
+        "managers"
+      ]
     },
     {
       "name": "Adam Grant",
       "handle": "@AdamMGrant",
       "url": "https://x.com/AdamMGrant",
-      "why": "Organizational psychology on leadership, rethinking, and teams."
+      "why": "Organizational psychology on leadership, rethinking, and teams.",
+      "tags": [
+        "people",
+        "leadership",
+        "aspiring"
+      ]
     },
     {
       "name": "Lenny Rachitsky",
       "handle": "@lennysan",
       "url": "https://x.com/lennysan",
-      "why": "Product, growth, and career interviews useful for managers."
+      "why": "Product, growth, and career interviews useful for managers.",
+      "tags": [
+        "people",
+        "aspiring",
+        "managers"
+      ]
     },
     {
       "name": "Dharmesh Shah",
       "handle": "@dharmesh",
       "url": "https://x.com/dharmesh",
-      "why": "Operator perspective on products, growth, and AI for growing companies."
+      "why": "Operator perspective on products, growth, and AI for growing companies.",
+      "tags": [
+        "people",
+        "smb"
+      ]
     }
   ],
   "dropped_links": [
@@ -234,6 +502,111 @@
     {
       "url": "https://support.google.com/docs/answer/14353928",
       "reason": "HTTP 404"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Npe2i9v7bnw",
+      "reason": "Skipped: hype/tool-stack promotional tone"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=3eR85yxE3uQ",
+      "reason": "Skipped: third-party book summary channel, not primary source"
+    }
+  ],
+  "healthcare": [
+    {
+      "title": "Artificial Intelligence for Drug Development",
+      "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/artificial-intelligence-drug-development",
+      "source": "U.S. Food and Drug Administration (CDER)",
+      "date": "updated 2025\u20132026",
+      "why": "FDA hub for how AI shows up in drug development submissions\u2014useful for leaders who need a regulatory map before funding pilots that may later support safety, efficacy, or quality decisions.",
+      "tags": [
+        "healthcare",
+        "managers",
+        "leadership"
+      ]
+    },
+    {
+      "title": "Considerations for the Use of Artificial Intelligence To Support Regulatory Decision-Making for Drug and Biological Products",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological",
+      "source": "U.S. Food and Drug Administration",
+      "date": "2025-01",
+      "why": "Draft guidance on risk-based credibility assessment for AI models used in regulatory decisions\u2014start here when defining context of use, documentation, and human oversight for life-sciences AI work.",
+      "tags": [
+        "healthcare",
+        "managers",
+        "leadership"
+      ]
+    },
+    {
+      "title": "Ethics and governance of artificial intelligence for health",
+      "url": "https://www.who.int/publications/i/item/9789240029200/",
+      "source": "World Health Organization",
+      "date": "2021",
+      "why": "Consensus principles (autonomy, safety, transparency, accountability, equity, sustainability) that still frame governance and privacy conversations for health AI programs.",
+      "tags": [
+        "healthcare",
+        "leadership",
+        "managers"
+      ]
+    },
+    {
+      "title": "Ethics and governance of artificial intelligence for health: Guidance on large multi-modal models",
+      "url": "https://www.who.int/publications/i/item/9789240084759/",
+      "source": "World Health Organization",
+      "date": "2025-03",
+      "why": "Practical recommendations for governments, developers, and providers on generative multi-modal models\u2014including risks of inaccurate outputs and the need for post-release audit and data protection.",
+      "tags": [
+        "healthcare",
+        "leadership",
+        "managers"
+      ]
+    },
+    {
+      "title": "Artificial intelligence (EMA overview)",
+      "url": "https://www.ema.europa.eu/en/about-us/how-we-work/big-data/artificial-intelligence",
+      "source": "European Medicines Agency",
+      "date": "ongoing",
+      "why": "EU regulator\u2019s page on AI across the medicine lifecycle\u2014helps pharma leaders align internal AI use with European expectations, not only U.S. FDA framing.",
+      "tags": [
+        "healthcare",
+        "managers"
+      ]
+    },
+    {
+      "title": "2026 Life sciences outlook",
+      "url": "https://www.deloitte.com/global/en/insights/industry/health-care/life-sciences-and-health-care-industry-outlooks/2026-life-sciences-executive-outlook.html",
+      "source": "Deloitte Insights",
+      "date": "2026",
+      "why": "Executive survey view of AI scaling, regulation, and cybersecurity pressure in biopharma and medtech\u2014useful for setting realistic adoption goals when few leaders report significant AI returns yet.",
+      "tags": [
+        "healthcare",
+        "managers",
+        "leadership"
+      ]
+    },
+    {
+      "title": "Redesigning leadership for clinical AI deployment",
+      "url": "https://www.nature.com/articles/s41746-026-02532-6",
+      "source": "npj Digital Medicine (Nature)",
+      "date": "2026-03",
+      "why": "On leadership structures that actually support clinical AI\u2014clinical champions, multidisciplinary teams, and frontline engagement rather than a single tech rollout plan.",
+      "tags": [
+        "healthcare",
+        "leadership",
+        "managers",
+        "aspiring"
+      ]
+    },
+    {
+      "title": "Artificial Intelligence-Enabled Medical Devices",
+      "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device",
+      "source": "U.S. Food and Drug Administration",
+      "date": "ongoing",
+      "why": "Device-side FDA landing page for AI-enabled medical devices\u2014helps healthcare leaders separate SaMD regulatory paths from drug-development AI uses.",
+      "tags": [
+        "healthcare",
+        "managers"
+      ]
     }
   ]
 }

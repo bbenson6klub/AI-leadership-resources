@@ -1,0 +1,6 @@
+preview.png
+preview-desktop.png
+preview-mobile.png
+.DS_Store
+__pycache__/
+*.pyc
