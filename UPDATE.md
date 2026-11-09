@@ -83,9 +83,12 @@ Do **not** publish `preview-desktop.png`, `preview-mobile.png`, or other preview
 6. **Spot-check** locally: open `index.html`, try search, a topic chip, a prompt Copy button, and one video click-to-play.
 7. **Commit** (when Brian asks to publish): `resources.json`, `build.py`, `index.html`, `assets/`, `UPDATE.md`, `README.md`. Exclude preview PNGs.
 
+
 ## Voice
 
 Human, non-hype. No employer or family details. Explain *why* in one plain sentence. Prefer workflows + human checkpoints over “10 tools that will transform everything.”
+
+Keep the page built for everyone: no "curated for" line, no owner name or personal X handle in visible page text.
 
 ## GitHub Pages
 
@@ -93,5 +96,3 @@ Repo: `https://github.com/bbenson6klub/AI-leadership-resources`
 Likely site: `https://bbenson6klub.github.io/AI-leadership-resources/`  
 Static only: relative asset paths, no server runtime. Inline CSS/JS is fine.
 
-## Voice
-Keep the page built for everyone: no "curated for" line, no owner name or personal X handle in visible page text.

@@ -18,21 +18,53 @@ def tag_attrs(tags: list) -> str:
     return " ".join(esc(t) for t in (tags or []))
 
 
+TAG_LABELS = {
+    "workflows": "Workflows",
+    "prompts": "Prompts",
+    "leadership": "Leadership",
+    "smb": "Small business",
+    "healthcare": "Healthcare",
+    "pharma-commercial": "Pharma commercial",
+    "healthcare-regulatory": "Regulatory",
+    "videos": "Videos",
+    "people": "People",
+    "managers": "Managers",
+    "aspiring": "Aspiring leaders",
+}
+
+
+def tag_pills(tags: list, limit: int = 3) -> str:
+    pills = []
+    for t in tags or []:
+        label = TAG_LABELS.get(t)
+        if not label:
+            continue
+        pills.append(f'<span class="tag-pill tag-{esc(t)}">{esc(label)}</span>')
+        if len(pills) >= limit:
+            break
+    if not pills:
+        return ""
+    return f'<div class="tag-row">{"".join(pills)}</div>'
+
+
+def icon_tile(section: str) -> str:
+    return f'<span class="icon-tile tone-{esc(section)}" aria-hidden="true">{ICON_SVGS.get(section, ICON_SVGS["workflows"])}</span>'
+
 ICON_SVGS = {
-    "workflows": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.2" fill="#3b82f6"/><circle cx="6" cy="12" r="1.2" fill="#3b82f6"/><circle cx="6" cy="17" r="1.2" fill="#3b82f6"/></svg>""",
+    "workflows": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="12" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="17" r="1.4" fill="currentColor" opacity=".45"/></svg>""",
     "prompts": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg>""",
-    "leadership": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5.1L12 13.8 7.5 15.8l.9-5.1L4.8 7.2l5-.7L12 2z"/><path fill="#3b82f6" d="M12 2l1.1 2.2-1.1.3-1.1-.3L12 2z"/></svg>""",
+    "leadership": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5.1L12 13.8 7.5 15.8l.9-5.1L4.8 7.2l5-.7L12 2z"/></svg>""",
     "smb": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20V9l9-5 9 5v11h-6v-6H9v6H3zm2-2h2v-4h10v4h2v-8.2L12 6.1 5 9.8V18z"/></svg>""",
-    "videos": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>""",
-    "people": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="#3b82f6"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="#3b82f6" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>""",
-    "healthcare": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>""",
+    "videos": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>""",
+    "people": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>""",
+    "healthcare": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg>""",
     "week": """<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg>""",
 }
 
 
 def card_link(item: dict, section: str) -> str:
     tags = item.get("tags") or [section]
-    new_badge = '<span class="badge-new">New this week</span>' if item.get("new") else ""
+    new_badge = '<span class="badge-new">New</span>' if item.get("new") else ""
     title = esc(item["title"])
     url = esc(item["url"])
     source = esc(item.get("source", ""))
@@ -40,9 +72,9 @@ def card_link(item: dict, section: str) -> str:
     why = esc(item.get("why", ""))
     meta = " · ".join(x for x in [source, date] if x)
     return f"""
-<article class="card" data-tags="{tag_attrs(tags)}" data-text="{esc((item['title'] + ' ' + item.get('source','') + ' ' + item.get('why','')).lower())}">
+<article class="card tone-{esc(section)}" data-tags="{tag_attrs(tags)}" data-text="{esc((item['title'] + ' ' + item.get('source','') + ' ' + item.get('why','')).lower())}">
   <div class="card-head">
-    {ICON_SVGS.get(section, ICON_SVGS['workflows'])}
+    {icon_tile(section)}
     <div>
       <h3><a href="{url}" rel="noopener noreferrer">{title}</a></h3>
       <p class="meta">{meta}</p>
@@ -50,7 +82,9 @@ def card_link(item: dict, section: str) -> str:
     {new_badge}
   </div>
   <p class="why">{why}</p>
+  {tag_pills(tags)}
 </article>"""
+
 
 
 def card_prompt(item: dict) -> str:
@@ -60,9 +94,9 @@ def card_prompt(item: dict) -> str:
     why = esc(item.get("why", ""))
     prompt = item.get("prompt", "")
     return f"""
-<article class="card prompt-card" data-tags="{tag_attrs(tags)}" data-text="{esc((item['title'] + ' ' + item.get('why','') + ' ' + prompt).lower())}" id="{pid}">
+<article class="card prompt-card tone-prompts" data-tags="{tag_attrs(tags)}" data-text="{esc((item['title'] + ' ' + item.get('why','') + ' ' + prompt).lower())}" id="{pid}">
   <div class="card-head">
-    {ICON_SVGS['prompts']}
+    {icon_tile('prompts')}
     <div>
       <h3>{title}</h3>
       <p class="meta">Copy-ready prompt</p>
@@ -70,11 +104,13 @@ def card_prompt(item: dict) -> str:
   </div>
   <p class="why">{why}</p>
   <pre class="prompt-body" id="{pid}-text">{esc(prompt)}</pre>
-  <button type="button" class="btn-copy" data-copy-target="{pid}-text" aria-label="Copy prompt: {title}">
-    Copy
-  </button>
-  <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  <div class="prompt-actions">
+    <button type="button" class="btn-copy" data-copy-target="{pid}-text" aria-label="Copy prompt: {title}">Copy</button>
+    <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  </div>
+  {tag_pills(tags)}
 </article>"""
+
 
 
 def card_person(item: dict) -> str:
@@ -84,16 +120,18 @@ def card_person(item: dict) -> str:
     url = esc(item["url"])
     why = esc(item.get("why", ""))
     return f"""
-<article class="card person-card" data-tags="{tag_attrs(tags)}" data-text="{esc((item['name'] + ' ' + item.get('handle','') + ' ' + item.get('why','')).lower())}">
+<article class="card person-card tone-people" data-tags="{tag_attrs(tags)}" data-text="{esc((item['name'] + ' ' + item.get('handle','') + ' ' + item.get('why','')).lower())}">
   <div class="card-head">
-    {ICON_SVGS['people']}
+    {icon_tile('people')}
     <div>
       <h3><a href="{url}" rel="noopener noreferrer">{name}</a></h3>
       <p class="meta">{handle}</p>
     </div>
   </div>
   <p class="why">{why}</p>
+  {tag_pills(tags)}
 </article>"""
+
 
 
 def card_video(item: dict) -> str:
@@ -107,7 +145,7 @@ def card_video(item: dict) -> str:
     thumb = f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
     meta = " · ".join(x for x in [channel, date] if x)
     return f"""
-<article class="card video-card" data-tags="{tag_attrs(tags)}" data-text="{esc((item['title'] + ' ' + item.get('channel','') + ' ' + item.get('why','')).lower())}">
+<article class="card video-card tone-videos" data-tags="{tag_attrs(tags)}" data-text="{esc((item['title'] + ' ' + item.get('channel','') + ' ' + item.get('why','')).lower())}">
   <div class="video-lazy" data-youtube-id="{vid}">
     <button type="button" class="video-poster" aria-label="Play video: {title}">
       <img src="{thumb}" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -115,21 +153,23 @@ def card_video(item: dict) -> str:
     </button>
   </div>
   <div class="card-head">
-    {ICON_SVGS['videos']}
+    {icon_tile('videos')}
     <div>
       <h3><a href="{url}" rel="noopener noreferrer">{title}</a></h3>
       <p class="meta">{meta}</p>
     </div>
   </div>
   <p class="why">{why}</p>
+  {tag_pills(tags)}
 </article>"""
+
 
 
 def section_block(sid: str, heading: str, intro: str, cards_html: str, icon_key: str) -> str:
     return f"""
-<section class="section" id="{sid}" data-section="{sid}">
+<section class="section reveal tone-{esc(icon_key if icon_key != 'week' else 'week')}" id="{sid}" data-section="{sid}">
   <header class="section-head">
-    {ICON_SVGS.get(icon_key, '')}
+    {icon_tile(icon_key)}
     <div>
       <h2>{esc(heading)}</h2>
       <p>{esc(intro)}</p>
@@ -139,22 +179,35 @@ def section_block(sid: str, heading: str, intro: str, cards_html: str, icon_key:
 </section>"""
 
 
+
 CSS = r"""
 :root {
   --navy: #0b1f3a;
   --navy-2: #122a4a;
-  --blue: #3b82f6;
-  --blue-soft: #60a5fa;
+  --indigo: #312e81;
+  --teal: #0d9488;
+  --violet: #7c3aed;
+  --amber: #d97706;
+  --green: #059669;
+  --rose: #e11d48;
+  --coral: #f43f5e;
+  --sky: #0284c7;
+  --blue: #2563eb;
+  --blue-soft: #93c5fd;
   --ink: #0f172a;
   --muted: #475569;
-  --line: #dbe3f0;
-  --bg: #f4f7fb;
+  --line: #d7e0ee;
+  --bg: #f3f6fb;
   --card: #ffffff;
   --ok: #059669;
-  --radius: 14px;
-  --shadow: 0 8px 24px rgba(11, 31, 58, 0.08);
+  --radius: 16px;
+  --shadow: 0 10px 28px rgba(11, 31, 58, 0.08);
+  --shadow-hover: 0 16px 36px rgba(11, 31, 58, 0.14);
   --max: 1100px;
-  --focus: 0 0 0 3px rgba(59, 130, 246, 0.45);
+  --focus: 0 0 0 3px rgba(37, 99, 235, 0.45);
+  --tone: #2563eb;
+  --tone-soft: #dbeafe;
+  --tone-ink: #1e3a8a;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -162,80 +215,155 @@ body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: var(--ink);
-  background: var(--bg);
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(45, 212, 191, 0.12), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(129, 140, 248, 0.14), transparent 50%),
+    var(--bg);
   line-height: 1.55;
 }
 a { color: var(--blue); }
-a:hover { color: #2563eb; }
+a:hover { color: #1d4ed8; }
 img { max-width: 100%; height: auto; display: block; }
 .skip {
   position: absolute; left: -999px; top: 0;
   background: var(--navy); color: #fff; padding: .6rem 1rem; z-index: 100;
 }
 .skip:focus { left: 0; }
+
+/* Section tone tokens */
+.tone-week, .tone-this-week { --tone: #0284c7; --tone-soft: #e0f2fe; --tone-ink: #075985; }
+.tone-workflows { --tone: #0d9488; --tone-soft: #ccfbf1; --tone-ink: #115e59; }
+.tone-prompts { --tone: #7c3aed; --tone-soft: #ede9fe; --tone-ink: #5b21b6; }
+.tone-leadership { --tone: #d97706; --tone-soft: #ffedd5; --tone-ink: #9a3412; }
+.tone-smb { --tone: #059669; --tone-soft: #d1fae5; --tone-ink: #065f46; }
+.tone-healthcare { --tone: #e11d48; --tone-soft: #ffe4e6; --tone-ink: #9f1239; }
+.tone-videos { --tone: #f43f5e; --tone-soft: #ffe4e6; --tone-ink: #9f1239; }
+.tone-people { --tone: #2563eb; --tone-soft: #dbeafe; --tone-ink: #1e3a8a; }
+
 .hero {
-  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 55%, #163a66 100%);
+  background:
+    radial-gradient(700px 280px at 18% 20%, rgba(45, 212, 191, 0.28), transparent 60%),
+    radial-gradient(560px 260px at 85% 10%, rgba(99, 102, 241, 0.35), transparent 55%),
+    radial-gradient(420px 220px at 70% 90%, rgba(244, 63, 94, 0.18), transparent 60%),
+    linear-gradient(145deg, #071527 0%, #0b1f3a 38%, #1e1b4b 72%, #134e4a 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
 }
+.hero-mesh {
+  position: absolute; inset: 0; pointer-events: none; opacity: .55;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.08) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,.07) 0 1px, transparent 2px);
+  background-size: 42px 42px, 56px 56px;
+  animation: meshDrift 28s linear infinite;
+}
+.hero-glow {
+  position: absolute; width: 340px; height: 340px; border-radius: 50%;
+  right: -80px; top: -100px;
+  background: radial-gradient(circle, rgba(96,165,250,.35), transparent 70%);
+  filter: blur(8px);
+  animation: glowPulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes meshDrift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 84px 42px, -56px 56px; }
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: .55; transform: scale(1); }
+  50% { opacity: .9; transform: scale(1.08); }
+}
 .hero-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 2.25rem 1.25rem 2.35rem;
+  padding: 2.5rem 1.25rem 2.6rem;
   position: relative;
   z-index: 1;
 }
 .network {
   position: absolute;
-  right: -40px;
-  top: 55%;
+  right: -30px;
+  top: 52%;
   transform: translateY(-50%);
-  width: min(40vw, 300px);
-  height: 210px;
-  opacity: 0.32;
+  width: min(42vw, 320px);
+  height: 220px;
+  opacity: 0.38;
   pointer-events: none;
   z-index: 0;
 }
-.hero-inner { text-shadow: none; }
-.hero h1, .hero .tagline { text-shadow: none; -webkit-font-smoothing: antialiased; }
 .hero h1 {
-  margin: 0 0 .4rem;
-  font-size: clamp(1.6rem, 4vw, 2.3rem);
-  letter-spacing: -0.02em;
+  margin: 0 0 .45rem;
+  font-size: clamp(1.85rem, 4.6vw, 2.65rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  font-weight: 800;
 }
-.hero .tagline { margin: 0 0 1rem; color: var(--blue-soft); font-weight: 600; }
-.hero .intro { max-width: 42rem; margin: 0 0 1rem; color: #dbeafe; }
-.hero .meta-line { font-size: .9rem; color: #93c5fd; }
+.hero .tagline {
+  margin: 0 0 1rem;
+  color: #99f6e4;
+  font-weight: 700;
+  font-size: clamp(1.02rem, 2.2vw, 1.2rem);
+}
+.hero .intro { max-width: 42rem; margin: 0 0 1.15rem; color: #dbeafe; }
+.hero .meta-line { font-size: .9rem; color: #bfdbfe; margin: 0 0 1.1rem; }
+.stat-pills {
+  display: flex; flex-wrap: wrap; gap: .5rem;
+}
+.stat-pill {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.22);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  border-radius: 999px;
+  padding: .4rem .8rem;
+  font-size: .86rem;
+  font-weight: 700;
+}
+.stat-pill strong {
+  color: #99f6e4;
+  font-size: .95rem;
+}
 
 .sticky-bar {
   position: sticky; top: 0; z-index: 40;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
 .sticky-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: .65rem 1.25rem .75rem;
+  padding: .7rem 1.25rem .8rem;
   display: grid;
   gap: .65rem;
 }
 .nav-scroll {
-  display: flex; gap: .5rem; overflow-x: auto; padding-bottom: .15rem;
+  display: flex; gap: .45rem; overflow-x: auto; padding-bottom: .15rem;
   scrollbar-width: thin;
 }
 .nav-scroll a {
   flex: 0 0 auto;
   text-decoration: none;
-  color: var(--navy);
-  background: #eef4ff;
-  border: 1px solid #cfe0ff;
+  color: var(--nav-ink, var(--navy));
+  background: var(--nav-bg, #eef4ff);
+  border: 1px solid var(--nav-border, #cfe0ff);
   border-radius: 999px;
-  padding: .35rem .75rem;
-  font-size: .85rem;
-  font-weight: 600;
+  padding: .38rem .78rem;
+  font-size: .84rem;
+  font-weight: 700;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
+.nav-scroll a:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(11,31,58,.08); }
+.nav-scroll a[href="#workflows"] { --nav-bg:#ccfbf1; --nav-border:#99f6e4; --nav-ink:#115e59; }
+.nav-scroll a[href="#prompts"] { --nav-bg:#ede9fe; --nav-border:#ddd6fe; --nav-ink:#5b21b6; }
+.nav-scroll a[href="#leadership"] { --nav-bg:#ffedd5; --nav-border:#fed7aa; --nav-ink:#9a3412; }
+.nav-scroll a[href="#smb"] { --nav-bg:#d1fae5; --nav-border:#a7f3d0; --nav-ink:#065f46; }
+.nav-scroll a[href="#healthcare"] { --nav-bg:#ffe4e6; --nav-border:#fecdd3; --nav-ink:#9f1239; }
+.nav-scroll a[href="#videos"] { --nav-bg:#ffe4e6; --nav-border:#fecdd3; --nav-ink:#be123c; }
+.nav-scroll a[href="#people"] { --nav-bg:#dbeafe; --nav-border:#bfdbfe; --nav-ink:#1e3a8a; }
+.nav-scroll a[href="#this-week"] { --nav-bg:#e0f2fe; --nav-border:#bae6fd; --nav-ink:#075985; }
 .nav-scroll a:focus-visible, .chip:focus-visible, .btn-copy:focus-visible, .video-poster:focus-visible, #q:focus-visible {
   outline: none; box-shadow: var(--focus);
 }
@@ -243,10 +371,11 @@ img { max-width: 100%; height: auto; display: block; }
 #q {
   width: 100%;
   border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: .7rem .9rem;
+  border-radius: 12px;
+  padding: .75rem 1rem;
   font-size: 1rem;
   background: #fff;
+  box-shadow: 0 1px 2px rgba(11,31,58,.04);
 }
 .chips { display: flex; flex-wrap: wrap; gap: .4rem; }
 .chip {
@@ -254,31 +383,44 @@ img { max-width: 100%; height: auto; display: block; }
   background: #fff;
   color: var(--navy);
   border-radius: 999px;
-  padding: .35rem .7rem;
+  padding: .36rem .72rem;
   font-size: .82rem;
+  font-weight: 650;
   cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
 }
+.chip:hover { transform: translateY(-1px); }
 .chip[aria-pressed="true"] {
   background: var(--navy);
   color: #fff;
   border-color: var(--navy);
 }
+.chip[data-filter="workflows"][aria-pressed="true"] { background: var(--teal); border-color: var(--teal); }
+.chip[data-filter="prompts"][aria-pressed="true"] { background: var(--violet); border-color: var(--violet); }
+.chip[data-filter="leadership"][aria-pressed="true"] { background: var(--amber); border-color: var(--amber); }
+.chip[data-filter="smb"][aria-pressed="true"] { background: var(--green); border-color: var(--green); }
+.chip[data-filter="healthcare"][aria-pressed="true"],
+.chip[data-filter="pharma-commercial"][aria-pressed="true"],
+.chip[data-filter="healthcare-regulatory"][aria-pressed="true"] { background: var(--rose); border-color: var(--rose); }
+.chip[data-filter="videos"][aria-pressed="true"] { background: var(--coral); border-color: var(--coral); }
+.chip[data-filter="people"][aria-pressed="true"] { background: var(--blue); border-color: var(--blue); }
+
 .wrap { max-width: var(--max); margin: 0 auto; padding: 1.25rem; }
 .start {
-  background: var(--card);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.1rem 1.2rem 1.25rem;
+  padding: 1.2rem 1.25rem 1.35rem;
   box-shadow: var(--shadow);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.35rem;
 }
-.start h2 { margin: 0 0 .35rem; font-size: 1.15rem; color: var(--navy); }
-.start p { margin: 0 0 1rem; color: var(--muted); }
+.start h2 { margin: 0 0 .35rem; font-size: 1.2rem; color: var(--navy); }
+.start p { margin: 0; color: var(--muted); }
 .steps {
   display: grid;
   gap: .65rem;
   grid-template-columns: 1fr;
-  margin-top: .85rem;
+  margin-top: .95rem;
   align-items: stretch;
 }
 @media (min-width: 720px) {
@@ -289,24 +431,30 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 .step {
-  border-radius: 12px;
-  padding: .95rem 1rem;
-  background: var(--navy);
+  border-radius: 14px;
+  padding: 1rem 1.05rem;
   color: #fff;
   box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.14);
+  background: #0b1f3a;
 }
+.steps .step:nth-child(1) { background: linear-gradient(145deg, #0f766e 0%, #0b1f3a 78%); }
+.steps .step:nth-child(3) { background: linear-gradient(145deg, #4f46e5 0%, #0b1f3a 78%); }
+.steps .step:nth-child(5) { background: linear-gradient(145deg, #be123c 0%, #0b1f3a 78%); }
 .step .num {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 1.55rem; height: 1.55rem; border-radius: 999px;
-  background: var(--blue); color: #fff; font-weight: 700; font-size: .8rem;
-  margin-bottom: .4rem;
+  width: 1.75rem; height: 1.75rem; border-radius: 999px;
+  background: #fff;
+  color: #0b1f3a; font-weight: 800; font-size: .82rem;
+  margin-bottom: .45rem;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.18);
 }
 .step strong { display: block; color: #fff; margin-bottom: .25rem; font-size: .98rem; }
-.step span { color: #93c5fd; font-size: .88rem; }
+.step span { color: #dbeafe; font-size: .88rem; }
 .step-arrow {
   display: none;
-  color: var(--blue);
-  font-size: 1.4rem;
+  color: #64748b;
+  font-size: 1.35rem;
   font-weight: 700;
   text-align: center;
   line-height: 1;
@@ -314,99 +462,176 @@ img { max-width: 100%; height: auto; display: block; }
 @media (min-width: 720px) {
   .step-arrow { display: block; }
 }
+
+.section {
+  margin: 1.35rem 0 1.8rem;
+  padding: 1.05rem 1rem 1.15rem;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--tone-soft) 42%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tone) 14%, var(--line));
+}
+.section:nth-of-type(even) {
+  background: color-mix(in srgb, var(--tone-soft) 58%, #fff);
+}
+.section-head {
+  display: flex; gap: .85rem; align-items: flex-start;
+  margin-bottom: .95rem;
+}
 .section-head h2 { margin: 0; color: var(--navy); font-size: 1.35rem; }
-.section-head p { margin: .2rem 0 0; color: var(--muted); }
-.subgroup { margin: 1.1rem 0 .65rem; }
+.section-head p { margin: .25rem 0 0; color: var(--muted); }
+.subgroup { margin: 1.15rem 0 .7rem; }
 .subgroup h3 {
   margin: 0 0 .25rem;
   font-size: 1.05rem;
   color: var(--navy);
 }
 .subgroup p {
-  margin: 0 0 .7rem;
+  margin: 0 0 .75rem;
   color: var(--muted);
   font-size: .92rem;
 }
-.ico { width: 28px; height: 28px; flex: 0 0 auto; color: var(--navy); margin-top: .15rem; }
+
+.icon-tile {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.45rem; height: 2.45rem; border-radius: 12px;
+  background: var(--tone-soft);
+  color: var(--tone);
+  flex: 0 0 auto;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tone) 18%, transparent);
+}
+.ico { width: 22px; height: 22px; display: block; }
+.card .icon-tile { width: 2.1rem; height: 2.1rem; border-radius: 10px; }
+.card .ico { width: 18px; height: 18px; }
+
 .grid {
   display: grid;
-  gap: .9rem;
+  gap: .95rem;
   grid-template-columns: 1fr;
 }
 @media (min-width: 700px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
 .card {
+  --tone: #2563eb;
+  --tone-soft: #dbeafe;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1rem 1.05rem 1.05rem;
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(180deg, var(--tone), color-mix(in srgb, var(--tone) 40%, #0b1f3a));
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: color-mix(in srgb, var(--tone) 35%, var(--line));
 }
 .card[hidden], .section.is-empty { display: none !important; }
-.card-head { display: flex; gap: .65rem; align-items: flex-start; position: relative; }
+.card-head { display: flex; gap: .7rem; align-items: flex-start; position: relative; }
 .card-head h3 { margin: 0; font-size: 1.02rem; line-height: 1.35; }
 .card-head h3 a { color: var(--navy); text-decoration: none; }
-.card-head h3 a:hover { color: var(--blue); text-decoration: underline; }
+.card-head h3 a:hover { color: var(--tone); text-decoration: underline; }
 .meta { margin: .2rem 0 0; color: var(--muted); font-size: .84rem; }
 .why { margin: .7rem 0 0; color: #334155; }
+.card-head > div { flex: 1 1 auto; min-width: 0; }
 .badge-new {
   position: static;
   margin-left: auto;
   align-self: flex-start;
-  background: #dbeafe; color: #1e3a8a;
-  border: 1px solid #93c5fd;
-  font-size: .72rem; font-weight: 700;
-  padding: .15rem .45rem; border-radius: 999px;
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #fff;
+  border: 0;
+  font-size: .72rem; font-weight: 800;
+  padding: .22rem .55rem; border-radius: 999px;
   white-space: nowrap;
   flex: 0 0 auto;
+  letter-spacing: .02em;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, .28);
 }
-.card-head > div { flex: 1 1 auto; min-width: 0; }
+.tag-row { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .75rem; }
+.tag-pill {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: .18rem .55rem;
+  font-size: .72rem;
+  font-weight: 700;
+  background: var(--tone-soft);
+  color: var(--tone-ink);
+  border: 1px solid color-mix(in srgb, var(--tone) 22%, transparent);
+}
+.tag-workflows { --tone:#0d9488; --tone-soft:#ccfbf1; --tone-ink:#115e59; }
+.tag-prompts { --tone:#7c3aed; --tone-soft:#ede9fe; --tone-ink:#5b21b6; }
+.tag-leadership { --tone:#d97706; --tone-soft:#ffedd5; --tone-ink:#9a3412; }
+.tag-smb { --tone:#059669; --tone-soft:#d1fae5; --tone-ink:#065f46; }
+.tag-healthcare, .tag-pharma-commercial, .tag-healthcare-regulatory { --tone:#e11d48; --tone-soft:#ffe4e6; --tone-ink:#9f1239; }
+.tag-videos { --tone:#f43f5e; --tone-soft:#ffe4e6; --tone-ink:#9f1239; }
+.tag-people { --tone:#2563eb; --tone-soft:#dbeafe; --tone-ink:#1e3a8a; }
+.tag-managers { --tone:#0369a1; --tone-soft:#e0f2fe; --tone-ink:#075985; }
+.tag-aspiring { --tone:#7c3aed; --tone-soft:#f3e8ff; --tone-ink:#6b21a8; }
+
 .prompt-body {
   margin: .75rem 0 .65rem;
-  padding: .75rem .8rem;
-  background: #0b1f3a;
+  padding: .8rem .85rem;
+  background: linear-gradient(160deg, #0b1f3a, #1e1b4b);
   color: #e2e8f0;
-  border-radius: 10px;
+  border-radius: 12px;
   white-space: pre-wrap;
   word-break: break-word;
   font-size: .86rem;
   line-height: 1.45;
   max-height: 220px;
   overflow: auto;
+  border: 1px solid rgba(148,163,184,.25);
 }
+.prompt-actions { display: flex; align-items: center; gap: .45rem; margin-bottom: .15rem; }
 .btn-copy {
   border: 0;
-  background: var(--blue);
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   border-radius: 999px;
-  padding: .45rem .9rem;
+  padding: .48rem .95rem;
   cursor: pointer;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, .25);
 }
-.btn-copy:hover { background: #2563eb; }
+.btn-copy:hover { filter: brightness(1.06); }
 .copy-feedback {
-  margin-left: .5rem;
   color: var(--ok);
   font-weight: 700;
   font-size: .9rem;
 }
-.video-lazy { margin: -.15rem -.15rem .75rem; border-radius: 10px; overflow: hidden; background: #0b1f3a; aspect-ratio: 16/9; }
+.video-lazy {
+  margin: -.2rem -.2rem .8rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0b1f3a;
+  aspect-ratio: 16/9;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+}
 .video-poster {
   position: relative; display: block; width: 100%; height: 100%;
   border: 0; padding: 0; cursor: pointer; background: #0b1f3a;
 }
-.video-poster img { width: 100%; height: 100%; object-fit: cover; opacity: .92; }
+.video-poster img { width: 100%; height: 100%; object-fit: cover; opacity: .94; transition: transform .25s ease, opacity .25s ease; }
+.video-card:hover .video-poster img { transform: scale(1.03); opacity: 1; }
 .play-btn {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
-  width: 56px; height: 56px; border-radius: 999px;
-  background: rgba(11,31,58,.88); border: 2px solid #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+  width: 58px; height: 58px; border-radius: 999px;
+  background: linear-gradient(145deg, rgba(244,63,94,.95), rgba(11,31,58,.9));
+  border: 2px solid #fff;
+  box-shadow: 0 8px 22px rgba(0,0,0,.35);
 }
 .play-btn::before {
   content: "";
-  position: absolute; left: 22px; top: 17px;
-  border-style: solid; border-width: 11px 0 11px 18px;
+  position: absolute; left: 23px; top: 17px;
+  border-style: solid; border-width: 12px 0 12px 18px;
   border-color: transparent transparent transparent #fff;
 }
 .video-lazy iframe { width: 100%; height: 100%; border: 0; aspect-ratio: 16/9; display: block; }
@@ -423,18 +648,63 @@ img { max-width: 100%; height: auto; display: block; }
 .empty.show { display: block; }
 footer {
   max-width: var(--max);
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.2rem;
   padding: 0 1.25rem;
   color: var(--muted);
-  font-size: .9rem;
+  font-size: .92rem;
 }
-footer a { color: var(--navy); }
 noscript .note {
   max-width: var(--max); margin: .75rem auto; padding: 0 1.25rem;
   color: var(--muted); font-size: .9rem;
 }
+
+/* Reveal on scroll — visible by default without JS */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+.js .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .hero-mesh, .hero-glow { animation: none !important; }
+  .card, .nav-scroll a, .chip, .video-poster img { transition: none !important; }
+  .js .reveal, .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e5eefc;
+    --muted: #9fb0c7;
+    --line: #243549;
+    --bg: #07111f;
+    --card: #0f1b2d;
+    --shadow: 0 10px 28px rgba(0,0,0,.35);
+    --shadow-hover: 0 16px 36px rgba(0,0,0,.45);
+    --focus: 0 0 0 3px rgba(96, 165, 250, 0.5);
+  }
+  body {
+    background:
+      radial-gradient(1000px 420px at 10% -10%, rgba(45, 212, 191, 0.08), transparent 55%),
+      radial-gradient(800px 380px at 100% 0%, rgba(129, 140, 248, 0.1), transparent 50%),
+      var(--bg);
+  }
+  .sticky-bar { background: rgba(7, 17, 31, 0.88); }
+  #q, .chip, .empty, .start { background: #0f1b2d; color: var(--ink); }
+  .chip { border-color: #2b3d55; color: #dbeafe; }
+  .section { border-color: #243549; }
+  .card-head h3 a { color: #e8eef8; }
+  .why { color: #c6d3e5; }
+  .nav-scroll a { color: var(--nav-ink, #dbeafe); }
+  footer { color: #9fb0c7; }
 }
 """
 
@@ -525,6 +795,27 @@ JS = r"""
     wrap.innerHTML = '';
     wrap.appendChild(iframe);
   });
+
+  document.documentElement.classList.add('js');
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -5% 0px' });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
 })();
 """
 
@@ -554,9 +845,9 @@ def healthcare_section_html(items: list) -> str:
     <div class="grid">{cards(commercial)}</div>
   </div>"""
     return f"""
-<section class="section" id="healthcare" data-section="healthcare">
+<section class="section reveal tone-healthcare" id="healthcare" data-section="healthcare">
   <header class="section-head">
-    {ICON_SVGS.get('healthcare', '')}
+    {icon_tile('healthcare')}
     <div>
       <h2>Healthcare &amp; pharma</h2>
       <p>AI for health systems and life-sciences companies—regulatory context plus commercial functions. No employer-specific content; no patient data.</p>
@@ -578,6 +869,18 @@ def build() -> Path:
     people = "".join(card_person(i) for i in DATA["people"])
     healthcare = healthcare_section_html(DATA.get("healthcare", []))
 
+    n_prompts = len(DATA.get("prompts", []))
+    n_videos = len(DATA.get("videos", []))
+    n_resources = (
+        len(DATA.get("this_week", []))
+        + len(DATA.get("workflows", []))
+        + n_prompts
+        + len(DATA.get("leadership", []))
+        + len(DATA.get("smb", []))
+        + len(DATA.get("healthcare", []))
+        + n_videos
+        + len(DATA.get("people", []))
+    )
 
     network_svg = """
 <svg class="network" viewBox="0 0 320 220" aria-hidden="true">
@@ -610,12 +913,19 @@ def build() -> Path:
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="hero">
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
   {network_svg}
   <div class="hero-inner">
     <h1>{esc(m['title'])}</h1>
     <p class="tagline">{esc(m['tagline'])}</p>
     <p class="intro">{esc(m['intro'])}</p>
-    <p class="meta-line">Updated {esc(m['last_updated'])} ({esc(m.get('timezone_note',''))})</p>
+    <p class="meta-line">Updated {esc(m['last_updated'])} · Updated daily</p>
+    <div class="stat-pills" aria-label="Library snapshot">
+      <span class="stat-pill"><strong>{n_resources}</strong> resources</span>
+      <span class="stat-pill"><strong>{n_prompts}</strong> prompts</span>
+      <span class="stat-pill"><strong>{n_videos}</strong> videos</span>
+    </div>
   </div>
 </header>
 
@@ -654,7 +964,7 @@ def build() -> Path:
 </div>
 
 <main id="main" class="wrap">
-  <section class="start" id="start-here">
+  <section class="start reveal" id="start-here">
     <h2>Start here</h2>
     <p>You do not need a stack of tools. Pick one recurring piece of work, keep a human in the loop, and track whether quality improved.</p>
     <div class="steps" role="list" aria-label="Three steps: pick one workflow, add a human checkpoint, measure">

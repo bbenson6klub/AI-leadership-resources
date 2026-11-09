@@ -12,18 +12,30 @@
 :root {
   --navy: #0b1f3a;
   --navy-2: #122a4a;
-  --blue: #3b82f6;
-  --blue-soft: #60a5fa;
+  --indigo: #312e81;
+  --teal: #0d9488;
+  --violet: #7c3aed;
+  --amber: #d97706;
+  --green: #059669;
+  --rose: #e11d48;
+  --coral: #f43f5e;
+  --sky: #0284c7;
+  --blue: #2563eb;
+  --blue-soft: #93c5fd;
   --ink: #0f172a;
   --muted: #475569;
-  --line: #dbe3f0;
-  --bg: #f4f7fb;
+  --line: #d7e0ee;
+  --bg: #f3f6fb;
   --card: #ffffff;
   --ok: #059669;
-  --radius: 14px;
-  --shadow: 0 8px 24px rgba(11, 31, 58, 0.08);
+  --radius: 16px;
+  --shadow: 0 10px 28px rgba(11, 31, 58, 0.08);
+  --shadow-hover: 0 16px 36px rgba(11, 31, 58, 0.14);
   --max: 1100px;
-  --focus: 0 0 0 3px rgba(59, 130, 246, 0.45);
+  --focus: 0 0 0 3px rgba(37, 99, 235, 0.45);
+  --tone: #2563eb;
+  --tone-soft: #dbeafe;
+  --tone-ink: #1e3a8a;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -31,80 +43,155 @@ body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: var(--ink);
-  background: var(--bg);
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(45, 212, 191, 0.12), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(129, 140, 248, 0.14), transparent 50%),
+    var(--bg);
   line-height: 1.55;
 }
 a { color: var(--blue); }
-a:hover { color: #2563eb; }
+a:hover { color: #1d4ed8; }
 img { max-width: 100%; height: auto; display: block; }
 .skip {
   position: absolute; left: -999px; top: 0;
   background: var(--navy); color: #fff; padding: .6rem 1rem; z-index: 100;
 }
 .skip:focus { left: 0; }
+
+/* Section tone tokens */
+.tone-week, .tone-this-week { --tone: #0284c7; --tone-soft: #e0f2fe; --tone-ink: #075985; }
+.tone-workflows { --tone: #0d9488; --tone-soft: #ccfbf1; --tone-ink: #115e59; }
+.tone-prompts { --tone: #7c3aed; --tone-soft: #ede9fe; --tone-ink: #5b21b6; }
+.tone-leadership { --tone: #d97706; --tone-soft: #ffedd5; --tone-ink: #9a3412; }
+.tone-smb { --tone: #059669; --tone-soft: #d1fae5; --tone-ink: #065f46; }
+.tone-healthcare { --tone: #e11d48; --tone-soft: #ffe4e6; --tone-ink: #9f1239; }
+.tone-videos { --tone: #f43f5e; --tone-soft: #ffe4e6; --tone-ink: #9f1239; }
+.tone-people { --tone: #2563eb; --tone-soft: #dbeafe; --tone-ink: #1e3a8a; }
+
 .hero {
-  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 55%, #163a66 100%);
+  background:
+    radial-gradient(700px 280px at 18% 20%, rgba(45, 212, 191, 0.28), transparent 60%),
+    radial-gradient(560px 260px at 85% 10%, rgba(99, 102, 241, 0.35), transparent 55%),
+    radial-gradient(420px 220px at 70% 90%, rgba(244, 63, 94, 0.18), transparent 60%),
+    linear-gradient(145deg, #071527 0%, #0b1f3a 38%, #1e1b4b 72%, #134e4a 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
 }
+.hero-mesh {
+  position: absolute; inset: 0; pointer-events: none; opacity: .55;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.08) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,.07) 0 1px, transparent 2px);
+  background-size: 42px 42px, 56px 56px;
+  animation: meshDrift 28s linear infinite;
+}
+.hero-glow {
+  position: absolute; width: 340px; height: 340px; border-radius: 50%;
+  right: -80px; top: -100px;
+  background: radial-gradient(circle, rgba(96,165,250,.35), transparent 70%);
+  filter: blur(8px);
+  animation: glowPulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes meshDrift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 84px 42px, -56px 56px; }
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: .55; transform: scale(1); }
+  50% { opacity: .9; transform: scale(1.08); }
+}
 .hero-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 2.25rem 1.25rem 2.35rem;
+  padding: 2.5rem 1.25rem 2.6rem;
   position: relative;
   z-index: 1;
 }
 .network {
   position: absolute;
-  right: -40px;
-  top: 55%;
+  right: -30px;
+  top: 52%;
   transform: translateY(-50%);
-  width: min(40vw, 300px);
-  height: 210px;
-  opacity: 0.32;
+  width: min(42vw, 320px);
+  height: 220px;
+  opacity: 0.38;
   pointer-events: none;
   z-index: 0;
 }
-.hero-inner { text-shadow: none; }
-.hero h1, .hero .tagline { text-shadow: none; -webkit-font-smoothing: antialiased; }
 .hero h1 {
-  margin: 0 0 .4rem;
-  font-size: clamp(1.6rem, 4vw, 2.3rem);
-  letter-spacing: -0.02em;
+  margin: 0 0 .45rem;
+  font-size: clamp(1.85rem, 4.6vw, 2.65rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  font-weight: 800;
 }
-.hero .tagline { margin: 0 0 1rem; color: var(--blue-soft); font-weight: 600; }
-.hero .intro { max-width: 42rem; margin: 0 0 1rem; color: #dbeafe; }
-.hero .meta-line { font-size: .9rem; color: #93c5fd; }
+.hero .tagline {
+  margin: 0 0 1rem;
+  color: #99f6e4;
+  font-weight: 700;
+  font-size: clamp(1.02rem, 2.2vw, 1.2rem);
+}
+.hero .intro { max-width: 42rem; margin: 0 0 1.15rem; color: #dbeafe; }
+.hero .meta-line { font-size: .9rem; color: #bfdbfe; margin: 0 0 1.1rem; }
+.stat-pills {
+  display: flex; flex-wrap: wrap; gap: .5rem;
+}
+.stat-pill {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.22);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  border-radius: 999px;
+  padding: .4rem .8rem;
+  font-size: .86rem;
+  font-weight: 700;
+}
+.stat-pill strong {
+  color: #99f6e4;
+  font-size: .95rem;
+}
 
 .sticky-bar {
   position: sticky; top: 0; z-index: 40;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
 .sticky-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: .65rem 1.25rem .75rem;
+  padding: .7rem 1.25rem .8rem;
   display: grid;
   gap: .65rem;
 }
 .nav-scroll {
-  display: flex; gap: .5rem; overflow-x: auto; padding-bottom: .15rem;
+  display: flex; gap: .45rem; overflow-x: auto; padding-bottom: .15rem;
   scrollbar-width: thin;
 }
 .nav-scroll a {
   flex: 0 0 auto;
   text-decoration: none;
-  color: var(--navy);
-  background: #eef4ff;
-  border: 1px solid #cfe0ff;
+  color: var(--nav-ink, var(--navy));
+  background: var(--nav-bg, #eef4ff);
+  border: 1px solid var(--nav-border, #cfe0ff);
   border-radius: 999px;
-  padding: .35rem .75rem;
-  font-size: .85rem;
-  font-weight: 600;
+  padding: .38rem .78rem;
+  font-size: .84rem;
+  font-weight: 700;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
+.nav-scroll a:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(11,31,58,.08); }
+.nav-scroll a[href="#workflows"] { --nav-bg:#ccfbf1; --nav-border:#99f6e4; --nav-ink:#115e59; }
+.nav-scroll a[href="#prompts"] { --nav-bg:#ede9fe; --nav-border:#ddd6fe; --nav-ink:#5b21b6; }
+.nav-scroll a[href="#leadership"] { --nav-bg:#ffedd5; --nav-border:#fed7aa; --nav-ink:#9a3412; }
+.nav-scroll a[href="#smb"] { --nav-bg:#d1fae5; --nav-border:#a7f3d0; --nav-ink:#065f46; }
+.nav-scroll a[href="#healthcare"] { --nav-bg:#ffe4e6; --nav-border:#fecdd3; --nav-ink:#9f1239; }
+.nav-scroll a[href="#videos"] { --nav-bg:#ffe4e6; --nav-border:#fecdd3; --nav-ink:#be123c; }
+.nav-scroll a[href="#people"] { --nav-bg:#dbeafe; --nav-border:#bfdbfe; --nav-ink:#1e3a8a; }
+.nav-scroll a[href="#this-week"] { --nav-bg:#e0f2fe; --nav-border:#bae6fd; --nav-ink:#075985; }
 .nav-scroll a:focus-visible, .chip:focus-visible, .btn-copy:focus-visible, .video-poster:focus-visible, #q:focus-visible {
   outline: none; box-shadow: var(--focus);
 }
@@ -112,10 +199,11 @@ img { max-width: 100%; height: auto; display: block; }
 #q {
   width: 100%;
   border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: .7rem .9rem;
+  border-radius: 12px;
+  padding: .75rem 1rem;
   font-size: 1rem;
   background: #fff;
+  box-shadow: 0 1px 2px rgba(11,31,58,.04);
 }
 .chips { display: flex; flex-wrap: wrap; gap: .4rem; }
 .chip {
@@ -123,31 +211,44 @@ img { max-width: 100%; height: auto; display: block; }
   background: #fff;
   color: var(--navy);
   border-radius: 999px;
-  padding: .35rem .7rem;
+  padding: .36rem .72rem;
   font-size: .82rem;
+  font-weight: 650;
   cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
 }
+.chip:hover { transform: translateY(-1px); }
 .chip[aria-pressed="true"] {
   background: var(--navy);
   color: #fff;
   border-color: var(--navy);
 }
+.chip[data-filter="workflows"][aria-pressed="true"] { background: var(--teal); border-color: var(--teal); }
+.chip[data-filter="prompts"][aria-pressed="true"] { background: var(--violet); border-color: var(--violet); }
+.chip[data-filter="leadership"][aria-pressed="true"] { background: var(--amber); border-color: var(--amber); }
+.chip[data-filter="smb"][aria-pressed="true"] { background: var(--green); border-color: var(--green); }
+.chip[data-filter="healthcare"][aria-pressed="true"],
+.chip[data-filter="pharma-commercial"][aria-pressed="true"],
+.chip[data-filter="healthcare-regulatory"][aria-pressed="true"] { background: var(--rose); border-color: var(--rose); }
+.chip[data-filter="videos"][aria-pressed="true"] { background: var(--coral); border-color: var(--coral); }
+.chip[data-filter="people"][aria-pressed="true"] { background: var(--blue); border-color: var(--blue); }
+
 .wrap { max-width: var(--max); margin: 0 auto; padding: 1.25rem; }
 .start {
-  background: var(--card);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.1rem 1.2rem 1.25rem;
+  padding: 1.2rem 1.25rem 1.35rem;
   box-shadow: var(--shadow);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.35rem;
 }
-.start h2 { margin: 0 0 .35rem; font-size: 1.15rem; color: var(--navy); }
-.start p { margin: 0 0 1rem; color: var(--muted); }
+.start h2 { margin: 0 0 .35rem; font-size: 1.2rem; color: var(--navy); }
+.start p { margin: 0; color: var(--muted); }
 .steps {
   display: grid;
   gap: .65rem;
   grid-template-columns: 1fr;
-  margin-top: .85rem;
+  margin-top: .95rem;
   align-items: stretch;
 }
 @media (min-width: 720px) {
@@ -158,24 +259,30 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 .step {
-  border-radius: 12px;
-  padding: .95rem 1rem;
-  background: var(--navy);
+  border-radius: 14px;
+  padding: 1rem 1.05rem;
   color: #fff;
   box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.14);
+  background: #0b1f3a;
 }
+.steps .step:nth-child(1) { background: linear-gradient(145deg, #0f766e 0%, #0b1f3a 78%); }
+.steps .step:nth-child(3) { background: linear-gradient(145deg, #4f46e5 0%, #0b1f3a 78%); }
+.steps .step:nth-child(5) { background: linear-gradient(145deg, #be123c 0%, #0b1f3a 78%); }
 .step .num {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 1.55rem; height: 1.55rem; border-radius: 999px;
-  background: var(--blue); color: #fff; font-weight: 700; font-size: .8rem;
-  margin-bottom: .4rem;
+  width: 1.75rem; height: 1.75rem; border-radius: 999px;
+  background: #fff;
+  color: #0b1f3a; font-weight: 800; font-size: .82rem;
+  margin-bottom: .45rem;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.18);
 }
 .step strong { display: block; color: #fff; margin-bottom: .25rem; font-size: .98rem; }
-.step span { color: #93c5fd; font-size: .88rem; }
+.step span { color: #dbeafe; font-size: .88rem; }
 .step-arrow {
   display: none;
-  color: var(--blue);
-  font-size: 1.4rem;
+  color: #64748b;
+  font-size: 1.35rem;
   font-weight: 700;
   text-align: center;
   line-height: 1;
@@ -183,99 +290,176 @@ img { max-width: 100%; height: auto; display: block; }
 @media (min-width: 720px) {
   .step-arrow { display: block; }
 }
+
+.section {
+  margin: 1.35rem 0 1.8rem;
+  padding: 1.05rem 1rem 1.15rem;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--tone-soft) 42%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tone) 14%, var(--line));
+}
+.section:nth-of-type(even) {
+  background: color-mix(in srgb, var(--tone-soft) 58%, #fff);
+}
+.section-head {
+  display: flex; gap: .85rem; align-items: flex-start;
+  margin-bottom: .95rem;
+}
 .section-head h2 { margin: 0; color: var(--navy); font-size: 1.35rem; }
-.section-head p { margin: .2rem 0 0; color: var(--muted); }
-.subgroup { margin: 1.1rem 0 .65rem; }
+.section-head p { margin: .25rem 0 0; color: var(--muted); }
+.subgroup { margin: 1.15rem 0 .7rem; }
 .subgroup h3 {
   margin: 0 0 .25rem;
   font-size: 1.05rem;
   color: var(--navy);
 }
 .subgroup p {
-  margin: 0 0 .7rem;
+  margin: 0 0 .75rem;
   color: var(--muted);
   font-size: .92rem;
 }
-.ico { width: 28px; height: 28px; flex: 0 0 auto; color: var(--navy); margin-top: .15rem; }
+
+.icon-tile {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.45rem; height: 2.45rem; border-radius: 12px;
+  background: var(--tone-soft);
+  color: var(--tone);
+  flex: 0 0 auto;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tone) 18%, transparent);
+}
+.ico { width: 22px; height: 22px; display: block; }
+.card .icon-tile { width: 2.1rem; height: 2.1rem; border-radius: 10px; }
+.card .ico { width: 18px; height: 18px; }
+
 .grid {
   display: grid;
-  gap: .9rem;
+  gap: .95rem;
   grid-template-columns: 1fr;
 }
 @media (min-width: 700px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
 .card {
+  --tone: #2563eb;
+  --tone-soft: #dbeafe;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1rem 1.05rem 1.05rem;
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(180deg, var(--tone), color-mix(in srgb, var(--tone) 40%, #0b1f3a));
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: color-mix(in srgb, var(--tone) 35%, var(--line));
 }
 .card[hidden], .section.is-empty { display: none !important; }
-.card-head { display: flex; gap: .65rem; align-items: flex-start; position: relative; }
+.card-head { display: flex; gap: .7rem; align-items: flex-start; position: relative; }
 .card-head h3 { margin: 0; font-size: 1.02rem; line-height: 1.35; }
 .card-head h3 a { color: var(--navy); text-decoration: none; }
-.card-head h3 a:hover { color: var(--blue); text-decoration: underline; }
+.card-head h3 a:hover { color: var(--tone); text-decoration: underline; }
 .meta { margin: .2rem 0 0; color: var(--muted); font-size: .84rem; }
 .why { margin: .7rem 0 0; color: #334155; }
+.card-head > div { flex: 1 1 auto; min-width: 0; }
 .badge-new {
   position: static;
   margin-left: auto;
   align-self: flex-start;
-  background: #dbeafe; color: #1e3a8a;
-  border: 1px solid #93c5fd;
-  font-size: .72rem; font-weight: 700;
-  padding: .15rem .45rem; border-radius: 999px;
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #fff;
+  border: 0;
+  font-size: .72rem; font-weight: 800;
+  padding: .22rem .55rem; border-radius: 999px;
   white-space: nowrap;
   flex: 0 0 auto;
+  letter-spacing: .02em;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, .28);
 }
-.card-head > div { flex: 1 1 auto; min-width: 0; }
+.tag-row { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .75rem; }
+.tag-pill {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: .18rem .55rem;
+  font-size: .72rem;
+  font-weight: 700;
+  background: var(--tone-soft);
+  color: var(--tone-ink);
+  border: 1px solid color-mix(in srgb, var(--tone) 22%, transparent);
+}
+.tag-workflows { --tone:#0d9488; --tone-soft:#ccfbf1; --tone-ink:#115e59; }
+.tag-prompts { --tone:#7c3aed; --tone-soft:#ede9fe; --tone-ink:#5b21b6; }
+.tag-leadership { --tone:#d97706; --tone-soft:#ffedd5; --tone-ink:#9a3412; }
+.tag-smb { --tone:#059669; --tone-soft:#d1fae5; --tone-ink:#065f46; }
+.tag-healthcare, .tag-pharma-commercial, .tag-healthcare-regulatory { --tone:#e11d48; --tone-soft:#ffe4e6; --tone-ink:#9f1239; }
+.tag-videos { --tone:#f43f5e; --tone-soft:#ffe4e6; --tone-ink:#9f1239; }
+.tag-people { --tone:#2563eb; --tone-soft:#dbeafe; --tone-ink:#1e3a8a; }
+.tag-managers { --tone:#0369a1; --tone-soft:#e0f2fe; --tone-ink:#075985; }
+.tag-aspiring { --tone:#7c3aed; --tone-soft:#f3e8ff; --tone-ink:#6b21a8; }
+
 .prompt-body {
   margin: .75rem 0 .65rem;
-  padding: .75rem .8rem;
-  background: #0b1f3a;
+  padding: .8rem .85rem;
+  background: linear-gradient(160deg, #0b1f3a, #1e1b4b);
   color: #e2e8f0;
-  border-radius: 10px;
+  border-radius: 12px;
   white-space: pre-wrap;
   word-break: break-word;
   font-size: .86rem;
   line-height: 1.45;
   max-height: 220px;
   overflow: auto;
+  border: 1px solid rgba(148,163,184,.25);
 }
+.prompt-actions { display: flex; align-items: center; gap: .45rem; margin-bottom: .15rem; }
 .btn-copy {
   border: 0;
-  background: var(--blue);
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   border-radius: 999px;
-  padding: .45rem .9rem;
+  padding: .48rem .95rem;
   cursor: pointer;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, .25);
 }
-.btn-copy:hover { background: #2563eb; }
+.btn-copy:hover { filter: brightness(1.06); }
 .copy-feedback {
-  margin-left: .5rem;
   color: var(--ok);
   font-weight: 700;
   font-size: .9rem;
 }
-.video-lazy { margin: -.15rem -.15rem .75rem; border-radius: 10px; overflow: hidden; background: #0b1f3a; aspect-ratio: 16/9; }
+.video-lazy {
+  margin: -.2rem -.2rem .8rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0b1f3a;
+  aspect-ratio: 16/9;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+}
 .video-poster {
   position: relative; display: block; width: 100%; height: 100%;
   border: 0; padding: 0; cursor: pointer; background: #0b1f3a;
 }
-.video-poster img { width: 100%; height: 100%; object-fit: cover; opacity: .92; }
+.video-poster img { width: 100%; height: 100%; object-fit: cover; opacity: .94; transition: transform .25s ease, opacity .25s ease; }
+.video-card:hover .video-poster img { transform: scale(1.03); opacity: 1; }
 .play-btn {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
-  width: 56px; height: 56px; border-radius: 999px;
-  background: rgba(11,31,58,.88); border: 2px solid #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+  width: 58px; height: 58px; border-radius: 999px;
+  background: linear-gradient(145deg, rgba(244,63,94,.95), rgba(11,31,58,.9));
+  border: 2px solid #fff;
+  box-shadow: 0 8px 22px rgba(0,0,0,.35);
 }
 .play-btn::before {
   content: "";
-  position: absolute; left: 22px; top: 17px;
-  border-style: solid; border-width: 11px 0 11px 18px;
+  position: absolute; left: 23px; top: 17px;
+  border-style: solid; border-width: 12px 0 12px 18px;
   border-color: transparent transparent transparent #fff;
 }
 .video-lazy iframe { width: 100%; height: 100%; border: 0; aspect-ratio: 16/9; display: block; }
@@ -292,18 +476,63 @@ img { max-width: 100%; height: auto; display: block; }
 .empty.show { display: block; }
 footer {
   max-width: var(--max);
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.2rem;
   padding: 0 1.25rem;
   color: var(--muted);
-  font-size: .9rem;
+  font-size: .92rem;
 }
-footer a { color: var(--navy); }
 noscript .note {
   max-width: var(--max); margin: .75rem auto; padding: 0 1.25rem;
   color: var(--muted); font-size: .9rem;
 }
+
+/* Reveal on scroll — visible by default without JS */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+.js .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .hero-mesh, .hero-glow { animation: none !important; }
+  .card, .nav-scroll a, .chip, .video-poster img { transition: none !important; }
+  .js .reveal, .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e5eefc;
+    --muted: #9fb0c7;
+    --line: #243549;
+    --bg: #07111f;
+    --card: #0f1b2d;
+    --shadow: 0 10px 28px rgba(0,0,0,.35);
+    --shadow-hover: 0 16px 36px rgba(0,0,0,.45);
+    --focus: 0 0 0 3px rgba(96, 165, 250, 0.5);
+  }
+  body {
+    background:
+      radial-gradient(1000px 420px at 10% -10%, rgba(45, 212, 191, 0.08), transparent 55%),
+      radial-gradient(800px 380px at 100% 0%, rgba(129, 140, 248, 0.1), transparent 50%),
+      var(--bg);
+  }
+  .sticky-bar { background: rgba(7, 17, 31, 0.88); }
+  #q, .chip, .empty, .start { background: #0f1b2d; color: var(--ink); }
+  .chip { border-color: #2b3d55; color: #dbeafe; }
+  .section { border-color: #243549; }
+  .card-head h3 a { color: #e8eef8; }
+  .why { color: #c6d3e5; }
+  .nav-scroll a { color: var(--nav-ink, #dbeafe); }
+  footer { color: #9fb0c7; }
 }
 
 </style>
@@ -311,6 +540,8 @@ noscript .note {
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="hero">
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
   
 <svg class="network" viewBox="0 0 320 220" aria-hidden="true">
   <g fill="none" stroke="#60a5fa" stroke-width="1.25" opacity="0.95">
@@ -329,7 +560,12 @@ noscript .note {
     <h1>Practical AI. Better Leadership.</h1>
     <p class="tagline">Work smarter. Lead with clarity.</p>
     <p class="intro">A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.</p>
-    <p class="meta-line">Updated 2026-11-08 (America/Chicago)</p>
+    <p class="meta-line">Updated 2026-11-08 · Updated daily</p>
+    <div class="stat-pills" aria-label="Library snapshot">
+      <span class="stat-pill"><strong>59</strong> resources</span>
+      <span class="stat-pill"><strong>6</strong> prompts</span>
+      <span class="stat-pill"><strong>10</strong> videos</span>
+    </div>
   </div>
 </header>
 
@@ -368,7 +604,7 @@ noscript .note {
 </div>
 
 <main id="main" class="wrap">
-  <section class="start" id="start-here">
+  <section class="start reveal" id="start-here">
     <h2>Start here</h2>
     <p>You do not need a stack of tools. Pick one recurring piece of work, keep a human in the loop, and track whether quality improved.</p>
     <div class="steps" role="list" aria-label="Three steps: pick one workflow, add a human checkpoint, measure">
@@ -383,95 +619,101 @@ noscript .note {
   <div id="no-results" class="empty" role="status">No resources match that search or filter. Clear search or choose All.</div>
 
   
-<section class="section" id="this-week" data-section="this-week">
+<section class="section reveal tone-week" id="this-week" data-section="this-week">
   <header class="section-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg>
+    <span class="icon-tile tone-week" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg></span>
     <div>
       <h2>New this week</h2>
       <p>Fresh reads worth a short bookmark.</p>
     </div>
   </header>
   <div class="grid">
-<article class="card" data-tags="workflows managers aspiring" data-text="three ways to work with ai, and how to choose wharton executive education (ethan mollick) clear framework for centaur, cyborg, and conjurer modes—so you decide how much of a task to keep, share, or hand off before you start prompting.">
+<article class="card tone-week" data-tags="workflows managers aspiring" data-text="three ways to work with ai, and how to choose wharton executive education (ethan mollick) clear framework for centaur, cyborg, and conjurer modes—so you decide how much of a task to keep, share, or hand off before you start prompting.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg>
+    <span class="icon-tile tone-week" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg></span>
     <div>
       <h3><a href="https://executiveeducation.wharton.upenn.edu/thought-leadership/wharton-at-work/2026/11/three-ways-to-work-with-ai/" rel="noopener noreferrer">Three Ways to Work with AI, and How to Choose</a></h3>
       <p class="meta">Wharton Executive Education (Ethan Mollick) · 2026-11</p>
     </div>
-    <span class="badge-new">New this week</span>
+    <span class="badge-new">New</span>
   </div>
   <p class="why">Clear framework for centaur, cyborg, and conjurer modes—so you decide how much of a task to keep, share, or hand off before you start prompting.</p>
+  <div class="tag-row"><span class="tag-pill tag-workflows">Workflows</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-aspiring">Aspiring leaders</span></div>
 </article>
-<article class="card" data-tags="leadership workflows managers" data-text="the four ps — how to manage an ai-native engineering team deeplearning.ai / andrew ng a leadership checklist around people, projects, platforms, and processes. useful even if you do not manage engineers—same pattern applies to any knowledge team adopting ai.">
+<article class="card tone-week" data-tags="leadership workflows managers" data-text="the four ps — how to manage an ai-native engineering team deeplearning.ai / andrew ng a leadership checklist around people, projects, platforms, and processes. useful even if you do not manage engineers—same pattern applies to any knowledge team adopting ai.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg>
+    <span class="icon-tile tone-week" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg></span>
     <div>
       <h3><a href="https://www.deeplearning.ai/the-batch/the-four-ps" rel="noopener noreferrer">The Four Ps — How to Manage an AI-Native Engineering Team</a></h3>
       <p class="meta">DeepLearning.AI / Andrew Ng · 2026-10-23</p>
     </div>
-    <span class="badge-new">New this week</span>
+    <span class="badge-new">New</span>
   </div>
   <p class="why">A leadership checklist around People, Projects, Platforms, and Processes. Useful even if you do not manage engineers—same pattern applies to any knowledge team adopting AI.</p>
+  <div class="tag-row"><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-workflows">Workflows</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="leadership managers" data-text="how ai is changing strategy (podcast with ethan mollick) harvard business review short listen on why ai is a strategy question, not just a productivity add-on, and why managers should experiment instead of waiting for a perfect playbook.">
+<article class="card tone-week" data-tags="leadership managers" data-text="how ai is changing strategy (podcast with ethan mollick) harvard business review short listen on why ai is a strategy question, not just a productivity add-on, and why managers should experiment instead of waiting for a perfect playbook.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg>
+    <span class="icon-tile tone-week" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg></span>
     <div>
       <h3><a href="https://hbr.org/podcast/2026/10/how-ai-is-changing-strategy-rethinking-what-your-business-is-designed-to-do" rel="noopener noreferrer">How AI Is Changing Strategy (podcast with Ethan Mollick)</a></h3>
       <p class="meta">Harvard Business Review · 2026-10</p>
     </div>
-    <span class="badge-new">New this week</span>
+    <span class="badge-new">New</span>
   </div>
   <p class="why">Short listen on why AI is a strategy question, not just a productivity add-on, and why managers should experiment instead of waiting for a perfect playbook.</p>
+  <div class="tag-row"><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="workflows managers smb" data-text="manager ai adoption playbook: six-week plan ajaia week-by-week plan to pick one workflow, set safe-use rules, add human checkpoints, and measure quality—not just logins.">
+<article class="card tone-week" data-tags="workflows managers smb" data-text="manager ai adoption playbook: six-week plan ajaia week-by-week plan to pick one workflow, set safe-use rules, add human checkpoints, and measure quality—not just logins.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg>
+    <span class="icon-tile tone-week" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg></span>
     <div>
       <h3><a href="https://ajaia.ai/resources/manager-ai-adoption-playbook" rel="noopener noreferrer">Manager AI Adoption Playbook: Six-Week Plan</a></h3>
       <p class="meta">Ajaia · 2026</p>
     </div>
-    <span class="badge-new">New this week</span>
+    <span class="badge-new">New</span>
   </div>
   <p class="why">Week-by-week plan to pick one workflow, set safe-use rules, add human checkpoints, and measure quality—not just logins.</p>
+  <div class="tag-row"><span class="tag-pill tag-workflows">Workflows</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-smb">Small business</span></div>
 </article>
-<article class="card" data-tags="workflows managers aspiring" data-text="ai for managers: how to lead a team that uses ai manish singh practical starting workflows (status reports, 1:1 prep, meeting actions) plus a one-page rules outline managers can actually use.">
+<article class="card tone-week" data-tags="workflows managers aspiring" data-text="ai for managers: how to lead a team that uses ai manish singh practical starting workflows (status reports, 1:1 prep, meeting actions) plus a one-page rules outline managers can actually use.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg>
+    <span class="icon-tile tone-week" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg></span>
     <div>
       <h3><a href="https://manishsingh.info/blog/ai-for-managers" rel="noopener noreferrer">AI for Managers: How to Lead a Team That Uses AI</a></h3>
       <p class="meta">Manish Singh · 2026</p>
     </div>
-    <span class="badge-new">New this week</span>
+    <span class="badge-new">New</span>
   </div>
   <p class="why">Practical starting workflows (status reports, 1:1 prep, meeting actions) plus a one-page rules outline managers can actually use.</p>
+  <div class="tag-row"><span class="tag-pill tag-workflows">Workflows</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-aspiring">Aspiring leaders</span></div>
 </article>
-<article class="card" data-tags="workflows managers" data-text="agency and agents one useful thing (ethan mollick) on when agents should pull humans in—for approval, expertise, exceptions, and interesting decisions—so you do not automate the wrong half of the job.">
+<article class="card tone-week" data-tags="workflows managers" data-text="agency and agents one useful thing (ethan mollick) on when agents should pull humans in—for approval, expertise, exceptions, and interesting decisions—so you do not automate the wrong half of the job.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg>
+    <span class="icon-tile tone-week" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm13 8H4v10h16V10zM8 13h3v3H8v-3z"/></svg></span>
     <div>
       <h3><a href="https://www.oneusefulthing.org/p/agency-and-agents" rel="noopener noreferrer">Agency and Agents</a></h3>
       <p class="meta">One Useful Thing (Ethan Mollick) · 2026-08-31</p>
     </div>
-    <span class="badge-new">New this week</span>
+    <span class="badge-new">New</span>
   </div>
   <p class="why">On when agents should pull humans in—for approval, expertise, exceptions, and interesting decisions—so you do not automate the wrong half of the job.</p>
+  <div class="tag-row"><span class="tag-pill tag-workflows">Workflows</span><span class="tag-pill tag-managers">Managers</span></div>
 </article></div>
 </section>
   
-<section class="section" id="workflows" data-section="workflows">
+<section class="section reveal tone-workflows" id="workflows" data-section="workflows">
   <header class="section-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.2" fill="#3b82f6"/><circle cx="6" cy="12" r="1.2" fill="#3b82f6"/><circle cx="6" cy="17" r="1.2" fill="#3b82f6"/></svg>
+    <span class="icon-tile tone-workflows" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="12" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="17" r="1.4" fill="currentColor" opacity=".45"/></svg></span>
     <div>
       <h2>Workflows</h2>
       <p>Practical ways to use AI on real recurring work.</p>
     </div>
   </header>
   <div class="grid">
-<article class="card" data-tags="workflows managers aspiring" data-text="management as ai superpower one useful thing (ethan mollick) why management skills—clear goals, evaluation, and feedback—matter more as ai agents do longer stretches of work.">
+<article class="card tone-workflows" data-tags="workflows managers aspiring" data-text="management as ai superpower one useful thing (ethan mollick) why management skills—clear goals, evaluation, and feedback—matter more as ai agents do longer stretches of work.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.2" fill="#3b82f6"/><circle cx="6" cy="12" r="1.2" fill="#3b82f6"/><circle cx="6" cy="17" r="1.2" fill="#3b82f6"/></svg>
+    <span class="icon-tile tone-workflows" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="12" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="17" r="1.4" fill="currentColor" opacity=".45"/></svg></span>
     <div>
       <h3><a href="https://www.oneusefulthing.org/p/management-as-ai-superpower" rel="noopener noreferrer">Management as AI Superpower</a></h3>
       <p class="meta">One Useful Thing (Ethan Mollick) · 2026-01-27</p>
@@ -479,10 +721,11 @@ noscript .note {
     
   </div>
   <p class="why">Why management skills—clear goals, evaluation, and feedback—matter more as AI agents do longer stretches of work.</p>
+  <div class="tag-row"><span class="tag-pill tag-workflows">Workflows</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-aspiring">Aspiring leaders</span></div>
 </article>
-<article class="card" data-tags="workflows managers" data-text="ai workflows: a practical guide for project managers self-made project manager defines an ai workflow as trigger → context → model → human review → output, with ownership and privacy called out explicitly.">
+<article class="card tone-workflows" data-tags="workflows managers" data-text="ai workflows: a practical guide for project managers self-made project manager defines an ai workflow as trigger → context → model → human review → output, with ownership and privacy called out explicitly.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.2" fill="#3b82f6"/><circle cx="6" cy="12" r="1.2" fill="#3b82f6"/><circle cx="6" cy="17" r="1.2" fill="#3b82f6"/></svg>
+    <span class="icon-tile tone-workflows" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="12" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="17" r="1.4" fill="currentColor" opacity=".45"/></svg></span>
     <div>
       <h3><a href="https://selfmadepm.com/blog/152-ai-workflows-a-practical-guide-for-project-managers/" rel="noopener noreferrer">AI Workflows: A Practical Guide for Project Managers</a></h3>
       <p class="meta">Self-Made Project Manager · 2026</p>
@@ -490,10 +733,11 @@ noscript .note {
     
   </div>
   <p class="why">Defines an AI workflow as trigger → context → model → human review → output, with ownership and privacy called out explicitly.</p>
+  <div class="tag-row"><span class="tag-pill tag-workflows">Workflows</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="workflows smb managers" data-text="how to use ai for business automation zapier sensible sequence for small teams: map repetitive work, automate one simple flow first, keep humans on customer-facing and high-risk steps.">
+<article class="card tone-workflows" data-tags="workflows smb managers" data-text="how to use ai for business automation zapier sensible sequence for small teams: map repetitive work, automate one simple flow first, keep humans on customer-facing and high-risk steps.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.2" fill="#3b82f6"/><circle cx="6" cy="12" r="1.2" fill="#3b82f6"/><circle cx="6" cy="17" r="1.2" fill="#3b82f6"/></svg>
+    <span class="icon-tile tone-workflows" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="12" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="17" r="1.4" fill="currentColor" opacity=".45"/></svg></span>
     <div>
       <h3><a href="https://zapier.com/blog/ai-for-business-automation/" rel="noopener noreferrer">How to Use AI for Business Automation</a></h3>
       <p class="meta">Zapier · 2026</p>
@@ -501,10 +745,11 @@ noscript .note {
     
   </div>
   <p class="why">Sensible sequence for small teams: map repetitive work, automate one simple flow first, keep humans on customer-facing and high-risk steps.</p>
+  <div class="tag-row"><span class="tag-pill tag-workflows">Workflows</span><span class="tag-pill tag-smb">Small business</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="workflows smb" data-text="business process automation (overview) zapier plain-language overview of when process automation helps—and when a messy process needs a sop before a tool.">
+<article class="card tone-workflows" data-tags="workflows smb" data-text="business process automation (overview) zapier plain-language overview of when process automation helps—and when a messy process needs a sop before a tool.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.2" fill="#3b82f6"/><circle cx="6" cy="12" r="1.2" fill="#3b82f6"/><circle cx="6" cy="17" r="1.2" fill="#3b82f6"/></svg>
+    <span class="icon-tile tone-workflows" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h4v2H4V6zm6 0h10v2H10V6zM4 11h4v2H4v-2zm6 0h10v2H10v-2zM4 16h4v2H4v-2zm6 0h10v2H10v-2z"/><circle cx="6" cy="7" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="12" r="1.4" fill="currentColor" opacity=".45"/><circle cx="6" cy="17" r="1.4" fill="currentColor" opacity=".45"/></svg></span>
     <div>
       <h3><a href="https://zapier.com/blog/business-process-automation/" rel="noopener noreferrer">Business Process Automation (overview)</a></h3>
       <p class="meta">Zapier · 2026</p>
@@ -512,24 +757,25 @@ noscript .note {
     
   </div>
   <p class="why">Plain-language overview of when process automation helps—and when a messy process needs a SOP before a tool.</p>
+  <div class="tag-row"><span class="tag-pill tag-workflows">Workflows</span><span class="tag-pill tag-smb">Small business</span></div>
 </article></div>
 </section>
   
-<section class="section" id="prompts" data-section="prompts">
+<section class="section reveal tone-prompts" id="prompts" data-section="prompts">
   <header class="section-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg>
+    <span class="icon-tile tone-prompts" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg></span>
     <div>
       <h2>Prompts</h2>
       <p>Copy these, swap in your notes, then edit the draft yourself.</p>
     </div>
   </header>
   <div class="grid">
-<article class="card prompt-card" data-tags="prompts managers aspiring" data-text="1:1 prep brief turn scattered notes into a sharp agenda without inventing performance judgments. you are helping a manager prepare for a weekly 1:1. using only the notes i paste below, produce: (1) 3 open commitments with owners and dates if mentioned, (2) 3 questions i should ask, (3) 1 risk or blocker to address, (4) a 4-bullet proposed agenda. do not invent facts, praise, or criticism that is not supported by the notes. flag anything unclear as a question for me.
+<article class="card prompt-card tone-prompts" data-tags="prompts managers aspiring" data-text="1:1 prep brief turn scattered notes into a sharp agenda without inventing performance judgments. you are helping a manager prepare for a weekly 1:1. using only the notes i paste below, produce: (1) 3 open commitments with owners and dates if mentioned, (2) 3 questions i should ask, (3) 1 risk or blocker to address, (4) a 4-bullet proposed agenda. do not invent facts, praise, or criticism that is not supported by the notes. flag anything unclear as a question for me.
 
 notes:
 {{paste notes}}" id="prompt-1on1">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg>
+    <span class="icon-tile tone-prompts" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg></span>
     <div>
       <h3>1:1 prep brief</h3>
       <p class="meta">Copy-ready prompt</p>
@@ -540,17 +786,18 @@ notes:
 
 Notes:
 {{paste notes}}</pre>
-  <button type="button" class="btn-copy" data-copy-target="prompt-1on1-text" aria-label="Copy prompt: 1:1 prep brief">
-    Copy
-  </button>
-  <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  <div class="prompt-actions">
+    <button type="button" class="btn-copy" data-copy-target="prompt-1on1-text" aria-label="Copy prompt: 1:1 prep brief">Copy</button>
+    <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  </div>
+  <div class="tag-row"><span class="tag-pill tag-prompts">Prompts</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-aspiring">Aspiring leaders</span></div>
 </article>
-<article class="card prompt-card" data-tags="prompts managers smb" data-text="meeting notes → actions convert a transcript or rough notes into owners and due dates you can send for confirmation. convert the meeting notes below into an action list. for each item include: action, owner (or &#x27;unassigned&#x27;), due date if stated, and status (new / needs confirmation). list open questions separately. do not assign owners or dates that were not said. end with a short follow-up email draft asking people to confirm their items.
+<article class="card prompt-card tone-prompts" data-tags="prompts managers smb" data-text="meeting notes → actions convert a transcript or rough notes into owners and due dates you can send for confirmation. convert the meeting notes below into an action list. for each item include: action, owner (or &#x27;unassigned&#x27;), due date if stated, and status (new / needs confirmation). list open questions separately. do not assign owners or dates that were not said. end with a short follow-up email draft asking people to confirm their items.
 
 meeting notes:
 {{paste notes}}" id="prompt-actions">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg>
+    <span class="icon-tile tone-prompts" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg></span>
     <div>
       <h3>Meeting notes → actions</h3>
       <p class="meta">Copy-ready prompt</p>
@@ -561,17 +808,18 @@ meeting notes:
 
 Meeting notes:
 {{paste notes}}</pre>
-  <button type="button" class="btn-copy" data-copy-target="prompt-actions-text" aria-label="Copy prompt: Meeting notes → actions">
-    Copy
-  </button>
-  <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  <div class="prompt-actions">
+    <button type="button" class="btn-copy" data-copy-target="prompt-actions-text" aria-label="Copy prompt: Meeting notes → actions">Copy</button>
+    <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  </div>
+  <div class="tag-row"><span class="tag-pill tag-prompts">Prompts</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-smb">Small business</span></div>
 </article>
-<article class="card prompt-card" data-tags="prompts managers workflows" data-text="delegation brief for an ai agent brief ai the way you would brief a new hire—goal, constraints, definition of done, and checks. rewrite my rough task into a clear delegation brief for an ai agent with these sections: objective, context, constraints (what must not change), definition of done, required outputs, checks to run before claiming finished, and escalation rules (when to stop and ask a human). keep it under 250 words. use only what i provide.
+<article class="card prompt-card tone-prompts" data-tags="prompts managers workflows" data-text="delegation brief for an ai agent brief ai the way you would brief a new hire—goal, constraints, definition of done, and checks. rewrite my rough task into a clear delegation brief for an ai agent with these sections: objective, context, constraints (what must not change), definition of done, required outputs, checks to run before claiming finished, and escalation rules (when to stop and ask a human). keep it under 250 words. use only what i provide.
 
 rough task:
 {{describe task}}" id="prompt-delegate">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg>
+    <span class="icon-tile tone-prompts" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg></span>
     <div>
       <h3>Delegation brief for an AI agent</h3>
       <p class="meta">Copy-ready prompt</p>
@@ -582,17 +830,18 @@ rough task:
 
 Rough task:
 {{describe task}}</pre>
-  <button type="button" class="btn-copy" data-copy-target="prompt-delegate-text" aria-label="Copy prompt: Delegation brief for an AI agent">
-    Copy
-  </button>
-  <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  <div class="prompt-actions">
+    <button type="button" class="btn-copy" data-copy-target="prompt-delegate-text" aria-label="Copy prompt: Delegation brief for an AI agent">Copy</button>
+    <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  </div>
+  <div class="tag-row"><span class="tag-pill tag-prompts">Prompts</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-workflows">Workflows</span></div>
 </article>
-<article class="card prompt-card" data-tags="prompts managers" data-text="weekly status from raw updates draft a status update for stakeholders while keeping escalation decisions with you. using only the team updates below, draft a weekly status with sections: done, in progress, blocked, asks, and risks. keep each bullet factual and short. mark items that need my judgment with [review]. do not soften bad news or invent metrics.
+<article class="card prompt-card tone-prompts" data-tags="prompts managers" data-text="weekly status from raw updates draft a status update for stakeholders while keeping escalation decisions with you. using only the team updates below, draft a weekly status with sections: done, in progress, blocked, asks, and risks. keep each bullet factual and short. mark items that need my judgment with [review]. do not soften bad news or invent metrics.
 
 updates:
 {{paste updates}}" id="prompt-status">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg>
+    <span class="icon-tile tone-prompts" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg></span>
     <div>
       <h3>Weekly status from raw updates</h3>
       <p class="meta">Copy-ready prompt</p>
@@ -603,17 +852,18 @@ updates:
 
 Updates:
 {{paste updates}}</pre>
-  <button type="button" class="btn-copy" data-copy-target="prompt-status-text" aria-label="Copy prompt: Weekly status from raw updates">
-    Copy
-  </button>
-  <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  <div class="prompt-actions">
+    <button type="button" class="btn-copy" data-copy-target="prompt-status-text" aria-label="Copy prompt: Weekly status from raw updates">Copy</button>
+    <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  </div>
+  <div class="tag-row"><span class="tag-pill tag-prompts">Prompts</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card prompt-card" data-tags="prompts smb managers" data-text="sop from a walkthrough turn a recorded process into a draft sop you still approve before it becomes team truth. turn this walkthrough into a step-by-step sop for a teammate doing the task for the first time. include: purpose, when to use it, prerequisites, numbered steps, common mistakes, and a short &#x27;done when&#x27; checklist. call out any step that needs human judgment or access i did not describe. do not invent tools or shortcuts i did not mention.
+<article class="card prompt-card tone-prompts" data-tags="prompts smb managers" data-text="sop from a walkthrough turn a recorded process into a draft sop you still approve before it becomes team truth. turn this walkthrough into a step-by-step sop for a teammate doing the task for the first time. include: purpose, when to use it, prerequisites, numbered steps, common mistakes, and a short &#x27;done when&#x27; checklist. call out any step that needs human judgment or access i did not describe. do not invent tools or shortcuts i did not mention.
 
 walkthrough:
 {{paste transcript or outline}}" id="prompt-sop">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg>
+    <span class="icon-tile tone-prompts" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg></span>
     <div>
       <h3>SOP from a walkthrough</h3>
       <p class="meta">Copy-ready prompt</p>
@@ -624,17 +874,18 @@ walkthrough:
 
 Walkthrough:
 {{paste transcript or outline}}</pre>
-  <button type="button" class="btn-copy" data-copy-target="prompt-sop-text" aria-label="Copy prompt: SOP from a walkthrough">
-    Copy
-  </button>
-  <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  <div class="prompt-actions">
+    <button type="button" class="btn-copy" data-copy-target="prompt-sop-text" aria-label="Copy prompt: SOP from a walkthrough">Copy</button>
+    <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  </div>
+  <div class="tag-row"><span class="tag-pill tag-prompts">Prompts</span><span class="tag-pill tag-smb">Small business</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card prompt-card" data-tags="prompts managers aspiring smb" data-text="decision memo (options + recommendation) force a clear recommendation with assumptions and kill criteria—useful for managers and owners alike. write a one-page decision memo from the facts below. structure: decision needed, options (2–4), pros/cons for each, recommendation, key assumptions, what would change my mind, and next step if we approve. do not invent data. if information is missing, list it under open questions instead of guessing.
+<article class="card prompt-card tone-prompts" data-tags="prompts managers aspiring smb" data-text="decision memo (options + recommendation) force a clear recommendation with assumptions and kill criteria—useful for managers and owners alike. write a one-page decision memo from the facts below. structure: decision needed, options (2–4), pros/cons for each, recommendation, key assumptions, what would change my mind, and next step if we approve. do not invent data. if information is missing, list it under open questions instead of guessing.
 
 facts:
 {{paste facts}}" id="prompt-decision">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg>
+    <span class="icon-tile tone-prompts" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 4v2h12V8H6zm0 4v2h8v-2H6z"/></svg></span>
     <div>
       <h3>Decision memo (options + recommendation)</h3>
       <p class="meta">Copy-ready prompt</p>
@@ -645,25 +896,26 @@ facts:
 
 Facts:
 {{paste facts}}</pre>
-  <button type="button" class="btn-copy" data-copy-target="prompt-decision-text" aria-label="Copy prompt: Decision memo (options + recommendation)">
-    Copy
-  </button>
-  <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  <div class="prompt-actions">
+    <button type="button" class="btn-copy" data-copy-target="prompt-decision-text" aria-label="Copy prompt: Decision memo (options + recommendation)">Copy</button>
+    <span class="copy-feedback" hidden aria-live="polite">Copied</span>
+  </div>
+  <div class="tag-row"><span class="tag-pill tag-prompts">Prompts</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-aspiring">Aspiring leaders</span></div>
 </article></div>
 </section>
   
-<section class="section" id="leadership" data-section="leadership">
+<section class="section reveal tone-leadership" id="leadership" data-section="leadership">
   <header class="section-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5.1L12 13.8 7.5 15.8l.9-5.1L4.8 7.2l5-.7L12 2z"/><path fill="#3b82f6" d="M12 2l1.1 2.2-1.1.3-1.1-.3L12 2z"/></svg>
+    <span class="icon-tile tone-leadership" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5.1L12 13.8 7.5 15.8l.9-5.1L4.8 7.2l5-.7L12 2z"/></svg></span>
     <div>
       <h2>Leadership</h2>
       <p>Judgment, feedback, and rethinking—skills AI does not replace.</p>
     </div>
   </header>
   <div class="grid">
-<article class="card" data-tags="leadership aspiring managers" data-text="want to become a better leader? question your assumptions knowledge at wharton (adam grant &amp; erika james) evidence-based reminder to rethink management habits—pairs well with ai experiments where old assumptions fail fast.">
+<article class="card tone-leadership" data-tags="leadership aspiring managers" data-text="want to become a better leader? question your assumptions knowledge at wharton (adam grant &amp; erika james) evidence-based reminder to rethink management habits—pairs well with ai experiments where old assumptions fail fast.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5.1L12 13.8 7.5 15.8l.9-5.1L4.8 7.2l5-.7L12 2z"/><path fill="#3b82f6" d="M12 2l1.1 2.2-1.1.3-1.1-.3L12 2z"/></svg>
+    <span class="icon-tile tone-leadership" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5.1L12 13.8 7.5 15.8l.9-5.1L4.8 7.2l5-.7L12 2z"/></svg></span>
     <div>
       <h3><a href="https://knowledge.wharton.upenn.edu/article/want-become-better-leader-question-assumptions/" rel="noopener noreferrer">Want to Become a Better Leader? Question Your Assumptions</a></h3>
       <p class="meta">Knowledge at Wharton (Adam Grant &amp; Erika James) · 2021-05-17</p>
@@ -671,10 +923,11 @@ Facts:
     
   </div>
   <p class="why">Evidence-based reminder to rethink management habits—pairs well with AI experiments where old assumptions fail fast.</p>
+  <div class="tag-row"><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-aspiring">Aspiring leaders</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="leadership managers aspiring" data-text="why you need a challenge network knowledge at wharton (adam grant) on surrounding yourself with thoughtful skeptics who catch blind spots—especially useful when ai makes weak ideas look polished.">
+<article class="card tone-leadership" data-tags="leadership managers aspiring" data-text="why you need a challenge network knowledge at wharton (adam grant) on surrounding yourself with thoughtful skeptics who catch blind spots—especially useful when ai makes weak ideas look polished.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5.1L12 13.8 7.5 15.8l.9-5.1L4.8 7.2l5-.7L12 2z"/><path fill="#3b82f6" d="M12 2l1.1 2.2-1.1.3-1.1-.3L12 2z"/></svg>
+    <span class="icon-tile tone-leadership" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5.1L12 13.8 7.5 15.8l.9-5.1L4.8 7.2l5-.7L12 2z"/></svg></span>
     <div>
       <h3><a href="https://knowledge.wharton.upenn.edu/article/why-you-need-a-challenge-network/" rel="noopener noreferrer">Why You Need a Challenge Network</a></h3>
       <p class="meta">Knowledge at Wharton (Adam Grant) · 2021-02-16</p>
@@ -682,10 +935,11 @@ Facts:
     
   </div>
   <p class="why">On surrounding yourself with thoughtful skeptics who catch blind spots—especially useful when AI makes weak ideas look polished.</p>
+  <div class="tag-row"><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-aspiring">Aspiring leaders</span></div>
 </article>
-<article class="card" data-tags="leadership managers" data-text="the shape of the thing one useful thing (ethan mollick) big-picture leadership read on the shift from co-intelligence chat to managing agents—and why org choices now set precedents.">
+<article class="card tone-leadership" data-tags="leadership managers" data-text="the shape of the thing one useful thing (ethan mollick) big-picture leadership read on the shift from co-intelligence chat to managing agents—and why org choices now set precedents.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5.1L12 13.8 7.5 15.8l.9-5.1L4.8 7.2l5-.7L12 2z"/><path fill="#3b82f6" d="M12 2l1.1 2.2-1.1.3-1.1-.3L12 2z"/></svg>
+    <span class="icon-tile tone-leadership" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.2 4.5 5 .7-3.6 3.5.9 5.1L12 13.8 7.5 15.8l.9-5.1L4.8 7.2l5-.7L12 2z"/></svg></span>
     <div>
       <h3><a href="https://www.oneusefulthing.org/p/the-shape-of-the-thing" rel="noopener noreferrer">The Shape of the Thing</a></h3>
       <p class="meta">One Useful Thing (Ethan Mollick) · 2026-03-12</p>
@@ -693,21 +947,22 @@ Facts:
     
   </div>
   <p class="why">Big-picture leadership read on the shift from co-intelligence chat to managing agents—and why org choices now set precedents.</p>
+  <div class="tag-row"><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-managers">Managers</span></div>
 </article></div>
 </section>
   
-<section class="section" id="smb" data-section="smb">
+<section class="section reveal tone-smb" id="smb" data-section="smb">
   <header class="section-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20V9l9-5 9 5v11h-6v-6H9v6H3zm2-2h2v-4h10v4h2v-8.2L12 6.1 5 9.8V18z"/></svg>
+    <span class="icon-tile tone-smb" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20V9l9-5 9 5v11h-6v-6H9v6H3zm2-2h2v-4h10v4h2v-8.2L12 6.1 5 9.8V18z"/></svg></span>
     <div>
       <h2>Small business</h2>
       <p>Automation ideas for owners who wear many hats.</p>
     </div>
   </header>
   <div class="grid">
-<article class="card" data-tags="smb workflows" data-text="business automation: transform your operations zapier owner-friendly starting point: audit repetitive work, automate one flow, measure time and errors before expanding.">
+<article class="card tone-smb" data-tags="smb workflows" data-text="business automation: transform your operations zapier owner-friendly starting point: audit repetitive work, automate one flow, measure time and errors before expanding.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20V9l9-5 9 5v11h-6v-6H9v6H3zm2-2h2v-4h10v4h2v-8.2L12 6.1 5 9.8V18z"/></svg>
+    <span class="icon-tile tone-smb" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20V9l9-5 9 5v11h-6v-6H9v6H3zm2-2h2v-4h10v4h2v-8.2L12 6.1 5 9.8V18z"/></svg></span>
     <div>
       <h3><a href="https://zapier.com/blog/business-automation/" rel="noopener noreferrer">Business Automation: Transform Your Operations</a></h3>
       <p class="meta">Zapier · 2026</p>
@@ -715,10 +970,11 @@ Facts:
     
   </div>
   <p class="why">Owner-friendly starting point: audit repetitive work, automate one flow, measure time and errors before expanding.</p>
+  <div class="tag-row"><span class="tag-pill tag-smb">Small business</span><span class="tag-pill tag-workflows">Workflows</span></div>
 </article>
-<article class="card" data-tags="smb workflows" data-text="operations automation: everything you need to know zapier practical ops framing for small businesses—what to automate in handoffs between apps without losing accountability.">
+<article class="card tone-smb" data-tags="smb workflows" data-text="operations automation: everything you need to know zapier practical ops framing for small businesses—what to automate in handoffs between apps without losing accountability.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20V9l9-5 9 5v11h-6v-6H9v6H3zm2-2h2v-4h10v4h2v-8.2L12 6.1 5 9.8V18z"/></svg>
+    <span class="icon-tile tone-smb" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20V9l9-5 9 5v11h-6v-6H9v6H3zm2-2h2v-4h10v4h2v-8.2L12 6.1 5 9.8V18z"/></svg></span>
     <div>
       <h3><a href="https://zapier.com/blog/operations-automation/" rel="noopener noreferrer">Operations Automation: Everything You Need to Know</a></h3>
       <p class="meta">Zapier · 2026</p>
@@ -726,10 +982,11 @@ Facts:
     
   </div>
   <p class="why">Practical ops framing for small businesses—what to automate in handoffs between apps without losing accountability.</p>
+  <div class="tag-row"><span class="tag-pill tag-smb">Small business</span><span class="tag-pill tag-workflows">Workflows</span></div>
 </article>
-<article class="card" data-tags="smb workflows" data-text="n8n workflow templates (open library) n8n browse free automation templates if you prefer self-hosted or open workflows; always adapt and review before connecting real data.">
+<article class="card tone-smb" data-tags="smb workflows" data-text="n8n workflow templates (open library) n8n browse free automation templates if you prefer self-hosted or open workflows; always adapt and review before connecting real data.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20V9l9-5 9 5v11h-6v-6H9v6H3zm2-2h2v-4h10v4h2v-8.2L12 6.1 5 9.8V18z"/></svg>
+    <span class="icon-tile tone-smb" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20V9l9-5 9 5v11h-6v-6H9v6H3zm2-2h2v-4h10v4h2v-8.2L12 6.1 5 9.8V18z"/></svg></span>
     <div>
       <h3><a href="https://n8n.io/workflows/" rel="noopener noreferrer">n8n Workflow Templates (open library)</a></h3>
       <p class="meta">n8n · ongoing</p>
@@ -737,12 +994,13 @@ Facts:
     
   </div>
   <p class="why">Browse free automation templates if you prefer self-hosted or open workflows; always adapt and review before connecting real data.</p>
+  <div class="tag-row"><span class="tag-pill tag-smb">Small business</span><span class="tag-pill tag-workflows">Workflows</span></div>
 </article></div>
 </section>
   
-<section class="section" id="healthcare" data-section="healthcare">
+<section class="section reveal tone-healthcare" id="healthcare" data-section="healthcare">
   <header class="section-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h2>Healthcare &amp; pharma</h2>
       <p>AI for health systems and life-sciences companies—regulatory context plus commercial functions. No employer-specific content; no patient data.</p>
@@ -753,9 +1011,9 @@ Facts:
     <h3>Regulatory &amp; clinical</h3>
     <p>FDA/EMA/WHO guidance, ethics, and clinical AI leadership—governance before pilots.</p>
     <div class="grid">
-<article class="card" data-tags="healthcare managers leadership healthcare-regulatory" data-text="artificial intelligence for drug development u.s. food and drug administration (cder) fda hub for how ai shows up in drug development submissions—useful for leaders who need a regulatory map before funding pilots that may later support safety, efficacy, or quality decisions.">
+<article class="card tone-healthcare" data-tags="healthcare managers leadership healthcare-regulatory" data-text="artificial intelligence for drug development u.s. food and drug administration (cder) fda hub for how ai shows up in drug development submissions—useful for leaders who need a regulatory map before funding pilots that may later support safety, efficacy, or quality decisions.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/artificial-intelligence-drug-development" rel="noopener noreferrer">Artificial Intelligence for Drug Development</a></h3>
       <p class="meta">U.S. Food and Drug Administration (CDER) · updated 2025–2026</p>
@@ -763,10 +1021,11 @@ Facts:
     
   </div>
   <p class="why">FDA hub for how AI shows up in drug development submissions—useful for leaders who need a regulatory map before funding pilots that may later support safety, efficacy, or quality decisions.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-leadership">Leadership</span></div>
 </article>
-<article class="card" data-tags="healthcare managers leadership healthcare-regulatory" data-text="considerations for the use of artificial intelligence to support regulatory decision-making for drug and biological products u.s. food and drug administration draft guidance on risk-based credibility assessment for ai models used in regulatory decisions—start here when defining context of use, documentation, and human oversight for life-sciences ai work.">
+<article class="card tone-healthcare" data-tags="healthcare managers leadership healthcare-regulatory" data-text="considerations for the use of artificial intelligence to support regulatory decision-making for drug and biological products u.s. food and drug administration draft guidance on risk-based credibility assessment for ai models used in regulatory decisions—start here when defining context of use, documentation, and human oversight for life-sciences ai work.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological" rel="noopener noreferrer">Considerations for the Use of Artificial Intelligence To Support Regulatory Decision-Making for Drug and Biological Products</a></h3>
       <p class="meta">U.S. Food and Drug Administration · 2025-01</p>
@@ -774,10 +1033,11 @@ Facts:
     
   </div>
   <p class="why">Draft guidance on risk-based credibility assessment for AI models used in regulatory decisions—start here when defining context of use, documentation, and human oversight for life-sciences AI work.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-leadership">Leadership</span></div>
 </article>
-<article class="card" data-tags="healthcare leadership managers healthcare-regulatory" data-text="ethics and governance of artificial intelligence for health world health organization consensus principles (autonomy, safety, transparency, accountability, equity, sustainability) that still frame governance and privacy conversations for health ai programs.">
+<article class="card tone-healthcare" data-tags="healthcare leadership managers healthcare-regulatory" data-text="ethics and governance of artificial intelligence for health world health organization consensus principles (autonomy, safety, transparency, accountability, equity, sustainability) that still frame governance and privacy conversations for health ai programs.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.who.int/publications/i/item/9789240029200/" rel="noopener noreferrer">Ethics and governance of artificial intelligence for health</a></h3>
       <p class="meta">World Health Organization · 2021</p>
@@ -785,10 +1045,11 @@ Facts:
     
   </div>
   <p class="why">Consensus principles (autonomy, safety, transparency, accountability, equity, sustainability) that still frame governance and privacy conversations for health AI programs.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare leadership managers healthcare-regulatory" data-text="ethics and governance of artificial intelligence for health: guidance on large multi-modal models world health organization practical recommendations for governments, developers, and providers on generative multi-modal models—including risks of inaccurate outputs and the need for post-release audit and data protection.">
+<article class="card tone-healthcare" data-tags="healthcare leadership managers healthcare-regulatory" data-text="ethics and governance of artificial intelligence for health: guidance on large multi-modal models world health organization practical recommendations for governments, developers, and providers on generative multi-modal models—including risks of inaccurate outputs and the need for post-release audit and data protection.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.who.int/publications/i/item/9789240084759/" rel="noopener noreferrer">Ethics and governance of artificial intelligence for health: Guidance on large multi-modal models</a></h3>
       <p class="meta">World Health Organization · 2025-03</p>
@@ -796,10 +1057,11 @@ Facts:
     
   </div>
   <p class="why">Practical recommendations for governments, developers, and providers on generative multi-modal models—including risks of inaccurate outputs and the need for post-release audit and data protection.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare managers healthcare-regulatory" data-text="artificial intelligence (ema overview) european medicines agency eu regulator’s page on ai across the medicine lifecycle—helps pharma leaders align internal ai use with european expectations, not only u.s. fda framing.">
+<article class="card tone-healthcare" data-tags="healthcare managers healthcare-regulatory" data-text="artificial intelligence (ema overview) european medicines agency eu regulator’s page on ai across the medicine lifecycle—helps pharma leaders align internal ai use with european expectations, not only u.s. fda framing.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.ema.europa.eu/en/about-us/how-we-work/big-data/artificial-intelligence" rel="noopener noreferrer">Artificial intelligence (EMA overview)</a></h3>
       <p class="meta">European Medicines Agency · ongoing</p>
@@ -807,10 +1069,11 @@ Facts:
     
   </div>
   <p class="why">EU regulator’s page on AI across the medicine lifecycle—helps pharma leaders align internal AI use with European expectations, not only U.S. FDA framing.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-healthcare-regulatory">Regulatory</span></div>
 </article>
-<article class="card" data-tags="healthcare managers leadership healthcare-regulatory" data-text="2026 life sciences outlook deloitte insights executive survey view of ai scaling, regulation, and cybersecurity pressure in biopharma and medtech—useful for setting realistic adoption goals when few leaders report significant ai returns yet.">
+<article class="card tone-healthcare" data-tags="healthcare managers leadership healthcare-regulatory" data-text="2026 life sciences outlook deloitte insights executive survey view of ai scaling, regulation, and cybersecurity pressure in biopharma and medtech—useful for setting realistic adoption goals when few leaders report significant ai returns yet.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.deloitte.com/global/en/insights/industry/health-care/life-sciences-and-health-care-industry-outlooks/2026-life-sciences-executive-outlook.html" rel="noopener noreferrer">2026 Life sciences outlook</a></h3>
       <p class="meta">Deloitte Insights · 2026</p>
@@ -818,10 +1081,11 @@ Facts:
     
   </div>
   <p class="why">Executive survey view of AI scaling, regulation, and cybersecurity pressure in biopharma and medtech—useful for setting realistic adoption goals when few leaders report significant AI returns yet.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-leadership">Leadership</span></div>
 </article>
-<article class="card" data-tags="healthcare leadership managers aspiring healthcare-regulatory" data-text="redesigning leadership for clinical ai deployment npj digital medicine (nature) on leadership structures that actually support clinical ai—clinical champions, multidisciplinary teams, and frontline engagement rather than a single tech rollout plan.">
+<article class="card tone-healthcare" data-tags="healthcare leadership managers aspiring healthcare-regulatory" data-text="redesigning leadership for clinical ai deployment npj digital medicine (nature) on leadership structures that actually support clinical ai—clinical champions, multidisciplinary teams, and frontline engagement rather than a single tech rollout plan.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.nature.com/articles/s41746-026-02532-6" rel="noopener noreferrer">Redesigning leadership for clinical AI deployment</a></h3>
       <p class="meta">npj Digital Medicine (Nature) · 2026-03</p>
@@ -829,10 +1093,11 @@ Facts:
     
   </div>
   <p class="why">On leadership structures that actually support clinical AI—clinical champions, multidisciplinary teams, and frontline engagement rather than a single tech rollout plan.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare managers healthcare-regulatory" data-text="artificial intelligence-enabled medical devices u.s. food and drug administration device-side fda landing page for ai-enabled medical devices—helps healthcare leaders separate samd regulatory paths from drug-development ai uses.">
+<article class="card tone-healthcare" data-tags="healthcare managers healthcare-regulatory" data-text="artificial intelligence-enabled medical devices u.s. food and drug administration device-side fda landing page for ai-enabled medical devices—helps healthcare leaders separate samd regulatory paths from drug-development ai uses.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device" rel="noopener noreferrer">Artificial Intelligence-Enabled Medical Devices</a></h3>
       <p class="meta">U.S. Food and Drug Administration · ongoing</p>
@@ -840,15 +1105,16 @@ Facts:
     
   </div>
   <p class="why">Device-side FDA landing page for AI-enabled medical devices—helps healthcare leaders separate SaMD regulatory paths from drug-development AI uses.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-healthcare-regulatory">Regulatory</span></div>
 </article></div>
   </div>
   <div class="subgroup" id="pharma-commercial">
     <h3>Pharma commercial: sales, marketing, market access</h3>
     <p>Using AI inside pharma companies—field/HCP engagement, content + MLR, HEOR/access, medical affairs, and commercial ops—with compliance and measurement in mind.</p>
     <div class="grid">
-<article class="card" data-tags="healthcare pharma-commercial managers" data-text="generative ai in life sciences marketing zs survey of marketing leaders on gen ai for concept ideation, derivative content, and why mlr process redesign—not just more drafts—is the bottleneck to scale.">
+<article class="card tone-healthcare" data-tags="healthcare pharma-commercial managers" data-text="generative ai in life sciences marketing zs survey of marketing leaders on gen ai for concept ideation, derivative content, and why mlr process redesign—not just more drafts—is the bottleneck to scale.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.zs.com/insights/generative-ai-in-life-sciences-marketing" rel="noopener noreferrer">Generative AI in life sciences marketing</a></h3>
       <p class="meta">ZS · 2024–2025</p>
@@ -856,10 +1122,11 @@ Facts:
     
   </div>
   <p class="why">Survey of marketing leaders on gen AI for concept ideation, derivative content, and why MLR process redesign—not just more drafts—is the bottleneck to scale.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-pharma-commercial">Pharma commercial</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare pharma-commercial managers leadership" data-text="agentic ai in life sciences commercialization strategy zs argues commercialization needs decision systems across sales, marketing, and access—not a pile of disconnected ai pilots—with human review still in the loop.">
+<article class="card tone-healthcare" data-tags="healthcare pharma-commercial managers leadership" data-text="agentic ai in life sciences commercialization strategy zs argues commercialization needs decision systems across sales, marketing, and access—not a pile of disconnected ai pilots—with human review still in the loop.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.zs.com/insights/agentic-ai-life-sciences-commercialization" rel="noopener noreferrer">Agentic AI in life sciences commercialization strategy</a></h3>
       <p class="meta">ZS · 2025–2026</p>
@@ -867,10 +1134,11 @@ Facts:
     
   </div>
   <p class="why">Argues commercialization needs decision systems across sales, marketing, and access—not a pile of disconnected AI pilots—with human review still in the loop.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-pharma-commercial">Pharma commercial</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare pharma-commercial managers" data-text="medical affairs outlook report 2026: key trends and insights zs outlook for medical affairs leaders on where ai and analytics fit scientific engagement and insight work—useful when commercial ai plans need a medical counterpart.">
+<article class="card tone-healthcare" data-tags="healthcare pharma-commercial managers" data-text="medical affairs outlook report 2026: key trends and insights zs outlook for medical affairs leaders on where ai and analytics fit scientific engagement and insight work—useful when commercial ai plans need a medical counterpart.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.zs.com/insights/medical-affairs-outlook-report-2026-trends-to-watch" rel="noopener noreferrer">Medical affairs outlook report 2026: Key trends and insights</a></h3>
       <p class="meta">ZS · 2026</p>
@@ -878,10 +1146,11 @@ Facts:
     
   </div>
   <p class="why">Outlook for medical affairs leaders on where AI and analytics fit scientific engagement and insight work—useful when commercial AI plans need a medical counterpart.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-pharma-commercial">Pharma commercial</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare pharma-commercial managers" data-text="reinventing pharma customer engagement with ai accenture field-focused view of ai for call planning, personalized hcp content, and cross-functional collaboration among sales, medical, and market access—with compliance framed as part of the engagement design.">
+<article class="card tone-healthcare" data-tags="healthcare pharma-commercial managers" data-text="reinventing pharma customer engagement with ai accenture field-focused view of ai for call planning, personalized hcp content, and cross-functional collaboration among sales, medical, and market access—with compliance framed as part of the engagement design.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.accenture.com/en/insights/life-sciences/ai-pharma-customer-engagement" rel="noopener noreferrer">Reinventing Pharma Customer Engagement with AI</a></h3>
       <p class="meta">Accenture · 2025</p>
@@ -889,10 +1158,11 @@ Facts:
     
   </div>
   <p class="why">Field-focused view of AI for call planning, personalized HCP content, and cross-functional collaboration among sales, medical, and market access—with compliance framed as part of the engagement design.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-pharma-commercial">Pharma commercial</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare pharma-commercial managers leadership" data-text="reinventing life sciences age of generative ai accenture commercialization section covers access/contracting, marketing content under regulatory constraints, mlr-assisted review, and field assistants—good overview before picking one workflow to pilot.">
+<article class="card tone-healthcare" data-tags="healthcare pharma-commercial managers leadership" data-text="reinventing life sciences age of generative ai accenture commercialization section covers access/contracting, marketing content under regulatory constraints, mlr-assisted review, and field assistants—good overview before picking one workflow to pilot.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.accenture.com/en/insights/life-sciences/reinventing-life-sciences-age-generative-ai" rel="noopener noreferrer">Reinventing Life Sciences Age of Generative AI</a></h3>
       <p class="meta">Accenture · 2024-08</p>
@@ -900,10 +1170,11 @@ Facts:
     
   </div>
   <p class="why">Commercialization section covers access/contracting, marketing content under regulatory constraints, MLR-assisted review, and field assistants—good overview before picking one workflow to pilot.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-pharma-commercial">Pharma commercial</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare pharma-commercial managers" data-text="ai in life sciences commercialization iqvia 2025 survey of commercial leaders on adoption across sales, marketing, market access, and compliance—useful for benchmarking where peers still struggle to industrialize tools.">
+<article class="card tone-healthcare" data-tags="healthcare pharma-commercial managers" data-text="ai in life sciences commercialization iqvia 2025 survey of commercial leaders on adoption across sales, marketing, market access, and compliance—useful for benchmarking where peers still struggle to industrialize tools.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.iqvia.com/library/white-papers/ai-in-life-sciences-commercialization" rel="noopener noreferrer">AI in Life Sciences Commercialization</a></h3>
       <p class="meta">IQVIA · 2025-08</p>
@@ -911,10 +1182,11 @@ Facts:
     
   </div>
   <p class="why">2025 survey of commercial leaders on adoption across sales, marketing, market access, and compliance—useful for benchmarking where peers still struggle to industrialize tools.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-pharma-commercial">Pharma commercial</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare pharma-commercial managers" data-text="omnichannel engagement in pharma: harnessing the power of generative ai iqvia on next-best-action and gen ai in hcp omnichannel programs—practical for leaders who need to measure engagement quality, not just content volume.">
+<article class="card tone-healthcare" data-tags="healthcare pharma-commercial managers" data-text="omnichannel engagement in pharma: harnessing the power of generative ai iqvia on next-best-action and gen ai in hcp omnichannel programs—practical for leaders who need to measure engagement quality, not just content volume.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.iqvia.com/blogs/2024/10/omnichannel-engagement-in-pharma" rel="noopener noreferrer">Omnichannel Engagement in Pharma: Harnessing the Power of Generative AI</a></h3>
       <p class="meta">IQVIA · 2024-10</p>
@@ -922,10 +1194,11 @@ Facts:
     
   </div>
   <p class="why">On next-best-action and gen AI in HCP omnichannel programs—practical for leaders who need to measure engagement quality, not just content volume.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-pharma-commercial">Pharma commercial</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare pharma-commercial managers workflows" data-text="best use cases for scaling agentic ai in commercial life sciences iqvia checklist mindset for which commercial ai use cases scale (repetitive but reviewable; immediate value for reps) versus experiments that stall—pairs well with adoption and impact measurement.">
+<article class="card tone-healthcare" data-tags="healthcare pharma-commercial managers workflows" data-text="best use cases for scaling agentic ai in commercial life sciences iqvia checklist mindset for which commercial ai use cases scale (repetitive but reviewable; immediate value for reps) versus experiments that stall—pairs well with adoption and impact measurement.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.iqvia.com/blogs/2025/06/best-use-cases-for-scaling-agentic-ai-in-commercial-life-sciences" rel="noopener noreferrer">Best use cases for scaling agentic AI in commercial life sciences</a></h3>
       <p class="meta">IQVIA · 2025-06</p>
@@ -933,10 +1206,11 @@ Facts:
     
   </div>
   <p class="why">Checklist mindset for which commercial AI use cases scale (repetitive but reviewable; immediate value for reps) versus experiments that stall—pairs well with adoption and impact measurement.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-pharma-commercial">Pharma commercial</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare pharma-commercial managers leadership" data-text="generative artificial intelligence for health technology assessment: opportunities, challenges, and policy considerations ispor (value in health) working-group view of gen ai in hta/heor—literature review, rwe, and economic modeling—with privacy, bias, and human oversight called out for market-access leaders.">
+<article class="card tone-healthcare" data-tags="healthcare pharma-commercial managers leadership" data-text="generative artificial intelligence for health technology assessment: opportunities, challenges, and policy considerations ispor (value in health) working-group view of gen ai in hta/heor—literature review, rwe, and economic modeling—with privacy, bias, and human oversight called out for market-access leaders.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.ispor.org/heor-resources/good-practices/article/generative-artificial-intelligence-for-health-technology-assessment--opportunities--challenges--and-policy-considerations" rel="noopener noreferrer">Generative Artificial Intelligence for Health Technology Assessment: Opportunities, Challenges, and Policy Considerations</a></h3>
       <p class="meta">ISPOR (Value in Health) · 2025-02</p>
@@ -944,10 +1218,11 @@ Facts:
     
   </div>
   <p class="why">Working-group view of gen AI in HTA/HEOR—literature review, RWE, and economic modeling—with privacy, bias, and human oversight called out for market-access leaders.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-pharma-commercial">Pharma commercial</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card" data-tags="healthcare pharma-commercial healthcare-regulatory managers" data-text="the office of prescription drug promotion (opdp) u.s. food and drug administration fda office that oversees prescription-drug promotional communications—baseline context for any marketing-content or mlr ai pilot so teams know what still needs human promotional review.">
+<article class="card tone-healthcare" data-tags="healthcare pharma-commercial healthcare-regulatory managers" data-text="the office of prescription drug promotion (opdp) u.s. food and drug administration fda office that oversees prescription-drug promotional communications—baseline context for any marketing-content or mlr ai pilot so teams know what still needs human promotional review.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <span class="icon-tile tone-healthcare" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/></svg></span>
     <div>
       <h3><a href="https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/office-prescription-drug-promotion-opdp" rel="noopener noreferrer">The Office of Prescription Drug Promotion (OPDP)</a></h3>
       <p class="meta">U.S. Food and Drug Administration · ongoing</p>
@@ -955,20 +1230,21 @@ Facts:
     
   </div>
   <p class="why">FDA office that oversees prescription-drug promotional communications—baseline context for any marketing-content or MLR AI pilot so teams know what still needs human promotional review.</p>
+  <div class="tag-row"><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-pharma-commercial">Pharma commercial</span><span class="tag-pill tag-healthcare-regulatory">Regulatory</span></div>
 </article></div>
   </div>
 </section>
   
-<section class="section" id="videos" data-section="videos">
+<section class="section reveal tone-videos" id="videos" data-section="videos">
   <header class="section-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
     <div>
       <h2>Videos</h2>
       <p>Click a thumbnail to play (loads YouTube privacy-enhanced embed).</p>
     </div>
   </header>
   <div class="grid">
-<article class="card video-card" data-tags="videos leadership managers" data-text="how ai is changing strategy—and 4 skills leaders need next harvard business review mollick on why treating ai as only a productivity tool backfires—and what leaders should decide urgently.">
+<article class="card video-card tone-videos" data-tags="videos leadership managers" data-text="how ai is changing strategy—and 4 skills leaders need next harvard business review mollick on why treating ai as only a productivity tool backfires—and what leaders should decide urgently.">
   <div class="video-lazy" data-youtube-id="9f3qnX6aiIE">
     <button type="button" class="video-poster" aria-label="Play video: How AI Is Changing Strategy—and 4 Skills Leaders Need Next">
       <img src="https://i.ytimg.com/vi/9f3qnX6aiIE/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -976,15 +1252,16 @@ Facts:
     </button>
   </div>
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
     <div>
       <h3><a href="https://www.youtube.com/watch?v=9f3qnX6aiIE" rel="noopener noreferrer">How AI Is Changing Strategy—and 4 Skills Leaders Need Next</a></h3>
       <p class="meta">Harvard Business Review · 2026</p>
     </div>
   </div>
   <p class="why">Mollick on why treating AI as only a productivity tool backfires—and what leaders should decide urgently.</p>
+  <div class="tag-row"><span class="tag-pill tag-videos">Videos</span><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card video-card" data-tags="videos workflows managers" data-text="ethan mollick on an ai strategy for organizations to succeed washington speakers bureau leadership–lab–crowd model for getting ai adoption out of pilots and into real work.">
+<article class="card video-card tone-videos" data-tags="videos workflows managers" data-text="ethan mollick on an ai strategy for organizations to succeed washington speakers bureau leadership–lab–crowd model for getting ai adoption out of pilots and into real work.">
   <div class="video-lazy" data-youtube-id="bsyqZ_oUwTo">
     <button type="button" class="video-poster" aria-label="Play video: Ethan Mollick on an AI Strategy for Organizations to Succeed">
       <img src="https://i.ytimg.com/vi/bsyqZ_oUwTo/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -992,15 +1269,16 @@ Facts:
     </button>
   </div>
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
     <div>
       <h3><a href="https://www.youtube.com/watch?v=bsyqZ_oUwTo" rel="noopener noreferrer">Ethan Mollick on an AI Strategy for Organizations to Succeed</a></h3>
       <p class="meta">Washington Speakers Bureau · 2025</p>
     </div>
   </div>
   <p class="why">Leadership–lab–crowd model for getting AI adoption out of pilots and into real work.</p>
+  <div class="tag-row"><span class="tag-pill tag-videos">Videos</span><span class="tag-pill tag-workflows">Workflows</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card video-card" data-tags="videos leadership managers" data-text="andrew ng on building ai-native teams | ai fund frontier ‘26 ai fund concrete leadership moves for ai-native teams: platforms, processes, and empowered high-context groups.">
+<article class="card video-card tone-videos" data-tags="videos leadership managers" data-text="andrew ng on building ai-native teams | ai fund frontier ‘26 ai fund concrete leadership moves for ai-native teams: platforms, processes, and empowered high-context groups.">
   <div class="video-lazy" data-youtube-id="DuT3dsyshLA">
     <button type="button" class="video-poster" aria-label="Play video: Andrew Ng on building AI-native teams | AI Fund Frontier ‘26">
       <img src="https://i.ytimg.com/vi/DuT3dsyshLA/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -1008,15 +1286,16 @@ Facts:
     </button>
   </div>
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
     <div>
       <h3><a href="https://www.youtube.com/watch?v=DuT3dsyshLA" rel="noopener noreferrer">Andrew Ng on building AI-native teams | AI Fund Frontier ‘26</a></h3>
       <p class="meta">AI Fund · 2026-10</p>
     </div>
   </div>
   <p class="why">Concrete leadership moves for AI-native teams: platforms, processes, and empowered high-context groups.</p>
+  <div class="tag-row"><span class="tag-pill tag-videos">Videos</span><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card video-card" data-tags="videos aspiring managers" data-text="ai for everyone by andrew ng deeplearningai non-technical grounding in what ai can and cannot do—still a solid on-ramp for aspiring managers.">
+<article class="card video-card tone-videos" data-tags="videos aspiring managers" data-text="ai for everyone by andrew ng deeplearningai non-technical grounding in what ai can and cannot do—still a solid on-ramp for aspiring managers.">
   <div class="video-lazy" data-youtube-id="JPcx9qHzzgk">
     <button type="button" class="video-poster" aria-label="Play video: AI for Everyone by Andrew Ng">
       <img src="https://i.ytimg.com/vi/JPcx9qHzzgk/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -1024,15 +1303,16 @@ Facts:
     </button>
   </div>
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
     <div>
       <h3><a href="https://www.youtube.com/watch?v=JPcx9qHzzgk" rel="noopener noreferrer">AI for Everyone by Andrew Ng</a></h3>
       <p class="meta">DeepLearningAI · 2019</p>
     </div>
   </div>
   <p class="why">Non-technical grounding in what AI can and cannot do—still a solid on-ramp for aspiring managers.</p>
+  <div class="tag-row"><span class="tag-pill tag-videos">Videos</span><span class="tag-pill tag-aspiring">Aspiring leaders</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card video-card" data-tags="videos workflows managers" data-text="software engineering with llms in 2025: reality check (at ldx3 by leaddev) the pragmatic engineer practical reality check on llm workflows from simon willison—useful even if you lead non-engineering teams adopting agents.">
+<article class="card video-card tone-videos" data-tags="videos workflows managers" data-text="software engineering with llms in 2025: reality check (at ldx3 by leaddev) the pragmatic engineer practical reality check on llm workflows from simon willison—useful even if you lead non-engineering teams adopting agents.">
   <div class="video-lazy" data-youtube-id="EO3_qN_Ynsk">
     <button type="button" class="video-poster" aria-label="Play video: Software engineering with LLMs in 2025: reality check (at LDX3 by LeadDev)">
       <img src="https://i.ytimg.com/vi/EO3_qN_Ynsk/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -1040,15 +1320,16 @@ Facts:
     </button>
   </div>
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
     <div>
       <h3><a href="https://www.youtube.com/watch?v=EO3_qN_Ynsk" rel="noopener noreferrer">Software engineering with LLMs in 2025: reality check (at LDX3 by LeadDev)</a></h3>
       <p class="meta">The Pragmatic Engineer · 2025-07</p>
     </div>
   </div>
   <p class="why">Practical reality check on LLM workflows from Simon Willison—useful even if you lead non-engineering teams adopting agents.</p>
+  <div class="tag-row"><span class="tag-pill tag-videos">Videos</span><span class="tag-pill tag-workflows">Workflows</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card video-card" data-tags="videos leadership aspiring managers" data-text="how to give &amp; get constructive feedback | dr. adam grant &amp; dr. andrew huberman huberman lab clips leadership skill that ai cannot replace: giving and receiving feedback without ego theater.">
+<article class="card video-card tone-videos" data-tags="videos leadership aspiring managers" data-text="how to give &amp; get constructive feedback | dr. adam grant &amp; dr. andrew huberman huberman lab clips leadership skill that ai cannot replace: giving and receiving feedback without ego theater.">
   <div class="video-lazy" data-youtube-id="sPWRjjj2iok">
     <button type="button" class="video-poster" aria-label="Play video: How to Give &amp; Get Constructive Feedback | Dr. Adam Grant &amp; Dr. Andrew Huberman">
       <img src="https://i.ytimg.com/vi/sPWRjjj2iok/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -1056,15 +1337,16 @@ Facts:
     </button>
   </div>
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
     <div>
       <h3><a href="https://www.youtube.com/watch?v=sPWRjjj2iok" rel="noopener noreferrer">How to Give &amp; Get Constructive Feedback | Dr. Adam Grant &amp; Dr. Andrew Huberman</a></h3>
       <p class="meta">Huberman Lab Clips · 2024</p>
     </div>
   </div>
   <p class="why">Leadership skill that AI cannot replace: giving and receiving feedback without ego theater.</p>
+  <div class="tag-row"><span class="tag-pill tag-videos">Videos</span><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-aspiring">Aspiring leaders</span></div>
 </article>
-<article class="card video-card" data-tags="videos leadership managers" data-text="how to change your workplace | worklife with adam grant ted podcasts on diagnosing what is actually broken before you roll out the next change—including ai tools.">
+<article class="card video-card tone-videos" data-tags="videos leadership managers" data-text="how to change your workplace | worklife with adam grant ted podcasts on diagnosing what is actually broken before you roll out the next change—including ai tools.">
   <div class="video-lazy" data-youtube-id="bhHqUaIVZf0">
     <button type="button" class="video-poster" aria-label="Play video: How to Change Your Workplace | WorkLife with Adam Grant">
       <img src="https://i.ytimg.com/vi/bhHqUaIVZf0/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -1072,15 +1354,16 @@ Facts:
     </button>
   </div>
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
     <div>
       <h3><a href="https://www.youtube.com/watch?v=bhHqUaIVZf0" rel="noopener noreferrer">How to Change Your Workplace | WorkLife with Adam Grant</a></h3>
       <p class="meta">TED Podcasts · 2023</p>
     </div>
   </div>
   <p class="why">On diagnosing what is actually broken before you roll out the next change—including AI tools.</p>
+  <div class="tag-row"><span class="tag-pill tag-videos">Videos</span><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card video-card" data-tags="videos leadership aspiring" data-text="brené brown and simon sinek on the leadership skills we need to build | re:thinking with adam grant ted podcasts conversation on learnable leadership skills—useful balance beside the ai workflow content.">
+<article class="card video-card tone-videos" data-tags="videos leadership aspiring" data-text="brené brown and simon sinek on the leadership skills we need to build | re:thinking with adam grant ted podcasts conversation on learnable leadership skills—useful balance beside the ai workflow content.">
   <div class="video-lazy" data-youtube-id="PQAqVbAQVtM">
     <button type="button" class="video-poster" aria-label="Play video: Brené Brown and Simon Sinek on the leadership skills we need to build | Re:Thinking with Adam Grant">
       <img src="https://i.ytimg.com/vi/PQAqVbAQVtM/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -1088,15 +1371,16 @@ Facts:
     </button>
   </div>
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
     <div>
       <h3><a href="https://www.youtube.com/watch?v=PQAqVbAQVtM" rel="noopener noreferrer">Brené Brown and Simon Sinek on the leadership skills we need to build | Re:Thinking with Adam Grant</a></h3>
       <p class="meta">TED Podcasts · 2022</p>
     </div>
   </div>
   <p class="why">Conversation on learnable leadership skills—useful balance beside the AI workflow content.</p>
+  <div class="tag-row"><span class="tag-pill tag-videos">Videos</span><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-aspiring">Aspiring leaders</span></div>
 </article>
-<article class="card video-card" data-tags="videos healthcare managers" data-text="redi 2024 | d2s05 - artificial intelligence/machine learning: the new frontier of drug development.. u.s. food and drug administration fda staff walk through ai/ml in drug development submissions and a risk-based credibility mindset—good orientation for pharma leaders before drafting internal ai rules.">
+<article class="card video-card tone-videos" data-tags="videos healthcare managers" data-text="redi 2024 | d2s05 - artificial intelligence/machine learning: the new frontier of drug development.. u.s. food and drug administration fda staff walk through ai/ml in drug development submissions and a risk-based credibility mindset—good orientation for pharma leaders before drafting internal ai rules.">
   <div class="video-lazy" data-youtube-id="KaO3V-B1Wjg">
     <button type="button" class="video-poster" aria-label="Play video: REdI 2024 | D2S05 - Artificial Intelligence/Machine Learning: The New Frontier of Drug Development..">
       <img src="https://i.ytimg.com/vi/KaO3V-B1Wjg/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -1104,15 +1388,16 @@ Facts:
     </button>
   </div>
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
     <div>
       <h3><a href="https://www.youtube.com/watch?v=KaO3V-B1Wjg" rel="noopener noreferrer">REdI 2024 | D2S05 - Artificial Intelligence/Machine Learning: The New Frontier of Drug Development..</a></h3>
       <p class="meta">U.S. Food and Drug Administration · 2024</p>
     </div>
   </div>
   <p class="why">FDA staff walk through AI/ML in drug development submissions and a risk-based credibility mindset—good orientation for pharma leaders before drafting internal AI rules.</p>
+  <div class="tag-row"><span class="tag-pill tag-videos">Videos</span><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card video-card" data-tags="videos healthcare pharma-commercial managers" data-text="how pharma can redesign decision-making to unlock ai value | aaron mitchell, zs reuters events pharma zs commercial perspective on redesigning decisions—not just tooling—so ai adoption sticks in pharma organizations.">
+<article class="card video-card tone-videos" data-tags="videos healthcare pharma-commercial managers" data-text="how pharma can redesign decision-making to unlock ai value | aaron mitchell, zs reuters events pharma zs commercial perspective on redesigning decisions—not just tooling—so ai adoption sticks in pharma organizations.">
   <div class="video-lazy" data-youtube-id="SFdiNc685kc">
     <button type="button" class="video-poster" aria-label="Play video: How pharma can redesign decision-making to unlock AI value | Aaron Mitchell, ZS">
       <img src="https://i.ytimg.com/vi/SFdiNc685kc/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
@@ -1120,114 +1405,124 @@ Facts:
     </button>
   </div>
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <span class="icon-tile tone-videos" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="currentColor" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg></span>
     <div>
       <h3><a href="https://www.youtube.com/watch?v=SFdiNc685kc" rel="noopener noreferrer">How pharma can redesign decision-making to unlock AI value | Aaron Mitchell, ZS</a></h3>
       <p class="meta">Reuters Events Pharma · 2024–2025</p>
     </div>
   </div>
   <p class="why">ZS commercial perspective on redesigning decisions—not just tooling—so AI adoption sticks in pharma organizations.</p>
+  <div class="tag-row"><span class="tag-pill tag-videos">Videos</span><span class="tag-pill tag-healthcare">Healthcare</span><span class="tag-pill tag-pharma-commercial">Pharma commercial</span></div>
 </article></div>
 </section>
   
-<section class="section" id="people" data-section="people">
+<section class="section reveal tone-people" id="people" data-section="people">
   <header class="section-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="#3b82f6"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="#3b82f6" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>
+    <span class="icon-tile tone-people" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg></span>
     <div>
       <h2>People to follow</h2>
       <p>Accounts that stay useful on AI at work and leadership.</p>
     </div>
   </header>
   <div class="grid">
-<article class="card person-card" data-tags="people managers" data-text="ethan mollick @emollick wharton professor on ai at work; practical frameworks for managers.">
+<article class="card person-card tone-people" data-tags="people managers" data-text="ethan mollick @emollick wharton professor on ai at work; practical frameworks for managers.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="#3b82f6"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="#3b82f6" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>
+    <span class="icon-tile tone-people" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg></span>
     <div>
       <h3><a href="https://x.com/emollick" rel="noopener noreferrer">Ethan Mollick</a></h3>
       <p class="meta">@emollick</p>
     </div>
   </div>
   <p class="why">Wharton professor on AI at work; practical frameworks for managers.</p>
+  <div class="tag-row"><span class="tag-pill tag-people">People</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card person-card" data-tags="people managers smb" data-text="allie k. miller @alliekmiller ai for business and operators; enterprise adoption in plain language.">
+<article class="card person-card tone-people" data-tags="people managers smb" data-text="allie k. miller @alliekmiller ai for business and operators; enterprise adoption in plain language.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="#3b82f6"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="#3b82f6" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>
+    <span class="icon-tile tone-people" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg></span>
     <div>
       <h3><a href="https://x.com/alliekmiller" rel="noopener noreferrer">Allie K. Miller</a></h3>
       <p class="meta">@alliekmiller</p>
     </div>
   </div>
   <p class="why">AI for business and operators; enterprise adoption in plain language.</p>
+  <div class="tag-row"><span class="tag-pill tag-people">People</span><span class="tag-pill tag-managers">Managers</span><span class="tag-pill tag-smb">Small business</span></div>
 </article>
-<article class="card person-card" data-tags="people managers" data-text="andrew ng @andrewyng practical ai skills and leadership notes for building ai-capable teams.">
+<article class="card person-card tone-people" data-tags="people managers" data-text="andrew ng @andrewyng practical ai skills and leadership notes for building ai-capable teams.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="#3b82f6"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="#3b82f6" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>
+    <span class="icon-tile tone-people" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg></span>
     <div>
       <h3><a href="https://x.com/AndrewYNg" rel="noopener noreferrer">Andrew Ng</a></h3>
       <p class="meta">@AndrewYNg</p>
     </div>
   </div>
   <p class="why">Practical AI skills and leadership notes for building AI-capable teams.</p>
+  <div class="tag-row"><span class="tag-pill tag-people">People</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card person-card" data-tags="people workflows" data-text="simon willison @simonw hands-on ai workflows and clear demos without the hype cycle.">
+<article class="card person-card tone-people" data-tags="people workflows" data-text="simon willison @simonw hands-on ai workflows and clear demos without the hype cycle.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="#3b82f6"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="#3b82f6" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>
+    <span class="icon-tile tone-people" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg></span>
     <div>
       <h3><a href="https://x.com/simonw" rel="noopener noreferrer">Simon Willison</a></h3>
       <p class="meta">@simonw</p>
     </div>
   </div>
   <p class="why">Hands-on AI workflows and clear demos without the hype cycle.</p>
+  <div class="tag-row"><span class="tag-pill tag-people">People</span><span class="tag-pill tag-workflows">Workflows</span></div>
 </article>
-<article class="card person-card" data-tags="people managers" data-text="cassie kozyrkov @decisionleader decision science—where human judgment still matters with ai.">
+<article class="card person-card tone-people" data-tags="people managers" data-text="cassie kozyrkov @decisionleader decision science—where human judgment still matters with ai.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="#3b82f6"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="#3b82f6" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>
+    <span class="icon-tile tone-people" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg></span>
     <div>
       <h3><a href="https://x.com/decisionleader" rel="noopener noreferrer">Cassie Kozyrkov</a></h3>
       <p class="meta">@decisionleader</p>
     </div>
   </div>
   <p class="why">Decision science—where human judgment still matters with AI.</p>
+  <div class="tag-row"><span class="tag-pill tag-people">People</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card person-card" data-tags="people aspiring managers" data-text="shreyas doshi @shreyas executive and product coaching for leaders and aspiring managers.">
+<article class="card person-card tone-people" data-tags="people aspiring managers" data-text="shreyas doshi @shreyas executive and product coaching for leaders and aspiring managers.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="#3b82f6"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="#3b82f6" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>
+    <span class="icon-tile tone-people" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg></span>
     <div>
       <h3><a href="https://x.com/shreyas" rel="noopener noreferrer">Shreyas Doshi</a></h3>
       <p class="meta">@shreyas</p>
     </div>
   </div>
   <p class="why">Executive and product coaching for leaders and aspiring managers.</p>
+  <div class="tag-row"><span class="tag-pill tag-people">People</span><span class="tag-pill tag-aspiring">Aspiring leaders</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card person-card" data-tags="people leadership aspiring" data-text="adam grant @adammgrant organizational psychology on leadership, rethinking, and teams.">
+<article class="card person-card tone-people" data-tags="people leadership aspiring" data-text="adam grant @adammgrant organizational psychology on leadership, rethinking, and teams.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="#3b82f6"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="#3b82f6" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>
+    <span class="icon-tile tone-people" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg></span>
     <div>
       <h3><a href="https://x.com/AdamMGrant" rel="noopener noreferrer">Adam Grant</a></h3>
       <p class="meta">@AdamMGrant</p>
     </div>
   </div>
   <p class="why">Organizational psychology on leadership, rethinking, and teams.</p>
+  <div class="tag-row"><span class="tag-pill tag-people">People</span><span class="tag-pill tag-leadership">Leadership</span><span class="tag-pill tag-aspiring">Aspiring leaders</span></div>
 </article>
-<article class="card person-card" data-tags="people aspiring managers" data-text="lenny rachitsky @lennysan product, growth, and career interviews useful for managers.">
+<article class="card person-card tone-people" data-tags="people aspiring managers" data-text="lenny rachitsky @lennysan product, growth, and career interviews useful for managers.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="#3b82f6"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="#3b82f6" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>
+    <span class="icon-tile tone-people" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg></span>
     <div>
       <h3><a href="https://x.com/lennysan" rel="noopener noreferrer">Lenny Rachitsky</a></h3>
       <p class="meta">@lennysan</p>
     </div>
   </div>
   <p class="why">Product, growth, and career interviews useful for managers.</p>
+  <div class="tag-row"><span class="tag-pill tag-people">People</span><span class="tag-pill tag-aspiring">Aspiring leaders</span><span class="tag-pill tag-managers">Managers</span></div>
 </article>
-<article class="card person-card" data-tags="people smb" data-text="dharmesh shah @dharmesh operator perspective on products, growth, and ai for growing companies.">
+<article class="card person-card tone-people" data-tags="people smb" data-text="dharmesh shah @dharmesh operator perspective on products, growth, and ai for growing companies.">
   <div class="card-head">
-    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="#3b82f6"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="#3b82f6" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg>
+    <span class="icon-tile tone-people" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="currentColor"/><circle cx="16" cy="9" r="2.4" fill="currentColor" opacity=".7"/><path fill="currentColor" d="M3 19c0-3 3-5 6-5s6 2 6 5v1H3v-1z"/><path fill="currentColor" opacity=".7" d="M14 19c0-1.8 1.4-3.2 3.2-3.6.5-.1 1-.2 1.5-.2 1.8 0 3.3 1.2 3.3 3v1h-8v-1z"/></svg></span>
     <div>
       <h3><a href="https://x.com/dharmesh" rel="noopener noreferrer">Dharmesh Shah</a></h3>
       <p class="meta">@dharmesh</p>
     </div>
   </div>
   <p class="why">Operator perspective on products, growth, and AI for growing companies.</p>
+  <div class="tag-row"><span class="tag-pill tag-people">People</span><span class="tag-pill tag-smb">Small business</span></div>
 </article></div>
 </section>
 </main>
@@ -1324,6 +1619,27 @@ Facts:
     wrap.innerHTML = '';
     wrap.appendChild(iframe);
   });
+
+  document.documentElement.classList.add('js');
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -5% 0px' });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
 })();
 
 </script>
