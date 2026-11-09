@@ -615,7 +615,7 @@ def build() -> Path:
     <h1>{esc(m['title'])}</h1>
     <p class="tagline">{esc(m['tagline'])}</p>
     <p class="intro">{esc(m['intro'])}</p>
-    <p class="meta-line">Updated {esc(m['last_updated'])} ({esc(m.get('timezone_note',''))}) · <a href="{esc(m['x_profile'])}" rel="noopener noreferrer" style="color:#bfdbfe">@BBenson6</a></p>
+    <p class="meta-line">Updated {esc(m['last_updated'])} ({esc(m.get('timezone_note',''))})</p>
   </div>
 </header>
 
@@ -679,8 +679,7 @@ def build() -> Path:
 </main>
 
 <footer>
-  <p>Built as a static site for GitHub Pages. Content curated for practical AI and clearer leadership—no hype. Source data: <code>resources.json</code>. Rebuild with <code>python3 build.py</code>.</p>
-  <p><a href="{esc(m['x_profile'])}" rel="noopener noreferrer">@BBenson6 on X</a></p>
+  <p>Practical AI and clearer leadership, no hype. Updated daily.</p>
 </footer>
 <noscript><p class="note">JavaScript is off: you can still read every resource. Search, filters, copy buttons, and click-to-play videos need JS.</p></noscript>
 <script>

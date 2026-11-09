@@ -92,3 +92,6 @@ Human, non-hype. No employer or family details. Explain *why* in one plain sente
 Repo: `https://github.com/bbenson6klub/AI-leadership-resources`  
 Likely site: `https://bbenson6klub.github.io/AI-leadership-resources/`  
 Static only: relative asset paths, no server runtime. Inline CSS/JS is fine.
+
+## Voice
+Keep the page built for everyone: no "curated for" line, no owner name or personal X handle in visible page text.
