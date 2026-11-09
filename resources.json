@@ -3,12 +3,26 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership\u2014not hype.",
-    "last_updated": "2026-11-08",
+    "last_updated": "2026-11-09",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
   },
   "this_week": [
+    {
+      "title": "Your AI Strategy Is Your Middle Managers",
+      "url": "https://www.reworked.co/digital-workplace/your-ai-strategy-is-your-middle-managers/",
+      "source": "Reworked (Andrew Pope)",
+      "date": "2026-11-06",
+      "why": "Practical take on why managers make or break AI adoption, with a simple green, amber, red way to agree with your team which uses are fine, which need a check, and which need approval.",
+      "tags": [
+        "leadership",
+        "workflows",
+        "managers",
+        "aspiring"
+      ],
+      "new": true
+    },
     {
       "title": "Three Ways to Work with AI, and How to Choose",
       "url": "https://executiveeducation.wharton.upenn.edu/thought-leadership/wharton-at-work/2026/11/three-ways-to-work-with-ai/",
@@ -32,8 +46,7 @@
         "leadership",
         "workflows",
         "managers"
-      ],
-      "new": true
+      ]
     },
     {
       "title": "How AI Is Changing Strategy (podcast with Ethan Mollick)",
@@ -44,8 +57,7 @@
       "tags": [
         "leadership",
         "managers"
-      ],
-      "new": true
+      ]
     },
     {
       "title": "Manager AI Adoption Playbook: Six-Week Plan",
@@ -70,18 +82,6 @@
         "workflows",
         "managers",
         "aspiring"
-      ],
-      "new": true
-    },
-    {
-      "title": "Agency and Agents",
-      "url": "https://www.oneusefulthing.org/p/agency-and-agents",
-      "source": "One Useful Thing (Ethan Mollick)",
-      "date": "2026-08-31",
-      "why": "On when agents should pull humans in\u2014for approval, expertise, exceptions, and interesting decisions\u2014so you do not automate the wrong half of the job.",
-      "tags": [
-        "workflows",
-        "managers"
       ],
       "new": true
     }
@@ -746,6 +746,20 @@
       "subgroup": "commercial"
     },
     {
+      "title": "The System-Level View That Sound Market Access Decisions Are Missing",
+      "url": "https://www.pharmaceuticalcommerce.com/view/the-system-level-view-that-sound-market-access-decisions-are-missing",
+      "source": "Pharmaceutical Commerce (Matthew Champion and Kunal Akwalia, IQVIA)",
+      "date": "2026-11-05",
+      "why": "Shows how market access teams can use scenario modeling, including AI agents that rebuild models as inputs change, to see how pricing, coverage, contracting, and affordability choices affect each other before committing.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "commercial"
+    },
+    {
       "title": "Generative Artificial Intelligence for Health Technology Assessment: Opportunities, Challenges, and Policy Considerations",
       "url": "https://www.ispor.org/heor-resources/good-practices/article/generative-artificial-intelligence-for-health-technology-assessment--opportunities--challenges--and-policy-considerations",
       "source": "ISPOR (Value in Health)",
@@ -774,5 +788,19 @@
       "subgroup": "commercial"
     }
   ],
-  "archive": []
+  "archive": [
+    {
+      "title": "Agency and Agents",
+      "url": "https://www.oneusefulthing.org/p/agency-and-agents",
+      "source": "One Useful Thing (Ethan Mollick)",
+      "date": "2026-08-31",
+      "why": "On when agents should pull humans in\u2014for approval, expertise, exceptions, and interesting decisions\u2014so you do not automate the wrong half of the job.",
+      "tags": [
+        "workflows",
+        "managers"
+      ],
+      "archived_date": "2026-11-09",
+      "archived_from": "this_week"
+    }
+  ]
 }
