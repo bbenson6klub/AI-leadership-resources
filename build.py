@@ -316,6 +316,17 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .section-head h2 { margin: 0; color: var(--navy); font-size: 1.35rem; }
 .section-head p { margin: .2rem 0 0; color: var(--muted); }
+.subgroup { margin: 1.1rem 0 .65rem; }
+.subgroup h3 {
+  margin: 0 0 .25rem;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+.subgroup p {
+  margin: 0 0 .7rem;
+  color: var(--muted);
+  font-size: .92rem;
+}
 .ico { width: 28px; height: 28px; flex: 0 0 auto; color: var(--navy); margin-top: .15rem; }
 .grid {
   display: grid;
@@ -518,6 +529,44 @@ JS = r"""
 """
 
 
+def healthcare_section_html(items: list) -> str:
+    """Healthcare & pharma with Regulatory vs Pharma commercial subgroups."""
+    regulatory = [i for i in items if i.get("subgroup") == "regulatory" or (
+        "healthcare-regulatory" in (i.get("tags") or []) and i.get("subgroup") != "commercial"
+    )]
+    commercial = [i for i in items if i.get("subgroup") == "commercial" or "pharma-commercial" in (i.get("tags") or [])]
+    # de-dupe if an item matched both lists: prefer commercial listing for dual-tagged OPDP etc.
+    reg_urls = {i["url"] for i in commercial}
+    regulatory = [i for i in regulatory if i["url"] not in reg_urls]
+    # keep stable order from JSON
+    def cards(group):
+        return "".join(card_link(i, "healthcare") for i in group)
+
+    body = f"""
+  <div class="subgroup" id="healthcare-regulatory">
+    <h3>Regulatory &amp; clinical</h3>
+    <p>FDA/EMA/WHO guidance, ethics, and clinical AI leadership—governance before pilots.</p>
+    <div class="grid">{cards(regulatory)}</div>
+  </div>
+  <div class="subgroup" id="pharma-commercial">
+    <h3>Pharma commercial: sales, marketing, market access</h3>
+    <p>Using AI inside pharma companies—field/HCP engagement, content + MLR, HEOR/access, medical affairs, and commercial ops—with compliance and measurement in mind.</p>
+    <div class="grid">{cards(commercial)}</div>
+  </div>"""
+    return f"""
+<section class="section" id="healthcare" data-section="healthcare">
+  <header class="section-head">
+    {ICON_SVGS.get('healthcare', '')}
+    <div>
+      <h2>Healthcare &amp; pharma</h2>
+      <p>AI for health systems and life-sciences companies—regulatory context plus commercial functions. No employer-specific content; no patient data.</p>
+    </div>
+  </header>
+  {body}
+</section>"""
+
+
+
 def build() -> Path:
     m = DATA["meta"]
     week = "".join(card_link(i, "week") for i in DATA["this_week"])
@@ -527,7 +576,7 @@ def build() -> Path:
     smb = "".join(card_link(i, "smb") for i in DATA["smb"])
     videos = "".join(card_video(i) for i in DATA["videos"])
     people = "".join(card_person(i) for i in DATA["people"])
-    healthcare = "".join(card_link(i, "healthcare") for i in DATA.get("healthcare", []))
+    healthcare = healthcare_section_html(DATA.get("healthcare", []))
 
 
     network_svg = """
@@ -593,6 +642,8 @@ def build() -> Path:
         <button type="button" class="chip" data-filter="leadership" aria-pressed="false">Leadership</button>
         <button type="button" class="chip" data-filter="smb" aria-pressed="false">Small business</button>
         <button type="button" class="chip" data-filter="healthcare" aria-pressed="false">Healthcare &amp; pharma</button>
+        <button type="button" class="chip" data-filter="pharma-commercial" aria-pressed="false">Pharma commercial</button>
+        <button type="button" class="chip" data-filter="healthcare-regulatory" aria-pressed="false">Regulatory &amp; clinical</button>
         <button type="button" class="chip" data-filter="videos" aria-pressed="false">Videos</button>
         <button type="button" class="chip" data-filter="people" aria-pressed="false">People</button>
         <button type="button" class="chip" data-filter="managers" aria-pressed="false">Managers</button>
@@ -622,7 +673,7 @@ def build() -> Path:
   {section_block('prompts', 'Prompts', 'Copy these, swap in your notes, then edit the draft yourself.', prompts, 'prompts')}
   {section_block('leadership', 'Leadership', 'Judgment, feedback, and rethinking—skills AI does not replace.', leadership, 'leadership')}
   {section_block('smb', 'Small business', 'Automation ideas for owners who wear many hats.', smb, 'smb')}
-  {section_block('healthcare', 'Healthcare & pharma', 'Regulatory, ethics, and leadership guidance for AI in health and life sciences—no hype, no patient data here.', healthcare, 'healthcare')}
+  {healthcare}
   {section_block('videos', 'Videos', 'Click a thumbnail to play (loads YouTube privacy-enhanced embed).', videos, 'videos')}
   {section_block('people', 'People to follow', 'Accounts that stay useful on AI at work and leadership.', people, 'people')}
 </main>

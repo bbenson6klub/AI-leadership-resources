@@ -185,6 +185,17 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .section-head h2 { margin: 0; color: var(--navy); font-size: 1.35rem; }
 .section-head p { margin: .2rem 0 0; color: var(--muted); }
+.subgroup { margin: 1.1rem 0 .65rem; }
+.subgroup h3 {
+  margin: 0 0 .25rem;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+.subgroup p {
+  margin: 0 0 .7rem;
+  color: var(--muted);
+  font-size: .92rem;
+}
 .ico { width: 28px; height: 28px; flex: 0 0 auto; color: var(--navy); margin-top: .15rem; }
 .grid {
   display: grid;
@@ -345,6 +356,8 @@ noscript .note {
         <button type="button" class="chip" data-filter="leadership" aria-pressed="false">Leadership</button>
         <button type="button" class="chip" data-filter="smb" aria-pressed="false">Small business</button>
         <button type="button" class="chip" data-filter="healthcare" aria-pressed="false">Healthcare &amp; pharma</button>
+        <button type="button" class="chip" data-filter="pharma-commercial" aria-pressed="false">Pharma commercial</button>
+        <button type="button" class="chip" data-filter="healthcare-regulatory" aria-pressed="false">Regulatory &amp; clinical</button>
         <button type="button" class="chip" data-filter="videos" aria-pressed="false">Videos</button>
         <button type="button" class="chip" data-filter="people" aria-pressed="false">People</button>
         <button type="button" class="chip" data-filter="managers" aria-pressed="false">Managers</button>
@@ -732,11 +745,15 @@ Facts:
     <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
     <div>
       <h2>Healthcare &amp; pharma</h2>
-      <p>Regulatory, ethics, and leadership guidance for AI in health and life sciences—no hype, no patient data here.</p>
+      <p>AI for health systems and life-sciences companies—regulatory context plus commercial functions. No employer-specific content; no patient data.</p>
     </div>
   </header>
-  <div class="grid">
-<article class="card" data-tags="healthcare managers leadership" data-text="artificial intelligence for drug development u.s. food and drug administration (cder) fda hub for how ai shows up in drug development submissions—useful for leaders who need a regulatory map before funding pilots that may later support safety, efficacy, or quality decisions.">
+  
+  <div class="subgroup" id="healthcare-regulatory">
+    <h3>Regulatory &amp; clinical</h3>
+    <p>FDA/EMA/WHO guidance, ethics, and clinical AI leadership—governance before pilots.</p>
+    <div class="grid">
+<article class="card" data-tags="healthcare managers leadership healthcare-regulatory" data-text="artificial intelligence for drug development u.s. food and drug administration (cder) fda hub for how ai shows up in drug development submissions—useful for leaders who need a regulatory map before funding pilots that may later support safety, efficacy, or quality decisions.">
   <div class="card-head">
     <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
     <div>
@@ -747,7 +764,7 @@ Facts:
   </div>
   <p class="why">FDA hub for how AI shows up in drug development submissions—useful for leaders who need a regulatory map before funding pilots that may later support safety, efficacy, or quality decisions.</p>
 </article>
-<article class="card" data-tags="healthcare managers leadership" data-text="considerations for the use of artificial intelligence to support regulatory decision-making for drug and biological products u.s. food and drug administration draft guidance on risk-based credibility assessment for ai models used in regulatory decisions—start here when defining context of use, documentation, and human oversight for life-sciences ai work.">
+<article class="card" data-tags="healthcare managers leadership healthcare-regulatory" data-text="considerations for the use of artificial intelligence to support regulatory decision-making for drug and biological products u.s. food and drug administration draft guidance on risk-based credibility assessment for ai models used in regulatory decisions—start here when defining context of use, documentation, and human oversight for life-sciences ai work.">
   <div class="card-head">
     <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
     <div>
@@ -758,7 +775,7 @@ Facts:
   </div>
   <p class="why">Draft guidance on risk-based credibility assessment for AI models used in regulatory decisions—start here when defining context of use, documentation, and human oversight for life-sciences AI work.</p>
 </article>
-<article class="card" data-tags="healthcare leadership managers" data-text="ethics and governance of artificial intelligence for health world health organization consensus principles (autonomy, safety, transparency, accountability, equity, sustainability) that still frame governance and privacy conversations for health ai programs.">
+<article class="card" data-tags="healthcare leadership managers healthcare-regulatory" data-text="ethics and governance of artificial intelligence for health world health organization consensus principles (autonomy, safety, transparency, accountability, equity, sustainability) that still frame governance and privacy conversations for health ai programs.">
   <div class="card-head">
     <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
     <div>
@@ -769,7 +786,7 @@ Facts:
   </div>
   <p class="why">Consensus principles (autonomy, safety, transparency, accountability, equity, sustainability) that still frame governance and privacy conversations for health AI programs.</p>
 </article>
-<article class="card" data-tags="healthcare leadership managers" data-text="ethics and governance of artificial intelligence for health: guidance on large multi-modal models world health organization practical recommendations for governments, developers, and providers on generative multi-modal models—including risks of inaccurate outputs and the need for post-release audit and data protection.">
+<article class="card" data-tags="healthcare leadership managers healthcare-regulatory" data-text="ethics and governance of artificial intelligence for health: guidance on large multi-modal models world health organization practical recommendations for governments, developers, and providers on generative multi-modal models—including risks of inaccurate outputs and the need for post-release audit and data protection.">
   <div class="card-head">
     <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
     <div>
@@ -780,7 +797,7 @@ Facts:
   </div>
   <p class="why">Practical recommendations for governments, developers, and providers on generative multi-modal models—including risks of inaccurate outputs and the need for post-release audit and data protection.</p>
 </article>
-<article class="card" data-tags="healthcare managers" data-text="artificial intelligence (ema overview) european medicines agency eu regulator’s page on ai across the medicine lifecycle—helps pharma leaders align internal ai use with european expectations, not only u.s. fda framing.">
+<article class="card" data-tags="healthcare managers healthcare-regulatory" data-text="artificial intelligence (ema overview) european medicines agency eu regulator’s page on ai across the medicine lifecycle—helps pharma leaders align internal ai use with european expectations, not only u.s. fda framing.">
   <div class="card-head">
     <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
     <div>
@@ -791,7 +808,7 @@ Facts:
   </div>
   <p class="why">EU regulator’s page on AI across the medicine lifecycle—helps pharma leaders align internal AI use with European expectations, not only U.S. FDA framing.</p>
 </article>
-<article class="card" data-tags="healthcare managers leadership" data-text="2026 life sciences outlook deloitte insights executive survey view of ai scaling, regulation, and cybersecurity pressure in biopharma and medtech—useful for setting realistic adoption goals when few leaders report significant ai returns yet.">
+<article class="card" data-tags="healthcare managers leadership healthcare-regulatory" data-text="2026 life sciences outlook deloitte insights executive survey view of ai scaling, regulation, and cybersecurity pressure in biopharma and medtech—useful for setting realistic adoption goals when few leaders report significant ai returns yet.">
   <div class="card-head">
     <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
     <div>
@@ -802,7 +819,7 @@ Facts:
   </div>
   <p class="why">Executive survey view of AI scaling, regulation, and cybersecurity pressure in biopharma and medtech—useful for setting realistic adoption goals when few leaders report significant AI returns yet.</p>
 </article>
-<article class="card" data-tags="healthcare leadership managers aspiring" data-text="redesigning leadership for clinical ai deployment npj digital medicine (nature) on leadership structures that actually support clinical ai—clinical champions, multidisciplinary teams, and frontline engagement rather than a single tech rollout plan.">
+<article class="card" data-tags="healthcare leadership managers aspiring healthcare-regulatory" data-text="redesigning leadership for clinical ai deployment npj digital medicine (nature) on leadership structures that actually support clinical ai—clinical champions, multidisciplinary teams, and frontline engagement rather than a single tech rollout plan.">
   <div class="card-head">
     <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
     <div>
@@ -813,7 +830,7 @@ Facts:
   </div>
   <p class="why">On leadership structures that actually support clinical AI—clinical champions, multidisciplinary teams, and frontline engagement rather than a single tech rollout plan.</p>
 </article>
-<article class="card" data-tags="healthcare managers" data-text="artificial intelligence-enabled medical devices u.s. food and drug administration device-side fda landing page for ai-enabled medical devices—helps healthcare leaders separate samd regulatory paths from drug-development ai uses.">
+<article class="card" data-tags="healthcare managers healthcare-regulatory" data-text="artificial intelligence-enabled medical devices u.s. food and drug administration device-side fda landing page for ai-enabled medical devices—helps healthcare leaders separate samd regulatory paths from drug-development ai uses.">
   <div class="card-head">
     <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
     <div>
@@ -824,6 +841,122 @@ Facts:
   </div>
   <p class="why">Device-side FDA landing page for AI-enabled medical devices—helps healthcare leaders separate SaMD regulatory paths from drug-development AI uses.</p>
 </article></div>
+  </div>
+  <div class="subgroup" id="pharma-commercial">
+    <h3>Pharma commercial: sales, marketing, market access</h3>
+    <p>Using AI inside pharma companies—field/HCP engagement, content + MLR, HEOR/access, medical affairs, and commercial ops—with compliance and measurement in mind.</p>
+    <div class="grid">
+<article class="card" data-tags="healthcare pharma-commercial managers" data-text="generative ai in life sciences marketing zs survey of marketing leaders on gen ai for concept ideation, derivative content, and why mlr process redesign—not just more drafts—is the bottleneck to scale.">
+  <div class="card-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <div>
+      <h3><a href="https://www.zs.com/insights/generative-ai-in-life-sciences-marketing" rel="noopener noreferrer">Generative AI in life sciences marketing</a></h3>
+      <p class="meta">ZS · 2024–2025</p>
+    </div>
+    
+  </div>
+  <p class="why">Survey of marketing leaders on gen AI for concept ideation, derivative content, and why MLR process redesign—not just more drafts—is the bottleneck to scale.</p>
+</article>
+<article class="card" data-tags="healthcare pharma-commercial managers leadership" data-text="agentic ai in life sciences commercialization strategy zs argues commercialization needs decision systems across sales, marketing, and access—not a pile of disconnected ai pilots—with human review still in the loop.">
+  <div class="card-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <div>
+      <h3><a href="https://www.zs.com/insights/agentic-ai-life-sciences-commercialization" rel="noopener noreferrer">Agentic AI in life sciences commercialization strategy</a></h3>
+      <p class="meta">ZS · 2025–2026</p>
+    </div>
+    
+  </div>
+  <p class="why">Argues commercialization needs decision systems across sales, marketing, and access—not a pile of disconnected AI pilots—with human review still in the loop.</p>
+</article>
+<article class="card" data-tags="healthcare pharma-commercial managers" data-text="medical affairs outlook report 2026: key trends and insights zs outlook for medical affairs leaders on where ai and analytics fit scientific engagement and insight work—useful when commercial ai plans need a medical counterpart.">
+  <div class="card-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <div>
+      <h3><a href="https://www.zs.com/insights/medical-affairs-outlook-report-2026-trends-to-watch" rel="noopener noreferrer">Medical affairs outlook report 2026: Key trends and insights</a></h3>
+      <p class="meta">ZS · 2026</p>
+    </div>
+    
+  </div>
+  <p class="why">Outlook for medical affairs leaders on where AI and analytics fit scientific engagement and insight work—useful when commercial AI plans need a medical counterpart.</p>
+</article>
+<article class="card" data-tags="healthcare pharma-commercial managers" data-text="reinventing pharma customer engagement with ai accenture field-focused view of ai for call planning, personalized hcp content, and cross-functional collaboration among sales, medical, and market access—with compliance framed as part of the engagement design.">
+  <div class="card-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <div>
+      <h3><a href="https://www.accenture.com/en/insights/life-sciences/ai-pharma-customer-engagement" rel="noopener noreferrer">Reinventing Pharma Customer Engagement with AI</a></h3>
+      <p class="meta">Accenture · 2025</p>
+    </div>
+    
+  </div>
+  <p class="why">Field-focused view of AI for call planning, personalized HCP content, and cross-functional collaboration among sales, medical, and market access—with compliance framed as part of the engagement design.</p>
+</article>
+<article class="card" data-tags="healthcare pharma-commercial managers leadership" data-text="reinventing life sciences age of generative ai accenture commercialization section covers access/contracting, marketing content under regulatory constraints, mlr-assisted review, and field assistants—good overview before picking one workflow to pilot.">
+  <div class="card-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <div>
+      <h3><a href="https://www.accenture.com/en/insights/life-sciences/reinventing-life-sciences-age-generative-ai" rel="noopener noreferrer">Reinventing Life Sciences Age of Generative AI</a></h3>
+      <p class="meta">Accenture · 2024-08</p>
+    </div>
+    
+  </div>
+  <p class="why">Commercialization section covers access/contracting, marketing content under regulatory constraints, MLR-assisted review, and field assistants—good overview before picking one workflow to pilot.</p>
+</article>
+<article class="card" data-tags="healthcare pharma-commercial managers" data-text="ai in life sciences commercialization iqvia 2025 survey of commercial leaders on adoption across sales, marketing, market access, and compliance—useful for benchmarking where peers still struggle to industrialize tools.">
+  <div class="card-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <div>
+      <h3><a href="https://www.iqvia.com/library/white-papers/ai-in-life-sciences-commercialization" rel="noopener noreferrer">AI in Life Sciences Commercialization</a></h3>
+      <p class="meta">IQVIA · 2025-08</p>
+    </div>
+    
+  </div>
+  <p class="why">2025 survey of commercial leaders on adoption across sales, marketing, market access, and compliance—useful for benchmarking where peers still struggle to industrialize tools.</p>
+</article>
+<article class="card" data-tags="healthcare pharma-commercial managers" data-text="omnichannel engagement in pharma: harnessing the power of generative ai iqvia on next-best-action and gen ai in hcp omnichannel programs—practical for leaders who need to measure engagement quality, not just content volume.">
+  <div class="card-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <div>
+      <h3><a href="https://www.iqvia.com/blogs/2024/10/omnichannel-engagement-in-pharma" rel="noopener noreferrer">Omnichannel Engagement in Pharma: Harnessing the Power of Generative AI</a></h3>
+      <p class="meta">IQVIA · 2024-10</p>
+    </div>
+    
+  </div>
+  <p class="why">On next-best-action and gen AI in HCP omnichannel programs—practical for leaders who need to measure engagement quality, not just content volume.</p>
+</article>
+<article class="card" data-tags="healthcare pharma-commercial managers workflows" data-text="best use cases for scaling agentic ai in commercial life sciences iqvia checklist mindset for which commercial ai use cases scale (repetitive but reviewable; immediate value for reps) versus experiments that stall—pairs well with adoption and impact measurement.">
+  <div class="card-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <div>
+      <h3><a href="https://www.iqvia.com/blogs/2025/06/best-use-cases-for-scaling-agentic-ai-in-commercial-life-sciences" rel="noopener noreferrer">Best use cases for scaling agentic AI in commercial life sciences</a></h3>
+      <p class="meta">IQVIA · 2025-06</p>
+    </div>
+    
+  </div>
+  <p class="why">Checklist mindset for which commercial AI use cases scale (repetitive but reviewable; immediate value for reps) versus experiments that stall—pairs well with adoption and impact measurement.</p>
+</article>
+<article class="card" data-tags="healthcare pharma-commercial managers leadership" data-text="generative artificial intelligence for health technology assessment: opportunities, challenges, and policy considerations ispor (value in health) working-group view of gen ai in hta/heor—literature review, rwe, and economic modeling—with privacy, bias, and human oversight called out for market-access leaders.">
+  <div class="card-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <div>
+      <h3><a href="https://www.ispor.org/heor-resources/good-practices/article/generative-artificial-intelligence-for-health-technology-assessment--opportunities--challenges--and-policy-considerations" rel="noopener noreferrer">Generative Artificial Intelligence for Health Technology Assessment: Opportunities, Challenges, and Policy Considerations</a></h3>
+      <p class="meta">ISPOR (Value in Health) · 2025-02</p>
+    </div>
+    
+  </div>
+  <p class="why">Working-group view of gen AI in HTA/HEOR—literature review, RWE, and economic modeling—with privacy, bias, and human oversight called out for market-access leaders.</p>
+</article>
+<article class="card" data-tags="healthcare pharma-commercial healthcare-regulatory managers" data-text="the office of prescription drug promotion (opdp) u.s. food and drug administration fda office that oversees prescription-drug promotional communications—baseline context for any marketing-content or mlr ai pilot so teams know what still needs human promotional review.">
+  <div class="card-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v6h6v2h-6v6h-2v-6H5V9h6V3z"/><circle cx="12" cy="12" r="9" fill="none" stroke="#3b82f6" stroke-width="1.5"/></svg>
+    <div>
+      <h3><a href="https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/office-prescription-drug-promotion-opdp" rel="noopener noreferrer">The Office of Prescription Drug Promotion (OPDP)</a></h3>
+      <p class="meta">U.S. Food and Drug Administration · ongoing</p>
+    </div>
+    
+  </div>
+  <p class="why">FDA office that oversees prescription-drug promotional communications—baseline context for any marketing-content or MLR AI pilot so teams know what still needs human promotional review.</p>
+</article></div>
+  </div>
 </section>
   
 <section class="section" id="videos" data-section="videos">
@@ -978,6 +1111,22 @@ Facts:
     </div>
   </div>
   <p class="why">FDA staff walk through AI/ML in drug development submissions and a risk-based credibility mindset—good orientation for pharma leaders before drafting internal AI rules.</p>
+</article>
+<article class="card video-card" data-tags="videos healthcare pharma-commercial managers" data-text="how pharma can redesign decision-making to unlock ai value | aaron mitchell, zs reuters events pharma zs commercial perspective on redesigning decisions—not just tooling—so ai adoption sticks in pharma organizations.">
+  <div class="video-lazy" data-youtube-id="SFdiNc685kc">
+    <button type="button" class="video-poster" aria-label="Play video: How pharma can redesign decision-making to unlock AI value | Aaron Mitchell, ZS">
+      <img src="https://i.ytimg.com/vi/SFdiNc685kc/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+      <span class="play-btn" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="card-head">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="#3b82f6" d="M10 9.2v5.6L15 12l-5-2.8z"/></svg>
+    <div>
+      <h3><a href="https://www.youtube.com/watch?v=SFdiNc685kc" rel="noopener noreferrer">How pharma can redesign decision-making to unlock AI value | Aaron Mitchell, ZS</a></h3>
+      <p class="meta">Reuters Events Pharma · 2024–2025</p>
+    </div>
+  </div>
+  <p class="why">ZS commercial perspective on redesigning decisions—not just tooling—so AI adoption sticks in pharma organizations.</p>
 </article></div>
 </section>
   

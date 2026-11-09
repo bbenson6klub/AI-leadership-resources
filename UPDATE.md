@@ -20,7 +20,8 @@ Do **not** publish `preview-desktop.png`, `preview-mobile.png`, or other preview
 - **Sections:** `this_week`, `workflows`, `prompts`, `leadership`, `smb`, `healthcare`, `videos`, `people`
 - **Common fields:** `title`, `url` (or `prompt` for prompts), `why`, `tags` (array)
 - **Tags:** topic chips — `workflows`, `prompts`, `leadership`, `smb`, `healthcare`, `videos`, `people` — plus audience — `managers`, `aspiring`, `smb`
-- **Healthcare & pharma:** use tag `healthcare` on articles/videos about AI in health, life sciences, or pharma leadership (governance, regulatory, privacy, adoption). Prefer FDA/EMA/WHO and peer-reviewed or major consulting outlooks. No employer-specific content; no patient data.
+- **Healthcare & pharma:** use tag `healthcare` on all health/life-sciences items. Set `"subgroup": "regulatory"` + tag `healthcare-regulatory` for FDA/EMA/WHO ethics/clinical/device items; set `"subgroup": "commercial"` + tag `pharma-commercial` for AI *inside* pharma companies (sales/HCP engagement, marketing + MLR, market access/HEOR, medical affairs, commercial ops/analytics). Prefer ZS/IQVIA/Accenture/ISPOR/FDA OPDP and similar public pieces. No employer- or brand-specific content; no patient data.
+- **Filter chips:** `healthcare` (whole section), `pharma-commercial`, `healthcare-regulatory`.
 - **New badge:** `"new": true` on `this_week` items (clear when they age out)
 - **Videos:**
   ```json
@@ -38,7 +39,7 @@ Do **not** publish `preview-desktop.png`, `preview-mobile.png`, or other preview
 
 ## Daily checklist
 
-1. **Scan** for 1–3 new, free, high-quality pieces (practical AI for managers / aspiring leaders / SMB, leadership judgment, or **healthcare & pharma** AI governance/regulatory/workflow pieces). Prefer primary sources over listicles.
+1. **Scan** for 1–3 new, free, high-quality pieces (practical AI for managers / aspiring leaders / SMB, leadership judgment, **healthcare & pharma** regulatory/clinical AI, or **pharma commercial** AI for sales/marketing/market access/medical affairs). Prefer primary sources over listicles.
 2. **Videos (optional each day):** If adding a YouTube video, verify it exists:
    ```bash
    curl -sL -o /dev/null -w "%{http_code}\n" \

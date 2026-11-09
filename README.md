@@ -1,6 +1,6 @@
 # Practical AI. Better Leadership.
 
-A static, mobile-first resources library for managers, aspiring leaders, and small-business owners—workflows, copy-ready prompts, leadership reads, small-business automation, healthcare & pharma AI guidance, curated YouTube videos, and people to follow.
+A static, mobile-first resources library for managers, aspiring leaders, and small-business owners—workflows, copy-ready prompts, leadership reads, small-business automation, healthcare & pharma AI guidance (including pharma commercial: sales, marketing, market access), curated YouTube videos, and people to follow.
 
 - **Live data:** `resources.json`
 - **Build:** `python3 build.py` → `index.html`

@@ -392,6 +392,20 @@
         "healthcare",
         "managers"
       ]
+    },
+    {
+      "youtube_id": "SFdiNc685kc",
+      "title": "How pharma can redesign decision-making to unlock AI value | Aaron Mitchell, ZS",
+      "url": "https://www.youtube.com/watch?v=SFdiNc685kc",
+      "channel": "Reuters Events Pharma",
+      "date": "2024\u20132025",
+      "why": "ZS commercial perspective on redesigning decisions\u2014not just tooling\u2014so AI adoption sticks in pharma organizations.",
+      "tags": [
+        "videos",
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ]
     }
   ],
   "people": [
@@ -522,8 +536,10 @@
       "tags": [
         "healthcare",
         "managers",
-        "leadership"
-      ]
+        "leadership",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
     },
     {
       "title": "Considerations for the Use of Artificial Intelligence To Support Regulatory Decision-Making for Drug and Biological Products",
@@ -534,8 +550,10 @@
       "tags": [
         "healthcare",
         "managers",
-        "leadership"
-      ]
+        "leadership",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
     },
     {
       "title": "Ethics and governance of artificial intelligence for health",
@@ -546,8 +564,10 @@
       "tags": [
         "healthcare",
         "leadership",
-        "managers"
-      ]
+        "managers",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
     },
     {
       "title": "Ethics and governance of artificial intelligence for health: Guidance on large multi-modal models",
@@ -558,8 +578,10 @@
       "tags": [
         "healthcare",
         "leadership",
-        "managers"
-      ]
+        "managers",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
     },
     {
       "title": "Artificial intelligence (EMA overview)",
@@ -569,8 +591,10 @@
       "why": "EU regulator\u2019s page on AI across the medicine lifecycle\u2014helps pharma leaders align internal AI use with European expectations, not only U.S. FDA framing.",
       "tags": [
         "healthcare",
-        "managers"
-      ]
+        "managers",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
     },
     {
       "title": "2026 Life sciences outlook",
@@ -581,8 +605,10 @@
       "tags": [
         "healthcare",
         "managers",
-        "leadership"
-      ]
+        "leadership",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
     },
     {
       "title": "Redesigning leadership for clinical AI deployment",
@@ -594,8 +620,10 @@
         "healthcare",
         "leadership",
         "managers",
-        "aspiring"
-      ]
+        "aspiring",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
     },
     {
       "title": "Artificial Intelligence-Enabled Medical Devices",
@@ -605,8 +633,145 @@
       "why": "Device-side FDA landing page for AI-enabled medical devices\u2014helps healthcare leaders separate SaMD regulatory paths from drug-development AI uses.",
       "tags": [
         "healthcare",
+        "managers",
+        "healthcare-regulatory"
+      ],
+      "subgroup": "regulatory"
+    },
+    {
+      "title": "Generative AI in life sciences marketing",
+      "url": "https://www.zs.com/insights/generative-ai-in-life-sciences-marketing",
+      "source": "ZS",
+      "date": "2024\u20132025",
+      "why": "Survey of marketing leaders on gen AI for concept ideation, derivative content, and why MLR process redesign\u2014not just more drafts\u2014is the bottleneck to scale.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
         "managers"
-      ]
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Agentic AI in life sciences commercialization strategy",
+      "url": "https://www.zs.com/insights/agentic-ai-life-sciences-commercialization",
+      "source": "ZS",
+      "date": "2025\u20132026",
+      "why": "Argues commercialization needs decision systems across sales, marketing, and access\u2014not a pile of disconnected AI pilots\u2014with human review still in the loop.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Medical affairs outlook report 2026: Key trends and insights",
+      "url": "https://www.zs.com/insights/medical-affairs-outlook-report-2026-trends-to-watch",
+      "source": "ZS",
+      "date": "2026",
+      "why": "Outlook for medical affairs leaders on where AI and analytics fit scientific engagement and insight work\u2014useful when commercial AI plans need a medical counterpart.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Reinventing Pharma Customer Engagement with AI",
+      "url": "https://www.accenture.com/en/insights/life-sciences/ai-pharma-customer-engagement",
+      "source": "Accenture",
+      "date": "2025",
+      "why": "Field-focused view of AI for call planning, personalized HCP content, and cross-functional collaboration among sales, medical, and market access\u2014with compliance framed as part of the engagement design.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Reinventing Life Sciences Age of Generative AI",
+      "url": "https://www.accenture.com/en/insights/life-sciences/reinventing-life-sciences-age-generative-ai",
+      "source": "Accenture",
+      "date": "2024-08",
+      "why": "Commercialization section covers access/contracting, marketing content under regulatory constraints, MLR-assisted review, and field assistants\u2014good overview before picking one workflow to pilot.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "AI in Life Sciences Commercialization",
+      "url": "https://www.iqvia.com/library/white-papers/ai-in-life-sciences-commercialization",
+      "source": "IQVIA",
+      "date": "2025-08",
+      "why": "2025 survey of commercial leaders on adoption across sales, marketing, market access, and compliance\u2014useful for benchmarking where peers still struggle to industrialize tools.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Omnichannel Engagement in Pharma: Harnessing the Power of Generative AI",
+      "url": "https://www.iqvia.com/blogs/2024/10/omnichannel-engagement-in-pharma",
+      "source": "IQVIA",
+      "date": "2024-10",
+      "why": "On next-best-action and gen AI in HCP omnichannel programs\u2014practical for leaders who need to measure engagement quality, not just content volume.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Best use cases for scaling agentic AI in commercial life sciences",
+      "url": "https://www.iqvia.com/blogs/2025/06/best-use-cases-for-scaling-agentic-ai-in-commercial-life-sciences",
+      "source": "IQVIA",
+      "date": "2025-06",
+      "why": "Checklist mindset for which commercial AI use cases scale (repetitive but reviewable; immediate value for reps) versus experiments that stall\u2014pairs well with adoption and impact measurement.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "workflows"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "Generative Artificial Intelligence for Health Technology Assessment: Opportunities, Challenges, and Policy Considerations",
+      "url": "https://www.ispor.org/heor-resources/good-practices/article/generative-artificial-intelligence-for-health-technology-assessment--opportunities--challenges--and-policy-considerations",
+      "source": "ISPOR (Value in Health)",
+      "date": "2025-02",
+      "why": "Working-group view of gen AI in HTA/HEOR\u2014literature review, RWE, and economic modeling\u2014with privacy, bias, and human oversight called out for market-access leaders.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "commercial"
+    },
+    {
+      "title": "The Office of Prescription Drug Promotion (OPDP)",
+      "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/office-prescription-drug-promotion-opdp",
+      "source": "U.S. Food and Drug Administration",
+      "date": "ongoing",
+      "why": "FDA office that oversees prescription-drug promotional communications\u2014baseline context for any marketing-content or MLR AI pilot so teams know what still needs human promotional review.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "healthcare-regulatory",
+        "managers"
+      ],
+      "subgroup": "commercial"
     }
   ]
 }
