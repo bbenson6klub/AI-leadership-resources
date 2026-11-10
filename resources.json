@@ -3,12 +3,38 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-09",
+    "last_updated": "2026-11-10",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
   },
   "this_week": [
+    {
+      "title": "4 areas where companies need AI guardrails",
+      "url": "https://mitsloan.mit.edu/ideas-made-to-matter/4-areas-where-companies-need-ai-guardrails",
+      "source": "MIT Sloan (MIT CISR research briefing)",
+      "date": "2026-11-09",
+      "why": "Based on interviews with 48 leaders, it argues for putting oversight where it matters most (architecture, experiments, workforce skills, and vendors) instead of building separate rules for every AI tool.",
+      "tags": [
+        "leadership",
+        "workflows",
+        "managers"
+      ],
+      "new": true
+    },
+    {
+      "title": "Why Leaders Need to Rethink Their Approach to AI Oversight",
+      "url": "https://hbr.org/2026/11/why-leaders-need-to-rethink-their-approach-to-ai-oversight",
+      "source": "Harvard Business Review",
+      "date": "2026-11-09",
+      "why": "When people are slow to adopt AI, more monitoring and mandates can push them to hide their use; this piece explains why trust works better than tighter control.",
+      "tags": [
+        "leadership",
+        "managers",
+        "aspiring"
+      ],
+      "new": true
+    },
     {
       "title": "Your AI Strategy Is Your Middle Managers",
       "url": "https://www.reworked.co/digital-workplace/your-ai-strategy-is-your-middle-managers/",
@@ -35,29 +61,6 @@
         "aspiring"
       ],
       "new": true
-    },
-    {
-      "title": "The Four Ps — How to Manage an AI-Native Engineering Team",
-      "url": "https://www.deeplearning.ai/the-batch/the-four-ps",
-      "source": "DeepLearning.AI / Andrew Ng",
-      "date": "2026-10-23",
-      "why": "A leadership checklist around People, Projects, Platforms, and Processes. Useful even if you do not manage engineers—same pattern applies to any knowledge team adopting AI.",
-      "tags": [
-        "leadership",
-        "workflows",
-        "managers"
-      ]
-    },
-    {
-      "title": "How AI Is Changing Strategy (podcast with Ethan Mollick)",
-      "url": "https://hbr.org/podcast/2026/10/how-ai-is-changing-strategy-rethinking-what-your-business-is-designed-to-do",
-      "source": "Harvard Business Review",
-      "date": "2026-10",
-      "why": "Short listen on why AI is a strategy question, not just a productivity add-on, and why managers should experiment instead of waiting for a perfect playbook.",
-      "tags": [
-        "leadership",
-        "managers"
-      ]
     },
     {
       "title": "Manager AI Adoption Playbook: Six-Week Plan",
@@ -731,21 +734,20 @@
       "added": "2026-11-09"
     },
     {
-      "id": "ind-ea9caf74cb",
-      "title": "The looming advisor shortage in US wealth management",
-      "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-looming-advisor-shortage-in-us-wealth-management",
-      "source": "McKinsey",
-      "date": "2025-02-10",
-      "why": "Sizes the coming advisor gap and shows where gen AI can give advisors time back: meeting prep, notes, plan drafts, and compliance tasks.",
+      "id": "ind-67d36f1dc5",
+      "title": "The Insurance CEO’s Blueprint for Scaling AI",
+      "url": "https://www.bcg.com/publications/2026/insurance-ceos-scale-ai-enterprise",
+      "source": "BCG",
+      "date": "2026-11-05",
+      "why": "Lays out six places insurers can build AI once and reuse it, from claims and underwriting to giving sales agents more time with customers, plus a short leadership checklist.",
       "tags": [
         "industries",
         "ind-finance",
-        "managers",
-        "aspiring"
+        "managers"
       ],
       "subgroup": "ind-finance",
       "new": true,
-      "added": "2026-11-09"
+      "added": "2026-11-10"
     },
     {
       "id": "ind-777e06135e",
@@ -1363,6 +1365,51 @@
       ],
       "archived_date": "2026-11-09",
       "archived_from": "this_week"
+    },
+    {
+      "title": "The Four Ps — How to Manage an AI-Native Engineering Team",
+      "url": "https://www.deeplearning.ai/the-batch/the-four-ps",
+      "source": "DeepLearning.AI / Andrew Ng",
+      "date": "2026-10-23",
+      "why": "A leadership checklist around People, Projects, Platforms, and Processes. Useful even if you do not manage engineers—same pattern applies to any knowledge team adopting AI.",
+      "tags": [
+        "leadership",
+        "workflows",
+        "managers"
+      ],
+      "archived_date": "2026-11-10",
+      "archived_from": "this_week"
+    },
+    {
+      "title": "How AI Is Changing Strategy (podcast with Ethan Mollick)",
+      "url": "https://hbr.org/podcast/2026/10/how-ai-is-changing-strategy-rethinking-what-your-business-is-designed-to-do",
+      "source": "Harvard Business Review",
+      "date": "2026-10",
+      "why": "Short listen on why AI is a strategy question, not just a productivity add-on, and why managers should experiment instead of waiting for a perfect playbook.",
+      "tags": [
+        "leadership",
+        "managers"
+      ],
+      "archived_date": "2026-11-10",
+      "archived_from": "this_week"
+    },
+    {
+      "id": "ind-ea9caf74cb",
+      "title": "The looming advisor shortage in US wealth management",
+      "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-looming-advisor-shortage-in-us-wealth-management",
+      "source": "McKinsey",
+      "date": "2025-02-10",
+      "why": "Sizes the coming advisor gap and shows where gen AI can give advisors time back: meeting prep, notes, plan drafts, and compliance tasks.",
+      "tags": [
+        "industries",
+        "ind-finance",
+        "managers",
+        "aspiring"
+      ],
+      "subgroup": "ind-finance",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-10",
+      "archived_from": "industries"
     }
   ],
   "dropped_links": [
