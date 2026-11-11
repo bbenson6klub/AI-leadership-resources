@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-10",
+    "last_updated": "2026-11-11",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -537,6 +537,22 @@
         "managers"
       ],
       "subgroup": "commercial"
+    },
+    {
+      "title": "The AI Efficiency Trap: Why Faster Tasks Alone Won’t Transform Life Sciences",
+      "url": "https://www.pharmaceuticalcommerce.com/view/the-ai-efficiency-trap-why-faster-tasks-alone-won-t-transform-life-sciences",
+      "source": "Pharmaceutical Commerce",
+      "date": "2026-11-06",
+      "why": "Argues that speeding up single tasks (research summaries, content drafts, call prep) isn't enough, and that commercial teams get more from connecting insights, content review, and field feedback, with human oversight kept where it matters.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "commercial",
+      "new": true,
+      "added": "2026-11-11"
     }
   ],
   "industry_groups": [
