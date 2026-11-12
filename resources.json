@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-11",
+    "last_updated": "2026-11-12",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -1136,6 +1136,23 @@
       "subgroup": "ind-sales",
       "new": true,
       "added": "2026-11-09"
+    },
+    {
+      "id": "ind-1fb63aa3d6",
+      "title": "The AI-disrupted supply chain organization",
+      "url": "https://www.deloitte.com/ca/en/services/consulting/perspectives/the-ai-disrupted-supply-chain.html",
+      "source": "Deloitte Canada",
+      "date": "2026-11-02",
+      "why": "Argues that as agentic AI takes on routine forecasting, replenishment, and logistics decisions, supply chain leaders should redesign around decisions, spelling out what AI can do alone, what needs human oversight, and what stays human-controlled.",
+      "tags": [
+        "industries",
+        "ind-manufacturing",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-manufacturing",
+      "new": true,
+      "added": "2026-11-12"
     }
   ],
   "videos": [
