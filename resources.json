@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-12",
+    "last_updated": "2026-11-13",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -984,6 +984,23 @@
       "subgroup": "ind-proservices",
       "new": true,
       "added": "2026-11-09"
+    },
+    {
+      "id": "ind-617ad58fe1",
+      "title": "Confident in Their Business, Cautious About the Economy: The State of Small Business 2026",
+      "url": "https://gusto.com/resources/gusto-insights/state-of-small-business-2026",
+      "source": "Gusto Insights",
+      "date": "2026-11-12",
+      "why": "A survey of 1,731 owners of businesses under 25 employees on how AI use is spreading (most in professional services), how few have an AI policy yet, and which tasks owners are comfortable letting AI handle with limited review.",
+      "tags": [
+        "industries",
+        "ind-proservices",
+        "managers",
+        "smb"
+      ],
+      "subgroup": "ind-proservices",
+      "new": true,
+      "added": "2026-11-13"
     },
     {
       "id": "ind-7040cc56d9",
