@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-13",
+    "last_updated": "2026-11-14",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -553,6 +553,21 @@
       "subgroup": "commercial",
       "new": true,
       "added": "2026-11-11"
+    },
+    {
+      "title": "Beyond the front door: evolving implications of AI as a gateway to medical information",
+      "url": "https://www.iqvia.com/blogs/2026/11/evolving-implications-of-ai-as-a-gateway-to-medical-information",
+      "source": "IQVIA",
+      "date": "2026-11-10",
+      "why": "Uses a large HCP survey and real AI prompts to show how clinicians now look up medical information through AI tools, and what that means for medical affairs and commercial teams.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ],
+      "subgroup": "commercial",
+      "new": true,
+      "added": "2026-11-14"
     }
   ],
   "industry_groups": [
@@ -1069,21 +1084,21 @@
       "added": "2026-11-09"
     },
     {
-      "id": "ind-1233e7f96b",
-      "title": "How to Use A.I. Effectively and Protect Your Organization's Reputation and Values",
-      "url": "https://www.philanthropy.com/solutions/how-to-use-a-i-effectively-and-protect-your-organizations-reputation-and-values/",
-      "source": "Chronicle of Philanthropy",
-      "date": "2025-01-09",
-      "why": "Experts explain why nonprofits need written AI-use guidelines and how to draft them.",
+      "id": "ind-dc9b717fb3",
+      "title": "The New Nonprofit Visibility Gap",
+      "url": "https://ssir.org/articles/entry/nonprofits-ai-search-visibility-gap",
+      "source": "Stanford Social Innovation Review",
+      "date": "2026-10-29",
+      "why": "Explains how AI chat answers are narrowing how donors discover nonprofits, and what smaller organizations can do to keep clear, consistent public information so they still show up.",
       "tags": [
         "industries",
         "ind-education",
         "managers",
-        "leadership"
+        "smb"
       ],
       "subgroup": "ind-education",
       "new": true,
-      "added": "2026-11-09"
+      "added": "2026-11-14"
     },
     {
       "id": "ind-4dd4119499",
@@ -1459,6 +1474,24 @@
       "subgroup": "ind-finance",
       "added": "2026-11-09",
       "archived_date": "2026-11-10",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-1233e7f96b",
+      "title": "How to Use A.I. Effectively and Protect Your Organization's Reputation and Values",
+      "url": "https://www.philanthropy.com/solutions/how-to-use-a-i-effectively-and-protect-your-organizations-reputation-and-values/",
+      "source": "Chronicle of Philanthropy",
+      "date": "2025-01-09",
+      "why": "Experts explain why nonprofits need written AI-use guidelines and how to draft them.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-education",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-14",
       "archived_from": "industries"
     }
   ],
