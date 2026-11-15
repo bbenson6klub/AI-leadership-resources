@@ -3,12 +3,26 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-14",
+    "last_updated": "2026-11-15",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
   },
   "this_week": [
+    {
+      "title": "Increase your personal productivity in an AI-enabled workspace",
+      "url": "https://mitsloan.mit.edu/ideas-made-to-matter/increase-your-personal-productivity-ai-enabled-workspace",
+      "source": "MIT Sloan (Robert Pozen and Renee Fry)",
+      "date": "2026-11-03",
+      "why": "A simple delegation rule for deciding which tasks to keep, template with review, hand off for a quick draft, or automate, plus a reminder that AI gets work to about 70% and your judgment finishes it.",
+      "tags": [
+        "workflows",
+        "managers",
+        "aspiring"
+      ],
+      "new": true,
+      "added": "2026-11-15"
+    },
     {
       "title": "4 areas where companies need AI guardrails",
       "url": "https://mitsloan.mit.edu/ideas-made-to-matter/4-areas-where-companies-need-ai-guardrails",
@@ -72,19 +86,6 @@
         "workflows",
         "managers",
         "smb"
-      ],
-      "new": true
-    },
-    {
-      "title": "AI for Managers: How to Lead a Team That Uses AI",
-      "url": "https://manishsingh.info/blog/ai-for-managers",
-      "source": "Manish Singh",
-      "date": "2026",
-      "why": "Practical starting workflows (status reports, 1:1 prep, meeting actions) plus a one-page rules outline managers can actually use.",
-      "tags": [
-        "workflows",
-        "managers",
-        "aspiring"
       ],
       "new": true
     }
@@ -388,6 +389,21 @@
         "healthcare-regulatory"
       ],
       "subgroup": "regulatory"
+    },
+    {
+      "title": "How Will the Food and Drug Administration Regulate Generative AI–Enabled Medical Devices?",
+      "url": "https://www.jmir.org/2026/1/e115030/",
+      "source": "Journal of Medical Internet Research (JMIR News and Perspectives)",
+      "date": "2026-11-02",
+      "why": "Explains where FDA stands on generative AI in devices: public comment closed in October 2026, there is no binding guidance yet, and an early clearance offers little precedent, so risk depends on whether a tool informs, directs, or takes action.",
+      "tags": [
+        "healthcare",
+        "healthcare-regulatory",
+        "managers"
+      ],
+      "subgroup": "regulatory",
+      "new": true,
+      "added": "2026-11-15"
     },
     {
       "title": "Generative AI in life sciences marketing",
@@ -1185,6 +1201,23 @@
       "subgroup": "ind-manufacturing",
       "new": true,
       "added": "2026-11-12"
+    },
+    {
+      "id": "ind-255735a219",
+      "title": "AI is transforming sales. The difficulty is measuring its value",
+      "url": "https://www.simon-kucher.com/en/insights/ai-transforming-sales-difficulty-measuring-its-value",
+      "source": "Simon-Kucher",
+      "date": "2026-11-12",
+      "why": "Gives sales leaders four ways to judge whether AI is paying off (revenue, margin, productivity, and how well it fits into coaching, pipeline reviews, and account planning) and suggests matching each use case to the specific bottleneck you need to fix.",
+      "tags": [
+        "industries",
+        "ind-sales",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-sales",
+      "new": true,
+      "added": "2026-11-15"
     }
   ],
   "videos": [
@@ -1493,6 +1526,20 @@
       "added": "2026-11-09",
       "archived_date": "2026-11-14",
       "archived_from": "industries"
+    },
+    {
+      "title": "AI for Managers: How to Lead a Team That Uses AI",
+      "url": "https://manishsingh.info/blog/ai-for-managers",
+      "source": "Manish Singh",
+      "date": "2026",
+      "why": "Practical starting workflows (status reports, 1:1 prep, meeting actions) plus a one-page rules outline managers can actually use.",
+      "tags": [
+        "workflows",
+        "managers",
+        "aspiring"
+      ],
+      "archived_date": "2026-11-15",
+      "archived_from": "this_week"
     }
   ],
   "dropped_links": [
