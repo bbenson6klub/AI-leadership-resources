@@ -3,12 +3,26 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-15",
+    "last_updated": "2026-11-16",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
   },
   "this_week": [
+    {
+      "title": "Why Even Your Best Employees Override AI Systems That Work",
+      "url": "https://hbr.org/2026/11/why-even-your-best-employees-override-ai-systems-that-work",
+      "source": "Harvard Business Review (Das Narayandas)",
+      "date": "2026-11",
+      "why": "Argues that people override working AI tools when they don't trust how the organization will back their decisions, so leaders need to redesign governance and accountability, not just deploy the system.",
+      "tags": [
+        "leadership",
+        "managers",
+        "aspiring"
+      ],
+      "new": true,
+      "added": "2026-11-16"
+    },
     {
       "title": "Increase your personal productivity in an AI-enabled workspace",
       "url": "https://mitsloan.mit.edu/ideas-made-to-matter/increase-your-personal-productivity-ai-enabled-workspace",
@@ -73,19 +87,6 @@
         "workflows",
         "managers",
         "aspiring"
-      ],
-      "new": true
-    },
-    {
-      "title": "Manager AI Adoption Playbook: Six-Week Plan",
-      "url": "https://ajaia.ai/resources/manager-ai-adoption-playbook",
-      "source": "Ajaia",
-      "date": "2026",
-      "why": "Week-by-week plan to pick one workflow, set safe-use rules, add human checkpoints, and measure quality—not just logins.",
-      "tags": [
-        "workflows",
-        "managers",
-        "smb"
       ],
       "new": true
     }
@@ -632,6 +633,22 @@
   ],
   "industries": [
     {
+      "id": "ind-be2a72ed45",
+      "title": "Modernizing the Milkman: AI’s New Playbook for Medtech Commercial Excellence",
+      "url": "https://www.bcg.com/publications/2026/ai-medtech-commercial-excellence",
+      "source": "BCG",
+      "date": "2026-11-02",
+      "why": "BCG's fourth survey of medtech commercial leaders finds most rate their next-gen commercial capabilities as basic to intermediate, and lays out five areas to work on: segmentation and targeting, personalized engagement, AI-augmented sales, data-driven pricing, and agentic workflows.",
+      "tags": [
+        "industries",
+        "ind-medtech",
+        "managers"
+      ],
+      "subgroup": "ind-medtech",
+      "new": true,
+      "added": "2026-11-16"
+    },
+    {
       "id": "ind-0c48c7b8e1",
       "title": "Scaling gen AI in the medtech industry",
       "url": "https://www.mckinsey.com/industries/life-sciences/our-insights/scaling-gen-ai-in-the-medtech-industry",
@@ -645,24 +662,6 @@
         "leadership"
       ],
       "subgroup": "ind-medtech",
-      "new": true,
-      "added": "2026-11-09"
-    },
-    {
-      "id": "ind-f1d4263d98",
-      "title": "Building an effective AI strategy for medtech organizations",
-      "url": "https://www.zs.com/insights/ai-strategy-framework-medtech",
-      "source": "ZS",
-      "date": "2025-04-23",
-      "why": "Argues for starting from the decisions you want to improve, not the tool, and tying each use case to revenue, productivity, or customer-experience goals.",
-      "tags": [
-        "industries",
-        "ind-medtech",
-        "managers",
-        "leadership"
-      ],
-      "subgroup": "ind-medtech",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -678,7 +677,6 @@
         "managers"
       ],
       "subgroup": "ind-medtech",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -695,7 +693,6 @@
         "leadership"
       ],
       "subgroup": "ind-medtech",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -711,7 +708,6 @@
         "managers"
       ],
       "subgroup": "ind-medtech",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -728,7 +724,6 @@
         "leadership"
       ],
       "subgroup": "ind-finance",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -744,7 +739,6 @@
         "managers"
       ],
       "subgroup": "ind-finance",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -761,7 +755,6 @@
         "leadership"
       ],
       "subgroup": "ind-finance",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -777,7 +770,6 @@
         "managers"
       ],
       "subgroup": "ind-finance",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -809,7 +801,6 @@
         "managers"
       ],
       "subgroup": "ind-retail",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -826,7 +817,6 @@
         "aspiring"
       ],
       "subgroup": "ind-retail",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -843,7 +833,6 @@
         "leadership"
       ],
       "subgroup": "ind-retail",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -860,7 +849,6 @@
         "leadership"
       ],
       "subgroup": "ind-retail",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -876,7 +864,6 @@
         "managers"
       ],
       "subgroup": "ind-retail",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -893,7 +880,6 @@
         "leadership"
       ],
       "subgroup": "ind-manufacturing",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -910,7 +896,6 @@
         "leadership"
       ],
       "subgroup": "ind-manufacturing",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -926,7 +911,6 @@
         "managers"
       ],
       "subgroup": "ind-manufacturing",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -943,7 +927,6 @@
         "workflows"
       ],
       "subgroup": "ind-manufacturing",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -961,7 +944,6 @@
         "workflows"
       ],
       "subgroup": "ind-proservices",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -979,7 +961,6 @@
         "aspiring"
       ],
       "subgroup": "ind-proservices",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -996,7 +977,6 @@
         "smb"
       ],
       "subgroup": "ind-proservices",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -1013,7 +993,6 @@
         "smb"
       ],
       "subgroup": "ind-proservices",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -1047,7 +1026,6 @@
         "leadership"
       ],
       "subgroup": "ind-education",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -1063,7 +1041,6 @@
         "managers"
       ],
       "subgroup": "ind-education",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -1080,7 +1057,6 @@
         "leadership"
       ],
       "subgroup": "ind-education",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -1096,7 +1072,6 @@
         "managers"
       ],
       "subgroup": "ind-education",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -1130,7 +1105,6 @@
         "leadership"
       ],
       "subgroup": "ind-sales",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -1147,7 +1121,6 @@
         "workflows"
       ],
       "subgroup": "ind-sales",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -1164,7 +1137,6 @@
         "leadership"
       ],
       "subgroup": "ind-sales",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -1182,7 +1154,6 @@
         "aspiring"
       ],
       "subgroup": "ind-sales",
-      "new": true,
       "added": "2026-11-09"
     },
     {
@@ -1539,6 +1510,38 @@
         "aspiring"
       ],
       "archived_date": "2026-11-15",
+      "archived_from": "this_week"
+    },
+    {
+      "id": "ind-f1d4263d98",
+      "title": "Building an effective AI strategy for medtech organizations",
+      "url": "https://www.zs.com/insights/ai-strategy-framework-medtech",
+      "source": "ZS",
+      "date": "2025-04-23",
+      "why": "Argues for starting from the decisions you want to improve, not the tool, and tying each use case to revenue, productivity, or customer-experience goals.",
+      "tags": [
+        "industries",
+        "ind-medtech",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-medtech",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-16",
+      "archived_from": "industries"
+    },
+    {
+      "title": "Manager AI Adoption Playbook: Six-Week Plan",
+      "url": "https://ajaia.ai/resources/manager-ai-adoption-playbook",
+      "source": "Ajaia",
+      "date": "2026",
+      "why": "Week-by-week plan to pick one workflow, set safe-use rules, add human checkpoints, and measure quality—not just logins.",
+      "tags": [
+        "workflows",
+        "managers",
+        "smb"
+      ],
+      "archived_date": "2026-11-16",
       "archived_from": "this_week"
     }
   ],
