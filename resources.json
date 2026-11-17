@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-16",
+    "last_updated": "2026-11-17",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -47,8 +47,7 @@
         "leadership",
         "workflows",
         "managers"
-      ],
-      "new": true
+      ]
     },
     {
       "title": "Why Leaders Need to Rethink Their Approach to AI Oversight",
@@ -60,8 +59,7 @@
         "leadership",
         "managers",
         "aspiring"
-      ],
-      "new": true
+      ]
     },
     {
       "title": "Your AI Strategy Is Your Middle Managers",
@@ -74,8 +72,7 @@
         "workflows",
         "managers",
         "aspiring"
-      ],
-      "new": true
+      ]
     },
     {
       "title": "Three Ways to Work with AI, and How to Choose",
@@ -87,8 +84,7 @@
         "workflows",
         "managers",
         "aspiring"
-      ],
-      "new": true
+      ]
     }
   ],
   "workflows": [
@@ -407,6 +403,21 @@
       "added": "2026-11-15"
     },
     {
+      "title": "Evaluating Benefit-Risk in Robotic Medical Devices with Autonomous or Remote Teleoperation Capabilities: Discussion Paper and Request for Feedback",
+      "url": "https://www.fda.gov/medical-devices/robotic-medical-devices/evaluating-benefit-risk-robotic-medical-devices-autonomous-or-remote-teleoperation-capabilities",
+      "source": "FDA",
+      "date": "2026-11-06",
+      "why": "FDA’s discussion paper on how autonomy and remote operation change the benefits and risks of robotic devices, including cases where a system can act before a clinician can interrupt it.",
+      "tags": [
+        "healthcare",
+        "healthcare-regulatory",
+        "managers"
+      ],
+      "subgroup": "regulatory",
+      "new": true,
+      "added": "2026-11-17"
+    },
+    {
       "title": "Generative AI in life sciences marketing",
       "url": "https://www.zs.com/insights/generative-ai-in-life-sciences-marketing",
       "source": "ZS",
@@ -711,12 +722,28 @@
       "added": "2026-11-09"
     },
     {
-      "id": "ind-b914767eeb",
-      "title": "The future of AI in the insurance industry",
-      "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-future-of-ai-in-the-insurance-industry",
-      "source": "McKinsey",
-      "date": "2025-07-15",
-      "why": "How insurers are reworking whole areas like claims, underwriting, and distribution instead of running scattered pilots, and why change management is half the work.",
+      "id": "ind-7f80946b09",
+      "title": "2027 Insurance Outlook",
+      "url": "https://www.deloitte.com/global/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html",
+      "source": "Deloitte Insights",
+      "date": "2026-11-12",
+      "why": "Describes how insurers can move AI into underwriting, claims, and adviser work, and why leaders need to track the cost and decide which tasks stay with people.",
+      "tags": [
+        "industries",
+        "ind-finance",
+        "managers"
+      ],
+      "subgroup": "ind-finance",
+      "new": true,
+      "added": "2026-11-17"
+    },
+    {
+      "id": "ind-5d0804080b",
+      "title": "Super Intelligence: Supervisory Framework",
+      "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-54.html",
+      "source": "OCC",
+      "date": "2026-11-04",
+      "why": "Shows how bank examiners will review generative and agentic AI—what the OCC calls super intelligence—by the consequences of a failure, how independently the system acts, and whether a person still checks the decision.",
       "tags": [
         "industries",
         "ind-finance",
@@ -724,22 +751,8 @@
         "leadership"
       ],
       "subgroup": "ind-finance",
-      "added": "2026-11-09"
-    },
-    {
-      "id": "ind-8d92b82dd0",
-      "title": "How banks can supercharge intelligent automation with agentic AI",
-      "url": "https://www.deloitte.com/us/en/insights/industry/financial-services/agentic-ai-banking.html",
-      "source": "Deloitte Insights",
-      "date": "2025-08-13",
-      "why": "Where AI agents fit in banking processes such as credit underwriting and fraud work, and why compliance has to be built in from the start.",
-      "tags": [
-        "industries",
-        "ind-finance",
-        "managers"
-      ],
-      "subgroup": "ind-finance",
-      "added": "2026-11-09"
+      "new": true,
+      "added": "2026-11-17"
     },
     {
       "id": "ind-7f7fb60221",
@@ -785,7 +798,6 @@
         "managers"
       ],
       "subgroup": "ind-finance",
-      "new": true,
       "added": "2026-11-10"
     },
     {
@@ -1543,6 +1555,41 @@
       ],
       "archived_date": "2026-11-16",
       "archived_from": "this_week"
+    },
+    {
+      "id": "ind-b914767eeb",
+      "title": "The future of AI in the insurance industry",
+      "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-future-of-ai-in-the-insurance-industry",
+      "source": "McKinsey",
+      "date": "2025-07-15",
+      "why": "How insurers are reworking whole areas like claims, underwriting, and distribution instead of running scattered pilots, and why change management is half the work.",
+      "tags": [
+        "industries",
+        "ind-finance",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-finance",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-17",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-8d92b82dd0",
+      "title": "How banks can supercharge intelligent automation with agentic AI",
+      "url": "https://www.deloitte.com/us/en/insights/industry/financial-services/agentic-ai-banking.html",
+      "source": "Deloitte Insights",
+      "date": "2025-08-13",
+      "why": "Where AI agents fit in banking processes such as credit underwriting and fraud work, and why compliance has to be built in from the start.",
+      "tags": [
+        "industries",
+        "ind-finance",
+        "managers"
+      ],
+      "subgroup": "ind-finance",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-17",
+      "archived_from": "industries"
     }
   ],
   "dropped_links": [
