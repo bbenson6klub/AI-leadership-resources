@@ -3,12 +3,26 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-17",
+    "last_updated": "2026-11-18",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
   },
   "this_week": [
+    {
+      "title": "What effective AI leaders already know",
+      "url": "https://mitsloan.mit.edu/ideas-made-to-matter/what-effective-ai-leaders-already-know",
+      "source": "MIT Sloan (Katherine C. Kellogg and Rama Ramakrishnan)",
+      "date": "2026-11-16",
+      "why": "Two MIT Sloan professors say leaders need a working mental model of how agents operate, should reward domain experts for checking outputs, and will have to manage several agents at once.",
+      "tags": [
+        "leadership",
+        "managers",
+        "aspiring"
+      ],
+      "new": true,
+      "added": "2026-11-18"
+    },
     {
       "title": "Why Even Your Best Employees Override AI Systems That Work",
       "url": "https://hbr.org/2026/11/why-even-your-best-employees-override-ai-systems-that-work",
@@ -418,6 +432,21 @@
       "added": "2026-11-17"
     },
     {
+      "title": "Updated AI and/or Machine Learning–Based Medical Devices Cleared Through the FDA 510(k) Pathway",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13741162/",
+      "source": "JAMA Network Open (Maria Zogka and colleagues)",
+      "date": "2026-11-05",
+      "why": "A study of FDA 510(k) records finds that about a third of the AI devices it tracked later updated their algorithms, often changing how the device is used, while the paperwork on those updates is uneven.",
+      "tags": [
+        "healthcare",
+        "healthcare-regulatory",
+        "managers"
+      ],
+      "subgroup": "regulatory",
+      "new": true,
+      "added": "2026-11-18"
+    },
+    {
       "title": "Generative AI in life sciences marketing",
       "url": "https://www.zs.com/insights/generative-ai-in-life-sciences-marketing",
       "source": "ZS",
@@ -579,7 +608,6 @@
         "leadership"
       ],
       "subgroup": "commercial",
-      "new": true,
       "added": "2026-11-11"
     },
     {
@@ -801,6 +829,23 @@
       "added": "2026-11-10"
     },
     {
+      "id": "ind-5eef9e335e",
+      "title": "Agentic commerce: The invisible shelf for CPG brands",
+      "url": "https://www.deloitte.com/lu/en/our-thinking/future-of-advice/invisible-shelf.html",
+      "source": "Deloitte",
+      "date": "2026-11-10",
+      "why": "Explains how shopping agents can skip a product that is not machine-readable, and why consumer-goods teams need consistent product data and closer coordination across content, commerce, and technology.",
+      "tags": [
+        "industries",
+        "ind-retail",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-retail",
+      "new": true,
+      "added": "2026-11-18"
+    },
+    {
       "id": "ind-777e06135e",
       "title": "The case for agentic AI in retail with AI-sourcing",
       "url": "https://www.deloitte.com/us/en/industries/consumer/articles/ai-retail-digital-workers-transformation.html",
@@ -811,22 +856,6 @@
         "industries",
         "ind-retail",
         "managers"
-      ],
-      "subgroup": "ind-retail",
-      "added": "2026-11-09"
-    },
-    {
-      "id": "ind-38620b0b44",
-      "title": "Elevating the retail floor: How will AI reshape frontline retail roles and the customer experience?",
-      "url": "https://www.kearney.com/industry/consumer-retail/article/elevating-the-retail-floor-how-will-ai-reshape-frontline-retail-roles-and-the-customer-experience",
-      "source": "Kearney",
-      "date": "2025",
-      "why": "How AI could free up store associates' time and change customer service, and what that means for hiring and training frontline teams.",
-      "tags": [
-        "industries",
-        "ind-retail",
-        "managers",
-        "aspiring"
       ],
       "subgroup": "ind-retail",
       "added": "2026-11-09"
@@ -1589,6 +1618,24 @@
       "subgroup": "ind-finance",
       "added": "2026-11-09",
       "archived_date": "2026-11-17",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-38620b0b44",
+      "title": "Elevating the retail floor: How will AI reshape frontline retail roles and the customer experience?",
+      "url": "https://www.kearney.com/industry/consumer-retail/article/elevating-the-retail-floor-how-will-ai-reshape-frontline-retail-roles-and-the-customer-experience",
+      "source": "Kearney",
+      "date": "2025-08-21",
+      "why": "How AI could free up store associates' time and change customer service, and what that means for hiring and training frontline teams.",
+      "tags": [
+        "industries",
+        "ind-retail",
+        "managers",
+        "aspiring"
+      ],
+      "subgroup": "ind-retail",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-18",
       "archived_from": "industries"
     }
   ],
