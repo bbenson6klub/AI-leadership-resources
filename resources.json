@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-18",
+    "last_updated": "2026-11-19",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -306,7 +306,7 @@
     },
     {
       "title": "Considerations for the Use of Artificial Intelligence To Support Regulatory Decision-Making for Drug and Biological Products",
-      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological",
+      "url": "https://www.fda.gov/media/184830/download",
       "source": "U.S. Food and Drug Administration",
       "date": "2025-01",
       "why": "Draft guidance on risk-based credibility assessment for AI models used in regulatory decisions—start here when defining context of use, documentation, and human oversight for life-sciences AI work.",
@@ -316,7 +316,8 @@
         "leadership",
         "healthcare-regulatory"
       ],
-      "subgroup": "regulatory"
+      "subgroup": "regulatory",
+      "id": "healthcare-e9d94afffb"
     },
     {
       "title": "Ethics and governance of artificial intelligence for health",
@@ -445,6 +446,21 @@
       "subgroup": "regulatory",
       "new": true,
       "added": "2026-11-18"
+    },
+    {
+      "title": "Clinician Acceptance of Large Language Model–Generated Discharge Summaries",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2856756",
+      "source": "JAMA Network Open (Kathleen Goldsmith and colleagues)",
+      "date": "2026-11-17",
+      "why": "Physicians reviewing admissions at five London hospitals were more willing to sign an LLM draft than the usual discharge summary, provided a clinician still checks it before it goes out.",
+      "tags": [
+        "healthcare",
+        "healthcare-regulatory",
+        "managers"
+      ],
+      "subgroup": "regulatory",
+      "new": true,
+      "added": "2026-11-19"
     },
     {
       "title": "Generative AI in life sciences marketing",
@@ -578,20 +594,6 @@
         "pharma-commercial",
         "managers",
         "leadership"
-      ],
-      "subgroup": "commercial"
-    },
-    {
-      "title": "The Office of Prescription Drug Promotion (OPDP)",
-      "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/office-prescription-drug-promotion-opdp",
-      "source": "U.S. Food and Drug Administration",
-      "date": "ongoing",
-      "why": "FDA office that oversees prescription-drug promotional communications—baseline context for any marketing-content or MLR AI pilot so teams know what still needs human promotional review.",
-      "tags": [
-        "healthcare",
-        "pharma-commercial",
-        "healthcare-regulatory",
-        "managers"
       ],
       "subgroup": "commercial"
     },
@@ -908,12 +910,12 @@
       "added": "2026-11-09"
     },
     {
-      "id": "ind-5327803a4d",
-      "title": "From vision to value: A road map for enterprise transformation in manufacturing with agentic AI",
-      "url": "https://www.deloitte.com/us/en/insights/industry/manufacturing-industrial-products/agentic-ai-manufacturing-digital-transformation.html",
-      "source": "Deloitte Insights",
-      "date": "2025-09-22",
-      "why": "Shop-floor examples like AI-drafted work instructions reviewed by engineers, plus why most task hours stay human and how to bring workers along.",
+      "id": "ind-96276e8a35",
+      "title": "Delivering the agentic supply chain",
+      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/operations-blog/delivering-the-agentic-supply-chain",
+      "source": "McKinsey",
+      "date": "2026-11-17",
+      "why": "Shows supply chain leaders where an agent can carry a plan through to action, and where a person still sets the limits and handles the exceptions.",
       "tags": [
         "industries",
         "ind-manufacturing",
@@ -921,15 +923,33 @@
         "leadership"
       ],
       "subgroup": "ind-manufacturing",
-      "added": "2026-11-09"
+      "new": true,
+      "added": "2026-11-19"
     },
     {
-      "id": "ind-53d8a6c9aa",
-      "title": "How COOs maximize operational impact from gen AI and agentic AI",
-      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/how-coos-maximize-operational-impact-from-gen-ai-and-agentic-ai",
-      "source": "McKinsey",
-      "date": "2025-03-20",
-      "why": "Includes a maintenance copilot for frontline technicians and an AI-prepared shift handover that the supervisor reviews before acting.",
+      "id": "ind-1b92a45096",
+      "title": "2027 Manufacturing Industry Outlook",
+      "url": "https://www.deloitte.com/global/en/insights/industry/manufacturing-industrial-products/manufacturing-industry-outlook.html",
+      "source": "Deloitte Insights",
+      "date": "2026-11-17",
+      "why": "A 2027 briefing for plant and supply chain leaders on scaling AI past pilots: who owns the decision, which data a workflow actually needs, and how floor roles may change.",
+      "tags": [
+        "industries",
+        "ind-manufacturing",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-manufacturing",
+      "new": true,
+      "added": "2026-11-19"
+    },
+    {
+      "id": "ind-5327803a4d",
+      "title": "From vision to value: A road map for enterprise transformation in manufacturing with agentic AI",
+      "url": "https://www.deloitte.com/us/en/insights/industry/manufacturing-industrial-products/agentic-ai-manufacturing-digital-transformation.html",
+      "source": "Deloitte Insights",
+      "date": "2025-09-22",
+      "why": "Shop-floor examples like AI-drafted work instructions reviewed by engineers, plus why most task hours stay human and how to bring workers along.",
       "tags": [
         "industries",
         "ind-manufacturing",
@@ -950,22 +970,6 @@
         "industries",
         "ind-manufacturing",
         "managers"
-      ],
-      "subgroup": "ind-manufacturing",
-      "added": "2026-11-09"
-    },
-    {
-      "id": "ind-a32fee2e7a",
-      "title": "The Future of Supply Chain Planning: Faster, Smarter Decisions with LLMs",
-      "url": "https://executive.mit.edu/blog/the-future-of-supply-chain-planning-faster-smarter-decisions-with-llms.html",
-      "source": "MIT Sloan Executive Education",
-      "date": "2025-07-03",
-      "why": "How planners can ask plain-language what-if questions of their planning tools and get answers in minutes instead of days.",
-      "tags": [
-        "industries",
-        "ind-manufacturing",
-        "managers",
-        "workflows"
       ],
       "subgroup": "ind-manufacturing",
       "added": "2026-11-09"
@@ -1211,7 +1215,6 @@
         "leadership"
       ],
       "subgroup": "ind-manufacturing",
-      "new": true,
       "added": "2026-11-12"
     },
     {
@@ -1637,6 +1640,42 @@
       "added": "2026-11-09",
       "archived_date": "2026-11-18",
       "archived_from": "industries"
+    },
+    {
+      "id": "ind-53d8a6c9aa",
+      "title": "How COOs maximize operational impact from gen AI and agentic AI",
+      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/how-coos-maximize-operational-impact-from-gen-ai-and-agentic-ai",
+      "source": "McKinsey",
+      "date": "2025-03-20",
+      "why": "Includes a maintenance copilot for frontline technicians and an AI-prepared shift handover that the supervisor reviews before acting.",
+      "tags": [
+        "industries",
+        "ind-manufacturing",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-manufacturing",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-19",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-a32fee2e7a",
+      "title": "The Future of Supply Chain Planning: Faster, Smarter Decisions with LLMs",
+      "url": "https://executive.mit.edu/blog/the-future-of-supply-chain-planning-faster-smarter-decisions-with-llms.html",
+      "source": "MIT Sloan Executive Education",
+      "date": "2025-07-03",
+      "why": "How planners can ask plain-language what-if questions of their planning tools and get answers in minutes instead of days.",
+      "tags": [
+        "industries",
+        "ind-manufacturing",
+        "managers",
+        "workflows"
+      ],
+      "subgroup": "ind-manufacturing",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-19",
+      "archived_from": "industries"
     }
   ],
   "dropped_links": [
@@ -1659,6 +1698,14 @@
     {
       "url": "https://www.youtube.com/watch?v=3eR85yxE3uQ",
       "reason": "Skipped: third-party book summary channel, not primary source"
+    },
+    {
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological",
+      "reason": "HTML page returned HTTP 404 on 2026-11-19. Item kept; URL updated to the live January 2025 draft-guidance PDF (https://www.fda.gov/media/184830/download)."
+    },
+    {
+      "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/office-prescription-drug-promotion-opdp",
+      "reason": "HTTP 404 on 2026-11-19 (curl and page fetch). A likely replacement FDA OPDP URL also returned 404, so the item was removed."
     }
   ]
 }
