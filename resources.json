@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-19",
+    "last_updated": "2026-11-20",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -349,7 +349,7 @@
     },
     {
       "title": "Artificial intelligence (EMA overview)",
-      "url": "https://www.ema.europa.eu/en/about-us/how-we-work/big-data/artificial-intelligence",
+      "url": "https://www.ema.europa.eu/en/about-us/how-we-work/data-regulation-big-data-other-sources/artificial-intelligence",
       "source": "European Medicines Agency",
       "date": "ongoing",
       "why": "EU regulator’s page on AI across the medicine lifecycle—helps pharma leaders align internal AI use with European expectations, not only U.S. FDA framing.",
@@ -358,7 +358,8 @@
         "managers",
         "healthcare-regulatory"
       ],
-      "subgroup": "regulatory"
+      "subgroup": "regulatory",
+      "id": "healthcare-3236525721"
     },
     {
       "title": "2026 Life sciences outlook",
@@ -391,7 +392,7 @@
     },
     {
       "title": "Artificial Intelligence-Enabled Medical Devices",
-      "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device",
+      "url": "https://www.fda.gov/medical-devices/digital-health-center-excellence/artificial-intelligence-enabled-medical-devices",
       "source": "U.S. Food and Drug Administration",
       "date": "ongoing",
       "why": "Device-side FDA landing page for AI-enabled medical devices—helps healthcare leaders separate SaMD regulatory paths from drug-development AI uses.",
@@ -400,7 +401,8 @@
         "managers",
         "healthcare-regulatory"
       ],
-      "subgroup": "regulatory"
+      "subgroup": "regulatory",
+      "id": "healthcare-94a901eaf2"
     },
     {
       "title": "How Will the Food and Drug Administration Regulate Generative AI–Enabled Medical Devices?",
@@ -975,6 +977,41 @@
       "added": "2026-11-09"
     },
     {
+      "id": "ind-f67974b74b",
+      "title": "The Hidden Costs of Delegating to AI",
+      "url": "https://hbr.org/2026/11/the-hidden-costs-of-delegating-to-ai",
+      "source": "Harvard Business Review (Nitin Nohria and Hélène Hannecart)",
+      "date": "2026-11-11",
+      "why": "Four accounting firms sped up tax preparation with AI, but review, incentives, and how junior staff learn the work still had to change before the firm gained much.",
+      "tags": [
+        "industries",
+        "ind-proservices",
+        "managers",
+        "leadership",
+        "smb"
+      ],
+      "subgroup": "ind-proservices",
+      "new": true,
+      "added": "2026-11-20"
+    },
+    {
+      "id": "ind-678b2ef1cc",
+      "title": "Tokenomics: Tech-forward small firms see higher AI bills but controls keep costs down",
+      "url": "https://www.accountingtoday.com/news/tokenomics-tech-forward-small-firms-see-higher-ai-bills-but-controls-keep-costs-down",
+      "source": "Accounting Today (Chris Gaetano)",
+      "date": "2026-11-13",
+      "why": "Small accounting firms are capping monthly AI use and asking for a business case before anyone spends more, because costs jump once agents run a whole workflow.",
+      "tags": [
+        "industries",
+        "ind-proservices",
+        "managers",
+        "smb"
+      ],
+      "subgroup": "ind-proservices",
+      "new": true,
+      "added": "2026-11-20"
+    },
+    {
       "id": "ind-2730a0b636",
       "title": "Real-life ways small firms use AI",
       "url": "https://www.journalofaccountancy.com/issues/2026/aug/real-life-ways-small-firms-use-ai/",
@@ -1009,38 +1046,6 @@
       "added": "2026-11-09"
     },
     {
-      "id": "ind-2d4f6c10cd",
-      "title": "AI readiness checklist for SMBs: A practical starting point",
-      "url": "https://aws.amazon.com/smart-business/resources-for-smb/ai-readiness-checklist/",
-      "source": "AWS",
-      "date": "2025-09-01",
-      "why": "A five-step check of your data, tools, and processes so you can start small, prove value, and then grow.",
-      "tags": [
-        "industries",
-        "ind-proservices",
-        "managers",
-        "smb"
-      ],
-      "subgroup": "ind-proservices",
-      "added": "2026-11-09"
-    },
-    {
-      "id": "ind-97a01d63a3",
-      "title": "New Advocacy Article Highlights Small Businesses Closing the AI Adoption Gap",
-      "url": "https://advocacy.sba.gov/2025/09/24/new-advocacy-article-highlights-small-businesses-closing-the-ai-adoption-gap/",
-      "source": "U.S. SBA Office of Advocacy",
-      "date": "2025-09-24",
-      "why": "Census-based data on how fast small firms are adopting AI. They're ahead in some areas, like automated marketing.",
-      "tags": [
-        "industries",
-        "ind-proservices",
-        "managers",
-        "smb"
-      ],
-      "subgroup": "ind-proservices",
-      "added": "2026-11-09"
-    },
-    {
       "id": "ind-617ad58fe1",
       "title": "Confident in Their Business, Cautious About the Economy: The State of Small Business 2026",
       "url": "https://gusto.com/resources/gusto-insights/state-of-small-business-2026",
@@ -1054,7 +1059,6 @@
         "smb"
       ],
       "subgroup": "ind-proservices",
-      "new": true,
       "added": "2026-11-13"
     },
     {
@@ -1676,6 +1680,42 @@
       "added": "2026-11-09",
       "archived_date": "2026-11-19",
       "archived_from": "industries"
+    },
+    {
+      "id": "ind-2d4f6c10cd",
+      "title": "AI readiness checklist for SMBs: A practical starting point",
+      "url": "https://aws.amazon.com/smart-business/resources-for-smb/ai-readiness-checklist/",
+      "source": "AWS",
+      "date": "2025-09-01",
+      "why": "A five-step check of your data, tools, and processes so you can start small, prove value, and then grow.",
+      "tags": [
+        "industries",
+        "ind-proservices",
+        "managers",
+        "smb"
+      ],
+      "subgroup": "ind-proservices",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-20",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-97a01d63a3",
+      "title": "New Advocacy Article Highlights Small Businesses Closing the AI Adoption Gap",
+      "url": "https://advocacy.sba.gov/2025/09/24/new-advocacy-article-highlights-small-businesses-closing-the-ai-adoption-gap/",
+      "source": "U.S. SBA Office of Advocacy",
+      "date": "2025-09-24",
+      "why": "Census-based data on how fast small firms are adopting AI. They're ahead in some areas, like automated marketing.",
+      "tags": [
+        "industries",
+        "ind-proservices",
+        "managers",
+        "smb"
+      ],
+      "subgroup": "ind-proservices",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-20",
+      "archived_from": "industries"
     }
   ],
   "dropped_links": [
@@ -1706,6 +1746,14 @@
     {
       "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/office-prescription-drug-promotion-opdp",
       "reason": "HTTP 404 on 2026-11-19 (curl and page fetch). A likely replacement FDA OPDP URL also returned 404, so the item was removed."
+    },
+    {
+      "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device",
+      "reason": "HTTP 302 on 2026-11-20 to the current FDA device page. Item kept; URL updated to https://www.fda.gov/medical-devices/digital-health-center-excellence/artificial-intelligence-enabled-medical-devices."
+    },
+    {
+      "url": "https://www.ema.europa.eu/en/about-us/how-we-work/big-data/artificial-intelligence",
+      "reason": "HTTP 301 on 2026-11-20. Item kept; URL updated to https://www.ema.europa.eu/en/about-us/how-we-work/data-regulation-big-data-other-sources/artificial-intelligence."
     }
   ]
 }
