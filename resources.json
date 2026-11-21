@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-20",
+    "last_updated": "2026-11-21",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -626,8 +626,24 @@
         "managers"
       ],
       "subgroup": "commercial",
-      "new": true,
       "added": "2026-11-14"
+    },
+    {
+      "title": "AI methods for evidence framework (draft for public feedback)",
+      "url": "https://www.nice.org.uk/corporate/ecd20",
+      "source": "National Institute for Health and Care Excellence (NICE)",
+      "date": "2026-11-09",
+      "why": "A draft framework for using AI in evidence generation, evidence synthesis, and health-economic evaluation, with human oversight and validation scaled to how much the output can influence a coverage or guidance decision.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "commercial",
+      "id": "healthcare-ceba7c986f",
+      "new": true,
+      "added": "2026-11-21"
     }
   ],
   "industry_groups": [
@@ -1062,6 +1078,40 @@
       "added": "2026-11-13"
     },
     {
+      "id": "ind-28afb05fef",
+      "title": "The Evidence Base on AI in K-12: A November 2026 Review",
+      "url": "https://scale.stanford.edu/ai/evidence-base-review/evidence-base-ai-k12-november-review",
+      "source": "Stanford SCALE Initiative (Seth Walker, Lily Fesler, and colleagues)",
+      "date": "2026-11-10",
+      "why": "Stanford's update of 52 causal studies finds generative AI is more useful when students use it to learn the material and when teachers use it for specific tasks such as feedback, and that it can weaken learning when it does the work for the student.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-education",
+      "new": true,
+      "added": "2026-11-21"
+    },
+    {
+      "id": "ind-748c11519a",
+      "title": "Higher-Income Parents Use AI More and Encourage Their Children to Do the Same",
+      "url": "https://www.rand.org/pubs/research_reports/RRA4742-5.html",
+      "source": "RAND (Heather L. Schwartz and Melissa Kay Diliberti)",
+      "date": "2026-11-12",
+      "why": "National surveys of parents and teens find higher-income families using and encouraging AI for schoolwork more than others, and recommend that districts give families plain reasons not to let a chatbot do the first attempt.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-education",
+      "new": true,
+      "added": "2026-11-21"
+    },
+    {
       "id": "ind-7040cc56d9",
       "title": "AI Use in Schools Is Quickly Increasing but Guidance Lags Behind",
       "url": "https://www.rand.org/pubs/research_reports/RRA4180-1.html",
@@ -1073,21 +1123,6 @@
         "ind-education",
         "managers",
         "leadership"
-      ],
-      "subgroup": "ind-education",
-      "added": "2026-11-09"
-    },
-    {
-      "id": "ind-9db0eaa8d2",
-      "title": "Strategies for Taking Advantage of AI as a New Administrator",
-      "url": "https://www.edutopia.org/article/strategies-taking-advantage-ai-school-administrator/",
-      "source": "Edutopia",
-      "date": "2025-07-21",
-      "why": "A new administrator shares how they use AI to save time on communications, planning, and data, and where they keep their own judgment.",
-      "tags": [
-        "industries",
-        "ind-education",
-        "managers"
       ],
       "subgroup": "ind-education",
       "added": "2026-11-09"
@@ -1109,21 +1144,6 @@
       "added": "2026-11-09"
     },
     {
-      "id": "ind-a19a081809",
-      "title": "How AI Can Deepen Nonprofit Relationships",
-      "url": "https://ssir.org/articles/entry/artificial-intelligence-donor-engagement",
-      "source": "Stanford Social Innovation Review",
-      "date": "2025-09-08",
-      "why": "How nonprofits can use AI to know donors better and personalize outreach without losing the human relationship.",
-      "tags": [
-        "industries",
-        "ind-education",
-        "managers"
-      ],
-      "subgroup": "ind-education",
-      "added": "2026-11-09"
-    },
-    {
       "id": "ind-dc9b717fb3",
       "title": "The New Nonprofit Visibility Gap",
       "url": "https://ssir.org/articles/entry/nonprofits-ai-search-visibility-gap",
@@ -1137,7 +1157,6 @@
         "smb"
       ],
       "subgroup": "ind-education",
-      "new": true,
       "added": "2026-11-14"
     },
     {
@@ -1715,6 +1734,40 @@
       "subgroup": "ind-proservices",
       "added": "2026-11-09",
       "archived_date": "2026-11-20",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-9db0eaa8d2",
+      "title": "Strategies for Taking Advantage of AI as a New Administrator",
+      "url": "https://www.edutopia.org/article/strategies-taking-advantage-ai-school-administrator/",
+      "source": "Edutopia",
+      "date": "2025-07-21",
+      "why": "A new administrator shares how they use AI to save time on communications, planning, and data, and where they keep their own judgment.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers"
+      ],
+      "subgroup": "ind-education",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-21",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-a19a081809",
+      "title": "How AI Can Deepen Nonprofit Relationships",
+      "url": "https://ssir.org/articles/entry/artificial-intelligence-donor-engagement",
+      "source": "Stanford Social Innovation Review",
+      "date": "2025-09-08",
+      "why": "How nonprofits can use AI to know donors better and personalize outreach without losing the human relationship.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers"
+      ],
+      "subgroup": "ind-education",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-21",
       "archived_from": "industries"
     }
   ],
