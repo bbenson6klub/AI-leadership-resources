@@ -3,12 +3,40 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-21",
+    "last_updated": "2026-11-22",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
   },
   "this_week": [
+    {
+      "title": "The Case for “Small AI”",
+      "url": "https://hbr.org/2026/11/the-case-for-small-ai",
+      "source": "Harvard Business Review (Bhaskar Chakravorti)",
+      "date": "2026-11-20",
+      "why": "Argues that leaders should buy the smallest system that can finish a defined task at the needed quality, speed, risk, and cost, instead of defaulting to the largest model.",
+      "tags": [
+        "leadership",
+        "managers",
+        "workflows"
+      ],
+      "new": true,
+      "added": "2026-11-22"
+    },
+    {
+      "title": "How AI Erodes People’s Sense of Value at Work",
+      "url": "https://hbr.org/2026/11/how-ai-erodes-peoples-sense-of-value-at-work",
+      "source": "Harvard Business Review (Zach Mercurio)",
+      "date": "2026-11-12",
+      "why": "A manager says colleagues stopped asking him questions and asked a chatbot instead, and the piece offers a few checks so faster AI use does not erase the moments that make people feel needed.",
+      "tags": [
+        "leadership",
+        "managers",
+        "aspiring"
+      ],
+      "new": true,
+      "added": "2026-11-22"
+    },
     {
       "title": "What effective AI leaders already know",
       "url": "https://mitsloan.mit.edu/ideas-made-to-matter/what-effective-ai-leaders-already-know",
@@ -48,7 +76,6 @@
         "managers",
         "aspiring"
       ],
-      "new": true,
       "added": "2026-11-15"
     },
     {
@@ -416,7 +443,6 @@
         "managers"
       ],
       "subgroup": "regulatory",
-      "new": true,
       "added": "2026-11-15"
     },
     {
@@ -463,6 +489,22 @@
       "subgroup": "regulatory",
       "new": true,
       "added": "2026-11-19"
+    },
+    {
+      "title": "FDA’s Use of “Super Intelligence” and “SI” Under Executive Order 14434",
+      "url": "https://www.fda.gov/science-research/fda-and-super-intelligence/fdas-use-super-intelligence-and-si-under-executive-order-14434",
+      "source": "U.S. Food and Drug Administration",
+      "date": "2026-11-16",
+      "why": "Starting November 16, FDA uses “Super Intelligence” and “SI” in new public documents, while existing guidance stays in effect and the wording change does not add a filing requirement.",
+      "tags": [
+        "healthcare",
+        "healthcare-regulatory",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "regulatory",
+      "new": true,
+      "added": "2026-11-22"
     },
     {
       "title": "Generative AI in life sciences marketing",
@@ -1254,7 +1296,6 @@
         "leadership"
       ],
       "subgroup": "ind-sales",
-      "new": true,
       "added": "2026-11-15"
     }
   ],
