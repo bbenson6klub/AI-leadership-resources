@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-22",
+    "last_updated": "2026-11-23",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -62,7 +62,6 @@
         "managers",
         "aspiring"
       ],
-      "new": true,
       "added": "2026-11-16"
     },
     {
@@ -686,6 +685,22 @@
       "id": "healthcare-ceba7c986f",
       "new": true,
       "added": "2026-11-21"
+    },
+    {
+      "title": "Fast Is Not the Same as Trustworthy: The Data Standing Behind an Effective AI Answer",
+      "url": "https://www.iqvia.com/library/articles/fast-is-not-the-same-as-trustworthy",
+      "source": "IQVIA",
+      "date": "2026-11-19",
+      "why": "Why commercial teams' AI answers are only as good as the connected data, governance, and human review behind them.",
+      "tags": [
+        "healthcare",
+        "pharma-commercial",
+        "managers"
+      ],
+      "subgroup": "commercial",
+      "id": "healthcare-b4ca2ffe1b",
+      "new": true,
+      "added": "2026-11-23"
     }
   ],
   "industry_groups": [
@@ -734,6 +749,22 @@
   ],
   "industries": [
     {
+      "id": "ind-8d558cd7e4",
+      "title": "CMS Finalizes Interim Payment Policy for Software as a Medical Service in Hospital Outpatient, Physician Fee Schedule Rules",
+      "url": "https://www.reedsmith.com/our-insights/blogs/health-industry-washington-watch/102o8ks/cms-finalizes-interim-payment-policy-for-software-as-a-medical-service-in-hospita/",
+      "source": "Reed Smith",
+      "date": "2026-11-06",
+      "why": "A plain walkthrough of the new CMS interim payment path for algorithm-based clinical software, starting Jan 1, 2027—useful context for anyone selling or getting reimbursed for AI devices.",
+      "tags": [
+        "industries",
+        "ind-medtech",
+        "managers"
+      ],
+      "subgroup": "ind-medtech",
+      "new": true,
+      "added": "2026-11-23"
+    },
+    {
       "id": "ind-be2a72ed45",
       "title": "Modernizing the Milkman: AI’s New Playbook for Medtech Commercial Excellence",
       "url": "https://www.bcg.com/publications/2026/ai-medtech-commercial-excellence",
@@ -746,7 +777,6 @@
         "managers"
       ],
       "subgroup": "ind-medtech",
-      "new": true,
       "added": "2026-11-16"
     },
     {
@@ -776,22 +806,6 @@
         "industries",
         "ind-medtech",
         "managers"
-      ],
-      "subgroup": "ind-medtech",
-      "added": "2026-11-09"
-    },
-    {
-      "id": "ind-ce4bdcee1b",
-      "title": "Three key trends likely to shape medtech in 2026",
-      "url": "https://www.deloitte.com/us/en/industries/life-sciences-health-care/blogs/health-care/three-key-trends-likely-to-shape-medtech.html",
-      "source": "Deloitte",
-      "date": "2026-01-25",
-      "why": "Short read on portfolio shifts, the move to outpatient care, and AI governance. Useful context for commercial leaders planning the year.",
-      "tags": [
-        "industries",
-        "ind-medtech",
-        "managers",
-        "leadership"
       ],
       "subgroup": "ind-medtech",
       "added": "2026-11-09"
@@ -1809,6 +1823,24 @@
       "subgroup": "ind-education",
       "added": "2026-11-09",
       "archived_date": "2026-11-21",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-ce4bdcee1b",
+      "title": "Three key trends likely to shape medtech in 2026",
+      "url": "https://www.deloitte.com/us/en/industries/life-sciences-health-care/blogs/health-care/three-key-trends-likely-to-shape-medtech.html",
+      "source": "Deloitte",
+      "date": "2026-01-25",
+      "why": "Short read on portfolio shifts, the move to outpatient care, and AI governance. Useful context for commercial leaders planning the year.",
+      "tags": [
+        "industries",
+        "ind-medtech",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-medtech",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-23",
       "archived_from": "industries"
     }
   ],
