@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-23",
+    "last_updated": "2026-11-24",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -456,7 +456,6 @@
         "managers"
       ],
       "subgroup": "regulatory",
-      "new": true,
       "added": "2026-11-17"
     },
     {
@@ -838,7 +837,6 @@
         "managers"
       ],
       "subgroup": "ind-finance",
-      "new": true,
       "added": "2026-11-17"
     },
     {
@@ -855,7 +853,6 @@
         "leadership"
       ],
       "subgroup": "ind-finance",
-      "new": true,
       "added": "2026-11-17"
     },
     {
@@ -875,21 +872,6 @@
       "added": "2026-11-09"
     },
     {
-      "id": "ind-0ad55b241d",
-      "title": "GenAI: Continuing and Emerging Trends (2026 FINRA Annual Regulatory Oversight Report)",
-      "url": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai",
-      "source": "FINRA",
-      "date": "2025-12",
-      "why": "The regulator's view of how existing supervision, communications, and recordkeeping rules apply when firms use gen AI and AI agents. A good compliance checklist.",
-      "tags": [
-        "industries",
-        "ind-finance",
-        "managers"
-      ],
-      "subgroup": "ind-finance",
-      "added": "2026-11-09"
-    },
-    {
       "id": "ind-67d36f1dc5",
       "title": "The Insurance CEO’s Blueprint for Scaling AI",
       "url": "https://www.bcg.com/publications/2026/insurance-ceos-scale-ai-enterprise",
@@ -903,6 +885,23 @@
       ],
       "subgroup": "ind-finance",
       "added": "2026-11-10"
+    },
+    {
+      "id": "ind-df5f3812c7",
+      "title": "Beyond AI pilots: Three takeaways from McKinsey's European Claims Forum",
+      "url": "https://www.mckinsey.com/industries/financial-services/our-insights/insurance-blog/beyond-ai-pilots-three-takeaways-from-mckinseys-european-claims-forum",
+      "source": "McKinsey (Michael Müssig)",
+      "date": "2026-11-12",
+      "why": "Notes from a forum of more than 50 chief claims officers: AI amplifies a well-run claims team but cannot fix weak processes, go deep in a few claim types instead of running dozens of pilots, and keep experienced adjusters on the final call for complex claims.",
+      "tags": [
+        "industries",
+        "ind-finance",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-finance",
+      "new": true,
+      "added": "2026-11-24"
     },
     {
       "id": "ind-5eef9e335e",
@@ -1841,6 +1840,23 @@
       "subgroup": "ind-medtech",
       "added": "2026-11-09",
       "archived_date": "2026-11-23",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-0ad55b241d",
+      "title": "GenAI: Continuing and Emerging Trends (2026 FINRA Annual Regulatory Oversight Report)",
+      "url": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai",
+      "source": "FINRA",
+      "date": "2025-12",
+      "why": "The regulator's view of how existing supervision, communications, and recordkeeping rules apply when firms use gen AI and AI agents. A good compliance checklist.",
+      "tags": [
+        "industries",
+        "ind-finance",
+        "managers"
+      ],
+      "subgroup": "ind-finance",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-24",
       "archived_from": "industries"
     }
   ],
