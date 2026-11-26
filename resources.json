@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-25",
+    "last_updated": "2026-11-26",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -448,7 +448,6 @@
         "managers"
       ],
       "subgroup": "regulatory",
-      "new": true,
       "added": "2026-11-19"
     },
     {
@@ -964,6 +963,23 @@
       "added": "2026-11-09"
     },
     {
+      "id": "ind-448afae4bb",
+      "title": "How Technology, Geopolitics, and Energy Could Redraw the Global Manufacturing Map",
+      "url": "https://www.bcg.com/publications/2026/ai-automation-reshape-manufacturing",
+      "source": "BCG",
+      "date": "2026-11-23",
+      "why": "Looks at whether agentic systems and physical AI can make plants in high-cost countries productive enough to keep production there, and why trade protection or cheaper energy alone won't. Useful framing for plant and operations leaders deciding where to invest.",
+      "tags": [
+        "industries",
+        "ind-manufacturing",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-manufacturing",
+      "new": true,
+      "added": "2026-11-26"
+    },
+    {
       "id": "ind-96276e8a35",
       "title": "Delivering the agentic supply chain",
       "url": "https://www.mckinsey.com/capabilities/operations/our-insights/operations-blog/delivering-the-agentic-supply-chain",
@@ -977,7 +993,6 @@
         "leadership"
       ],
       "subgroup": "ind-manufacturing",
-      "new": true,
       "added": "2026-11-19"
     },
     {
@@ -994,24 +1009,7 @@
         "leadership"
       ],
       "subgroup": "ind-manufacturing",
-      "new": true,
       "added": "2026-11-19"
-    },
-    {
-      "id": "ind-5327803a4d",
-      "title": "From vision to value: A road map for enterprise transformation in manufacturing with agentic AI",
-      "url": "https://www.deloitte.com/us/en/insights/industry/manufacturing-industrial-products/agentic-ai-manufacturing-digital-transformation.html",
-      "source": "Deloitte Insights",
-      "date": "2025-09-22",
-      "why": "Shop-floor examples like AI-drafted work instructions reviewed by engineers, plus why most task hours stay human and how to bring workers along.",
-      "tags": [
-        "industries",
-        "ind-manufacturing",
-        "managers",
-        "leadership"
-      ],
-      "subgroup": "ind-manufacturing",
-      "added": "2026-11-09"
     },
     {
       "id": "ind-ba6b0aad0d",
@@ -1912,6 +1910,24 @@
       "subgroup": "ind-retail",
       "added": "2026-11-09",
       "archived_date": "2026-11-25",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-5327803a4d",
+      "title": "From vision to value: A road map for enterprise transformation in manufacturing with agentic AI",
+      "url": "https://www.deloitte.com/us/en/insights/industry/manufacturing-industrial-products/agentic-ai-manufacturing-digital-transformation.html",
+      "source": "Deloitte Insights",
+      "date": "2025-09-22",
+      "why": "Shop-floor examples like AI-drafted work instructions reviewed by engineers, plus why most task hours stay human and how to bring workers along.",
+      "tags": [
+        "industries",
+        "ind-manufacturing",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-manufacturing",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-26",
       "archived_from": "industries"
     }
   ],
