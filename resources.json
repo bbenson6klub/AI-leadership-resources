@@ -3,12 +3,26 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-26",
+    "last_updated": "2026-11-27",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
   },
   "this_week": [
+    {
+      "title": "Four Habits of Tech-Savvy Leaders",
+      "url": "https://sloanreview.mit.edu/article/four-habits-of-tech-savvy-leaders/",
+      "source": "MIT Sloan Management Review (Melissa Swift)",
+      "date": "2026-11-24",
+      "why": "Four habits for keeping up with AI without chasing every trend: learn from more than one kind of source, talk with people who use the tools, try them in low-stakes ways, and keep a balanced view of what they can and cannot do.",
+      "tags": [
+        "leadership",
+        "managers",
+        "aspiring"
+      ],
+      "new": true,
+      "added": "2026-11-27"
+    },
     {
       "title": "What Happens When AI Makes Work Too Easy?",
       "url": "https://executive.mit.edu/blog/what-happens-when-ai-makes-work-too-easy.html",
@@ -245,6 +259,18 @@
     }
   ],
   "smb": [
+    {
+      "title": "New Phase of Exploration: AI Usage and Workforce impact in Small Businesses",
+      "url": "https://www.cfib-fcei.ca/en/research-economic-analysis/new-phase-of-exploration-ai-usage-and-workforce-impact-in-small-businesses",
+      "source": "Canadian Federation of Independent Business (Marvin Cruz)",
+      "date": "2026-11-24",
+      "why": "A survey of Canadian small-business owners finds most AI use is still exploration or a few processes, and where staffing changed it was more often a shift in tasks than fewer jobs.",
+      "tags": [
+        "smb",
+        "managers"
+      ],
+      "added": "2026-11-27"
+    },
     {
       "title": "Business Automation: Transform Your Operations",
       "url": "https://zapier.com/blog/business-automation/",
@@ -1027,6 +1053,23 @@
       "added": "2026-11-09"
     },
     {
+      "id": "ind-c8e39bf4c5",
+      "title": "Wolters Kluwer’s Future Ready Accountant report: Redesigning work around AI is the next competitive advantage",
+      "url": "https://www.wolterskluwer.com/en/news/future-ready-accountant-redesigning-work-around-ai",
+      "source": "Wolters Kluwer",
+      "date": "2026-11-18",
+      "why": "A survey of more than 2,600 accounting professionals finds most AI gains are still task by task, only 11% of firms say at least three-quarters of their technology is integrated, and 36% have a written firm-wide AI policy.",
+      "tags": [
+        "industries",
+        "ind-proservices",
+        "managers",
+        "smb"
+      ],
+      "subgroup": "ind-proservices",
+      "new": true,
+      "added": "2026-11-27"
+    },
+    {
       "id": "ind-f67974b74b",
       "title": "The Hidden Costs of Delegating to AI",
       "url": "https://hbr.org/2026/11/the-hidden-costs-of-delegating-to-ai",
@@ -1041,7 +1084,6 @@
         "smb"
       ],
       "subgroup": "ind-proservices",
-      "new": true,
       "added": "2026-11-20"
     },
     {
@@ -1058,7 +1100,6 @@
         "smb"
       ],
       "subgroup": "ind-proservices",
-      "new": true,
       "added": "2026-11-20"
     },
     {
@@ -1074,23 +1115,6 @@
         "managers",
         "smb",
         "workflows"
-      ],
-      "subgroup": "ind-proservices",
-      "added": "2026-11-09"
-    },
-    {
-      "id": "ind-dc05fc3b3a",
-      "title": "AI for Small Business 101: How to Get Started",
-      "url": "https://www.uschamber.com/co/run/technology/small-business-ai-guide",
-      "source": "CO— by U.S. Chamber of Commerce",
-      "date": "updated 2025-12",
-      "why": "Beginner-friendly guide to picking AI tools for marketing, customer service, and admin tasks, with tips on trying them safely.",
-      "tags": [
-        "industries",
-        "ind-proservices",
-        "managers",
-        "smb",
-        "aspiring"
       ],
       "subgroup": "ind-proservices",
       "added": "2026-11-09"
@@ -1928,6 +1952,25 @@
       "subgroup": "ind-manufacturing",
       "added": "2026-11-09",
       "archived_date": "2026-11-26",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-dc05fc3b3a",
+      "title": "AI for Small Business 101: How to Get Started",
+      "url": "https://www.uschamber.com/co/run/technology/small-business-ai-guide",
+      "source": "CO— by U.S. Chamber of Commerce",
+      "date": "updated 2025-12",
+      "why": "Beginner-friendly guide to picking AI tools for marketing, customer service, and admin tasks, with tips on trying them safely.",
+      "tags": [
+        "industries",
+        "ind-proservices",
+        "managers",
+        "smb",
+        "aspiring"
+      ],
+      "subgroup": "ind-proservices",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-27",
       "archived_from": "industries"
     }
   ],
