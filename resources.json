@@ -3,7 +3,7 @@
     "title": "Practical AI. Better Leadership.",
     "tagline": "Work smarter. Lead with clarity.",
     "intro": "A living library of useful, free resources for team leaders, aspiring managers, and small-business owners who want practical AI and clearer leadership—not hype.",
-    "last_updated": "2026-11-27",
+    "last_updated": "2026-11-28",
     "timezone_note": "America/Chicago",
     "x_profile": "https://x.com/BBenson6",
     "bio": "Practical AI for better leadership. Workflows, prompts, and ideas for team leaders, aspiring managers, and small-business owners."
@@ -687,7 +687,6 @@
       ],
       "subgroup": "commercial",
       "id": "healthcare-ceba7c986f",
-      "new": true,
       "added": "2026-11-21"
     },
     {
@@ -1136,6 +1135,22 @@
       "added": "2026-11-13"
     },
     {
+      "id": "ind-ee0f392224",
+      "title": "Putting AI Into Practice: Lessons from Educator-Led Pilots in California",
+      "url": "https://crpe.org/putting-ai-into-practice-lessons-from-educator-led-pilots-in-california/",
+      "source": "Center on Reinventing Public Education (CRPE)",
+      "date": "2026-11",
+      "why": "A grounded look at educator-led AI pilots: they took more time and work than expected, and early gains showed up as better judgment about when to use AI before measurable results.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers"
+      ],
+      "subgroup": "ind-education",
+      "new": true,
+      "added": "2026-11-28"
+    },
+    {
       "id": "ind-28afb05fef",
       "title": "The Evidence Base on AI in K-12: A November 2026 Review",
       "url": "https://scale.stanford.edu/ai/evidence-base-review/evidence-base-ai-k12-november-review",
@@ -1149,7 +1164,6 @@
         "leadership"
       ],
       "subgroup": "ind-education",
-      "new": true,
       "added": "2026-11-21"
     },
     {
@@ -1166,7 +1180,6 @@
         "leadership"
       ],
       "subgroup": "ind-education",
-      "new": true,
       "added": "2026-11-21"
     },
     {
@@ -1176,22 +1189,6 @@
       "source": "RAND",
       "date": "2025-09-30",
       "why": "National surveys of teachers, school and district leaders, students, and parents. Shows how fast AI use is growing and where policy and training lag.",
-      "tags": [
-        "industries",
-        "ind-education",
-        "managers",
-        "leadership"
-      ],
-      "subgroup": "ind-education",
-      "added": "2026-11-09"
-    },
-    {
-      "id": "ind-67b2b874af",
-      "title": "How to Make Purposeful Decisions About Generative AI in Your School",
-      "url": "https://www.edutopia.org/article/purposeful-decisions-school-ai-policies/",
-      "source": "Edutopia",
-      "date": "2025-09-11",
-      "why": "Guidance for school leaders writing AI policies: involve teachers, start with clear goals, and revisit the rules as tools change.",
       "tags": [
         "industries",
         "ind-education",
@@ -1971,6 +1968,24 @@
       "subgroup": "ind-proservices",
       "added": "2026-11-09",
       "archived_date": "2026-11-27",
+      "archived_from": "industries"
+    },
+    {
+      "id": "ind-67b2b874af",
+      "title": "How to Make Purposeful Decisions About Generative AI in Your School",
+      "url": "https://www.edutopia.org/article/purposeful-decisions-school-ai-policies/",
+      "source": "Edutopia",
+      "date": "2025-09-11",
+      "why": "Guidance for school leaders writing AI policies: involve teachers, start with clear goals, and revisit the rules as tools change.",
+      "tags": [
+        "industries",
+        "ind-education",
+        "managers",
+        "leadership"
+      ],
+      "subgroup": "ind-education",
+      "added": "2026-11-09",
+      "archived_date": "2026-11-28",
       "archived_from": "industries"
     }
   ],
